@@ -1,0 +1,5 @@
+rule operatorsCollection2html
+transform col: MutationOperatorMM!MutationOperatorCollection {
+	template: "./operatorset2page_EOL.egl"
+	target: "./operators.html"
+}

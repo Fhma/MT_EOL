@@ -1,0 +1,27 @@
+@namespace(uri="MutationOperatorMM", prefix="MutationOperatorMM")
+package MutationOperatorMM;
+
+class MutationOperatorCollection {
+	val MutationOperatorSet[*] all_operator_sets;
+}
+
+class MutationOperatorSet {
+	attr EString[1] containingClass;
+	val MutationOperator[*]#op_set operators;
+	attr EString[*] extended_sets;
+}
+
+abstract class MutationOperator {
+	ref MutationOperatorSet[1]#operators op_set;
+	attr EString[1] feature_type;
+	attr EInt[1] lowerBound;
+	attr EInt[1] upperBound;
+	attr EString[1] feature_name;
+	attr EString[1] signature;
+}
+
+class AddMutationOperator extends MutationOperator { }
+
+class DeleteMutationOperator extends MutationOperator { }
+
+class ReplaceMutationOperator extends MutationOperator { }

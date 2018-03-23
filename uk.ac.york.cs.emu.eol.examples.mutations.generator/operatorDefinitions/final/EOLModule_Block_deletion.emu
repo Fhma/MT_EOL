@@ -1,0 +1,15 @@
+// operator: EOLModule_Block-DEL
+// desc: deletes the block of an EOL module. This would 
+// remove all statements of the EOL module.
+//
+// Inherited operators: EOLLibraryModule
+////////////////////////////////////////////////////////////
+
+@action delete
+@property block
+pattern delete_eol_module_block
+instance:EOLModule {
+	do {
+		instance.block = null;
+	}
+}

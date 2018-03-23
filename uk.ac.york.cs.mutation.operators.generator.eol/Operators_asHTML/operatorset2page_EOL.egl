@@ -1,0 +1,47 @@
+<h1>EOL Mutation Operator Set</h1>
+[% for(set in col.all_operator_sets) {%]
+	<h2>[%= set.containingClass%]</h2>
+	<center>
+	[% if(set.extended_sets.size()>0) {%]
+	<h4>Extended Operators Set</h4>
+	<table align="center" border="1" bgcolor="#E0E0E0" cellpadding="3">
+		<tr>
+		[% for (item in set.extended_sets) {%]
+			<td>[%= item %]</td>
+		[%}%]
+		</tr>
+	</table>
+	[%}%]
+	[% if(set.operators.size()>0) {%]
+	<h4>Mutation Operators</h4>
+	<table align="center" border="1" bgcolor="#FFE5CC" cellpadding="2">
+		<tr>
+			<th>Feature Type</th>
+			<th>lowerBound</th>
+			<th>UpperBound</th>
+			<th>Feature Name</th>
+			<th>Mutation Action</th>
+		</tr>
+		
+		[%for (op in set.operators) {%]
+		<tr>
+			<td align="center">[%= op.feature_type%]</td>
+			<td align="center">[%= op.lowerBound%]</td>
+			<td align="center">[%= op.upperBound%]</td>
+			<td align="center">[%= op.feature_name%]</td>
+			[% if(op.isTypeOf(MutationOperatorMM!AddMutationOperator)) {%]
+				<td align="center">add</td>
+			[%}%]
+			[% if(op.isTypeOf(MutationOperatorMM!DeleteMutationOperator)) {%]
+				<td align="center">delete</td>
+			[%}%]
+			[% if(op.isTypeOf(MutationOperatorMM!ReplaceMutationOperator)) {%]
+				<td align="center">replace</td>
+			[%}%]
+		</tr>
+		[%}%]
+	</table>
+	[%}%]
+	<hr />
+	</center>
+[%}%]

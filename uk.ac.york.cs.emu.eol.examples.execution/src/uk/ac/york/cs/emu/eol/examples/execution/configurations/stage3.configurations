@@ -1,0 +1,5 @@
+# Stage 3: this stage executes a set of mutations (mutants) located in "generatedMutations" against the same inputs models
+# (test inputs) used for stage 2 ("inModels") and compare the result of each test input of a mutant with corresponding
+# expected models generated in that stage. A summary of execution of this stage is stored in "mutationsExecution_summary"
+
+ShortestPath

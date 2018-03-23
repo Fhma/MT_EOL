@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="ASCII"?>
+<MutationOperatorMM:MutationOperatorCollection xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MutationOperatorMM="MutationOperatorMM" xsi:schemaLocation="MutationOperatorMM /Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.mutation.operators.generator.eol/bin/uk/ac/york/cs/mutation/operators/generator/resources/MutationOperatorMM.ecore">
+  <all_operator_sets containingClass="eol.EOLLibraryModule">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="name" signature="EOLLibraryModule [ EString [ 1, 1 ] name, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="name" signature="EOLLibraryModule [ EString [ 1, 1 ] name, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="name" signature="EOLLibraryModule [ EString [ 1, 1 ] name, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Import" upperBound="-1" feature_name="imports" signature="EOLLibraryModule [ Import [ 0, -1 ] imports, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Import" upperBound="-1" feature_name="imports" signature="EOLLibraryModule [ Import [ 0, -1 ] imports, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Import" upperBound="-1" feature_name="imports" signature="EOLLibraryModule [ Import [ 0, -1 ] imports, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="ModelDeclarationStatement" upperBound="-1" feature_name="modelDeclarations" signature="EOLLibraryModule [ ModelDeclarationStatement [ 0, -1 ] modelDeclarations, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="ModelDeclarationStatement" upperBound="-1" feature_name="modelDeclarations" signature="EOLLibraryModule [ ModelDeclarationStatement [ 0, -1 ] modelDeclarations, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="ModelDeclarationStatement" upperBound="-1" feature_name="modelDeclarations" signature="EOLLibraryModule [ ModelDeclarationStatement [ 0, -1 ] modelDeclarations, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="OperationDefinition" upperBound="-1" feature_name="operations" signature="EOLLibraryModule [ OperationDefinition [ 0, -1 ] operations, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="OperationDefinition" upperBound="-1" feature_name="operations" signature="EOLLibraryModule [ OperationDefinition [ 0, -1 ] operations, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="OperationDefinition" upperBound="-1" feature_name="operations" signature="EOLLibraryModule [ OperationDefinition [ 0, -1 ] operations, replace]"/>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.EOLModule">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Block" upperBound="1" feature_name="block" signature="EOLModule [ Block [ 0, 1 ] block, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Block" upperBound="1" feature_name="block" signature="EOLModule [ Block [ 0, 1 ] block, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Block" upperBound="1" feature_name="block" signature="EOLModule [ Block [ 0, 1 ] block, replace]"/>
+    <extended_sets>eol.EOLLibraryModule</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.Import">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EOLLibraryModule" lowerBound="1" upperBound="1" feature_name="importedModule" signature="Import [ EOLLibraryModule [ 1, 1 ] importedModule, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EOLLibraryModule" lowerBound="1" upperBound="1" feature_name="importedModule" signature="Import [ EOLLibraryModule [ 1, 1 ] importedModule, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EOLLibraryModule" lowerBound="1" upperBound="1" feature_name="importedModule" signature="Import [ EOLLibraryModule [ 1, 1 ] importedModule, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="imported" signature="Import [ EString [ 1, 1 ] imported, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="imported" signature="Import [ EString [ 1, 1 ] imported, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="imported" signature="Import [ EString [ 1, 1 ] imported, replace]"/>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.Block">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Statement" upperBound="-1" feature_name="statements" signature="Block [ Statement [ 0, -1 ] statements, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Statement" upperBound="-1" feature_name="statements" signature="Block [ Statement [ 0, -1 ] statements, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Statement" upperBound="-1" feature_name="statements" signature="Block [ Statement [ 0, -1 ] statements, replace]"/>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.AnnotationBlock">
+    <extended_sets>eol.Block</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ExpressionOrStatementBlock">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Block" upperBound="1" feature_name="block" signature="ExpressionOrStatementBlock [ Block [ 0, 1 ] block, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Block" upperBound="1" feature_name="block" signature="ExpressionOrStatementBlock [ Block [ 0, 1 ] block, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Block" upperBound="1" feature_name="block" signature="ExpressionOrStatementBlock [ Block [ 0, 1 ] block, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" upperBound="1" feature_name="expression" signature="ExpressionOrStatementBlock [ Expression [ 0, 1 ] expression, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" upperBound="1" feature_name="expression" signature="ExpressionOrStatementBlock [ Expression [ 0, 1 ] expression, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" upperBound="1" feature_name="expression" signature="ExpressionOrStatementBlock [ Expression [ 0, 1 ] expression, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" upperBound="1" feature_name="condition" signature="ExpressionOrStatementBlock [ Expression [ 0, 1 ] condition, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" upperBound="1" feature_name="condition" signature="ExpressionOrStatementBlock [ Expression [ 0, 1 ] condition, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" upperBound="1" feature_name="condition" signature="ExpressionOrStatementBlock [ Expression [ 0, 1 ] condition, replace]"/>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.OperationDefinition">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Type" lowerBound="1" upperBound="1" feature_name="contextType" signature="OperationDefinition [ Type [ 1, 1 ] contextType, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Type" lowerBound="1" upperBound="1" feature_name="contextType" signature="OperationDefinition [ Type [ 1, 1 ] contextType, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Type" lowerBound="1" upperBound="1" feature_name="contextType" signature="OperationDefinition [ Type [ 1, 1 ] contextType, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Type" lowerBound="1" upperBound="1" feature_name="returnType" signature="OperationDefinition [ Type [ 1, 1 ] returnType, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Type" lowerBound="1" upperBound="1" feature_name="returnType" signature="OperationDefinition [ Type [ 1, 1 ] returnType, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Type" lowerBound="1" upperBound="1" feature_name="returnType" signature="OperationDefinition [ Type [ 1, 1 ] returnType, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="AnnotationBlock" upperBound="1" feature_name="annotationBlock" signature="OperationDefinition [ AnnotationBlock [ 0, 1 ] annotationBlock, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="AnnotationBlock" upperBound="1" feature_name="annotationBlock" signature="OperationDefinition [ AnnotationBlock [ 0, 1 ] annotationBlock, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="AnnotationBlock" upperBound="1" feature_name="annotationBlock" signature="OperationDefinition [ AnnotationBlock [ 0, 1 ] annotationBlock, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Block" upperBound="1" feature_name="body" signature="OperationDefinition [ Block [ 0, 1 ] body, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Block" upperBound="1" feature_name="body" signature="OperationDefinition [ Block [ 0, 1 ] body, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Block" upperBound="1" feature_name="body" signature="OperationDefinition [ Block [ 0, 1 ] body, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="name" signature="OperationDefinition [ NameExpression [ 1, 1 ] name, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="name" signature="OperationDefinition [ NameExpression [ 1, 1 ] name, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="name" signature="OperationDefinition [ NameExpression [ 1, 1 ] name, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="FormalParameterExpression" upperBound="-1" feature_name="parameters" signature="OperationDefinition [ FormalParameterExpression [ 0, -1 ] parameters, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="FormalParameterExpression" upperBound="-1" feature_name="parameters" signature="OperationDefinition [ FormalParameterExpression [ 0, -1 ] parameters, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="FormalParameterExpression" upperBound="-1" feature_name="parameters" signature="OperationDefinition [ FormalParameterExpression [ 0, -1 ] parameters, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="VariableDeclarationExpression" lowerBound="1" upperBound="1" feature_name="self" signature="OperationDefinition [ VariableDeclarationExpression [ 1, 1 ] self, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="VariableDeclarationExpression" lowerBound="1" upperBound="1" feature_name="self" signature="OperationDefinition [ VariableDeclarationExpression [ 1, 1 ] self, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="VariableDeclarationExpression" lowerBound="1" upperBound="1" feature_name="self" signature="OperationDefinition [ VariableDeclarationExpression [ 1, 1 ] self, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="VariableDeclarationExpression" upperBound="1" feature_name="_result" signature="OperationDefinition [ VariableDeclarationExpression [ 0, 1 ] _result, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="VariableDeclarationExpression" upperBound="1" feature_name="_result" signature="OperationDefinition [ VariableDeclarationExpression [ 0, 1 ] _result, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="VariableDeclarationExpression" upperBound="1" feature_name="_result" signature="OperationDefinition [ VariableDeclarationExpression [ 0, 1 ] _result, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="OperationDefinition" upperBound="-1" feature_name="dependingOperationDefinitions" signature="OperationDefinition [ OperationDefinition [ 0, -1 ] dependingOperationDefinitions, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="OperationDefinition" upperBound="-1" feature_name="dependingOperationDefinitions" signature="OperationDefinition [ OperationDefinition [ 0, -1 ] dependingOperationDefinitions, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="OperationDefinition" upperBound="-1" feature_name="dependingOperationDefinitions" signature="OperationDefinition [ OperationDefinition [ 0, -1 ] dependingOperationDefinitions, replace]"/>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.Expression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Type" lowerBound="1" upperBound="1" feature_name="resolvedType" signature="Expression [ Type [ 1, 1 ] resolvedType, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Type" lowerBound="1" upperBound="1" feature_name="resolvedType" signature="Expression [ Type [ 1, 1 ] resolvedType, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Type" lowerBound="1" upperBound="1" feature_name="resolvedType" signature="Expression [ Type [ 1, 1 ] resolvedType, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="inBrackets" signature="Expression [ EBoolean [ 1, 1 ] inBrackets, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="inBrackets" signature="Expression [ EBoolean [ 1, 1 ] inBrackets, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="inBrackets" signature="Expression [ EBoolean [ 1, 1 ] inBrackets, replace]"/>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.OperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.UnaryOperatorExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="UnaryOperatorExpression [ Expression [ 1, 1 ] expression, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="UnaryOperatorExpression [ Expression [ 1, 1 ] expression, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="UnaryOperatorExpression [ Expression [ 1, 1 ] expression, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.NotOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.UnaryOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.NegativeOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.UnaryOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.BinaryOperatorExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="lhs" signature="BinaryOperatorExpression [ Expression [ 1, 1 ] lhs, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="lhs" signature="BinaryOperatorExpression [ Expression [ 1, 1 ] lhs, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="lhs" signature="BinaryOperatorExpression [ Expression [ 1, 1 ] lhs, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="rhs" signature="BinaryOperatorExpression [ Expression [ 1, 1 ] rhs, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="rhs" signature="BinaryOperatorExpression [ Expression [ 1, 1 ] rhs, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="rhs" signature="BinaryOperatorExpression [ Expression [ 1, 1 ] rhs, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.LogicalOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.AndOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+    <extended_sets>eol.LogicalOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.XorOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+    <extended_sets>eol.LogicalOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.OrOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+    <extended_sets>eol.LogicalOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ImpliesOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+    <extended_sets>eol.LogicalOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ArithmeticOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.DivideOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+    <extended_sets>eol.ArithmeticOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.MultiplyOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+    <extended_sets>eol.ArithmeticOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.MinusOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+    <extended_sets>eol.ArithmeticOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.PlusOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+    <extended_sets>eol.ArithmeticOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ComparisonOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.GreaterThanOrEqualToOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+    <extended_sets>eol.ComparisonOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.GreaterThanOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+    <extended_sets>eol.ComparisonOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.LessThanOrEqualToOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+    <extended_sets>eol.ComparisonOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.LessThanOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+    <extended_sets>eol.ComparisonOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.NotEqualsOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+    <extended_sets>eol.ComparisonOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.EqualsOperatorExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.OperatorExpression</extended_sets>
+    <extended_sets>eol.BinaryOperatorExpression</extended_sets>
+    <extended_sets>eol.ComparisonOperatorExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.VariableDeclarationExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="create" signature="VariableDeclarationExpression [ EBoolean [ 1, 1 ] create, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="create" signature="VariableDeclarationExpression [ EBoolean [ 1, 1 ] create, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="create" signature="VariableDeclarationExpression [ EBoolean [ 1, 1 ] create, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="name" signature="VariableDeclarationExpression [ NameExpression [ 1, 1 ] name, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="name" signature="VariableDeclarationExpression [ NameExpression [ 1, 1 ] name, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="name" signature="VariableDeclarationExpression [ NameExpression [ 1, 1 ] name, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="NameExpression" upperBound="-1" feature_name="references" signature="VariableDeclarationExpression [ NameExpression [ 0, -1 ] references, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="NameExpression" upperBound="-1" feature_name="references" signature="VariableDeclarationExpression [ NameExpression [ 0, -1 ] references, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="NameExpression" upperBound="-1" feature_name="references" signature="VariableDeclarationExpression [ NameExpression [ 0, -1 ] references, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.FormalParameterExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.VariableDeclarationExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.NameExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="name" signature="NameExpression [ EString [ 1, 1 ] name, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="name" signature="NameExpression [ EString [ 1, 1 ] name, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="name" signature="NameExpression [ EString [ 1, 1 ] name, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="isType" signature="NameExpression [ EBoolean [ 1, 1 ] isType, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="isType" signature="NameExpression [ EBoolean [ 1, 1 ] isType, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="isType" signature="NameExpression [ EBoolean [ 1, 1 ] isType, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.FeatureCallExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" upperBound="1" feature_name="target" signature="FeatureCallExpression [ Expression [ 0, 1 ] target, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" upperBound="1" feature_name="target" signature="FeatureCallExpression [ Expression [ 0, 1 ] target, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" upperBound="1" feature_name="target" signature="FeatureCallExpression [ Expression [ 0, 1 ] target, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="arrow" signature="FeatureCallExpression [ EBoolean [ 1, 1 ] arrow, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="arrow" signature="FeatureCallExpression [ EBoolean [ 1, 1 ] arrow, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="arrow" signature="FeatureCallExpression [ EBoolean [ 1, 1 ] arrow, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.MethodCallExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" upperBound="-1" feature_name="arguments" signature="MethodCallExpression [ Expression [ 0, -1 ] arguments, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" upperBound="-1" feature_name="arguments" signature="MethodCallExpression [ Expression [ 0, -1 ] arguments, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" upperBound="-1" feature_name="arguments" signature="MethodCallExpression [ Expression [ 0, -1 ] arguments, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="method" signature="MethodCallExpression [ NameExpression [ 1, 1 ] method, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="method" signature="MethodCallExpression [ NameExpression [ 1, 1 ] method, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="method" signature="MethodCallExpression [ NameExpression [ 1, 1 ] method, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="OperationDefinition" upperBound="1" feature_name="resolvedOperationDefinition" signature="MethodCallExpression [ OperationDefinition [ 0, 1 ] resolvedOperationDefinition, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="OperationDefinition" upperBound="1" feature_name="resolvedOperationDefinition" signature="MethodCallExpression [ OperationDefinition [ 0, 1 ] resolvedOperationDefinition, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="OperationDefinition" upperBound="1" feature_name="resolvedOperationDefinition" signature="MethodCallExpression [ OperationDefinition [ 0, 1 ] resolvedOperationDefinition, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.FeatureCallExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.PropertyCallExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EBoolean" upperBound="1" feature_name="extended" signature="PropertyCallExpression [ EBoolean [ 0, 1 ] extended, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EBoolean" upperBound="1" feature_name="extended" signature="PropertyCallExpression [ EBoolean [ 0, 1 ] extended, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EBoolean" upperBound="1" feature_name="extended" signature="PropertyCallExpression [ EBoolean [ 0, 1 ] extended, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="property" signature="PropertyCallExpression [ NameExpression [ 1, 1 ] property, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="property" signature="PropertyCallExpression [ NameExpression [ 1, 1 ] property, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="property" signature="PropertyCallExpression [ NameExpression [ 1, 1 ] property, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.FeatureCallExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.FOLMethodCallExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="FormalParameterExpression" lowerBound="1" upperBound="1" feature_name="iterator" signature="FOLMethodCallExpression [ FormalParameterExpression [ 1, 1 ] iterator, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="FormalParameterExpression" lowerBound="1" upperBound="1" feature_name="iterator" signature="FOLMethodCallExpression [ FormalParameterExpression [ 1, 1 ] iterator, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="FormalParameterExpression" lowerBound="1" upperBound="1" feature_name="iterator" signature="FOLMethodCallExpression [ FormalParameterExpression [ 1, 1 ] iterator, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="-1" feature_name="conditions" signature="FOLMethodCallExpression [ Expression [ 1, -1 ] conditions, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="-1" feature_name="conditions" signature="FOLMethodCallExpression [ Expression [ 1, -1 ] conditions, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="-1" feature_name="conditions" signature="FOLMethodCallExpression [ Expression [ 1, -1 ] conditions, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="method" signature="FOLMethodCallExpression [ NameExpression [ 1, 1 ] method, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="method" signature="FOLMethodCallExpression [ NameExpression [ 1, 1 ] method, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="method" signature="FOLMethodCallExpression [ NameExpression [ 1, 1 ] method, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="OperationDefinition" upperBound="1" feature_name="resolvedFOLDefinition" signature="FOLMethodCallExpression [ OperationDefinition [ 0, 1 ] resolvedFOLDefinition, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="OperationDefinition" upperBound="1" feature_name="resolvedFOLDefinition" signature="FOLMethodCallExpression [ OperationDefinition [ 0, 1 ] resolvedFOLDefinition, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="OperationDefinition" upperBound="1" feature_name="resolvedFOLDefinition" signature="FOLMethodCallExpression [ OperationDefinition [ 0, 1 ] resolvedFOLDefinition, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.FeatureCallExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.KeyValueExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="key" signature="KeyValueExpression [ Expression [ 1, 1 ] key, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="key" signature="KeyValueExpression [ Expression [ 1, 1 ] key, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="key" signature="KeyValueExpression [ Expression [ 1, 1 ] key, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="value" signature="KeyValueExpression [ Expression [ 1, 1 ] value, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="value" signature="KeyValueExpression [ Expression [ 1, 1 ] value, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="value" signature="KeyValueExpression [ Expression [ 1, 1 ] value, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ModelDeclarationParameter">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.KeyValueExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.NewExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="typeName" signature="NewExpression [ NameExpression [ 1, 1 ] typeName, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="typeName" signature="NewExpression [ NameExpression [ 1, 1 ] typeName, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="typeName" signature="NewExpression [ NameExpression [ 1, 1 ] typeName, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" upperBound="-1" feature_name="parameters" signature="NewExpression [ Expression [ 0, -1 ] parameters, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" upperBound="-1" feature_name="parameters" signature="NewExpression [ Expression [ 0, -1 ] parameters, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" upperBound="-1" feature_name="parameters" signature="NewExpression [ Expression [ 0, -1 ] parameters, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.MapExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="KeyValueExpression" upperBound="-1" feature_name="keyValues" signature="MapExpression [ KeyValueExpression [ 0, -1 ] keyValues, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="KeyValueExpression" upperBound="-1" feature_name="keyValues" signature="MapExpression [ KeyValueExpression [ 0, -1 ] keyValues, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="KeyValueExpression" upperBound="-1" feature_name="keyValues" signature="MapExpression [ KeyValueExpression [ 0, -1 ] keyValues, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.CollectionExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" upperBound="-1" feature_name="contents" signature="CollectionExpression [ Expression [ 0, -1 ] contents, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" upperBound="-1" feature_name="contents" signature="CollectionExpression [ Expression [ 0, -1 ] contents, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" upperBound="-1" feature_name="contents" signature="CollectionExpression [ Expression [ 0, -1 ] contents, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="CollectionInitialisationExpression" upperBound="1" feature_name="parameterList" signature="CollectionExpression [ CollectionInitialisationExpression [ 0, 1 ] parameterList, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="CollectionInitialisationExpression" upperBound="1" feature_name="parameterList" signature="CollectionExpression [ CollectionInitialisationExpression [ 0, 1 ] parameterList, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="CollectionInitialisationExpression" upperBound="1" feature_name="parameterList" signature="CollectionExpression [ CollectionInitialisationExpression [ 0, 1 ] parameterList, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.PrimitiveExpression">
+    <extended_sets>eol.Expression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ComparableExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.PrimitiveExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.SummableExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.PrimitiveExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.StringExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="value" signature="StringExpression [ EString [ 1, 1 ] value, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="value" signature="StringExpression [ EString [ 1, 1 ] value, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="value" signature="StringExpression [ EString [ 1, 1 ] value, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.PrimitiveExpression</extended_sets>
+    <extended_sets>eol.ComparableExpression</extended_sets>
+    <extended_sets>eol.SummableExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.BooleanExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="value" signature="BooleanExpression [ EBoolean [ 1, 1 ] value, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="value" signature="BooleanExpression [ EBoolean [ 1, 1 ] value, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="value" signature="BooleanExpression [ EBoolean [ 1, 1 ] value, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.PrimitiveExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.RealExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EDouble" lowerBound="1" upperBound="1" feature_name="value" signature="RealExpression [ EDouble [ 1, 1 ] value, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EDouble" lowerBound="1" upperBound="1" feature_name="value" signature="RealExpression [ EDouble [ 1, 1 ] value, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EDouble" lowerBound="1" upperBound="1" feature_name="value" signature="RealExpression [ EDouble [ 1, 1 ] value, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.PrimitiveExpression</extended_sets>
+    <extended_sets>eol.ComparableExpression</extended_sets>
+    <extended_sets>eol.SummableExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.IntegerExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EInt" lowerBound="1" upperBound="1" feature_name="value" signature="IntegerExpression [ EInt [ 1, 1 ] value, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EInt" lowerBound="1" upperBound="1" feature_name="value" signature="IntegerExpression [ EInt [ 1, 1 ] value, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EInt" lowerBound="1" upperBound="1" feature_name="value" signature="IntegerExpression [ EInt [ 1, 1 ] value, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.PrimitiveExpression</extended_sets>
+    <extended_sets>eol.ComparableExpression</extended_sets>
+    <extended_sets>eol.SummableExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.BagExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.CollectionExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.SetExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.CollectionExpression</extended_sets>
+    <extended_sets>eol.UniqueCollection</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.OrderedSetExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.CollectionExpression</extended_sets>
+    <extended_sets>eol.OrderedCollection</extended_sets>
+    <extended_sets>eol.UniqueCollection</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.SequenceExpression">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.CollectionExpression</extended_sets>
+    <extended_sets>eol.OrderedCollection</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.OrderedCollection">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.CollectionExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.UniqueCollection">
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.CollectionExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.EnumerationLiteralExpression">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="literal" signature="EnumerationLiteralExpression [ NameExpression [ 1, 1 ] literal, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="literal" signature="EnumerationLiteralExpression [ NameExpression [ 1, 1 ] literal, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="literal" signature="EnumerationLiteralExpression [ NameExpression [ 1, 1 ] literal, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="enumeration" signature="EnumerationLiteralExpression [ NameExpression [ 1, 1 ] enumeration, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="enumeration" signature="EnumerationLiteralExpression [ NameExpression [ 1, 1 ] enumeration, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="enumeration" signature="EnumerationLiteralExpression [ NameExpression [ 1, 1 ] enumeration, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="model" signature="EnumerationLiteralExpression [ NameExpression [ 1, 1 ] model, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="model" signature="EnumerationLiteralExpression [ NameExpression [ 1, 1 ] model, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="model" signature="EnumerationLiteralExpression [ NameExpression [ 1, 1 ] model, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.CollectionInitialisationExpression">
+    <extended_sets>eol.Expression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ExpressionRange">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="start" signature="ExpressionRange [ Expression [ 1, 1 ] start, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="start" signature="ExpressionRange [ Expression [ 1, 1 ] start, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="start" signature="ExpressionRange [ Expression [ 1, 1 ] start, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="end" signature="ExpressionRange [ Expression [ 1, 1 ] end, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="end" signature="ExpressionRange [ Expression [ 1, 1 ] end, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="end" signature="ExpressionRange [ Expression [ 1, 1 ] end, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.CollectionInitialisationExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ExpressionList">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="-1" feature_name="expressions" signature="ExpressionList [ Expression [ 1, -1 ] expressions, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="-1" feature_name="expressions" signature="ExpressionList [ Expression [ 1, -1 ] expressions, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="-1" feature_name="expressions" signature="ExpressionList [ Expression [ 1, -1 ] expressions, replace]"/>
+    <extended_sets>eol.Expression</extended_sets>
+    <extended_sets>eol.CollectionInitialisationExpression</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.Statement"/>
+  <all_operator_sets containingClass="eol.TransactionStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="NameExpression" upperBound="-1" feature_name="names" signature="TransactionStatement [ NameExpression [ 0, -1 ] names, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="NameExpression" upperBound="-1" feature_name="names" signature="TransactionStatement [ NameExpression [ 0, -1 ] names, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="NameExpression" upperBound="-1" feature_name="names" signature="TransactionStatement [ NameExpression [ 0, -1 ] names, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="body" signature="TransactionStatement [ ExpressionOrStatementBlock [ 1, 1 ] body, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="body" signature="TransactionStatement [ ExpressionOrStatementBlock [ 1, 1 ] body, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="body" signature="TransactionStatement [ ExpressionOrStatementBlock [ 1, 1 ] body, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ExpressionStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="ExpressionStatement [ Expression [ 1, 1 ] expression, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="ExpressionStatement [ Expression [ 1, 1 ] expression, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="ExpressionStatement [ Expression [ 1, 1 ] expression, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.SwitchStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="SwitchStatement [ Expression [ 1, 1 ] expression, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="SwitchStatement [ Expression [ 1, 1 ] expression, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="SwitchStatement [ Expression [ 1, 1 ] expression, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="SwitchCaseExpressionStatement" upperBound="-1" feature_name="cases" signature="SwitchStatement [ SwitchCaseExpressionStatement [ 0, -1 ] cases, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="SwitchCaseExpressionStatement" upperBound="-1" feature_name="cases" signature="SwitchStatement [ SwitchCaseExpressionStatement [ 0, -1 ] cases, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="SwitchCaseExpressionStatement" upperBound="-1" feature_name="cases" signature="SwitchStatement [ SwitchCaseExpressionStatement [ 0, -1 ] cases, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="SwitchCaseDefaultStatement" upperBound="1" feature_name="default" signature="SwitchStatement [ SwitchCaseDefaultStatement [ 0, 1 ] default, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="SwitchCaseDefaultStatement" upperBound="1" feature_name="default" signature="SwitchStatement [ SwitchCaseDefaultStatement [ 0, 1 ] default, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="SwitchCaseDefaultStatement" upperBound="1" feature_name="default" signature="SwitchStatement [ SwitchCaseDefaultStatement [ 0, 1 ] default, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.SwitchCaseStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="body" signature="SwitchCaseStatement [ ExpressionOrStatementBlock [ 1, 1 ] body, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="body" signature="SwitchCaseStatement [ ExpressionOrStatementBlock [ 1, 1 ] body, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="body" signature="SwitchCaseStatement [ ExpressionOrStatementBlock [ 1, 1 ] body, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.SwitchCaseDefaultStatement">
+    <extended_sets>eol.Statement</extended_sets>
+    <extended_sets>eol.SwitchCaseStatement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.SwitchCaseExpressionStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="SwitchCaseExpressionStatement [ Expression [ 1, 1 ] expression, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="SwitchCaseExpressionStatement [ Expression [ 1, 1 ] expression, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="SwitchCaseExpressionStatement [ Expression [ 1, 1 ] expression, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+    <extended_sets>eol.SwitchCaseStatement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.IfStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="condition" signature="IfStatement [ Expression [ 1, 1 ] condition, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="condition" signature="IfStatement [ Expression [ 1, 1 ] condition, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="condition" signature="IfStatement [ Expression [ 1, 1 ] condition, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="ifBody" signature="IfStatement [ ExpressionOrStatementBlock [ 1, 1 ] ifBody, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="ifBody" signature="IfStatement [ ExpressionOrStatementBlock [ 1, 1 ] ifBody, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="ifBody" signature="IfStatement [ ExpressionOrStatementBlock [ 1, 1 ] ifBody, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="ExpressionOrStatementBlock" upperBound="-1" feature_name="elseIfBodies" signature="IfStatement [ ExpressionOrStatementBlock [ 0, -1 ] elseIfBodies, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="ExpressionOrStatementBlock" upperBound="-1" feature_name="elseIfBodies" signature="IfStatement [ ExpressionOrStatementBlock [ 0, -1 ] elseIfBodies, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="ExpressionOrStatementBlock" upperBound="-1" feature_name="elseIfBodies" signature="IfStatement [ ExpressionOrStatementBlock [ 0, -1 ] elseIfBodies, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="ExpressionOrStatementBlock" upperBound="1" feature_name="elseBody" signature="IfStatement [ ExpressionOrStatementBlock [ 0, 1 ] elseBody, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="ExpressionOrStatementBlock" upperBound="1" feature_name="elseBody" signature="IfStatement [ ExpressionOrStatementBlock [ 0, 1 ] elseBody, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="ExpressionOrStatementBlock" upperBound="1" feature_name="elseBody" signature="IfStatement [ ExpressionOrStatementBlock [ 0, 1 ] elseBody, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ForStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="FormalParameterExpression" lowerBound="1" upperBound="1" feature_name="iterator" signature="ForStatement [ FormalParameterExpression [ 1, 1 ] iterator, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="FormalParameterExpression" lowerBound="1" upperBound="1" feature_name="iterator" signature="ForStatement [ FormalParameterExpression [ 1, 1 ] iterator, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="FormalParameterExpression" lowerBound="1" upperBound="1" feature_name="iterator" signature="ForStatement [ FormalParameterExpression [ 1, 1 ] iterator, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="condition" signature="ForStatement [ Expression [ 1, 1 ] condition, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="condition" signature="ForStatement [ Expression [ 1, 1 ] condition, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="condition" signature="ForStatement [ Expression [ 1, 1 ] condition, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="body" signature="ForStatement [ ExpressionOrStatementBlock [ 1, 1 ] body, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="body" signature="ForStatement [ ExpressionOrStatementBlock [ 1, 1 ] body, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="body" signature="ForStatement [ ExpressionOrStatementBlock [ 1, 1 ] body, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.WhileStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="condition" signature="WhileStatement [ Expression [ 1, 1 ] condition, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="condition" signature="WhileStatement [ Expression [ 1, 1 ] condition, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="condition" signature="WhileStatement [ Expression [ 1, 1 ] condition, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="body" signature="WhileStatement [ ExpressionOrStatementBlock [ 1, 1 ] body, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="body" signature="WhileStatement [ ExpressionOrStatementBlock [ 1, 1 ] body, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="ExpressionOrStatementBlock" lowerBound="1" upperBound="1" feature_name="body" signature="WhileStatement [ ExpressionOrStatementBlock [ 1, 1 ] body, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ReturnStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="ReturnStatement [ Expression [ 1, 1 ] expression, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="ReturnStatement [ Expression [ 1, 1 ] expression, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="ReturnStatement [ Expression [ 1, 1 ] expression, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ThrowStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="ThrowStatement [ Expression [ 1, 1 ] expression, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="ThrowStatement [ Expression [ 1, 1 ] expression, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="ThrowStatement [ Expression [ 1, 1 ] expression, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.DeleteStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="DeleteStatement [ Expression [ 1, 1 ] expression, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="DeleteStatement [ Expression [ 1, 1 ] expression, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="DeleteStatement [ Expression [ 1, 1 ] expression, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.AssignmentStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="lhs" signature="AssignmentStatement [ Expression [ 1, 1 ] lhs, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="lhs" signature="AssignmentStatement [ Expression [ 1, 1 ] lhs, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="lhs" signature="AssignmentStatement [ Expression [ 1, 1 ] lhs, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="rhs" signature="AssignmentStatement [ Expression [ 1, 1 ] rhs, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="rhs" signature="AssignmentStatement [ Expression [ 1, 1 ] rhs, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="rhs" signature="AssignmentStatement [ Expression [ 1, 1 ] rhs, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.SpecialAssignmentStatement">
+    <extended_sets>eol.Statement</extended_sets>
+    <extended_sets>eol.AssignmentStatement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ContinueStatement">
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.AbortStatement">
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.BreakStatement">
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.BreakAllStatement">
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.AnnotationStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="name" signature="AnnotationStatement [ NameExpression [ 1, 1 ] name, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="name" signature="AnnotationStatement [ NameExpression [ 1, 1 ] name, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="name" signature="AnnotationStatement [ NameExpression [ 1, 1 ] name, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.SimpleAnnotationStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="StringExpression" upperBound="-1" feature_name="values" signature="SimpleAnnotationStatement [ StringExpression [ 0, -1 ] values, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="StringExpression" upperBound="-1" feature_name="values" signature="SimpleAnnotationStatement [ StringExpression [ 0, -1 ] values, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="StringExpression" upperBound="-1" feature_name="values" signature="SimpleAnnotationStatement [ StringExpression [ 0, -1 ] values, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+    <extended_sets>eol.AnnotationStatement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ExecutableAnnotationStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="ExecutableAnnotationStatement [ Expression [ 1, 1 ] expression, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="ExecutableAnnotationStatement [ Expression [ 1, 1 ] expression, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Expression" lowerBound="1" upperBound="1" feature_name="expression" signature="ExecutableAnnotationStatement [ Expression [ 1, 1 ] expression, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+    <extended_sets>eol.AnnotationStatement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ModelDeclarationStatement">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="VariableDeclarationExpression" lowerBound="1" upperBound="1" feature_name="name" signature="ModelDeclarationStatement [ VariableDeclarationExpression [ 1, 1 ] name, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="VariableDeclarationExpression" lowerBound="1" upperBound="1" feature_name="name" signature="ModelDeclarationStatement [ VariableDeclarationExpression [ 1, 1 ] name, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="VariableDeclarationExpression" lowerBound="1" upperBound="1" feature_name="name" signature="ModelDeclarationStatement [ VariableDeclarationExpression [ 1, 1 ] name, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="driver" signature="ModelDeclarationStatement [ NameExpression [ 1, 1 ] driver, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="driver" signature="ModelDeclarationStatement [ NameExpression [ 1, 1 ] driver, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="NameExpression" lowerBound="1" upperBound="1" feature_name="driver" signature="ModelDeclarationStatement [ NameExpression [ 1, 1 ] driver, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="VariableDeclarationExpression" upperBound="-1" feature_name="aliases" signature="ModelDeclarationStatement [ VariableDeclarationExpression [ 0, -1 ] aliases, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="VariableDeclarationExpression" upperBound="-1" feature_name="aliases" signature="ModelDeclarationStatement [ VariableDeclarationExpression [ 0, -1 ] aliases, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="VariableDeclarationExpression" upperBound="-1" feature_name="aliases" signature="ModelDeclarationStatement [ VariableDeclarationExpression [ 0, -1 ] aliases, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="ModelDeclarationParameter" upperBound="-1" feature_name="parameters" signature="ModelDeclarationStatement [ ModelDeclarationParameter [ 0, -1 ] parameters, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="ModelDeclarationParameter" upperBound="-1" feature_name="parameters" signature="ModelDeclarationStatement [ ModelDeclarationParameter [ 0, -1 ] parameters, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="ModelDeclarationParameter" upperBound="-1" feature_name="parameters" signature="ModelDeclarationStatement [ ModelDeclarationParameter [ 0, -1 ] parameters, replace]"/>
+    <extended_sets>eol.Statement</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.Type"/>
+  <all_operator_sets containingClass="eol.AnyType">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Type" upperBound="-1" feature_name="dynamicTypes" signature="AnyType [ Type [ 0, -1 ] dynamicTypes, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Type" upperBound="-1" feature_name="dynamicTypes" signature="AnyType [ Type [ 0, -1 ] dynamicTypes, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Type" upperBound="-1" feature_name="dynamicTypes" signature="AnyType [ Type [ 0, -1 ] dynamicTypes, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="declared" signature="AnyType [ EBoolean [ 1, 1 ] declared, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="declared" signature="AnyType [ EBoolean [ 1, 1 ] declared, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EBoolean" lowerBound="1" upperBound="1" feature_name="declared" signature="AnyType [ EBoolean [ 1, 1 ] declared, replace]"/>
+    <extended_sets>eol.Type</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ModelType">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EString" upperBound="1" feature_name="modelName" signature="ModelType [ EString [ 0, 1 ] modelName, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EString" upperBound="1" feature_name="modelName" signature="ModelType [ EString [ 0, 1 ] modelName, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EString" upperBound="1" feature_name="modelName" signature="ModelType [ EString [ 0, 1 ] modelName, replace]"/>
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ModelElementType">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EString" upperBound="1" feature_name="modelName" signature="ModelElementType [ EString [ 0, 1 ] modelName, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EString" upperBound="1" feature_name="modelName" signature="ModelElementType [ EString [ 0, 1 ] modelName, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EString" upperBound="1" feature_name="modelName" signature="ModelElementType [ EString [ 0, 1 ] modelName, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="elementName" signature="ModelElementType [ EString [ 1, 1 ] elementName, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="elementName" signature="ModelElementType [ EString [ 1, 1 ] elementName, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="EString" lowerBound="1" upperBound="1" feature_name="elementName" signature="ModelElementType [ EString [ 1, 1 ] elementName, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="ModelDeclarationStatement" lowerBound="1" upperBound="1" feature_name="resolvedModelDeclaration" signature="ModelElementType [ ModelDeclarationStatement [ 1, 1 ] resolvedModelDeclaration, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="ModelDeclarationStatement" lowerBound="1" upperBound="1" feature_name="resolvedModelDeclaration" signature="ModelElementType [ ModelDeclarationStatement [ 1, 1 ] resolvedModelDeclaration, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="ModelDeclarationStatement" lowerBound="1" upperBound="1" feature_name="resolvedModelDeclaration" signature="ModelElementType [ ModelDeclarationStatement [ 1, 1 ] resolvedModelDeclaration, replace]"/>
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.PseudoType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.SelfType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+    <extended_sets>eol.PseudoType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.SelfContentType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+    <extended_sets>eol.PseudoType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.MapType">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="AnyType" upperBound="1" feature_name="keyType" signature="MapType [ AnyType [ 0, 1 ] keyType, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="AnyType" upperBound="1" feature_name="keyType" signature="MapType [ AnyType [ 0, 1 ] keyType, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="AnyType" upperBound="1" feature_name="keyType" signature="MapType [ AnyType [ 0, 1 ] keyType, replace]"/>
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="AnyType" upperBound="1" feature_name="valueType" signature="MapType [ AnyType [ 0, 1 ] valueType, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="AnyType" upperBound="1" feature_name="valueType" signature="MapType [ AnyType [ 0, 1 ] valueType, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="AnyType" upperBound="1" feature_name="valueType" signature="MapType [ AnyType [ 0, 1 ] valueType, replace]"/>
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.NativeType">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="StringExpression" lowerBound="1" upperBound="1" feature_name="expression" signature="NativeType [ StringExpression [ 1, 1 ] expression, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="StringExpression" lowerBound="1" upperBound="1" feature_name="expression" signature="NativeType [ StringExpression [ 1, 1 ] expression, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="StringExpression" lowerBound="1" upperBound="1" feature_name="expression" signature="NativeType [ StringExpression [ 1, 1 ] expression, replace]"/>
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.VoidType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.InvalidType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.CollectionType">
+    <operators xsi:type="MutationOperatorMM:AddMutationOperator" feature_type="Type" lowerBound="1" upperBound="1" feature_name="contentType" signature="CollectionType [ Type [ 1, 1 ] contentType, add]"/>
+    <operators xsi:type="MutationOperatorMM:DeleteMutationOperator" feature_type="Type" lowerBound="1" upperBound="1" feature_name="contentType" signature="CollectionType [ Type [ 1, 1 ] contentType, delete]"/>
+    <operators xsi:type="MutationOperatorMM:ReplaceMutationOperator" feature_type="Type" lowerBound="1" upperBound="1" feature_name="contentType" signature="CollectionType [ Type [ 1, 1 ] contentType, replace]"/>
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.BagType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+    <extended_sets>eol.CollectionType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.OrderedCollectionType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+    <extended_sets>eol.CollectionType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.UniqueCollectionType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+    <extended_sets>eol.CollectionType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.SetType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+    <extended_sets>eol.CollectionType</extended_sets>
+    <extended_sets>eol.UniqueCollectionType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.OrderedSetType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+    <extended_sets>eol.CollectionType</extended_sets>
+    <extended_sets>eol.UniqueCollectionType</extended_sets>
+    <extended_sets>eol.OrderedCollectionType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.SequenceType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+    <extended_sets>eol.CollectionType</extended_sets>
+    <extended_sets>eol.OrderedCollectionType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.PrimitiveType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.ComparablePrimitiveType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+    <extended_sets>eol.PrimitiveType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.SummablePrimitiveType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+    <extended_sets>eol.PrimitiveType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.BooleanType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+    <extended_sets>eol.PrimitiveType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.RealType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+    <extended_sets>eol.PrimitiveType</extended_sets>
+    <extended_sets>eol.ComparablePrimitiveType</extended_sets>
+    <extended_sets>eol.SummablePrimitiveType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.IntegerType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+    <extended_sets>eol.PrimitiveType</extended_sets>
+    <extended_sets>eol.ComparablePrimitiveType</extended_sets>
+    <extended_sets>eol.SummablePrimitiveType</extended_sets>
+    <extended_sets>eol.RealType</extended_sets>
+  </all_operator_sets>
+  <all_operator_sets containingClass="eol.StringType">
+    <extended_sets>eol.Type</extended_sets>
+    <extended_sets>eol.AnyType</extended_sets>
+    <extended_sets>eol.PrimitiveType</extended_sets>
+    <extended_sets>eol.ComparablePrimitiveType</extended_sets>
+    <extended_sets>eol.SummablePrimitiveType</extended_sets>
+  </all_operator_sets>
+</MutationOperatorMM:MutationOperatorCollection>

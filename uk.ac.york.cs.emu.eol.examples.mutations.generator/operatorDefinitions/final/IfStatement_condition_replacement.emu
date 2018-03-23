@@ -1,0 +1,110 @@
+// operator: IfStatement_condition-REP
+// desc:  
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+// 1.0: change the comparison operator of a condition of IfStatement
+// to alternative one
+
+// 1.1: change a less than operator to alternative ones
+
+// 1.1.1: change to less than or equal
+@action replace
+@property condition
+pattern IFStatement_condition_from_lt_to_lte
+element:IfStatement
+	in:IfStatement.allInstances()
+	guard: element.condition.isTypeOf(LessThanOperatorExpression) {
+	do {
+			// create new condition
+			var new_comp_op = LessThanOrEqualToOperatorExpression.createInstance();
+			
+			// copy lhs and rhs
+			new_comp_op.lhs = element.condition.lhs;
+			new_comp_op.rhs = element.condition.rhs;
+			
+			// remove this condition and replace it with new one
+			element.condition = new_comp_op;
+	}
+}
+
+// 1.1.2: change to greater than
+@action replace
+@property condition
+pattern IFStatement_condition_from_lt_to_gt
+element:IfStatement
+	in:IfStatement.allInstances()
+	guard: element.condition.isTypeOf(LessThanOperatorExpression) {
+	do {
+			// create new condition
+			var new_comp_op = GreaterThanOperatorExpression.createInstance();
+			
+			// copy lhs and rhs
+			new_comp_op.lhs = element.condition.lhs;
+			new_comp_op.rhs = element.condition.rhs;
+			
+			// remove this condition and replace it with new one
+			element.condition = new_comp_op;
+	}
+}
+
+// 1.1.3: change to greater than or equal
+@action replace
+@property condition
+pattern IFStatement_condition_from_lt_to_gte
+element:IfStatement
+	in:IfStatement.allInstances()
+	guard: element.condition.isTypeOf(LessThanOperatorExpression) {
+	do {
+			// create new condition
+			var new_comp_op = GreaterThanOrEqualToOperatorExpression.createInstance();
+			
+			// copy lhs and rhs
+			new_comp_op.lhs = element.condition.lhs;
+			new_comp_op.rhs = element.condition.rhs;
+			
+			// remove this condition and replace it with new one
+			element.condition = new_comp_op;
+	}
+}
+
+// 1.1.4: change to equal operator
+@action replace
+@property condition
+pattern IFStatement_condition_from_lt_to_e
+element:IfStatement
+	in:IfStatement.allInstances()
+	guard: element.condition.isTypeOf(LessThanOperatorExpression) {
+	do {
+			// create new condition
+			var new_comp_op = EqualsOperatorExpression.createInstance();
+			
+			// copy lhs and rhs
+			new_comp_op.lhs = element.condition.lhs;
+			new_comp_op.rhs = element.condition.rhs;
+			
+			// remove this condition and replace it with new one
+			element.condition = new_comp_op;
+	}
+}
+
+// 1.1.5: change to not equal operator
+@action replace
+@property condition
+pattern IFStatement_condition_from_lt_to_ne
+element:IfStatement
+	in:IfStatement.allInstances()
+	guard: element.condition.isTypeOf(LessThanOperatorExpression) {
+	do {
+			// create new condition
+			var new_comp_op = NotEqualsOperatorExpression.createInstance();
+			
+			// copy lhs and rhs
+			new_comp_op.lhs = element.condition.lhs;
+			new_comp_op.rhs = element.condition.rhs;
+			
+			// remove this condition and replace it with new one
+			element.condition = new_comp_op;
+	}
+}

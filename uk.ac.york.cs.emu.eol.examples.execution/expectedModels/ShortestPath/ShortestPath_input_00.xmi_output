@@ -1,0 +1,7 @@
+Distance of a from a : 0 via a
+Distance of b from a : 4 via a->b
+Distance of c from a : 6 via a->b->c
+Distance of d from a : 16 via a->b->c->d
+Distance of e from a : 2 via a->e
+Distance of f from a : 5 via a->f
+Distance of g from a : 6 via a->f->g

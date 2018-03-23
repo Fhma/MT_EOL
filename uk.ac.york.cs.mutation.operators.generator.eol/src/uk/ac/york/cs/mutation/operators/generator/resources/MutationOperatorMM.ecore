@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="MutationOperatorMM" nsURI="MutationOperatorMM" nsPrefix="MutationOperatorMM">
+  <eClassifiers xsi:type="ecore:EClass" name="MutationOperatorCollection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="all_operator_sets" upperBound="-1"
+        eType="#//MutationOperatorSet" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MutationOperatorSet">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="containingClass" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operators" upperBound="-1"
+        eType="#//MutationOperator" containment="true" eOpposite="#//MutationOperator/op_set"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extended_sets" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MutationOperator" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="op_set" lowerBound="1"
+        eType="#//MutationOperatorSet" eOpposite="#//MutationOperatorSet/operators"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="feature_type" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="feature_name" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="signature" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddMutationOperator" eSuperTypes="#//MutationOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeleteMutationOperator" eSuperTypes="#//MutationOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReplaceMutationOperator" eSuperTypes="#//MutationOperator"/>
+</ecore:EPackage>

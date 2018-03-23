@@ -1,0 +1,77 @@
+pre {
+	("Running ETL Transformation: Generate Mutation Operators for "+Ecore.modelFile).println();
+	var mo_collection = new MutationOperatorMM!MutationOperatorCollection;
+	var total:Integer = 0;
+}
+
+rule EClass2MutationOperatorSet
+transform c:Ecore!EClass
+to mo_set:MutationOperatorMM!MutationOperatorSet
+{
+	mo_set.containingClass = c.getEPackage().getName() + "." + c.getName();
+	for(feat in c.getEStructuralFeatures)
+	{
+		if(feat.changeable and not feat.volatile and not feat.transient)
+		{
+		
+				var add = new MutationOperatorMM!AddMutationOperator;
+				add.feature_type = getFeatureType(feat);
+				add.feature_name = feat.getName();
+				add.lowerBound = feat.getLowerBound();
+				add.upperBound = feat.getUpperBound();
+				add.signature = signature(c, feat,"add");
+				mo_set.operators.add(add);
+				var del = new MutationOperatorMM!DeleteMutationOperator;
+				del.feature_type = getFeatureType(feat);
+				del.feature_name = feat.getName();
+				del.lowerBound = feat.getLowerBound();
+				del.upperBound = feat.getUpperBound();
+				del.signature = signature(c, feat,"delete");
+				mo_set.operators.add(del);
+				
+				var rep = new MutationOperatorMM!ReplaceMutationOperator;
+				rep.feature_type = getFeatureType(feat);
+				rep.feature_name = feat.getName();
+				rep.lowerBound = feat.getLowerBound();
+				rep.upperBound = feat.getUpperBound();
+				rep.feature_name = feat.getName();
+				rep.signature = signature(c, feat,"replace");
+				mo_set.operators.add(rep);
+		}
+	}
+	var list:OrderedSet = new OrderedSet;
+	list.addAll(c.getEAllSuperTypes());
+	for(item in list)
+	{
+		list.addAll(item.getEAllSuperTypes);
+	}
+
+	for(item in list)
+		mo_set.extended_sets.add(item.getEPackage().getName() + "." + item.getName());
+
+	if(mo_set.size>0)
+		mo_collection.all_operator_sets.add(mo_set);
+	total = total + mo_set.operators.size();
+}
+
+operation signature(type:Any, feature:Any, action:String):String
+{
+	if(feature.eType.name.isUndefined())	
+	{
+		return type.getName()+" [ "+feature.eType.eProxyURI+" [ "+feature.getLowerBound()+", "+feature.getUpperBound()+" ] "+feature.getName()+", "+action+"]";
+	}
+	else		
+		return type.getName()+" [ "+feature.eType.name+" [ "+feature.getLowerBound()+", "+feature.getUpperBound()+" ] "+feature.getName()+", "+action+"]";	
+}
+
+operation getFeatureType(feature:Any):String
+{
+	if(feature.eType.name.isUndefined())	
+		return feature.eType.eProxyURI().toString();
+	else		
+		return feature.eType.name;
+}
+
+post {
+	("Total mutation operators generated = "+total).println();
+}

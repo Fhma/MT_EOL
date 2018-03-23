@@ -1,0 +1,6 @@
+	\--> Processed mutants-> 6
+	\--> Invalid mutants-> 0
+	\--> Killed mutants-> 4
+	\--> Not killed mutants-> 2
+		\-->IfStatement_condition_replace_4.xmi
+		\-->IfStatement_condition_replace_5.xmi

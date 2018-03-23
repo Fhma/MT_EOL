@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Workbench
+Bundle-SymbolicName: org.eclipse.epsilon.haetae.eol.metamodel.visitor.printer.workbench
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.common;bundle-version="2.11.1",
+ org.eclipse.emf.ecore;bundle-version="2.11.2",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.11.1",
+ org.eclipse.epsilon.haetae.eol.metamodel;bundle-version="1.0.0",
+ org.eclipse.epsilon.haetae.eol.metamodel.visitor;bundle-version="1.0.0",
+ org.eclipse.epsilon.haetae.eol.metamodel.visitor.printer;bundle-version="0.1.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

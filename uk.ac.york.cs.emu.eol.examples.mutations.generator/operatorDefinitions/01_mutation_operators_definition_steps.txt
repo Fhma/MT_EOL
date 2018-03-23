@@ -1,0 +1,55 @@
+Mutation operator definition steps:
+	For current object/type DO
+		1) for each attribute in all self.attributes DO
+			Method 1) apply mutation deletion action
+			Method 2) apply mutation replacement action
+			 
+		2) for each relation in all self.relations DO
+			Method 3) apply mutation deletion and delete one instance at a time
+			Method 4) apply mutation replacement and replace one instance with another/new sibling
+				where values of the sibling are copied over where applicable
+				
+----------------------------------------------------------------------------------------------------------------
+List of Classes: to go through including super-classes
+EOLLibraryModule [Done]
+EOLMudule -> EOLLibraryModule [Done]
+Block [Done]
+AnnotationBlock [Done]
+ExpressionOrStatementBlock [Done]
+OperationDefinition
+
+
+Statement
+AssignmentStatement -> Statement
+ExpressionStatement -> Statement
+ForStatement -> Statement
+IfStatement -> Statement
+WhileStatement -> Statement
+ReturnStatement -> Statement
+AnnotationStatement
+SimpleAnnotationStatement
+ExecutableAnnotationStatement
+
+Expression
+FeatureCallExpression
+FOLMethodCallExpression -> Expression, FeatureCallExpression
+MethodCallExpression -> Expression, FeatureCallExpression
+PropertyCallExpression -> Expression, FeatureCallExpression
+VariableDeclarationExpression
+FormalParameterExpression -> Expression, VariableDeclarationExpression
+VariableDeclarationExpression -> Expression
+
+Type
+AnyType
+PrimitiveType
+ComparablePrimitiveType
+SummablePrimitiveType
+IntegerType -> Type, AnyType, PrimitiveType, ComparablePrimitiveType, SummablePrimitiveType
+StringType -> Type, AnyType, PrimitiveType, ComparablePrimitiveType, SummablePrimitiveType
+BooleanType
+ModelElementType -> Type, AnyType
+CollectionType
+UniqueCollectionType
+OrderedCollectionType
+OrderedSetType -> Type, AnyType, CollectionType, UniqueCollectionType, OrderedCollectionType
+SequenceType -> Type, AnyType, CollectionType, OrderedCollectionType
