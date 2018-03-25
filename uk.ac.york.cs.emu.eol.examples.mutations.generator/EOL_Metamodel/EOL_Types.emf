@@ -1,0 +1,84 @@
+@namespace(uri="http://www.eclipse.org/epsilon/eol_types", prefix="eol_types")
+package eol_types;
+
+class Type {
+}
+
+class AnyType extends Type {
+  val Type[*] dynamicType;
+  attr boolean[1] declared;
+}
+
+class ModelType extends AnyType {
+  attr String modelName;
+}
+
+class ModelElementType extends AnyType {
+  attr String modelName;
+  attr String[1] elementName;
+  ref ModelDeclarationStatement[1] resolvedModelDeclaration;
+}
+
+class ModelDeclarationStatement {
+}
+
+abstract class PseudoType extends AnyType {
+}
+
+class SelfType extends PseudoType {
+}
+
+class SelfContentType extends PseudoType {
+}
+
+class MapType extends AnyType {
+  val AnyType keyType;
+  val AnyType valueType;
+}
+
+class NativeType extends AnyType {
+  attr String[1] value;
+}
+
+class VoidType extends AnyType {
+}
+
+class InvalidType extends AnyType {
+}
+
+class CollectionType extends AnyType {
+  val Type[1] contentType;
+}
+
+class BagType extends CollectionType {
+}
+
+abstract class OrderedCollectionType extends CollectionType {
+}
+
+abstract class UniqueCollectionType extends CollectionType {
+}
+
+class SetType extends UniqueCollectionType {
+}
+
+class OrderedSetType extends UniqueCollectionType, OrderedCollectionType {
+}
+
+class SequenceType extends OrderedCollectionType {
+}
+
+abstract class PrimitiveType extends AnyType {
+}
+
+class BooleanType extends PrimitiveType {
+}
+
+class RealType extends PrimitiveType{
+}
+
+class IntegerType extends RealType {
+}
+
+class StringType extends PrimitiveType{
+}

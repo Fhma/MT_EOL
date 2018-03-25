@@ -20,7 +20,7 @@ public class ParseMain {
 
 	public void run() throws Exception {
 
-		String code_name = "ECore2GMF";
+		String code_name = "Test";
 		URL url = getClass().getResource(code_name + ".eol");
 
 		EolModule eolModule = new EolModule();

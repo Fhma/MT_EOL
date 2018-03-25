@@ -54,9 +54,9 @@ public class OperatorExecutor implements Runnable {
 		Ast2EolContext context = new Ast2EolContext();
 		EOLElement dom = context.getEolElementCreatorFactory().createEOLElement(eol.getAst(), null, context);
 
-		File eolModels = new File("EolModels");
+		File eolModels = new File("Eol_Models");
 		eolModels.mkdirs();
-		eolModels.deleteOnExit();
+		// eolModels.deleteOnExit();
 		String model_path = eolModels.getAbsolutePath() + File.separatorChar + eol_name + ".xmi";
 		ResourceSet rs = new ResourceSetImpl();
 		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
@@ -94,6 +94,7 @@ public class OperatorExecutor implements Runnable {
 						System.err.println(module.getParseProblems().toString());
 						return;
 					}
+
 					IModel emfModel = createEmfModel("Eol_" + eol_name, model_path, EcoreModel.class.getResource("EOL.ecore").getPath(), true, false);
 					module.getContext().getModelRepository().addModel(emfModel);
 					module.setRepeatWhileMatches(false);
@@ -113,15 +114,19 @@ public class OperatorExecutor implements Runnable {
 		}
 	}
 
-	private IModel createEmfModel(String name, String model, String metamodel, boolean readOnLoad, boolean storeOnDisposal) throws EolModelLoadingException, URISyntaxException {
+	private IModel createEmfModel(String name, String model, String metamodel, boolean readOnLoad, boolean storeOnDisposal) {
 		IMutant emfModel = new EmfMutant();
 		StringProperties properties = new StringProperties();
 		properties.put(EmfModel.PROPERTY_NAME, name);
-		properties.put(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI, new URI(metamodel).toString());
-		properties.put(EmfModel.PROPERTY_MODEL_URI, new URI(model).toString());
-		properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad + "");
-		properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, storeOnDisposal + "");
-		emfModel.load(properties, (IRelativePathResolver) null);
+		try {
+			properties.put(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI, new URI(metamodel).toString());
+			properties.put(EmfModel.PROPERTY_MODEL_URI, new URI(model).toString());
+			properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad + "");
+			properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, storeOnDisposal + "");
+			emfModel.load(properties, (IRelativePathResolver) null);
+		} catch (URISyntaxException | EolModelLoadingException e) {
+			e.printStackTrace();
+		}
 		return emfModel;
 	}
 

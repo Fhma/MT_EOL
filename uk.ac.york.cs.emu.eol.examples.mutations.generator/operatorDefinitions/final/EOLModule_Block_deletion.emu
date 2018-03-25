@@ -1,4 +1,4 @@
-// operator: EOLModule_Block-DEL
+// operator: EOLModule_block-DEL
 // desc: deletes the block of an EOL module. This would 
 // remove all statements of the EOL module.
 //

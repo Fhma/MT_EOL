@@ -1,0 +1,115 @@
+@emf.gen(classPackageSuffix="metamodel.impl", utilityPackageSuffix="metamodel.util", metaDataPackageSuffix="metamodel", interfacePackageSuffix="metamodel", basePackage="org.eclipse.epsilon")
+@namespace(uri="http://www.eclipse.org/epsilon/eol_statements", prefix="eol_statements")
+package eol_statements;
+
+abstract class Statement{
+}
+
+class ExpressionStatement extends Statement {
+  val Expression[1] expression;
+}
+
+class SwitchStatement extends Statement {
+  val Expression[1] expression;
+  val SwitchCaseExpressionStatement[*] cases;
+  val SwitchCaseDefaultStatement default;
+}
+
+abstract class SwitchCaseStatement extends Statement {
+  val ExpressionOrStatementBlock[1] body;
+}
+
+class SwitchCaseDefaultStatement extends SwitchCaseStatement {
+}
+
+class SwitchCaseExpressionStatement extends SwitchCaseStatement {
+  val Expression[1] expression;
+}
+
+class IfStatement extends Statement {
+  val Expression[1] condition;
+  val ExpressionOrStatementBlock[1] ifBody;
+  val ExpressionOrStatementBlock[*] elseIfBodies;
+  val ExpressionOrStatementBlock elseBody;
+}
+
+class ForStatement extends Statement {
+  val FormalParameterExpression[1] iterator;
+  val Expression[1] condition;
+  val ExpressionOrStatementBlock[1] body;
+}
+
+class WhileStatement extends Statement {
+  val Expression[1] condition;
+  val ExpressionOrStatementBlock[1] body;
+}
+
+class ReturnStatement extends Statement {
+  val Expression[1] expression;
+}
+
+class ThrowStatement extends Statement {
+  val Expression[1] expression;
+}
+
+class DeleteStatement extends Statement {
+  val Expression[1] expression;
+}
+
+class AssignmentStatement extends Statement {
+  val Expression[1] lhs;
+  val Expression[1] rhs;
+}
+
+class SpecialAssignmentStatement extends AssignmentStatement {
+}
+
+class ContinueStatement extends Statement {
+}
+
+class AbortStatement extends Statement {
+}
+
+class BreakStatement extends Statement {
+}
+
+class BreakAllStatement extends Statement {
+}
+
+abstract class AnnotationStatement extends Statement {
+  val NameExpression[1] name;
+}
+
+class SimpleAnnotationStatement extends AnnotationStatement {
+  val StringExpression[*] values;
+}
+
+class ExecutableAnnotationStatement extends AnnotationStatement {
+  val Expression[1] expression;
+}
+
+class ModelDeclarationStatement extends Statement {
+  val VariableDeclarationExpression[1] name;
+  val NameExpression[1] driver;
+  val VariableDeclarationExpression[*] aliases;
+  val ModelDeclarationParameter[*] parameters;
+}
+
+abstract class Expression{
+}
+class ExpressionOrStatementBlock{
+}
+
+class VariableDeclarationExpression extends Expression {
+}
+
+class NameExpression extends Expression {
+}
+class ModelDeclarationParameter {
+}
+
+class FormalParameterExpression{
+}
+
+class StringExpression{
+}

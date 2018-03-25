@@ -3,7 +3,6 @@ package uk.ac.york.cs.emu.eol.examples.mutations.generator.configurations;
 import java.util.HashMap;
 import java.util.Map;
 import uk.ac.york.cs.emu.eol.examples.mutations.generator.candidates.EOLCandidate;
-import uk.ac.york.cs.emu.eol.examples.mutations.generator.metamodels.EcoreModel;
 
 public class ECore2GMF {
 

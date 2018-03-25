@@ -16,10 +16,10 @@ EOLMudule -> EOLLibraryModule [Done]
 Block [Done]
 AnnotationBlock [Done]
 ExpressionOrStatementBlock [Done]
-OperationDefinition
+OperationDefinition [Done]
 
 
-Statement
+Statement [Done]
 AssignmentStatement -> Statement
 ExpressionStatement -> Statement
 ForStatement -> Statement

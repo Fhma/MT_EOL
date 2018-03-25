@@ -1,0 +1,17 @@
+// operator: OperationDefinition_result-DEL
+// desc: deletes the value of _result built-in variable
+// of an operation.
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+@action delete
+@property _result
+pattern delete_content_result
+instance:OperationDefinition
+	in: OperationDefinition.all.select(e|e._result.isDefined()) {
+	do {
+		instance._result = null;
+	}
+}
+	
