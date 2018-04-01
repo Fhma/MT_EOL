@@ -20,19 +20,19 @@ OperationDefinition [Done]
 
 
 Statement [Done]
-AssignmentStatement -> Statement
-ExpressionStatement -> Statement
-ForStatement -> Statement
-IfStatement -> Statement
-WhileStatement -> Statement
-ReturnStatement -> Statement
-AnnotationStatement
-SimpleAnnotationStatement
-ExecutableAnnotationStatement
+AssignmentStatement -> Statement [Done]
+ExpressionStatement -> Statement [Done]
+ForStatement -> Statement [Done]
+IfStatement -> Statement [Done]
+WhileStatement -> Statement [Done]
+ReturnStatement -> Statement [Done]
+AnnotationStatement -> Statement [Done]
+SimpleAnnotationStatement -> Statement, AnnotationStatement [Done]
+ExecutableAnnotationStatement -> Statement, AnnotationStatement [Done]
 
-Expression
-FeatureCallExpression
-FOLMethodCallExpression -> Expression, FeatureCallExpression
+Expression [Done]
+FeatureCallExpression [Done]
+FOLMethodCallExpression -> Expression, FeatureCallExpression [Done]
 MethodCallExpression -> Expression, FeatureCallExpression
 PropertyCallExpression -> Expression, FeatureCallExpression
 VariableDeclarationExpression

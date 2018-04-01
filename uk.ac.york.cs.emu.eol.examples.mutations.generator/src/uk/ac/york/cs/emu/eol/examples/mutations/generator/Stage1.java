@@ -40,11 +40,12 @@ public class Stage1 {
 			method = clazz.getMethod("properties");
 			config = (Map<String, String>) method.invoke(clazz);
 			OperatorExecutor runner = new OperatorExecutor(config);
-			executor = Executors.newSingleThreadExecutor();
-			executor.execute(runner);
+			// executor = Executors.newSingleThreadExecutor();
+			// executor.execute(runner);
+			runner.run();
 		}
-		if (executor != null)
-			executor.shutdown();
+		// if (executor != null)
+		// executor.shutdown();
 		System.out.println("------------------------------------------------");
 	}
 }

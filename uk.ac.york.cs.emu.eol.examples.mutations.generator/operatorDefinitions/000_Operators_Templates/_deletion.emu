@@ -1,5 +1,7 @@
-// operator: -DEL
-// desc:
+// operator:
+// desc: There is no deletion implementation
+// for this operator as this a requird property (ie. lower
+// bound and upper bound = 1)
 //
 // Inherited operators: n/a 
 ////////////////////////////////////////////////////////////

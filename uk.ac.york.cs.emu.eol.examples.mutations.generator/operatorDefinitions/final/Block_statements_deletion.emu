@@ -11,7 +11,7 @@
 pattern delete_statement_of_block
 instance:Block,
 stat:Statement
-	from:instance.statements {
+	from: instance.statements {
 	do {
 		instance.statements.remove(stat);
 	}

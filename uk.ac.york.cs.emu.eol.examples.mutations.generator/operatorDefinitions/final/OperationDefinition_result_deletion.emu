@@ -1,7 +1,7 @@
 // operator: OperationDefinition_result-DEL
 // desc: deletes the value of _result built-in variable
 // of an operation.
-//
+// 
 // Inherited operators: n/a 
 ////////////////////////////////////////////////////////////
 

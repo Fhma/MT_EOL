@@ -1,0 +1,7 @@
+var list = FOLMethodCallExpression.all.collect(e|e.conditions.size()).asSet();
+
+list.size().println();
+
+for (c in list) {
+	c.println();
+}

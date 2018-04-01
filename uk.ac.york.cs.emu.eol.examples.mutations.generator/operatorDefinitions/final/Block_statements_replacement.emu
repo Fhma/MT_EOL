@@ -30,8 +30,7 @@ if_stat:IfStatement
 @role instance
 pattern replace_while_with_if
 instance:Block,
-while_stat:WhileStatement
-	from: instance.statements{
+while_stat:WhileStatement from: instance.statements{
 	do {
 		var new_stat = IfStatement.createInstance();
 		new_stat.condition = while_stat.condition;

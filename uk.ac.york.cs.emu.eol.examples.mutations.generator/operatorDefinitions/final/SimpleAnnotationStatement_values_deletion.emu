@@ -1,0 +1,17 @@
+// operator: SimpleAnnotationStatement_values_deletion
+// desc: deletes a value from the collection of values
+//
+// Inherited operators: Statement, AnnotationStatement 
+////////////////////////////////////////////////////////////
+
+@action delete
+@property values
+@role instance
+pattern delete_a_value
+instance:SimpleAnnotationStatement,
+value:StringExpression
+	from: instance.values {
+	do {
+		instance.values.remove(value);
+	}
+}

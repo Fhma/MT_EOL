@@ -1,0 +1,11 @@
+run1();
+
+@anno1 value1
+operation run1()
+{	
+	run2();
+}
+@anno2 value2
+operation run2()
+{	
+}

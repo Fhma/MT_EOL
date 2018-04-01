@@ -1,4 +1,4 @@
-// operator:
+// operator: Expression_inBrackets-REP
 // desc: There is no replacement implementation
 // for this operator as there is no suitable sibling to 
 // be replaced with.

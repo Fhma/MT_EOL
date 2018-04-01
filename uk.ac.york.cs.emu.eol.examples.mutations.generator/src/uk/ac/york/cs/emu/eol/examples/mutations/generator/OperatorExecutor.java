@@ -108,7 +108,7 @@ public class OperatorExecutor implements Runnable {
 		} // end of executing operators
 
 		try {
-			// print_summary(operators_matrix, "generatedMutations_summary" + File.separatorChar + eol_name + File.separatorChar);
+			//print_summary(operators_matrix, "generatedMutations_summary" + File.separatorChar + eol_name + File.separatorChar);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

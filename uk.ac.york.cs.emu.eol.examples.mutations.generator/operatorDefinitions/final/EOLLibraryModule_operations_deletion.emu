@@ -13,8 +13,7 @@
 @role instance
 pattern delete_one_operation_declarations
 instance:EOLLibraryModule, 
-element:OperationDefinition
-    from: instance.operations {
+element:OperationDefinition from: instance.operations {
 	do {
 	    instance.operations.remove(element);
 	}

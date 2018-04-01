@@ -112,7 +112,8 @@ public class EmuPatternMatcher extends PatternMatcher {
 							context.getModelRepository().getTransactionSupport().rollbackTransaction();
 							context.getFrameStack().leaveLocal(do_);
 							module.getOperatorsMatrix().getValue(operatorName).add(INVALID_MUTATION);
-							continue;
+							//continue;
+							throw e;
 						} catch (Exception e) {
 							throw new Exception(e);
 						}

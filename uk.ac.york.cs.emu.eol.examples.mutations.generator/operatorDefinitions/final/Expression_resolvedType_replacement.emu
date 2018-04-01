@@ -1,0 +1,12 @@
+// operator: Expression_resolvedType-REP
+// desc: There is no replacement implementation
+// for this operator as there is no suitable sibling to 
+// be replaced with.
+//
+// Remarks: although this property is set to be a single
+// valued and required property in the EOL metamodel (ie.
+// lower bound and upper bound = 1), some instances of 
+// Expression has no value for this property.
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
