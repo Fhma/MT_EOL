@@ -1,0 +1,921 @@
+// operator: MethodCallExpression_method_replacement
+// desc: replaces the method name with another one from
+// same category. 
+//	1) Type = Any
+//	2) Type = String
+//	3) Type = Real
+//	4) Type = Integer
+//	5) Type = Collection
+//	6) Type = OrderedSet and Sequence
+//	7) Type = ModelElement 
+//
+// Inherited operators: Expression, FeatureCallExpression 
+////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////
+// Helping function
+////////////////////////////////////////////////////////////
+operation MethodCallExpression isEOLOperation() : Boolean {
+	var eol_operation = Sequence {"abs", "add", "addAll", "all", "allInstances", "allOfKind", "allOfType", "asBag", "asBoolean", "asInteger", "asOrderedSet", "asReal", "asSequence", "asSet", "asString", "at", "ceiling", "characterAt", "clear", "clone", "concat", "containsValue", "count", "endsWith", "err", "errln", "excludes", "excludesAll", "excluding", "excludingAll", "first", "firstToLowerCase", "firstToUpperCase", "flatten", "floor", "format", "fourth", "get", "hasProperty", "ifUndefined", "includes", "includesAll", "including", "includingAll", "indexOF", "invert", "iota", "isDefined", "isEmpty", "isInstantiable", "isInteger", "isKindOf", "isReal", "isSubstringOf", "isTypeOf", "isUndefined", "keySet", "length", "log", "log10", "matches", "max", "min", "mod", "notEmpty", "owningModel", "pad", "pow", "powerset", "print", "println", "product", "put", "putAll", "random", "remove", "removeAll", "removeAt", "replace", "round", "second", "Sequence", "size", "split", "startsWith", "substring", "sum", "third", "to", "toBinary", "toCharSequence", "toHex", "toLowerCase", "toUpperCase", "trim", "type", "values"};
+	if(eol_operation.includes(self.method.name))
+		return true;
+	return false;
+}
+
+////////////////////////////////////////////////////////////
+
+// 1.0: Type = Any
+// 1.1: isDefined <-> isUndefined
+// 1.1.1: isDefined -> isUndefined
+@action replace
+@property method
+pattern replace_isDefined_with_isUndefined
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "isDefined") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "isUndefined";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.1.2: isUndefined -> isDefined
+@action replace
+@property method
+pattern replace_isUndefined_with_isDefined
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "isUndefined") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "isDefined";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.2: asBag <-> asSet
+// 1.2.1: asBag -> asSet
+@action replace
+@property method
+pattern replace_asBag_asSet_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "asBag") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "asSet";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.2.2: asBag <- asSet
+@action replace
+@property method
+pattern replace_asBag_asSet_2		
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "asSet") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "asBag";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.3: asBag <-> asOrderedSet
+// 1.3.1: asBag -> asOrderedSet
+@action replace
+@property method
+pattern replace_asBag_asOrderedSet_1		
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "asBag") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "asOrderedSet";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.3.2: asBag <- asOrderedSet
+@action replace
+@property method
+pattern replace_asBag_asOrderedSet_2		
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "asOrderedSet") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "asBag";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.4: asBag <-> asSequence
+// 1.4.1: asBag -> asSequence
+@action replace
+@property method
+pattern replace_asBag_asSequence_1		
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "asBag") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "asSequence";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.4.2: asBag <- asSequence
+@action replace
+@property method
+pattern replace_asBag_asSequence_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "asSequence") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "asBag";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.5: asSet <-> asOrderedSet
+// 1.5.1: asSet -> asOrderedSet
+@action replace
+@property method
+pattern replace_asSet_asOrderedSet_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "asSet") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "asOrderedSet";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.5.2: asSet <- asOrderedSet
+@action replace
+@property method
+pattern replace_asSet_asOrderedSet_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "asOrderedSet") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "asSet";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.6: asSet <-> asSequence
+// 1.6.1: asSet -> asSequence
+@action replace
+@property method
+pattern replace_asSet_asSequence_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "asSet") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "asSequence";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.6.2: asSet <- asSequence
+@action replace
+@property method
+pattern replace_asSet_asSequence_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "asSequence") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "asSet";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.7: asOrderedSet <-> asSequence
+// 1.7.1: asOrderedSet -> asSequence
+@action replace
+@property method
+pattern replace_asOrderedSet_asSequence_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "asOrderedSet") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "asSequence";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.7.2: asOrderedSet <- asSequence
+@action replace
+@property method
+pattern replace_asOrderedSet_asSequence_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "asSequence") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "asOrderedSet";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.8: asReal <-> asInteger
+// 1.8.1: asReal -> asInteger
+@action replace
+@property method
+pattern replace_asReal_asInteger_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "asReal") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "asInteger";
+		instance.method = name_exp; 
+	}
+}
+
+// 1.8.2: asReal <- asInteger
+@action replace
+@property method
+pattern replace_asReal_asInteger_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "asInteger") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "asReal";
+		instance.method = name_exp; 
+	}
+}
+
+// 2.0: Type = Real
+// 2.1:  ceiling <-> floor
+// 2.1.1:  ceiling -> floor
+@action replace
+@property method
+pattern replace_ceiling_floor_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "ceiling") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "floor";
+		instance.method = name_exp; 
+	}
+}
+
+// 2.1.2:  ceiling <- floor
+@action replace
+@property method
+pattern replace_ceiling_floor_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "floor") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "ceiling";
+		instance.method = name_exp; 
+	}
+}
+
+
+// 2.2:  ceiling <-> round
+// 2.2.1:  ceiling -> round 
+@action replace
+@property method
+pattern replace_ceiling_round_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "ceiling") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "round";
+		instance.method = name_exp; 
+	}
+}
+
+// 2.2.2:  ceiling <- round
+@action replace
+@property method
+pattern replace_ceiling_round_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "round") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "ceiling";
+		instance.method = name_exp; 
+	}
+} 
+ 
+// 2.3:  floor <-> round
+// 2.3.1:  floor -> round
+@action replace
+@property method
+pattern replace_floor_round_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "floor") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "round";
+		instance.method = name_exp; 
+	}
+} 
+
+// 2.3.2:  floor <- round 
+@action replace
+@property method
+pattern replace_floor_round_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "round") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "floor";
+		instance.method = name_exp; 
+	}
+} 
+
+// 2.4:  log <-> log10
+// 2.4.1:  log <-> log10
+@action replace
+@property method
+pattern replace_log_log10_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "log") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "log10";
+		instance.method = name_exp; 
+	}
+} 
+
+// 2.4.1:  log <-> log10
+@action replace
+@property method
+pattern replace_log_log10_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "log10") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "log";
+		instance.method = name_exp; 
+	}
+} 
+
+// 2.5:  max <-> min
+// 2.5.1:  max -> min
+@action replace
+@property method
+pattern replace_max_min_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "max") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "min";
+		instance.method = name_exp; 
+	}
+}
+
+// 2.5.1:  max <- min
+@action replace
+@property method
+pattern replace_max_min_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "min") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "max";
+		instance.method = name_exp; 
+	}
+}  
+
+// 3.0: Type = Integer
+// 3.1:  toBinary <-> toHex 
+// 3.1.1:  toBinary -> toHex 
+@action replace
+@property method
+pattern replace_toBinary_toHex_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "toBinary") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "toHex";
+		instance.method = name_exp; 
+	}
+} 
+
+// 3.1.2:  toBinary <- toHex 
+@action replace
+@property method
+pattern replace_toBinary_toHex_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "toHex") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "toBinary";
+		instance.method = name_exp; 
+	}
+} 
+
+// 4.0:  Type = String
+// 4.1:  firstToLowerCase <-> firstToUpperCase
+// 4.1.1:  firstToLowerCase -> firstToUpperCase
+@action replace
+@property method
+pattern replace_firstToLowerCase_firstToUpperCase_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "firstToLowerCase") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "firstToUpperCase";
+		instance.method = name_exp; 
+	}
+}
+
+// 4.1.2:  firstToLowerCase <- firstToUpperCase  
+@action replace
+@property method
+pattern replace_firstToLowerCase_firstToUpperCase_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "firstToUpperCase") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "firstToLowerCase";
+		instance.method = name_exp; 
+	}
+}
+
+// 4.2:  isInteger <-> isReal
+// 4.2.1:  isInteger -> isReal
+@action replace
+@property method
+pattern replace_isInteger_isReal_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "isInteger") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "isReal";
+		instance.method = name_exp; 
+	}
+}
+
+// 4.2.2:  isInteger <- isReal
+@action replace
+@property method
+pattern replace_isInteger_isReal_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "isReal") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "isInteger";
+		instance.method = name_exp; 
+	}
+}
+
+// 4.3:  startsWith <-> endsWith
+// 4.3.1:  startsWith -> endsWith
+@action replace
+@property method
+pattern replace_startsWith_endsWith_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "startsWith") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "endsWith";
+		instance.method = name_exp; 
+	}
+}
+ 
+// 4.3.2:  startsWith <- endsWith
+@action replace
+@property method
+pattern replace_startsWith_endsWith_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "endsWith") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "startsWith";
+		instance.method = name_exp; 
+	}
+}
+
+// 4.4:  toLowerCase <-> toUpperCase
+// 4.4.1:  toLowerCase -> toUpperCase
+@action replace
+@property method
+pattern replace_toLowerCase_toUpperCase_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "toLowerCase") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "toUpperCase";
+		instance.method = name_exp; 
+	}
+}
+
+// 4.4.2:  toLowerCase <- toUpperCase
+@action replace
+@property method
+pattern replace_toLowerCase_toUpperCase_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "toUpperCase") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "toLowerCase";
+		instance.method = name_exp; 
+	}
+}
+
+// 5.0:  Type = Collection
+// 5.1:   includes <-> excludes
+// 5.1.1:   includes -> excludes
+@action replace
+@property method
+pattern replace_includes_excludes_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "includes") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "excludes";
+		instance.method = name_exp; 
+	}
+}
+
+// 5.1.2:   includes <- excludes
+@action replace
+@property method
+pattern replace_includes_excludes_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "excludes") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "includes";
+		instance.method = name_exp; 
+	}
+}
+
+// 5.2:   includesAll <-> excludesAll
+// 5.2.1:   includesAll -> excludesAll
+@action replace
+@property method
+pattern replace_includesAll_excludesAll_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "includesAll") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "excludesAll";
+		instance.method = name_exp; 
+	}
+}
+
+// 5.2.2:   includesAll <- excludesAll 
+@action replace
+@property method
+pattern replace_includesAll_excludesAll_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "excludesAll") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "includesAll";
+		instance.method = name_exp; 
+	}
+}
+
+// 5.3:   including <-> excluding
+// 5.3.1:   including -> excluding
+@action replace
+@property method
+pattern replace_including_excluding_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "including") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "excluding";
+		instance.method = name_exp; 
+	}
+}
+
+// 5.3.2:   including <- excluding
+@action replace
+@property method
+pattern replace_including_excluding_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "excluding") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "including";
+		instance.method = name_exp; 
+	}
+}
+
+// 5.4:   includingAll <-> excludingAll
+// 5.4.1:   includingAll -> excludingAll
+@action replace
+@property method
+pattern replace_includingAll_excludingAll_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "includingAll") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "excludingAll";
+		instance.method = name_exp; 
+	}
+}
+
+// 5.4.2:   includingAll <- excludingAll
+@action replace
+@property method
+pattern replace_includingAll_excludingAll_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "excludingAll") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "includingAll";
+		instance.method = name_exp; 
+	}
+}
+
+// 5.5:   isEmpty <-> notEmpty
+// 5.5.1:   isEmpty <-> notEmpty
+@action replace
+@property method
+pattern replace_isEmpty_notEmpty_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "isEmpty") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "notEmpty";
+		instance.method = name_exp; 
+	}
+}
+
+// 5.5.2:   isEmpty <-> notEmpty   
+@action replace
+@property method
+pattern replace_isEmpty_notEmpty_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "notEmpty") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "isEmpty";
+		instance.method = name_exp; 
+	}
+}
+
+// 6.0:  Type = OrderedSet and Sequence
+// 6.1:   first <-> second
+// 6.1.1:   first -> second
+@action replace
+@property method
+pattern replace_first_second_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "first") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "second";
+		instance.method = name_exp; 
+	}
+}
+
+// 6.1.2:   first <- second
+@action replace
+@property method
+pattern replace_first_second_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "second") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "first";
+		instance.method = name_exp; 
+	}
+}
+
+// 6.2:   first <-> third
+// 6.2.1:   first -> third
+@action replace
+@property method
+pattern replace_first_third_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "first") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "third";
+		instance.method = name_exp; 
+	}
+}
+
+// 6.2.2:   first <- third
+@action replace
+@property method
+pattern replace_first_third_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "third") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "first";
+		instance.method = name_exp; 
+	}
+}
+
+// 6.3:   first <-> fourth
+// 6.3.1:   first -> fourth
+@action replace
+@property method
+pattern replace_first_fourth_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "first") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "fourth";
+		instance.method = name_exp; 
+	}
+}
+
+// 6.3.2:   first <- fourth
+@action replace
+@property method
+pattern replace_first_fourth_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "fourth") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "first";
+		instance.method = name_exp; 
+	}
+}
+
+// 6.4:   second <-> third
+// 6.4.1:   second -> third
+@action replace
+@property method
+pattern replace_second_third_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "second") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "third";
+		instance.method = name_exp; 
+	}
+}
+
+// 6.4.2:   second <- third
+@action replace
+@property method
+pattern replace_second_third_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "third") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "second";
+		instance.method = name_exp; 
+	}
+}
+
+// 6.5:   second <-> fourth
+// 6.5.1:   second -> fourth
+@action replace
+@property method
+pattern replace_second_fourth_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "second") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "fourth";
+		instance.method = name_exp; 
+	}
+}
+
+// 6.5.2:   second <- fourth
+@action replace
+@property method
+pattern replace_second_fourth_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "fourth") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "second";
+		instance.method = name_exp; 
+	}
+}
+
+// 6.6:   third <-> fourth
+// 6.6.1:   third -> fourth
+@action replace
+@property method
+pattern replace_third_fourth_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "third") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "fourth";
+		instance.method = name_exp; 
+	}
+}
+
+// 6.6.2:   third <- fourth
+@action replace
+@property method
+pattern replace_third_fourth_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "fourth") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "third";
+		instance.method = name_exp; 
+	}
+}
+
+// 7.0:  Type = ModelElement
+// 7.1:   allInstances/all <-> allOfType
+// 7.1.1:   allInstances/all -> allOfType
+@action replace
+@property method
+pattern replace_allInstances_all_allOfType_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "allInstances"
+		or e.method.name = "all") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "allOfType";
+		instance.method = name_exp; 
+	}
+}
+
+// 7.1.2:   allInstances/all <- allOfType
+@action replace
+@property method
+pattern replace_allInstances_all_allOfType_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "allOfType") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "allInstances";
+		instance.method = name_exp; 
+	}
+}
+
+// 7.2:   allInstances/all <-> allOfKind
+// 7.2.1:   allInstances/all -> allOfKind
+@action replace
+@property method
+pattern replace_allInstances_all_allOfKind_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "allInstances"
+		or e.method.name = "all") {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "allOfKind";
+		instance.method = name_exp; 
+	}
+}
+
+// 7.2.2:   allInstances/all <- allOfKind
+@action replace
+@property method
+pattern replace_allInstances_all_allOfKind_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "allOfKind"){
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "allInstances";
+		instance.method = name_exp; 
+	}
+}
+
+// 7.3:   allOfType <-> allOfKind
+// 7.3.1:   allOfType -> allOfKind
+@action replace
+@property method
+pattern replace_allOfType_allOfKind_1
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "allOfType"){
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "allOfKind";
+		instance.method = name_exp; 
+	}
+}
+
+// 7.3.2:   allOfType <- allOfKind
+@action replace
+@property method
+pattern replace_allOfType_allOfKind_2
+instance:MethodCallExpression
+	in: MethodCallExpression.all.select(e|e.method.name = "allOfKind"){
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "allOfType";
+		instance.method = name_exp; 
+	}
+}
+
+
+/*
+// 8.0: replace with another declared operation that have same number of arguments
+@action replace
+@property method
+@role instance
+pattern replace_with_another_same_arguments
+instance:MethodCallExpression
+	in:MethodCallExpression.all.select(e| not e.isEOLOperation()),
+another_name:NameExpression
+	from: NameExpression.all.select(e|e.container.isTypeOf(MethodCallExpression)
+		and (not e.container.isEOLOperation()) and e.container.arguments.size() = instance.arguments.size()
+		and e.name <> instance.method.name) -> asOrderedSet() {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = another_name.name;
+		
+		instance.method = name_exp;
+	}
+}
+*/

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_13.xmi#//State/regions"/>
+    <ownedChild relatedDiagrams="//@diagram">
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_13.xmi#//Region"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_13_output.xmi#RegionLabel"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_13.xmi#//NamedElement/name"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_13_output.xmi#//@palette/@tools.0/@tools.1"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_13_output.xmi#Region"/>
+      <children compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_13.xmi#//Region/cities"/>
+        <ownedChild>
+          <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_13.xmi#//City"/>
+          <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_13_output.xmi#CityLabel"/>
+            <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_13.xmi#//NamedElement/name"/>
+          </labelMappings>
+          <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_13_output.xmi#//@palette/@tools.0/@tools.0"/>
+          <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_13_output.xmi#City"/>
+        </ownedChild>
+      </children>
+      <compartments children="//@nodes.0/@ownedChild/@children.0">
+        <compartment href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_13_output.xmi#RegionCitiesCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <diagram>
+    <diagramCanvas href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_13_output.xmi#state"/>
+    <domainModel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_13.xmi#/"/>
+    <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_13.xmi#//State"/>
+    <palette href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_13_output.xmi#//@palette"/>
+  </diagram>
+</gmfmap:Mapping>

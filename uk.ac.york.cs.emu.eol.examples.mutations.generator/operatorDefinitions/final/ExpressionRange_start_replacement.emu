@@ -1,0 +1,23 @@
+// operator: ExpressionRange_start_replacement
+// desc: This modelling concept is always used with collections and 
+// and the value of start is always integer. To mutate this, this operator
+// implementation mutate the number given by start.
+//
+// Inherited operators: Expression, CollectionInitialisationExpression 
+////////////////////////////////////////////////////////////
+
+@action replace
+@property start
+pattern change_start_number
+instance:ExpressionRange {
+	do {
+		var new_number = Set{1..100};
+		var chosen = new_number.random();
+		while(chosen = instance.start) {
+			chosen = new_number.random();
+		}	
+		var new_exp = IntegerExpression.createInstance();
+		new_exp.value = chosen;
+		instance.start = new_exp;
+	}
+}

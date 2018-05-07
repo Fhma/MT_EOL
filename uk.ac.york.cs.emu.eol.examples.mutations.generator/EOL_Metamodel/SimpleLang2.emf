@@ -1,0 +1,37 @@
+@namespace(uri="uk.ac.york.cs/metamodels/SimpleLang", prefix="simple_lang")
+package simple_lang;
+
+class Lang {
+  val Statement[*] statements;
+}
+
+abstract class Expression{
+  val Type[1] type;
+}
+
+abstract class BinaryExpression extends Expression {
+  val Expression[1] lhs;
+  val Expression[1] rhs;
+}
+
+class DivideOperator extends BinaryExpression {
+}
+
+class MultiplyOperator extends BinaryExpression {
+}
+
+class MinusOperator extends BinaryExpression {
+}
+
+class PlusOperator extends BinaryExpression {
+}
+
+abstract class Statement{
+}
+
+class ExpressionStatement extends Statement {
+  val Expression[1] expression;
+}
+
+class Type{
+}

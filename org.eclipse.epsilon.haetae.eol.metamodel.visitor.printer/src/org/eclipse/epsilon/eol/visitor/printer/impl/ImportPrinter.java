@@ -10,7 +10,8 @@ public class ImportPrinter extends ImportVisitor<EOLPrinterContext, Object>{
 	@Override
 	public Object visit(Import _import, EOLPrinterContext context,
 			EolVisitorController<EOLPrinterContext, Object> controller) {
-		String result = "import " + _import.getImported() + ";";
+		//FIXED: use escaping to single quote imported file name/path 
+		String result = "import \'" + _import.getImported() + "\';";
 		return result;
 	}
 

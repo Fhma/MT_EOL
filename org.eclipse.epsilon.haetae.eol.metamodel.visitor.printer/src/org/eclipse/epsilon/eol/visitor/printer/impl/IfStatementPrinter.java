@@ -1,5 +1,6 @@
 package org.eclipse.epsilon.eol.visitor.printer.impl;
 
+import org.eclipse.epsilon.eol.metamodel.ExpressionOrStatementBlock;
 import org.eclipse.epsilon.eol.metamodel.IfStatement;
 import org.eclipse.epsilon.eol.metamodel.visitor.EolVisitorController;
 import org.eclipse.epsilon.eol.metamodel.visitor.IfStatementVisitor;
@@ -19,6 +20,22 @@ public class IfStatementPrinter extends IfStatementVisitor<EOLPrinterContext, Ob
 		context.outdent();
 		//result += context.newline();
 		result += context.whitespace() + "}";
+
+		// FIXED: print elseIfBodies
+		if(ifStatement.getElseIfBodies().size()>0)
+		{
+			for(ExpressionOrStatementBlock else_if:ifStatement.getElseIfBodies()) {
+				result += context.newline();
+				result += context.whitespace();
+				result += "else if(" + controller.visit(else_if.getCondition(), context) + ") {";
+				result += context.newline();
+				context.indent();
+				result += controller.visit(else_if.getBlock(), context);
+				context.outdent();
+				result += context.whitespace() + "}";
+			}
+		}
+		
 		if (ifStatement.getElseBody() != null) {
 			result += context.newline() + context.whitespace() + "else {" + context.newline();
 			context.indent();

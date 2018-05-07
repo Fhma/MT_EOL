@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<DirectedGraph:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DirectedGraph="DirectedGraph">
+  <contents xsi:type="DirectedGraph:Node" label="4N" outgoing="//@contents.31" incoming="//@contents.18"/>
+  <contents xsi:type="DirectedGraph:Node" label="pl" outgoing="//@contents.23" incoming="//@contents.27"/>
+  <contents xsi:type="DirectedGraph:Node" label="cS" outgoing="//@contents.19"/>
+  <contents xsi:type="DirectedGraph:Node" label="qK" incoming="//@contents.17"/>
+  <contents xsi:type="DirectedGraph:Node" label="w0" outgoing="//@contents.25 //@contents.30 //@contents.33"/>
+  <contents xsi:type="DirectedGraph:Node" label="Ea" incoming="//@contents.23"/>
+  <contents xsi:type="DirectedGraph:Node" label="VE" outgoing="//@contents.18"/>
+  <contents xsi:type="DirectedGraph:Node" label="GN" outgoing="//@contents.22 //@contents.29"/>
+  <contents xsi:type="DirectedGraph:Node" label="nc" incoming="//@contents.22"/>
+  <contents xsi:type="DirectedGraph:Node" label="eh" incoming="//@contents.19"/>
+  <contents xsi:type="DirectedGraph:Node" label="2d" outgoing="//@contents.24" incoming="//@contents.29 //@contents.32"/>
+  <contents xsi:type="DirectedGraph:Node" label="Dw" outgoing="//@contents.20 //@contents.28" incoming="//@contents.26"/>
+  <contents xsi:type="DirectedGraph:Node" label="eC" incoming="//@contents.24 //@contents.30"/>
+  <contents xsi:type="DirectedGraph:Node" label="kC" outgoing="//@contents.21" incoming="//@contents.31"/>
+  <contents xsi:type="DirectedGraph:Node" label="sE" outgoing="//@contents.27 //@contents.32" incoming="//@contents.20 //@contents.25 //@contents.33"/>
+  <contents xsi:type="DirectedGraph:Node" label="U8" outgoing="//@contents.26" incoming="//@contents.21"/>
+  <contents xsi:type="DirectedGraph:Node" label="S1" outgoing="//@contents.17" incoming="//@contents.28"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="21" source="//@contents.16" target="//@contents.3"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="35" source="//@contents.6" target="//@contents.0"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="33" source="//@contents.2" target="//@contents.9"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="100" source="//@contents.11" target="//@contents.14"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="14" source="//@contents.13" target="//@contents.15"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="30" source="//@contents.7" target="//@contents.8"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="54" source="//@contents.1" target="//@contents.5"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="45" source="//@contents.10" target="//@contents.12"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="87" source="//@contents.4" target="//@contents.14"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="69" source="//@contents.15" target="//@contents.11"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="83" source="//@contents.14" target="//@contents.1"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="51" source="//@contents.11" target="//@contents.16"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="97" source="//@contents.7" target="//@contents.10"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="63" source="//@contents.4" target="//@contents.12"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="78" source="//@contents.0" target="//@contents.13"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="48" source="//@contents.14" target="//@contents.10"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="21" source="//@contents.4" target="//@contents.14"/>
+</DirectedGraph:Graph>

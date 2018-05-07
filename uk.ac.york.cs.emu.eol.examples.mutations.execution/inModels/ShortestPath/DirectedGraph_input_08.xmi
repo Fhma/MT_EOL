@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<DirectedGraph:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DirectedGraph="DirectedGraph">
+  <contents xsi:type="DirectedGraph:Node" label="eM" outgoing="//@contents.3"/>
+  <contents xsi:type="DirectedGraph:Node" label="f2" outgoing="//@contents.4"/>
+  <contents xsi:type="DirectedGraph:Node" label="Qe" incoming="//@contents.3 //@contents.4"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="83" source="//@contents.0" target="//@contents.2"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="43" source="//@contents.1" target="//@contents.2"/>
+</DirectedGraph:Graph>

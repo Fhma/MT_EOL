@@ -1,0 +1,143 @@
+@namespace(uri="http://www.eclipse.org/gmf/2005/ToolDefinition", prefix="tooldef")
+package tooldef;
+
+class ToolRegistry {
+
+  @GenModel(documentation="Instead of placing	common actions somewhere in menu hierarchy and referencing them in (2..n) cases, keep them in this central registry and use ItemRef everywhere (i.e. in 1..n cases)")
+  val MenuAction[*] sharedActions;
+  val Menu[*] allMenus;
+  val Palette palette;
+}
+
+abstract class AbstractTool {
+  val Image smallIcon;
+  val Image largeIcon;
+  attr String title;
+  attr String description;
+}
+
+abstract class ToolContainer extends AbstractTool {
+  val AbstractTool[*] tools;
+}
+
+class PaletteSeparator extends AbstractTool {
+}
+
+class ToolGroup extends ToolContainer {
+  attr boolean collapsible;
+  attr boolean stack;
+  ref AbstractTool active;
+}
+
+class Palette extends ToolContainer {
+  ref AbstractTool default;
+}
+
+@GenModel(documentation="predefined, like zoom or marquee")
+class StandardTool extends AbstractTool {
+  attr StandardToolKind toolKind;
+}
+
+enum StandardToolKind {
+  SELECT = 0;
+  SELECT_PAN = 1;
+  MARQUEE = 2;
+  ZOOM_PAN = 3;
+  ZOOM_IN = 4;
+  ZOOM_OUT = 5;
+}
+
+class CreationTool extends AbstractTool {
+}
+
+class GenericTool extends AbstractTool {
+  attr String[1] toolClass;
+}
+
+abstract interface ItemBase {
+}
+
+abstract class Menu {
+  val ItemBase[*] items;
+}
+
+class Separator extends ItemBase {
+  attr String name;
+}
+
+class PredefinedItem extends ItemBase {
+  attr String identifier;
+}
+
+class PredefinedMenu extends Menu, PredefinedItem {
+}
+
+abstract interface ContributionItem extends ItemBase {
+  val Image icon;
+  attr String title;
+}
+
+class MenuAction extends ContributionItem {
+  attr ActionKind kind;
+  attr String hotKey;
+}
+
+class ItemRef extends ItemBase {
+  ref ItemBase[1] item;
+}
+
+class ContextMenu extends Menu {
+  ref MenuAction default;
+}
+
+class PopupMenu extends Menu, ContributionItem {
+  id attr String iD;
+}
+
+@GenModel(documentation="no default action and no id, just a collection of items")
+class MainMenu extends Menu {
+  attr String title;
+}
+
+class Toolbar extends Menu {
+}
+
+enum ActionKind {
+  CREATE = 0;
+  PROPCHANGE = 1;
+  MODIFY = 2;
+  PROCESS = 3;
+  CUSTOM = 99;
+}
+
+abstract interface Image {
+}
+
+@GenModel(documentation="Delegate to EMF.Edit providers")
+class DefaultImage extends Image {
+}
+
+@GenModel(documentation="Image bundled as part of distribution")
+class BundleImage extends Image {
+
+  @GenModel(documentation="Relative path to image")
+  attr String path;
+
+  @GenModel(documentation="Empty value means image path is relative to generated bundle")
+  attr String bundle;
+}
+
+abstract interface StyleSelector {
+  op boolean isOk(EJavaObject style);
+}
+
+class GenericStyleSelector extends StyleSelector {
+  attr AppearanceStyle[+] values;
+}
+
+enum AppearanceStyle {
+  Font = 0;
+  Fill = 1;
+  Line = 2;
+}
+

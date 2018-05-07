@@ -1,0 +1,10 @@
+@namespace(uri="uk.ac.york.cs/metamodels/testing", prefix="_testing")
+package testing;
+
+class TestClass {
+	attr String string;
+	attr float float_p;
+	attr EFloat float_ep;
+	attr Float float_o;
+	attr boolean boolean_p;
+}

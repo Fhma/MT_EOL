@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<DirectedGraph:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DirectedGraph="DirectedGraph">
+  <contents xsi:type="DirectedGraph:Node" label="UJ" outgoing="//@contents.12 //@contents.16" incoming="//@contents.14"/>
+  <contents xsi:type="DirectedGraph:Node" label="bW" outgoing="//@contents.9" incoming="//@contents.15"/>
+  <contents xsi:type="DirectedGraph:Node" label="dF" outgoing="//@contents.13 //@contents.14"/>
+  <contents xsi:type="DirectedGraph:Node" label="Vi" outgoing="//@contents.17" incoming="//@contents.10"/>
+  <contents xsi:type="DirectedGraph:Node" label="H9" outgoing="//@contents.11"/>
+  <contents xsi:type="DirectedGraph:Node" label="pe" incoming="//@contents.12"/>
+  <contents xsi:type="DirectedGraph:Node" label="gg" incoming="//@contents.11 //@contents.13"/>
+  <contents xsi:type="DirectedGraph:Node" label="Fu" incoming="//@contents.9 //@contents.17"/>
+  <contents xsi:type="DirectedGraph:Node" label="Zm" outgoing="//@contents.10 //@contents.15" incoming="//@contents.16"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="14" source="//@contents.1" target="//@contents.7"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="59" source="//@contents.8" target="//@contents.3"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="31" source="//@contents.4" target="//@contents.6"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="59" source="//@contents.0" target="//@contents.5"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="27" source="//@contents.2" target="//@contents.6"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="46" source="//@contents.2" target="//@contents.0"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="74" source="//@contents.8" target="//@contents.1"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="60" source="//@contents.0" target="//@contents.8"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="7" source="//@contents.3" target="//@contents.7"/>
+</DirectedGraph:Graph>

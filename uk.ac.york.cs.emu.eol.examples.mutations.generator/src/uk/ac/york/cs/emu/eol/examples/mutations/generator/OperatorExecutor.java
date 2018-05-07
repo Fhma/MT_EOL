@@ -20,6 +20,8 @@ import org.eclipse.epsilon.emc.emf.EmfModel;
 import org.eclipse.epsilon.emc.mutant.IMutant;
 import org.eclipse.epsilon.emc.mutant.emf.EmfMutant;
 import org.eclipse.epsilon.eol.models.IRelativePathResolver;
+
+import uk.ac.york.cs.emu.eol.examples.mutations.generator.configurations.Configuration;
 import uk.ac.york.cs.emu.eol.examples.mutations.generator.metamodels.EcoreModel;
 import org.eclipse.epsilon.eol.EolModule;
 import org.eclipse.epsilon.eol.ast2eol.context.Ast2EolContext;
@@ -30,103 +32,111 @@ import java.net.URISyntaxException;
 
 public class OperatorExecutor implements Runnable {
 
+	public static final String MUTATIONS_DIR = "mutations" + File.separatorChar;
+	public static final String MUTATIONS_SUMMARY_DIR = "mutations_summary" + File.separatorChar;
+	public static final String OPERATORS_DIR = "operatorDefinitions" + File.separatorChar;
+
 	private String eol_name;
-	private String code_path;
+	private String eol_code;
 
 	public OperatorExecutor(Map<String, String> config) {
-		eol_name = config.get("EOL_NAME");
-		code_path = config.get("EOL_CODE");
+		eol_name = config.get(Configuration.EOL_NAME);
+		eol_code = config.get(Configuration.EOL_CODE);
 	}
 
 	@Override
 	public void run() {
 
-		// covert the EOL code to EOL model
-		EolModule eol = new EolModule();
+		File mutations_dir = new File(MUTATIONS_DIR + eol_name);
+		mutations_dir.mkdirs();
+		File log_file = new File(MUTATIONS_DIR + eol_name + ".log");
+		FileWriter logger = null;
 		try {
-			eol.parse(new File(code_path).getAbsoluteFile());
+			logger = new FileWriter(log_file);
+			mutateEolModule(mutations_dir, logger);
+			logger.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-			return;
+			try {
+				logger.close();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
+	}
 
-		// parse the code to emf model
-		Ast2EolContext context = new Ast2EolContext();
+	private void mutateEolModule(File dir, FileWriter logger) throws Exception {
+
+		String model_path = null;
+		model_path = parseEolCodeToModel();
+
+		// File emu_programs_dir = new File(OPERATORSDIR);
+		File emu_programs_dir = new File(OPERATORS_DIR + "final" + File.separatorChar);
+		final File emu_programs[] = emu_programs_dir.listFiles();
+
+		OMatrix operators_matrix = new OMatrix(dir.getPath());
+
+		EmuModule module = null;
+		IModel emfModel = null;
+		for (File entry : emu_programs) {
+			if (!entry.isDirectory() && entry.getName().endsWith(".emu")) {
+
+				module = new EmuModule();
+				module.setMutants_dir(dir);
+				module.setOperatorsMatrix(operators_matrix);
+				module.parse(entry.getAbsoluteFile());
+				if (module.getParseProblems().size() >= 1) {
+					logger.close();
+					throw new Exception("Unable to parse file: " + entry.getName() + "\n" + module.getParseProblems().toString() + "\n");
+				}
+				emfModel = createEmfModel("Eol_" + eol_name, model_path, EcoreModel.class.getResource("EOL.ecore").getPath(), true, false);
+				module.getContext().getModelRepository().addModel(emfModel);
+				module.setRepeatWhileMatches(false);
+				module.execute();
+				module.getContext().getModelRepository().dispose();
+			}
+		} // end of executing mutation operators
+		print_summary(operators_matrix, MUTATIONS_SUMMARY_DIR + eol_name + File.separatorChar);
+	}
+
+	private String parseEolCodeToModel() throws Exception {
+
+		// parse the EOL code
+		EolModule eol = new EolModule();
+
+		eol.parse(new File(eol_code).getAbsoluteFile());
+
+		if (eol.getParseProblems().size() > 0)
+			throw new Exception("Unable to parse file: " + eol_code);
+
+		// get the EMF model of the code
+		Ast2EolContext context = new Ast2EolContext(eol);
 		EOLElement dom = context.getEolElementCreatorFactory().createEOLElement(eol.getAst(), null, context);
 
 		File eolModels = new File("Eol_Models");
 		eolModels.mkdirs();
-		// eolModels.deleteOnExit();
 		String model_path = eolModels.getAbsolutePath() + File.separatorChar + eol_name + ".xmi";
+
 		ResourceSet rs = new ResourceSetImpl();
+
 		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
 		Resource resource = getResource(rs, model_path);
 		resource.getContents().add(dom);
+		resource.save(null);
 
-		try {
-			resource.save(null);
-		} catch (IOException e) {
-			e.printStackTrace();
-			return;
-		}
-
-		File mutations_dir = new File("generatedMutations" + File.separatorChar + eol_name);
-		mutations_dir.mkdirs();
-
-		EmuModule module = null;
-
-		File emu_programs_dir = new File("operatorDefinitions" + File.separatorChar);
-		final File emu_programs[] = emu_programs_dir.listFiles();
-
-		OMatrix operators_matrix = new OMatrix(mutations_dir.getPath());
-
-		for (File entry : emu_programs) {
-			try {
-				if (!entry.isDirectory() && entry.getName().endsWith(".emu")) {
-
-					module = new EmuModule();
-					module.setMutants_dir(mutations_dir);
-					module.setOperatorsMatrix(operators_matrix);
-					module.parse(entry.getAbsoluteFile());
-					if (module.getParseProblems().size() >= 1) {
-						System.err.println("\t- - - - - - - - - - - - - -");
-						System.err.println("\t|---->Parsing Problems in emu program: " + entry);
-						System.err.println(module.getParseProblems().toString());
-						return;
-					}
-
-					IModel emfModel = createEmfModel("Eol_" + eol_name, model_path, EcoreModel.class.getResource("EOL.ecore").getPath(), true, false);
-					module.getContext().getModelRepository().addModel(emfModel);
-					module.setRepeatWhileMatches(false);
-					module.execute();
-					module.getContext().getModelRepository().dispose();
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-				return;
-			}
-		} // end of executing operators
-
-		try {
-			//print_summary(operators_matrix, "generatedMutations_summary" + File.separatorChar + eol_name + File.separatorChar);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		return model_path;
 	}
 
-	private IModel createEmfModel(String name, String model, String metamodel, boolean readOnLoad, boolean storeOnDisposal) {
+	private IModel createEmfModel(String name, String model, String metamodel, boolean readOnLoad, boolean storeOnDisposal) throws URISyntaxException, EolModelLoadingException {
 		IMutant emfModel = new EmfMutant();
 		StringProperties properties = new StringProperties();
 		properties.put(EmfModel.PROPERTY_NAME, name);
-		try {
-			properties.put(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI, new URI(metamodel).toString());
-			properties.put(EmfModel.PROPERTY_MODEL_URI, new URI(model).toString());
-			properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad + "");
-			properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, storeOnDisposal + "");
-			emfModel.load(properties, (IRelativePathResolver) null);
-		} catch (URISyntaxException | EolModelLoadingException e) {
-			e.printStackTrace();
-		}
+		properties.put(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI, new URI(metamodel).toString());
+		properties.put(EmfModel.PROPERTY_MODEL_URI, new URI(model).toString());
+		properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad + "");
+		properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, storeOnDisposal + "");
+		emfModel.load(properties, (IRelativePathResolver) null);
+
 		return emfModel;
 	}
 
@@ -176,11 +186,10 @@ public class OperatorExecutor implements Runnable {
 
 		File folder = new File(location);
 		folder.mkdirs();
-		try (FileWriter file = new FileWriter(location + eol_name + "_summary.csv")) {
-			file.write(entry.toString());
-			file.flush();
-			file.close();
-		}
+		FileWriter file = new FileWriter(location + eol_name + "_summary.csv");
+		file.write(entry.toString());
+		file.flush();
+		file.close();
 	}
 
 	private Resource getResource(ResourceSet rs, String path) {

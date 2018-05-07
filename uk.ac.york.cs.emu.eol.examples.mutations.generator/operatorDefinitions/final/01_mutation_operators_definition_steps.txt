@@ -1,15 +1,17 @@
 Mutation operator definition steps:
 	For current object/type DO
 		1) for each attribute in all self.attributes DO
-			Method 1) apply mutation deletion action
-			Method 2) apply mutation replacement action
+			Method 1) apply mutation addition action
+			Method 2) apply mutation deletion action
+			Method 3) apply mutation replacement action
 			 
 		2) for each relation in all self.relations DO
-			Method 3) apply mutation deletion and delete one instance at a time
-			Method 4) apply mutation replacement and replace one instance with another/new sibling
+			Method 4) apply mutation addition where single element is possible to add
+			Method 5) apply mutation deletion and delete one instance at a time
+			Method 6) apply mutation replacement and replace one instance with another/new sibling
 				where values of the sibling are copied over where applicable
 				
-----------------------------------------------------------------------------------------------------------------
+/************************** Most Common **************************/
 List of Classes: to go through including super-classes
 EOLLibraryModule [Done]
 EOLMudule -> EOLLibraryModule [Done]
@@ -17,7 +19,6 @@ Block [Done]
 AnnotationBlock [Done]
 ExpressionOrStatementBlock [Done]
 OperationDefinition [Done]
-
 
 Statement [Done]
 AssignmentStatement -> Statement [Done]
@@ -33,23 +34,20 @@ ExecutableAnnotationStatement -> Statement, AnnotationStatement [Done]
 Expression [Done]
 FeatureCallExpression [Done]
 FOLMethodCallExpression -> Expression, FeatureCallExpression [Done]
-MethodCallExpression -> Expression, FeatureCallExpression
-PropertyCallExpression -> Expression, FeatureCallExpression
-VariableDeclarationExpression
-FormalParameterExpression -> Expression, VariableDeclarationExpression
-VariableDeclarationExpression -> Expression
+MethodCallExpression -> Expression, FeatureCallExpression [Done] 
+PropertyCallExpression -> Expression, FeatureCallExpression [Done]
+VariableDeclarationExpression -> Expression [Done]
+FormalParameterExpression -> Expression, VariableDeclarationExpression [Done]
 
 Type
-AnyType
-PrimitiveType
-ComparablePrimitiveType
-SummablePrimitiveType
-IntegerType -> Type, AnyType, PrimitiveType, ComparablePrimitiveType, SummablePrimitiveType
-StringType -> Type, AnyType, PrimitiveType, ComparablePrimitiveType, SummablePrimitiveType
-BooleanType
-ModelElementType -> Type, AnyType
-CollectionType
-UniqueCollectionType
-OrderedCollectionType
-OrderedSetType -> Type, AnyType, CollectionType, UniqueCollectionType, OrderedCollectionType
-SequenceType -> Type, AnyType, CollectionType, OrderedCollectionType
+AnyType [Done]
+PrimitiveType [Done]
+ModelElementType -> Type, AnyType [Done]
+
+/************************** Not Yet Implemented **************************/
+VariableDeclarationExpression (references: no clear understanding of the purpose of the modelling elemenet)
+NameExpression (exhaustive execution and potentially generates equivalent mutations)
+FeatureCallExpression (arrow: always generates equivalent mutations)
+NewExpression (parameters)
+EnumerationLiteralExpression (no clear usage case available)
+TransactionStatement

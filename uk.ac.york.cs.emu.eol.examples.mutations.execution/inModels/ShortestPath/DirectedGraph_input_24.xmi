@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<DirectedGraph:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DirectedGraph="DirectedGraph">
+  <contents xsi:type="DirectedGraph:Node" label="zC" outgoing="//@contents.7" incoming="//@contents.8"/>
+  <contents xsi:type="DirectedGraph:Node" label="9x" outgoing="//@contents.6 //@contents.9"/>
+  <contents xsi:type="DirectedGraph:Node" label="Oh" incoming="//@contents.5 //@contents.7 //@contents.9"/>
+  <contents xsi:type="DirectedGraph:Node" label="Cm" incoming="//@contents.6"/>
+  <contents xsi:type="DirectedGraph:Node" label="8X" outgoing="//@contents.5 //@contents.8"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="64" source="//@contents.4" target="//@contents.2"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="17" source="//@contents.1" target="//@contents.3"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="87" source="//@contents.0" target="//@contents.2"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="98" source="//@contents.4" target="//@contents.0"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="91" source="//@contents.1" target="//@contents.2"/>
+</DirectedGraph:Graph>

@@ -9,6 +9,8 @@ public class AnnotationBlockCreator extends BlockCreator{
 
 	@Override
 	public boolean appliesTo(AST ast) {
+		if(ast==null)
+			return false;
 		if(ast.getType() == EolParser.ANNOTATIONBLOCK)
 		{
 			return true;

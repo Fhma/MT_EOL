@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:atl="http://www.eclipse.org/gmt/2005/ATL" xmlns:ocl="http://www.eclipse.org/gmt/2005/OCL">
+  <atl:Module location="1:1-25:2" name="Book2Publication">
+    <inModels location="2:30-2:38" name="IN" metamodel="/2"/>
+    <outModels location="2:8-2:24" name="OUT" metamodel="/1"/>
+    <elements xsi:type="atl:Helper" location="4:1-9:10">
+      <definition location="4:8-9:9">
+        <feature xsi:type="ocl:Operation" location="4:31-9:9" name="getAuthors">
+          <returnType xsi:type="ocl:StringType" location="4:45-4:51"/>
+          <body xsi:type="ocl:IterateExp" location="5:2-9:9">
+            <source xsi:type="ocl:CollectionOperationCallExp" location="5:2-5:51" operationName="asSet">
+              <source xsi:type="ocl:IteratorExp" location="5:2-5:40" name="collect">
+                <source xsi:type="ocl:NavigationOrAttributeCallExp" location="5:2-5:15" name="chapters">
+                  <source xsi:type="ocl:VariableExp" location="5:2-5:6" referredVariable="/3"/>
+                </source>
+                <body xsi:type="ocl:NavigationOrAttributeCallExp" location="5:31-5:39" name="author">
+                  <source xsi:type="ocl:VariableExp" location="5:31-5:32" referredVariable="/0/@elements.0/@definition/@feature/@body/@source/@source/@iterators.0"/>
+                </body>
+                <iterators location="5:27-5:28" varName="e" variableExp="/0/@elements.0/@definition/@feature/@body/@source/@source/@body/@source"/>
+              </source>
+            </source>
+            <body xsi:type="ocl:OperatorCallExp" location="5:94-9:8" operationName="+">
+              <source xsi:type="ocl:VariableExp" location="5:94-5:97" referredVariable="/0/@elements.0/@definition/@feature/@body/@result"/>
+              <arguments xsi:type="ocl:IfExp" location="5:100-9:8">
+                <thenExpression xsi:type="ocl:VariableExp" location="6:4-6:14" referredVariable="/0/@elements.0/@definition/@feature/@body/@iterators.0"/>
+                <condition xsi:type="ocl:OperatorCallExp" location="5:103-5:111" operationName="=">
+                  <source xsi:type="ocl:VariableExp" location="5:103-5:106" referredVariable="/0/@elements.0/@definition/@feature/@body/@result"/>
+                  <arguments xsi:type="ocl:StringExp" location="5:109-5:111" stringSymbol=""/>
+                </condition>
+                <elseExpression xsi:type="ocl:OperatorCallExp" location="8:4-8:24" operationName="+">
+                  <source xsi:type="ocl:StringExp" location="8:4-8:11" stringSymbol=" and "/>
+                  <arguments xsi:type="ocl:VariableExp" location="8:14-8:24" referredVariable="/0/@elements.0/@definition/@feature/@body/@iterators.0"/>
+                </elseExpression>
+              </arguments>
+            </body>
+            <iterators location="5:63-5:73" varName="authorName" variableExp="/0/@elements.0/@definition/@feature/@body/@body/@arguments.0/@thenExpression /0/@elements.0/@definition/@feature/@body/@body/@arguments.0/@elseExpression/@arguments.0"/>
+            <result location="5:75-5:91" varName="acc" variableExp="/0/@elements.0/@definition/@feature/@body/@body/@source /0/@elements.0/@definition/@feature/@body/@body/@arguments.0/@condition/@source">
+              <type xsi:type="ocl:StringType" location="5:80-5:86"/>
+              <initExpression xsi:type="ocl:StringExp" location="5:89-5:91" stringSymbol=""/>
+            </result>
+          </body>
+        </feature>
+        <context_ location="4:8-4:25">
+          <context_ xsi:type="ocl:OclModelElement" location="4:16-4:25" name="Book" model="/2"/>
+        </context_>
+      </definition>
+    </elements>
+    <elements xsi:type="atl:Helper" location="11:1-12:92">
+      <definition location="11:8-12:91">
+        <feature xsi:type="ocl:Operation" location="11:31-12:91" name="getNbPages">
+          <returnType xsi:type="ocl:IntegerType" location="11:45-11:52"/>
+          <body xsi:type="ocl:IterateExp" location="12:2-12:91">
+            <source xsi:type="ocl:IteratorExp" location="12:2-12:41" name="collect">
+              <source xsi:type="ocl:NavigationOrAttributeCallExp" location="12:2-12:15" name="chapters">
+                <source xsi:type="ocl:VariableExp" location="12:2-12:6" referredVariable="/4"/>
+              </source>
+              <body xsi:type="ocl:NavigationOrAttributeCallExp" location="12:31-12:40" name="nbPages">
+                <source xsi:type="ocl:VariableExp" location="12:31-12:32" referredVariable="/0/@elements.1/@definition/@feature/@body/@source/@iterators.0"/>
+              </body>
+              <iterators location="12:27-12:28" varName="f" variableExp="/0/@elements.1/@definition/@feature/@body/@source/@body/@source"/>
+            </source>
+            <body xsi:type="ocl:OperatorCallExp" location="12:79-12:90" operationName="+">
+              <source xsi:type="ocl:VariableExp" location="12:79-12:82" referredVariable="/0/@elements.1/@definition/@feature/@body/@result"/>
+              <arguments xsi:type="ocl:VariableExp" location="12:85-12:90" referredVariable="/0/@elements.1/@definition/@feature/@body/@iterators.0"/>
+            </body>
+            <iterators location="12:53-12:58" varName="pages" variableExp="/0/@elements.1/@definition/@feature/@body/@body/@arguments.0"/>
+            <result location="12:60-12:76" varName="acc" variableExp="/0/@elements.1/@definition/@feature/@body/@body/@source">
+              <type xsi:type="ocl:IntegerType" location="12:65-12:72"/>
+              <initExpression xsi:type="ocl:IntegerExp" location="12:75-12:76"/>
+            </result>
+          </body>
+        </feature>
+        <context_ location="11:8-11:25">
+          <context_ xsi:type="ocl:OclModelElement" location="11:16-11:25" name="Book" model="/2"/>
+        </context_>
+      </definition>
+    </elements>
+    <elements xsi:type="atl:MatchedRule" location="14:1-25:2" name="Book2Publication">
+      <outPattern location="19:2-24:4">
+        <elements xsi:type="atl:SimpleOutPatternElement" location="20:3-24:4" varName="out">
+          <type xsi:type="ocl:OclModelElement" location="20:8-20:31" name="Publication" model="/1"/>
+          <bindings location="21:4-21:20" propertyName="title">
+            <value xsi:type="ocl:NavigationOrAttributeCallExp" location="21:13-21:20" name="title">
+              <source xsi:type="ocl:VariableExp" location="21:13-21:14" referredVariable="/0/@elements.2/@inPattern/@elements.0"/>
+            </value>
+          </bindings>
+          <bindings location="22:4-22:29" propertyName="authors">
+            <value xsi:type="ocl:OperationCallExp" location="22:15-22:29" operationName="getAuthors">
+              <source xsi:type="ocl:VariableExp" location="22:15-22:16" referredVariable="/0/@elements.2/@inPattern/@elements.0"/>
+            </value>
+          </bindings>
+          <bindings location="23:4-23:29" propertyName="nbPages">
+            <value xsi:type="ocl:OperationCallExp" location="23:15-23:29" operationName="getNbPages">
+              <source xsi:type="ocl:VariableExp" location="23:15-23:16" referredVariable="/0/@elements.2/@inPattern/@elements.0"/>
+            </value>
+          </bindings>
+        </elements>
+      </outPattern>
+      <inPattern location="15:2-18:4">
+        <elements xsi:type="atl:SimpleInPatternElement" location="16:3-16:15" varName="b" variableExp="/0/@elements.2/@inPattern/@filter/@source/@source /0/@elements.2/@outPattern/@elements.0/@bindings.0/@value/@source /0/@elements.2/@outPattern/@elements.0/@bindings.1/@value/@source /0/@elements.2/@outPattern/@elements.0/@bindings.2/@value/@source">
+          <type xsi:type="ocl:OclModelElement" location="16:6-16:15" name="Book" model="/2"/>
+        </elements>
+        <filter xsi:type="ocl:OperatorCallExp" location="17:4-17:22" operationName=">">
+          <source xsi:type="ocl:OperationCallExp" location="17:4-17:18" operationName="getNbPages">
+            <source xsi:type="ocl:VariableExp" location="17:4-17:5" referredVariable="/0/@elements.2/@inPattern/@elements.0"/>
+          </source>
+          <arguments xsi:type="ocl:IntegerExp" location="17:21-17:22" integerSymbol="2"/>
+        </filter>
+      </inPattern>
+    </elements>
+  </atl:Module>
+  <ocl:OclModel location="2:13-2:24" name="Publication" elements="/0/@elements.2/@outPattern/@elements.0/@type" model="/0/@outModels.0"/>
+  <ocl:OclModel location="2:34-2:38" name="Book" elements="/0/@elements.0/@definition/@context_/@context_ /0/@elements.1/@definition/@context_/@context_ /0/@elements.2/@inPattern/@elements.0/@type" model="/0/@inModels.0"/>
+  <ocl:VariableDeclaration location="5:2-5:6" varName="self" variableExp="/0/@elements.0/@definition/@feature/@body/@source/@source/@source/@source"/>
+  <ocl:VariableDeclaration location="12:2-12:6" varName="self" variableExp="/0/@elements.1/@definition/@feature/@body/@source/@source/@source"/>
+</xmi:XMI>

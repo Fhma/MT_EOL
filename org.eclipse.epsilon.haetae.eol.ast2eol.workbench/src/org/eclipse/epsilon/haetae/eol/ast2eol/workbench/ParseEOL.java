@@ -18,28 +18,26 @@ public class ParseEOL {
 
 	public void run() throws Exception {
 
+		// read all EOL code files in "EOL_Programs" and parse the generated AST to XMI models
 		File model_folder = new File("EOL_Programs" + File.separatorChar);
 
-		for (File model_file : model_folder.listFiles()) {
-
+		for (File eol_code : model_folder.listFiles()) {
+			if (!eol_code.getName().endsWith(".eol"))
+				continue;
+			System.out.println("Parsing: "+eol_code.getName());
 			EolModule eolModule = new EolModule();
 			try {
-				eolModule.parse(model_file.getAbsoluteFile());
+				eolModule.parse(eol_code.getAbsoluteFile());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
-			Ast2EolContext context = new Ast2EolContext();
+			Ast2EolContext context = new Ast2EolContext(eolModule);
 			EOLElement domElements = context.getEolElementCreatorFactory().createEOLElement(eolModule.getAst(), null, context);
-
-			if (!context.getEolElementCreatorFactory().isProperlyContained()) {
-				System.err.println("DomElements are NOT properly contained");
-				continue;
-			}
-
+			
 			ResourceSet rs = new ResourceSetImpl();
 			rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
-			Resource resource = rs.createResource(URI.createFileURI(new File(model_file.getAbsolutePath() + ".xmi").getAbsolutePath()));
+			Resource resource = rs.createResource(URI.createFileURI(new File(eol_code.getAbsolutePath() + ".xmi").getAbsolutePath()));
 			resource.getContents().add(domElements);
 			resource.save(null);
 		}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:DirectedGraph="DirectedGraph">
+  <DirectedGraph:Node label="woody" outgoing="/2"/>
+  <DirectedGraph:Node label="amelita" incoming="/2"/>
+  <DirectedGraph:Edge weight="88" source="/0" target="/1"/>
+</xmi:XMI>

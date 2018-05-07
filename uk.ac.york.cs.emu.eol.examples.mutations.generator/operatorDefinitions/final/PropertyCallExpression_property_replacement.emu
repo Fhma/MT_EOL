@@ -1,0 +1,27 @@
+// operator: PropertyCallExpression_property_replacement
+// desc: replaces a property name with another one
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+/*
+@action replace
+@property property
+@role instance
+pattern replaces_propety_name
+instance:PropertyCallExpression,
+other_value:PropertyCallExpression
+	from: PropertyCallExpression.all.select(e|e <> instance)
+	guard: instance.property.name <> other_value.property.name {
+	do {
+		var new_name = NameExpression.createInstance();
+		new_name.name = other_value.property.name;
+		new_name.resolvedContent = other_value.property.resolvedContent;
+		new_name.resolvedType = other_value.property.resolvedType;
+		new_name.inBrackets = other_value.property.inBrackets;
+		new_name.isType = other_value.property.isType;
+		
+		// replace with new nameexp
+		instance.property = new_name;
+	}
+}
+*/

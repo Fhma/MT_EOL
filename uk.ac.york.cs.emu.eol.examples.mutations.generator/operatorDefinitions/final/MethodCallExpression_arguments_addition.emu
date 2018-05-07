@@ -1,0 +1,44 @@
+// operator: MethodCallExpression_arguments_addition
+// desc: adds a new argument while calling a method.
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+@action add
+@property arguments
+pattern adding_an_argument
+instance:MethodCallExpression {
+	do {
+		// 1) find a variable to add to arguments; obtained from
+		// a statement block 
+		var found_var = null;
+		var block = instance;
+		var found = false;
+		while(found_var.isUndefined())
+		{
+			if(block.container.isUndefined())
+				break;
+			block = block.container;
+			if(block.isTypeOf(Block))
+			{
+				var col = block.statements.select(e|e.isTypeOf(ExpressionStatement)
+					and e.expression.isTypeOf(VariableDeclarationExpression));
+				if(col.size()>0)
+				{
+					found_var = col.random().expression.name.name;
+				}
+			}
+		}
+		var name_exp = NameExpression.createInstance();
+		if(found_var.isDefined())
+		{
+			name_exp.name = found_var;
+		}
+		else
+		{
+			// give any name
+			name_exp.name = "var1";
+		}
+		instance.arguments.add(name_exp);
+	}
+}

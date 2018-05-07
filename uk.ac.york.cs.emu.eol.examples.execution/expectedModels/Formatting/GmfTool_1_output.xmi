@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<tooldef:ToolRegistry xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette title="widgetsPalette">
+    <tools xsi:type="tooldef:ToolGroup" title="Objects" collapsible="true">
+      <tools xsi:type="tooldef:CreationTool" title="Widget" description="Create new Widget">
+        <smallIcon xsi:type="tooldef:DefaultImage"/>
+        <largeIcon xsi:type="tooldef:DefaultImage"/>
+      </tools>
+    </tools>
+  </palette>
+</tooldef:ToolRegistry>

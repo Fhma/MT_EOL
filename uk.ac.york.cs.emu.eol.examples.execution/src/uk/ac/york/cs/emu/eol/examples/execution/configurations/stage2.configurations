@@ -1,5 +1,0 @@
-# Stage 2: this stage executes the original execution of an EOL program located at "uk.ac.york.cs.emu.eol.examples.execution.candidates"
-# The execution involves executing each candidate EOL program against a set of input models located in "inModels". The outcomes is a set of 
-# output models (stored in "expectedModels" folder) that we consider oracles for testing in stage (3).
-
-ShortestPath

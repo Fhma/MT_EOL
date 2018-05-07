@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//And"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.1"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#And"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Or"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.26"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Or"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Not"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.24"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Not"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Addition"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.0"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Addition"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Subtraction"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.31"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Subtraction"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Multiplication"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.21"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Multiplication"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Division"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.6"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Division"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Modulus"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.20"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Modulus"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Equal"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.8"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Equal"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//NotEqual"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.25"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#NotEqual"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//LessThan"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.17"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#LessThan"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//GreaterThan"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.15"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#GreaterThan"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//LessEqual"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.16"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#LessEqual"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//GreaterEqual"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.14"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#GreaterEqual"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Every"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.11"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Every"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//EveryDistinct"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.12"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#EveryDistinct"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Repeat"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" viewPattern="{0}" editorPattern="{0, number}" editPattern="{0, number}">
+        <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#RepeatLabel"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Repeat/count"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.28"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Repeat"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Until"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.36"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Until"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Range"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" viewPattern="[{0, number}:{1, number}]" editorPattern="{0}:{1}" editPattern="{0}:{1}">
+        <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#RangeLabel"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Range/lowEndpoint"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Range/highEndpoint"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.27"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Range"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//FollowedBy"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.13"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#FollowedBy"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//While"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.38"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#While"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Max"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.18"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Max"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Min"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.19"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Min"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Avg"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.2"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Avg"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Count"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.5"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Count"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Sum"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.32"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Sum"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild relatedDiagrams="//@diagram">
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Event"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true">
+        <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#EventLabel"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Event/typeName"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.9"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Event"/>
+      <children compartment="//@nodes.26/@ownedChild/@compartments.0" referencedChild="//@nodes.27/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Event/eventProperties"/>
+      </children>
+      <compartments children="//@nodes.26/@ownedChild/@children.0">
+        <compartment href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#EventEventPropertiesCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild relatedDiagrams="//@diagram">
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//EventProperty"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true">
+        <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#EventPropertyLabel"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//EventProperty/name"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.10"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#EventProperty"/>
+      <children compartment="//@nodes.27/@ownedChild/@compartments.0" referencedChild="//@nodes.27/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//EventProperty/eventProperties"/>
+      </children>
+      <compartments children="//@nodes.27/@ownedChild/@children.0">
+        <compartment href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#EventPropertyEventPropertiesCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Value"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#ValueLabel"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Value/value"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.37"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Value"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild relatedDiagrams="//@diagram">
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true" viewPattern="Within Timer: {0,choice,0#|0&lt;{0,number}y }{1,choice,0#|0&lt;{1,number}m }{2,choice,0#|0&lt;{2,number}w }{3,choice,0#|0&lt;{3,number}d }{4,choice,0#|0&lt;{4,number}h }{5,choice,0#|0&lt;{5,number}min }{6,choice,0#|0&lt;{6,number}s }{7,choice,0#|0&lt;{7,number}ms}">
+        <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#WithinTimerLabel"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/years"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/months"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/weeks"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/days"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/hours"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/minutes"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/seconds"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/milliseconds"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.39"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#WithinTimer"/>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.0/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.1/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.2/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.3/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.4/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.5/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.6/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.7/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.8/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.9/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.10/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.11/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.12/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.13/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.14/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.15/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.16/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.17/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.18/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.19/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.20/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.26/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.27/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <children compartment="//@nodes.29/@ownedChild/@compartments.0" referencedChild="//@nodes.28/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//WithinTimer/withinTimerElements"/>
+      </children>
+      <compartments children="//@nodes.29/@ownedChild/@children.0 //@nodes.29/@ownedChild/@children.1 //@nodes.29/@ownedChild/@children.2 //@nodes.29/@ownedChild/@children.3 //@nodes.29/@ownedChild/@children.4 //@nodes.29/@ownedChild/@children.5 //@nodes.29/@ownedChild/@children.6 //@nodes.29/@ownedChild/@children.7 //@nodes.29/@ownedChild/@children.8 //@nodes.29/@ownedChild/@children.9 //@nodes.29/@ownedChild/@children.10 //@nodes.29/@ownedChild/@children.11 //@nodes.29/@ownedChild/@children.12 //@nodes.29/@ownedChild/@children.13 //@nodes.29/@ownedChild/@children.14 //@nodes.29/@ownedChild/@children.15 //@nodes.29/@ownedChild/@children.16 //@nodes.29/@ownedChild/@children.17 //@nodes.29/@ownedChild/@children.18 //@nodes.29/@ownedChild/@children.19 //@nodes.29/@ownedChild/@children.20 //@nodes.29/@ownedChild/@children.21 //@nodes.29/@ownedChild/@children.22 //@nodes.29/@ownedChild/@children.23">
+        <compartment href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#WithinTimerWithinTimerElementsCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeInterval"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true" viewPattern=" {0,choice,0#|0&lt;{0,number}y }{1,choice,0#|0&lt;{1,number}m }{2,choice,0#|0&lt;{2,number}w }{3,choice,0#|0&lt;{3,number}d }{4,choice,0#|0&lt;{4,number}h }{5,choice,0#|0&lt;{5,number}min }{6,choice,0#|0&lt;{6,number}s }{7,choice,0#|0&lt;{7,number}ms} ">
+        <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#TimeIntervalLabel"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeInterval/years"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeInterval/months"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeInterval/weeks"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeInterval/days"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeInterval/hours"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeInterval/minutes"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeInterval/seconds"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeInterval/milliseconds"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.33"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#TimeInterval"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeSchedule"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true" viewPattern=" {0,choice,-1#|0#Sun, |1#Mon, |2#Tue, |3#Wed, |4#Thu, |5#Fri, |6#Sat, }{1,choice,-1#|0&lt;{1,number} }{2,choice,-1#|1#Jan |2#Feb |3#Mar |4#Apr |5#May |6#Jun |7#Jul |8#Aug |9#Sep |10#Oct |11#Nov |12#Dec }{3,choice,-1# hh:|-1&lt; {3,number}:}{4,choice,-1#mm:|-1&lt;{4,number}:}{5,choice,-1#ss|-1&lt;{5,number}} ">
+        <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#TimeScheduleLabel"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeSchedule/dayOfWeek"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeSchedule/dayOfMonth"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeSchedule/month"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeSchedule/hour"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeSchedule/minute"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//TimeSchedule/second"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.34"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#TimeSchedule"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/actions"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Email"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.7"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Email"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/actions"/>
+    <ownedChild>
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Twitter"/>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.35"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Twitter"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild relatedDiagrams="//@diagram">
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//SlidingEventInterval"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" viewPattern="Sliding Event Interval: {0}" editorPattern="{0, number}" editPattern="{0, number}">
+        <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#SlidingEventIntervalLabel"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//SlidingEventInterval/size"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.29"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#SlidingEventInterval"/>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.0/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.1/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.2/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.3/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.4/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.5/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.6/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.7/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.8/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.9/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.10/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.11/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.12/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.13/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.14/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.15/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.16/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.17/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.18/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.19/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.20/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.21/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.22/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.23/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.24/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.25/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.26/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.27/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.28/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.29/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.30/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.34/@ownedChild/@compartments.0" referencedChild="//@nodes.31/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <compartments children="//@nodes.34/@ownedChild/@children.0 //@nodes.34/@ownedChild/@children.1 //@nodes.34/@ownedChild/@children.2 //@nodes.34/@ownedChild/@children.3 //@nodes.34/@ownedChild/@children.4 //@nodes.34/@ownedChild/@children.5 //@nodes.34/@ownedChild/@children.6 //@nodes.34/@ownedChild/@children.7 //@nodes.34/@ownedChild/@children.8 //@nodes.34/@ownedChild/@children.9 //@nodes.34/@ownedChild/@children.10 //@nodes.34/@ownedChild/@children.11 //@nodes.34/@ownedChild/@children.12 //@nodes.34/@ownedChild/@children.13 //@nodes.34/@ownedChild/@children.14 //@nodes.34/@ownedChild/@children.15 //@nodes.34/@ownedChild/@children.16 //@nodes.34/@ownedChild/@children.17 //@nodes.34/@ownedChild/@children.18 //@nodes.34/@ownedChild/@children.19 //@nodes.34/@ownedChild/@children.20 //@nodes.34/@ownedChild/@children.21 //@nodes.34/@ownedChild/@children.22 //@nodes.34/@ownedChild/@children.23 //@nodes.34/@ownedChild/@children.24 //@nodes.34/@ownedChild/@children.25 //@nodes.34/@ownedChild/@children.26 //@nodes.34/@ownedChild/@children.27 //@nodes.34/@ownedChild/@children.28 //@nodes.34/@ownedChild/@children.29 //@nodes.34/@ownedChild/@children.30 //@nodes.34/@ownedChild/@children.31">
+        <compartment href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#SlidingEventIntervalEventPatternConditionsCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild relatedDiagrams="//@diagram">
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//BatchingEventInterval"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" viewPattern="Batching Event Interval: {0}" editorPattern="{0, number}" editPattern="{0, number}">
+        <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#BatchingEventIntervalLabel"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//BatchingEventInterval/size"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.3"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#BatchingEventInterval"/>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.0/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.1/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.2/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.3/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.4/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.5/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.6/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.7/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.8/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.9/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.10/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.11/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.12/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.13/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.14/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.15/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.16/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.17/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.18/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.19/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.20/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.21/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.22/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.23/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.24/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.25/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.26/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.27/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.28/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.29/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.30/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.35/@ownedChild/@compartments.0" referencedChild="//@nodes.31/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <compartments children="//@nodes.35/@ownedChild/@children.0 //@nodes.35/@ownedChild/@children.1 //@nodes.35/@ownedChild/@children.2 //@nodes.35/@ownedChild/@children.3 //@nodes.35/@ownedChild/@children.4 //@nodes.35/@ownedChild/@children.5 //@nodes.35/@ownedChild/@children.6 //@nodes.35/@ownedChild/@children.7 //@nodes.35/@ownedChild/@children.8 //@nodes.35/@ownedChild/@children.9 //@nodes.35/@ownedChild/@children.10 //@nodes.35/@ownedChild/@children.11 //@nodes.35/@ownedChild/@children.12 //@nodes.35/@ownedChild/@children.13 //@nodes.35/@ownedChild/@children.14 //@nodes.35/@ownedChild/@children.15 //@nodes.35/@ownedChild/@children.16 //@nodes.35/@ownedChild/@children.17 //@nodes.35/@ownedChild/@children.18 //@nodes.35/@ownedChild/@children.19 //@nodes.35/@ownedChild/@children.20 //@nodes.35/@ownedChild/@children.21 //@nodes.35/@ownedChild/@children.22 //@nodes.35/@ownedChild/@children.23 //@nodes.35/@ownedChild/@children.24 //@nodes.35/@ownedChild/@children.25 //@nodes.35/@ownedChild/@children.26 //@nodes.35/@ownedChild/@children.27 //@nodes.35/@ownedChild/@children.28 //@nodes.35/@ownedChild/@children.29 //@nodes.35/@ownedChild/@children.30 //@nodes.35/@ownedChild/@children.31">
+        <compartment href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#BatchingEventIntervalEventPatternConditionsCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild relatedDiagrams="//@diagram">
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//SlidingTimeInterval"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true" viewPattern="Sliding Time Interval: {0,choice,0#|0&lt;{0,number}y }{1,choice,0#|0&lt;{1,number}m }{2,choice,0#|0&lt;{2,number}w }{3,choice,0#|0&lt;{3,number}d }{4,choice,0#|0&lt;{4,number}h }{5,choice,0#|0&lt;{5,number}min }{6,choice,0#|0&lt;{6,number}s }{7,choice,0#|0&lt;{7,number}ms}">
+        <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#SlidingTimeIntervalLabel"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//SlidingTimeInterval/years"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//SlidingTimeInterval/months"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//SlidingTimeInterval/weeks"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//SlidingTimeInterval/days"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//SlidingTimeInterval/hours"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//SlidingTimeInterval/minutes"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//SlidingTimeInterval/seconds"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//SlidingTimeInterval/milliseconds"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.30"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#SlidingTimeInterval"/>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.0/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.1/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.2/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.3/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.4/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.5/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.6/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.7/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.8/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.9/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.10/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.11/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.12/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.13/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.14/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.15/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.16/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.17/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.18/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.19/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.20/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.21/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.22/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.23/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.24/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.25/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.26/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.27/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.28/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.29/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.30/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.36/@ownedChild/@compartments.0" referencedChild="//@nodes.31/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <compartments children="//@nodes.36/@ownedChild/@children.0 //@nodes.36/@ownedChild/@children.1 //@nodes.36/@ownedChild/@children.2 //@nodes.36/@ownedChild/@children.3 //@nodes.36/@ownedChild/@children.4 //@nodes.36/@ownedChild/@children.5 //@nodes.36/@ownedChild/@children.6 //@nodes.36/@ownedChild/@children.7 //@nodes.36/@ownedChild/@children.8 //@nodes.36/@ownedChild/@children.9 //@nodes.36/@ownedChild/@children.10 //@nodes.36/@ownedChild/@children.11 //@nodes.36/@ownedChild/@children.12 //@nodes.36/@ownedChild/@children.13 //@nodes.36/@ownedChild/@children.14 //@nodes.36/@ownedChild/@children.15 //@nodes.36/@ownedChild/@children.16 //@nodes.36/@ownedChild/@children.17 //@nodes.36/@ownedChild/@children.18 //@nodes.36/@ownedChild/@children.19 //@nodes.36/@ownedChild/@children.20 //@nodes.36/@ownedChild/@children.21 //@nodes.36/@ownedChild/@children.22 //@nodes.36/@ownedChild/@children.23 //@nodes.36/@ownedChild/@children.24 //@nodes.36/@ownedChild/@children.25 //@nodes.36/@ownedChild/@children.26 //@nodes.36/@ownedChild/@children.27 //@nodes.36/@ownedChild/@children.28 //@nodes.36/@ownedChild/@children.29 //@nodes.36/@ownedChild/@children.30 //@nodes.36/@ownedChild/@children.31">
+        <compartment href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#SlidingTimeIntervalEventPatternConditionsCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/eventPatternElements"/>
+    <ownedChild relatedDiagrams="//@diagram">
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//BatchingTimeInterval"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true" viewPattern="Batching Time Interval: {0,choice,0#|0&lt;{0,number}y }{1,choice,0#|0&lt;{1,number}m }{2,choice,0#|0&lt;{2,number}w }{3,choice,0#|0&lt;{3,number}d }{4,choice,0#|0&lt;{4,number}h }{5,choice,0#|0&lt;{5,number}min }{6,choice,0#|0&lt;{6,number}s }{7,choice,0#|0&lt;{7,number}ms}">
+        <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#BatchingTimeIntervalLabel"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//BatchingTimeInterval/years"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//BatchingTimeInterval/months"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//BatchingTimeInterval/weeks"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//BatchingTimeInterval/days"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//BatchingTimeInterval/hours"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//BatchingTimeInterval/minutes"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//BatchingTimeInterval/seconds"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//BatchingTimeInterval/milliseconds"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.4"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#BatchingTimeInterval"/>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.0/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.1/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.2/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.3/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.4/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.5/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.6/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.7/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.8/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.9/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.10/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.11/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.12/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.13/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.14/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.15/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.16/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.17/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.18/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.19/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.20/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.21/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.22/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.23/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.24/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.25/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.26/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.27/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.28/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.29/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.30/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <children compartment="//@nodes.37/@ownedChild/@compartments.0" referencedChild="//@nodes.31/@ownedChild">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//DataWindow/eventPatternConditions"/>
+      </children>
+      <compartments children="//@nodes.37/@ownedChild/@children.0 //@nodes.37/@ownedChild/@children.1 //@nodes.37/@ownedChild/@children.2 //@nodes.37/@ownedChild/@children.3 //@nodes.37/@ownedChild/@children.4 //@nodes.37/@ownedChild/@children.5 //@nodes.37/@ownedChild/@children.6 //@nodes.37/@ownedChild/@children.7 //@nodes.37/@ownedChild/@children.8 //@nodes.37/@ownedChild/@children.9 //@nodes.37/@ownedChild/@children.10 //@nodes.37/@ownedChild/@children.11 //@nodes.37/@ownedChild/@children.12 //@nodes.37/@ownedChild/@children.13 //@nodes.37/@ownedChild/@children.14 //@nodes.37/@ownedChild/@children.15 //@nodes.37/@ownedChild/@children.16 //@nodes.37/@ownedChild/@children.17 //@nodes.37/@ownedChild/@children.18 //@nodes.37/@ownedChild/@children.19 //@nodes.37/@ownedChild/@children.20 //@nodes.37/@ownedChild/@children.21 //@nodes.37/@ownedChild/@children.22 //@nodes.37/@ownedChild/@children.23 //@nodes.37/@ownedChild/@children.24 //@nodes.37/@ownedChild/@children.25 //@nodes.37/@ownedChild/@children.26 //@nodes.37/@ownedChild/@children.27 //@nodes.37/@ownedChild/@children.28 //@nodes.37/@ownedChild/@children.29 //@nodes.37/@ownedChild/@children.30 //@nodes.37/@ownedChild/@children.31">
+        <compartment href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#BatchingTimeIntervalEventPatternConditionsCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/complexEvent"/>
+    <ownedChild relatedDiagrams="//@diagram">
+      <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//ComplexEvent"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true" viewPattern="New Complex Event: {0}">
+        <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#ComplexEventLabel"/>
+        <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//ComplexEvent/typeName"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.22"/>
+      <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#ComplexEvent"/>
+      <children compartment="//@nodes.38/@ownedChild/@compartments.0">
+        <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//ComplexEvent/complexEventProperties"/>
+        <ownedChild>
+          <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//ComplexEventProperty"/>
+          <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#ComplexEventPropertyLabel"/>
+            <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//ComplexEventProperty/name"/>
+          </labelMappings>
+          <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.0/@tools.23"/>
+          <diagramNode href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#ComplexEventProperty"/>
+        </ownedChild>
+      </children>
+      <compartments children="//@nodes.38/@ownedChild/@children.0">
+        <compartment href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#ComplexEventComplexEventPropertiesCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <links>
+    <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Link"/>
+    <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#LinkLabel"/>
+      <features href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Link/order"/>
+    </labelMappings>
+    <containmentFeature href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern/links"/>
+    <tool xsi:type="tooldef:CreationTool" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette/@tools.1/@tools.0"/>
+    <diagramLink href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#Link"/>
+    <sourceMetaFeature xsi:type="ecore:EReference" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Link/operand"/>
+    <linkMetaFeature xsi:type="ecore:EReference" href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//Link/operator"/>
+    <creationConstraints>
+      <sourceEnd body="self &lt;> oppositeEnd &#xD;&#xA;&#x9;and ( &#xD;&#xA;&#x9;   (self.oclIsKindOf(ComplexEvent) and oppositeEnd.oclIsKindOf(Action))&#xD;&#xA;&#x9;   or ((self.oclIsKindOf(Value) or self.oclIsKindOf(EventProperty) or &#xD;&#xA;&#x9;        self.oclIsKindOf(AggregationOperator) or self.oclIsKindOf(ArithmeticOperator)) &#xD;&#xA;&#x9;        and oppositeEnd.oclIsKindOf(ComplexEventProperty)) &#xD;&#xA;&#x9;   or (self.oclIsKindOf(PatternOperand) and oppositeEnd.oclIsKindOf(PatternOperator))&#xD;&#xA;&#x9;   or ((self.oclIsTypeOf(EventProperty) or self.oclIsTypeOf(Value)) &#xD;&#xA;&#x9;      and (oppositeEnd.oclIsKindOf(LogicalOperator) or oppositeEnd.oclIsKindOf(ComparisonOperator) &#xD;&#xA;&#x9;         or oppositeEnd.oclIsKindOf(ArithmeticOperator))) &#xD;&#xA;&#x9;   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsKindOf(LogicalOperator))        &#xD;&#xA;&#x9;   or (self.oclIsKindOf(ArithmeticOperator) and (oppositeEnd.oclIsKindOf(ArithmeticOperator) &#xD;&#xA;&#x9;      or oppositeEnd.oclIsKindOf(ComparisonOperator)))  &#xD;&#xA;&#x9;   or ((self.oclIsTypeOf(EventProperty) or self.oclIsKindOf(ArithmeticOperator)) &#xD;&#xA;&#x9;      and oppositeEnd.oclIsKindOf(AggregationOperator)) &#xD;&#xA;&#x9;   or (self.oclIsKindOf(AggregationOperator) and oppositeEnd.oclIsKindOf(ArithmeticOperator))   &#xD;&#xA;&#x9;   or (self.oclIsKindOf(ComparisonOperator) and oppositeEnd.oclIsTypeOf(While))&#xD;&#xA;&#x9;   or (self.oclIsTypeOf(EventProperty) and oppositeEnd.oclIsTypeOf(EveryDistinct))&#xD;&#xA;&#x9;   or (self.oclIsKindOf(Event) and oppositeEnd.oclIsKindOf(ComplexEvent)) &#xD;&#xA;&#x9;)"/>
+      <targetEnd body="self &lt;> oppositeEnd"/>
+    </creationConstraints>
+  </links>
+  <diagram>
+    <diagramCanvas href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfGraph_12_output.xmi#eventpattern"/>
+    <domainModel href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#/"/>
+    <domainMetaElement href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/inModels/Formatting/ECore_input_12.xmi#//CEPEventPattern"/>
+    <palette href="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.execution/expectedModels/Formatting/GmfTool_12_output.xmi#//@palette"/>
+  </diagram>
+</gmfmap:Mapping>

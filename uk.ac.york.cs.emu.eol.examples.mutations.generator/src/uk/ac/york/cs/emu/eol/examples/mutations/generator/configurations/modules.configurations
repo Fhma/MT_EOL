@@ -3,5 +3,6 @@
 # The output of this stage is a collection of mutations stored in "generatedMutations" folder. A summary of this 
 # execution is stored in folder "generatedMutations_summary"
 ShortestPath
-ECore2GMF
-Testing
+#ECore2GMF
+#ECoreUtil
+#Formatting

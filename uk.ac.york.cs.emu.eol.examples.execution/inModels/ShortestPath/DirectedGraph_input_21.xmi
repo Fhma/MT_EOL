@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:DirectedGraph="DirectedGraph">
+  <DirectedGraph:Node label="foss" incoming="/7"/>
+  <DirectedGraph:Node label="land" outgoing="/6" incoming="/4"/>
+  <DirectedGraph:Node label="guilbert" outgoing="/5 /7"/>
+  <DirectedGraph:Node label="wenda" outgoing="/4" incoming="/5 /6"/>
+  <DirectedGraph:Edge weight="125" source="/3" target="/1"/>
+  <DirectedGraph:Edge weight="86" source="/2" target="/3"/>
+  <DirectedGraph:Edge weight="73" source="/1" target="/3"/>
+  <DirectedGraph:Edge weight="123" source="/2" target="/0"/>
+</xmi:XMI>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:DirectedGraph="DirectedGraph">
+  <DirectedGraph:Node label="baldwin" outgoing="/2 /3"/>
+  <DirectedGraph:Node label="hastings" incoming="/2 /3"/>
+  <DirectedGraph:Edge weight="180" source="/0" target="/1"/>
+  <DirectedGraph:Edge weight="87" source="/0" target="/1"/>
+</xmi:XMI>

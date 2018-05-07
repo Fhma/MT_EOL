@@ -23,8 +23,11 @@ public class PrintEOL {
 
 		EolPackage.eINSTANCE.eClass();
 
+		// read all models in "EOL_Programs" and print the corresponding EOL code for each
 		File model_folder = new File("EOL_Programs" + File.separatorChar);
 		for (File model_file : model_folder.listFiles()) {
+			if (!model_file.getName().endsWith(".xmi"))
+				continue;
 			ResourceSet rs = new ResourceSetImpl();
 			rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 			Resource model = rs.getResource(URI.createFileURI(model_file.getAbsolutePath()), true);

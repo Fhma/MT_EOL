@@ -1,0 +1,499 @@
+@namespace(uri="http://www.eclipse.org/gmf/2006/GraphicalDefinition", prefix="gmfgraph")
+package gmfgraph;
+
+class Canvas extends Identity {
+
+  @GenModel(documentation="containment here doesn't restrict nodes/connection from using figure galeries defined elsewhere. No assumption should be made whether or not node/connection figure is defined in the galery beloning to this canvas")
+  val FigureGallery[*] figures;
+  val Node[*] nodes;
+  val Connection[*] connections;
+  val Compartment[*] compartments;
+  val DiagramLabel[*] labels;
+}
+
+@GenModel(documentation="Kind of explicit figure library notion. Bundle of figures. Allows to specify plugin id (allows importing it later from gmfgen code) in addition to figures")
+class FigureGallery extends Identity {
+  val RealFigure[*] figures;
+  val FigureDescriptor[*] descriptors;
+
+  @GenModel(documentation="Borders for reuse")
+  val Border[*] borders;
+
+  @GenModel(documentation="Layouts for reuse")
+  val Layout[*] layouts;
+  attr String implementationBundle;
+}
+
+@GenModel(documentation="Easy and readable way to reference element of the model from another one")
+abstract interface Identity {
+  id attr String[1] name;
+}
+
+abstract class DiagramElement extends Identity {
+  ref FigureDescriptor[1] figure;
+
+  @GenModel(documentation="anything to further specify constraint or any other aspect of the element")
+  val VisualFacet[*] facets;
+}
+
+abstract class AbstractNode extends DiagramElement {
+}
+
+class Node extends AbstractNode {
+  attr Direction resizeConstraint = "NSEW";
+  attr Direction affixedParentSide = "NONE";
+  ref ChildAccess contentPane;
+}
+
+class Connection extends DiagramElement {
+}
+
+class Compartment extends DiagramElement {
+  attr boolean collapsible;
+  attr boolean needsTitle;
+  ref ChildAccess accessor;
+}
+
+class DiagramLabel extends Node {
+  attr boolean elementIcon = true;
+  ref ChildAccess accessor;
+  ref ChildAccess container;
+  readonly volatile transient derived attr boolean external;
+}
+
+abstract interface VisualFacet {
+}
+
+@GenModel(documentation="provide means to attach arbitrary data to your diagram element definition. It's up to you (template author) to process it somehow.")
+class GeneralFacet extends VisualFacet {
+  id attr String identifier;
+  attr String data;
+}
+
+@GenModel(documentation="Makes sense for DiagramLabels of Links only (now). Constants from {@link org.eclipse.draw2d.ConnectionLocator} are: MIDDLE = Alignment.CENTER, TARGET = Alignment.END, SOURCE = Alignment.BEGINNING")
+class AlignmentFacet extends VisualFacet {
+  attr Alignment alignment;
+}
+
+class GradientFacet extends VisualFacet {
+  attr Direction direction;
+}
+
+class LabelOffsetFacet extends VisualFacet {
+  attr int x;
+  attr int y;
+}
+
+class DefaultSizeFacet extends VisualFacet {
+  val Dimension defaultSize;
+}
+
+@GenModel(documentation="Anything you could combine visual representation from. Ordinary GEF figures, custom-defined or references to defined elsewhere. org.eclipse.draw2d.Figure")
+abstract interface Figure extends Layoutable {
+  readonly volatile transient derived !resolve ref FigureDescriptor descriptor;
+  val Color foregroundColor;
+  val Color backgroundColor;
+  val Dimension maximumSize;
+  val Dimension minimumSize;
+  val Dimension preferredSize;
+  val Font font;
+  val Insets insets;
+  val Border border;
+  val Point location;
+  val Point size;
+}
+
+@GenModel(documentation="This is merely an implementation artifact to get only one base implementation of Figure attributes")
+abstract class AbstractFigure extends Figure {
+}
+
+@GenModel(documentation="The thing describes structure of a figure")
+class FigureDescriptor extends Identity {
+  val Figure[1] actualFigure;
+  val ChildAccess[*]#owner accessors;
+}
+
+class ChildAccess {
+  readonly !resolve ref FigureDescriptor[1]#accessors owner;
+  attr String accessor;
+
+  @GenModel(documentation="This may also point to RealFigure from FigureAccessor#typedFigure")
+  ref Figure[1] figure;
+}
+
+@GenModel(documentation="This is exact/specific/concrete figure, unlike proxy/reference-nature FigureRef")
+abstract class RealFigure extends AbstractFigure, PinOwner, CustomAttributeOwner {
+  attr String name;
+  val Figure[*] children;
+}
+
+@GenModel(documentation="Need this to facilitate reuse of figures while keeping (so nice looking) containment relationship in the Figure class")
+class FigureRef extends AbstractFigure {
+
+  @GenModel(documentation="not just Figure because don't want to reference figure references.")
+  ref RealFigure[1] figure;
+}
+
+abstract interface ConnectionFigure extends RealFigure {
+}
+
+abstract interface DecorationFigure extends RealFigure {
+}
+
+@GenModel(documentation="org.eclipse.draw2d.Shape")
+abstract class Shape extends RealFigure {
+  attr boolean outline = true;
+  attr boolean fill = true;
+  attr int lineWidth = 1;
+  attr LineKind lineKind;
+  attr boolean xorFill;
+  attr boolean xorOutline;
+
+  @GenModel(documentation="Same as children, but resolves child FigureRefs, if any, to Figures")
+  readonly volatile transient derived ref Figure[*] resolvedChildren;
+}
+
+@GenModel(documentation="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel")
+class Label extends RealFigure {
+  attr String text;
+}
+
+@GenModel(documentation="org.eclipse.draw2d.LabeledContainer")
+class LabeledContainer extends RealFigure {
+}
+
+@GenModel(documentation="org.eclipse.gmf.tooling.runtime.draw2d.labels.VerticalLabel")
+class VerticalLabel extends RealFigure {
+  attr String text;
+}
+
+@GenModel(documentation="org.eclipse.draw2d.RectangleFigure")
+class Rectangle extends Shape {
+}
+
+@GenModel(documentation="org.eclipse.draw2d.RectangleFigure #opaque=false, #outline=false, #fill=false")
+class InvisibleRectangle extends RealFigure {
+}
+
+@GenModel(documentation="org.eclipse.draw2d.RoundedRectangle")
+class RoundedRectangle extends Shape {
+  attr int cornerWidth = 8;
+  attr int cornerHeight = 8;
+}
+
+@GenModel(documentation="org.eclipse.draw2d.Ellipse")
+class Ellipse extends Shape {
+}
+
+@GenModel(documentation="org.eclipse.draw2d.Polyline")
+class Polyline extends Shape {
+  val Point[*] template;
+}
+
+@GenModel(documentation="org.eclipse.draw2d.Polygon")
+class Polygon extends Polyline {
+}
+
+@GenModel(documentation="Marker interface to denote polygons with ability to autoscale to fit all available bounds. Separate class is needed instead of property in the Polygon class because of generalization PolygonDecoration extends Polygon")
+class ScalablePolygon extends Polygon {
+}
+
+@GenModel(documentation="org.eclipse.draw2d.PolylineConnection")
+class PolylineConnection extends Polyline, ConnectionFigure {
+  ref DecorationFigure sourceDecoration;
+  ref DecorationFigure targetDecoration;
+}
+
+@GenModel(documentation="org.eclipse.draw2d.PolylineDecoration")
+class PolylineDecoration extends Polyline, DecorationFigure {
+}
+
+@GenModel(documentation="org.eclipse.draw2d.PolygonDecoration")
+class PolygonDecoration extends Polygon, DecorationFigure {
+}
+
+abstract interface CustomAttributeOwner {
+  val CustomAttribute[*] attributes;
+}
+
+abstract interface CustomClass extends CustomAttributeOwner {
+  attr String qualifiedClassName;
+}
+
+class CustomAttribute {
+  attr String[1] name;
+  attr String[1] value = "null";
+  attr boolean[1] directAccess = false;
+  attr boolean[1] multiStatementValue = false;
+}
+
+class FigureAccessor {
+  attr String[1] accessor;
+  val RealFigure[1] typedFigure;
+}
+
+@GenModel(documentation="Any figure class provided by some bundle")
+class CustomFigure extends RealFigure, CustomClass {
+
+  @GenModel(documentation="Childrent enumerated with this feature are mere 'access points' to actual structure of the CustomFigure. They are not created, unlike those contained in regular Figure#children")
+  val FigureAccessor[*] customChildren;
+}
+
+@GenModel(documentation="Same as CustomFigure, but for Decorations")
+class CustomDecoration extends CustomFigure, DecorationFigure {
+}
+
+@GenModel(documentation="Same as CustomFigure, but for Connections")
+class CustomConnection extends CustomFigure, ConnectionFigure {
+}
+
+abstract interface Color {
+}
+
+class RGBColor extends Color {
+  attr int[1] red;
+  attr int[1] green;
+  attr int[1] blue;
+}
+
+class ConstantColor extends Color {
+  attr ColorConstants[1] value;
+}
+
+enum ColorConstants {
+  white = 0;
+  black = 1;
+  lightGray = 2;
+  gray = 3;
+  darkGray = 4;
+  red = 5;
+  orange = 6;
+  yellow = 7;
+  green = 8;
+  lightGreen = 9;
+  darkGreen = 10;
+  cyan = 11;
+  lightBlue = 12;
+  blue = 13;
+  darkBlue = 14;
+}
+
+abstract interface Font {
+}
+
+class BasicFont extends Font {
+  attr String faceName;
+  attr int height = 9;
+  attr FontStyle style = "NORMAL";
+}
+
+enum FontStyle {
+  NORMAL = 0;
+  BOLD = 1;
+  ITALIC = 2;
+}
+
+class Point {
+  attr int x;
+  attr int y;
+}
+
+class Dimension {
+  attr int dx;
+  attr int dy;
+}
+
+class Insets {
+  attr int top;
+  attr int left;
+  attr int bottom;
+  attr int right;
+}
+
+abstract interface Border {
+}
+
+@GenModel(documentation="Border reuse mechanism")
+class BorderRef extends Border {
+
+  @GenModel(documentation="constraint: actual should not be another BorderRef")
+  ref Border[1] actual;
+}
+
+class LineBorder extends Border {
+  val Color color;
+  attr int width = 1;
+}
+
+class MarginBorder extends Border {
+  val Insets insets;
+}
+
+class CompoundBorder extends Border {
+  val Border outer;
+  val Border inner;
+}
+
+class CustomBorder extends Border, CustomClass {
+}
+
+@GenModel(documentation="Geographical bit constants from org.eclipse.draw2d.PositionConstants")
+enum Direction {
+  NONE = 0;
+  NORTH = 1;
+  SOUTH = 4;
+  WEST = 8;
+  EAST = 16;
+  NORTH_EAST = 17;
+  NORTH_WEST = 9;
+  SOUTH_EAST = 20;
+  SOUTH_WEST = 12;
+  NORTH_SOUTH = 5;
+  EAST_WEST = 24;
+  NSEW = 29;
+}
+
+@GenModel(documentation="org.eclipse.draw2d.Graphics.LINE_* (== org.eclipse.swt.SWT.LINE_*. Values are same as SWT constants")
+enum LineKind {
+  LINE_SOLID = 1;
+  LINE_DASH = 2;
+  LINE_DOT = 3;
+  LINE_DASHDOT = 4;
+  LINE_DASHDOTDOT = 5;
+  LINE_CUSTOM = 6;
+}
+
+abstract interface LayoutData {
+  ref Layoutable[1]#layoutData owner;
+}
+
+class CustomLayoutData extends LayoutData, CustomClass {
+}
+
+class GridLayoutData extends LayoutData {
+  attr boolean[1] grabExcessHorizontalSpace = false;
+  attr boolean[1] grabExcessVerticalSpace = false;
+  attr Alignment[1] verticalAlignment = "CENTER";
+  attr Alignment[1] horizontalAlignment = "CENTER";
+  attr int[1] verticalSpan = 1;
+  attr int[1] horizontalSpan = 1;
+  attr int[1] horizontalIndent;
+  val Dimension sizeHint;
+}
+
+class BorderLayoutData extends LayoutData {
+  attr Alignment[1] alignment = "CENTER";
+  attr boolean vertical = false;
+}
+
+enum Alignment {
+  BEGINNING = 0;
+  CENTER = 1;
+  END = 2;
+  FILL = 3;
+}
+
+abstract interface Layoutable {
+  val LayoutData#owner layoutData;
+  val Layout layout;
+}
+
+abstract interface Layout {
+}
+
+@GenModel(documentation="Layout reuse mechanism")
+class LayoutRef extends Layout {
+
+  @GenModel(documentation="constraint: actual should not be another LayoutRef")
+  ref Layout[1] actual;
+}
+
+class CustomLayout extends Layout, CustomClass {
+}
+
+class GridLayout extends Layout {
+  attr int[1] numColumns = 1;
+  attr boolean[1] equalWidth = true;
+  val Dimension margins;
+  val Dimension spacing;
+}
+
+class BorderLayout extends Layout {
+  val Dimension spacing;
+}
+
+class FlowLayout extends Layout {
+  attr boolean vertical = false;
+  attr boolean matchMinorSize = false;
+  attr boolean forceSingleLine = false;
+  attr Alignment majorAlignment = "BEGINNING";
+  attr Alignment minorAlignment = "BEGINNING";
+  attr int majorSpacing = 5;
+  attr int minorSpacing = 5;
+}
+
+class XYLayout extends Layout {
+}
+
+class XYLayoutData extends LayoutData {
+  val Point[1] topLeft;
+  val Dimension[1] size;
+}
+
+class StackLayout extends Layout {
+}
+
+class CenterLayout extends Layout {
+}
+
+class SVGFigure extends RealFigure {
+  attr String documentURI;
+  val SVGProperty[*] properties;
+  val Rectangle2D areaOfInterest;
+  attr boolean noCanvasWidth;
+  attr boolean noCanvasHeight;
+}
+
+class SVGProperty {
+  attr String query;
+  attr String attribute;
+  attr SVGPropertyType type;
+  attr String getter;
+  attr String setter;
+  attr boolean callSuper;
+}
+
+enum SVGPropertyType {
+  STRING = 0;
+  COLOR = 1;
+  FLOAT = 2;
+}
+
+class Rectangle2D {
+  attr float x;
+  attr float y;
+  attr float width;
+  attr float height;
+}
+
+abstract interface Pin extends Identity {
+  op String getOperationName();
+  op String getOperationType();
+}
+
+class CustomPin extends Pin {
+  attr String customOperationName;
+  attr String customOperationType;
+}
+
+class ColorPin extends Pin {
+  attr boolean backgroundNotForeground;
+}
+
+class VisiblePin extends Pin {
+}
+
+abstract interface PinOwner {
+  val Pin[*] pins;
+}
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:DirectedGraph="DirectedGraph">
+  <DirectedGraph:Node label="harriette" outgoing="/24" incoming="/20 /23"/>
+  <DirectedGraph:Node label="gisele" incoming="/31"/>
+  <DirectedGraph:Node label="marillin" incoming="/16 /26 /27"/>
+  <DirectedGraph:Node label="aryn" incoming="/21"/>
+  <DirectedGraph:Node label="jake" incoming="/25 /30"/>
+  <DirectedGraph:Node label="maridel" outgoing="/16 /23"/>
+  <DirectedGraph:Node label="brear" outgoing="/31"/>
+  <DirectedGraph:Node label="kent" outgoing="/20"/>
+  <DirectedGraph:Node label="tasia" outgoing="/19" incoming="/29"/>
+  <DirectedGraph:Node label="annalise" outgoing="/25" incoming="/17"/>
+  <DirectedGraph:Node label="jule" incoming="/19"/>
+  <DirectedGraph:Node label="blaine" outgoing="/30"/>
+  <DirectedGraph:Node label="alexa" outgoing="/17 /18 /29"/>
+  <DirectedGraph:Node label="gabe" outgoing="/21 /22 /26 /28"/>
+  <DirectedGraph:Node label="madlin" outgoing="/27" incoming="/22 /24 /28"/>
+  <DirectedGraph:Node label="pansie" incoming="/18"/>
+  <DirectedGraph:Edge weight="32" source="/5" target="/2"/>
+  <DirectedGraph:Edge weight="56" source="/12" target="/9"/>
+  <DirectedGraph:Edge weight="170" source="/12" target="/15"/>
+  <DirectedGraph:Edge weight="90" source="/8" target="/10"/>
+  <DirectedGraph:Edge weight="168" source="/7" target="/0"/>
+  <DirectedGraph:Edge weight="126" source="/13" target="/3"/>
+  <DirectedGraph:Edge weight="114" source="/13" target="/14"/>
+  <DirectedGraph:Edge weight="147" source="/5" target="/0"/>
+  <DirectedGraph:Edge weight="148" source="/0" target="/14"/>
+  <DirectedGraph:Edge weight="158" source="/9" target="/4"/>
+  <DirectedGraph:Edge weight="122" source="/13" target="/2"/>
+  <DirectedGraph:Edge weight="85" source="/14" target="/2"/>
+  <DirectedGraph:Edge weight="93" source="/13" target="/14"/>
+  <DirectedGraph:Edge weight="106" source="/12" target="/8"/>
+  <DirectedGraph:Edge weight="8" source="/11" target="/4"/>
+  <DirectedGraph:Edge weight="139" source="/6" target="/1"/>
+</xmi:XMI>
