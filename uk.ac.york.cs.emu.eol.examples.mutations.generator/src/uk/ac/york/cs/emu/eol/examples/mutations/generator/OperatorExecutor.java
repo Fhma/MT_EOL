@@ -34,7 +34,7 @@ public class OperatorExecutor implements Runnable {
 
 	public static final String MUTATIONS_DIR = "mutations" + File.separatorChar;
 	public static final String MUTATIONS_SUMMARY_DIR = "mutations_summary" + File.separatorChar;
-	public static final String OPERATORS_DIR = "operatorDefinitions" + File.separatorChar;
+	public static final String OPERATORS_DIR = "operators" + File.separatorChar;
 
 	private String eol_name;
 	private String eol_code;
@@ -127,25 +127,25 @@ public class OperatorExecutor implements Runnable {
 		return model_path;
 	}
 
-	private IModel createEmfModel(String name, String model, String metamodel, boolean readOnLoad, boolean storeOnDisposal) throws URISyntaxException, EolModelLoadingException {
+	private IModel createEmfModel(String name, String m, String mm, boolean r, boolean s) throws URISyntaxException, EolModelLoadingException {
 		IMutant emfModel = new EmfMutant();
 		StringProperties properties = new StringProperties();
 		properties.put(EmfModel.PROPERTY_NAME, name);
-		properties.put(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI, new URI(metamodel).toString());
-		properties.put(EmfModel.PROPERTY_MODEL_URI, new URI(model).toString());
-		properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad + "");
-		properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, storeOnDisposal + "");
+		properties.put(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI, new URI(mm).toString());
+		properties.put(EmfModel.PROPERTY_MODEL_URI, new URI(m).toString());
+		properties.put(EmfModel.PROPERTY_READONLOAD, r + "");
+		properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, s + "");
 		emfModel.load(properties, (IRelativePathResolver) null);
 
 		return emfModel;
 	}
 
-	private void print_summary(OMatrix matrix, String location) throws IOException {
-		if (matrix == null)
+	private void print_summary(OMatrix mat, String loc) throws IOException {
+		if (mat == null)
 			return;
 		int valid_mutants;
 		int invalid_mutants;
-		Iterator<Map.Entry<String, List<String>>> it = matrix.getContent().entrySet().iterator();
+		Iterator<Map.Entry<String, List<String>>> it = mat.getContent().entrySet().iterator();
 		StringBuilder entry = new StringBuilder();
 
 		entry.append("Mutation Operator");
@@ -184,9 +184,9 @@ public class OperatorExecutor implements Runnable {
 		entry.append(',');
 		entry.append(totol_invalid);
 
-		File folder = new File(location);
+		File folder = new File(loc);
 		folder.mkdirs();
-		FileWriter file = new FileWriter(location + eol_name + "_summary.csv");
+		FileWriter file = new FileWriter(loc + eol_name + "_summary.csv");
 		file.write(entry.toString());
 		file.flush();
 		file.close();

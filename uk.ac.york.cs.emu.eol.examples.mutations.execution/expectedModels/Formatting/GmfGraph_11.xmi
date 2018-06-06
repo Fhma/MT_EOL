@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="statecharts">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="StateNextFigureTargetDecoration"/>
+    <descriptors name="HyperEdgeFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="HyperEdgeFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="HyperEdgeLabelFigure" text="HyperEdge"/>
+      </actualFigure>
+      <accessors accessor="getFigureHyperEdgeLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="BasicFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="BasicFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="BasicLabelFigure" text="Basic"/>
+      </actualFigure>
+      <accessors accessor="getFigureBasicLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ANDFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ANDFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+        <preferredSize dx="250" dy="250"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ANDLabelFigure" text="AND">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="ANDContainsCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureANDLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors accessor="getANDContainsCompartmentFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="ORFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ORFigure" lineKind="LINE_DASH">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+        <preferredSize dx="150" dy="150"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ORLabelFigure" text="OR">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="ORContainsCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureORLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+      <accessors accessor="getORContainsCompartmentFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="StateNextFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="StateNextFigure" targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="StateNextExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="StateNextExternalLabel"/>
+    </descriptors>
+  </figures>
+  <nodes name="HyperEdge" figure="HyperEdgeFigure"/>
+  <nodes name="Basic" figure="BasicFigure"/>
+  <nodes name="AND" figure="ANDFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="250" dy="250"/>
+    </facets>
+  </nodes>
+  <nodes name="OR" figure="ORFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="150" dy="150"/>
+    </facets>
+  </nodes>
+  <connections name="StateNext" figure="StateNextFigure"/>
+  <compartments name="ANDContainsCompartment" figure="ANDFigure" collapsible="true" accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+  <compartments name="ORContainsCompartment" figure="ORFigure" collapsible="true" accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+  <labels name="HyperEdgeLabel" figure="HyperEdgeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="BasicLabel" figure="BasicFigure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="ANDLabel" figure="ANDFigure" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="ORLabel" figure="ORFigure" elementIcon="false" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="StateNextExternalLabel" figure="StateNextExternalLabelFigure" elementIcon="false"/>
+</gmfgraph:Canvas>

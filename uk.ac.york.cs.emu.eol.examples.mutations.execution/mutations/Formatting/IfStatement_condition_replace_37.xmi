@@ -265,14 +265,18 @@
           <start line="12" column="1"/>
           <end line="42" column="2"/>
         </region>
-        <condition xsi:type="eol:GreaterThanOperatorExpression">
-          <lhs xsi:type="eol:NameExpression" name="shapeName">
+        <condition xsi:type="eol:EqualsOperatorExpression" container="//@operations.0/@body/@statements.4">
+          <region>
+            <start line="12" column="4"/>
+            <end line="12" column="25"/>
+          </region>
+          <lhs xsi:type="eol:NameExpression" container="//@operations.0/@body/@statements.4/@condition" name="shapeName">
             <region>
               <start line="12" column="4"/>
               <end line="12" column="13"/>
             </region>
           </lhs>
-          <rhs xsi:type="eol:StringExpression" value="rectangle">
+          <rhs xsi:type="eol:StringExpression" container="//@operations.0/@body/@statements.4/@condition" value="rectangle">
             <region>
               <start line="12" column="14"/>
               <end line="12" column="25"/>
@@ -1958,18 +1962,14 @@
                 <start line="65" column="2"/>
                 <end line="73" column="3"/>
               </region>
-              <condition xsi:type="eol:EqualsOperatorExpression" container="//@operations.1/@body/@statements.2/@ifBody/@block/@statements.0">
-                <region>
-                  <start line="65" column="5"/>
-                  <end line="65" column="17"/>
-                </region>
-                <lhs xsi:type="eol:NameExpression" container="//@operations.1/@body/@statements.2/@ifBody/@block/@statements.0/@condition" name="style">
+              <condition xsi:type="eol:GreaterThanOperatorExpression">
+                <lhs xsi:type="eol:NameExpression" name="style">
                   <region>
                     <start line="65" column="5"/>
                     <end line="65" column="10"/>
                   </region>
                 </lhs>
-                <rhs xsi:type="eol:StringExpression" container="//@operations.1/@body/@statements.2/@ifBody/@block/@statements.0/@condition" value="dash">
+                <rhs xsi:type="eol:StringExpression" value="dash">
                   <region>
                     <start line="65" column="11"/>
                     <end line="65" column="17"/>

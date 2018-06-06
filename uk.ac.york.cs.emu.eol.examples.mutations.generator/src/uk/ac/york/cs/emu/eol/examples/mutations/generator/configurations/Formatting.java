@@ -12,7 +12,7 @@ public class Formatting {
 		properties = new HashMap<String, Object>();
 
 		properties.put(Configuration.EOL_NAME, "Formatting");
-		properties.put(Configuration.EOL_CODE, EOLCandidate.class.getResource("Formatting.eol").getPath());
+		properties.put(Configuration.EOL_CODE, EOLCandidate.LOCATION + "Formatting.eol");
 
 		return properties;
 	}

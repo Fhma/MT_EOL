@@ -16,7 +16,7 @@ public interface IMutationChecker {
 
 	public final String ADD_MUTATION_ACTION = "add";
 	public final String DEL_MUTATION_ACTION = "delete";
-	public final String REPLACE_MUTATION_ACTION = "replace";
+	public final String REP_MUTATION_ACTION = "replace";
 
 	public Object checkConditions(IProperty property, Object value, String mutation_action);
 

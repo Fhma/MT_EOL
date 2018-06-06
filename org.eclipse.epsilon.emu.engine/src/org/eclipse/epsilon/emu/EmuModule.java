@@ -11,9 +11,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.epsilon.common.parse.AST;
+import org.eclipse.epsilon.common.parse.problem.ParseProblem;
 import org.eclipse.epsilon.emu.execute.EmuPatternMatcher;
 import org.eclipse.epsilon.emu.mutation.matrix.OMatrix;
 import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
+import org.eclipse.epsilon.eol.execute.context.IEolContext;
 import org.eclipse.epsilon.epl.EplModule;
 import org.eclipse.epsilon.epl.dom.Domain;
 import org.eclipse.epsilon.epl.dom.Pattern;
@@ -58,7 +60,9 @@ public class EmuModule extends EplModule {
 
 	public OMatrix getOperatorsMatrix() {
 		if (operatorsMatrix == null) {
-			operatorsMatrix = new OMatrix(getMutantsDir().getAbsolutePath() + File.separatorChar + getMutantsDir().getName());
+			if (getMutantsDir() != null) {
+				operatorsMatrix = new OMatrix(getMutantsDir().getAbsolutePath() + File.separatorChar + getMutantsDir().getName());
+			}
 		}
 		return operatorsMatrix;
 	}
@@ -71,8 +75,7 @@ public class EmuModule extends EplModule {
 				path = path.substring(0, path.length() - 4);
 				mutants_dir = new File(path + "_mutants" + File.separatorChar);
 				mutants_dir.mkdir();
-			} else
-				throw new IllegalArgumentException("Unable to get EMU source file.");
+			}
 		}
 		return mutants_dir;
 	}
@@ -101,5 +104,25 @@ public class EmuModule extends EplModule {
 
 	public void setOperatorsMatrix(OMatrix operatorsMatrix) {
 		this.operatorsMatrix = operatorsMatrix;
+	}
+
+	@Override
+	public IEolContext getContext() {
+		return super.getContext();
+	}
+
+	@Override
+	public boolean parse(File file) throws Exception {
+		return super.parse(file);
+	}
+
+	@Override
+	public List<ParseProblem> getParseProblems() {
+		return super.getParseProblems();
+	}
+
+	@Override
+	public boolean parse(String string) throws Exception {
+		throw new EolRuntimeException("Parsing a string is not allowed with EMU.");
 	}
 }

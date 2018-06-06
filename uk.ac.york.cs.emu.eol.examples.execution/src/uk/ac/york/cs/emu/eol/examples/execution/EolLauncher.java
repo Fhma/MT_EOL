@@ -30,11 +30,11 @@ import uk.ac.york.cs.emu.eol.examples.execution.configurations.Configuration;
 
 public class EolLauncher implements Runnable {
 
-	// Execution types
+	// execution types
 	public static final String MUTATION_EXECUTION = "mutation_execution";
 	public static final String ORIGINAL_EXECUTION = "original_execution";
 
-	// Important directories
+	// important directories
 	public static final String IN_MODELS_DIR = "inModels" + File.separatorChar;
 	public static final String EXPECTED_MODELS_DIR = "expectedModels" + File.separatorChar;
 	public static final String REPORT_DIR = "execution_report" + File.separatorChar;
@@ -94,7 +94,7 @@ public class EolLauncher implements Runnable {
 		// report dir
 		File report_dir = new File(REPORT_DIR + File.separatorChar);
 		report_dir.mkdirs();
-		File log_file = new File(report_dir.getAbsolutePath() + File.separatorChar + eol_name + ".log");
+		File log_file = new File(report_dir.getPath() + File.separatorChar + eol_name + ".log");
 		logger = new FileWriter(log_file);
 
 		// output folder
@@ -119,7 +119,7 @@ public class EolLauncher implements Runnable {
 				throw new Exception("Unable to parse file: " + mainModule + "\n" + eol.getParseProblems().toString());
 			}
 
-			// Two types of outputs
+			// Three types of outputs
 			// 1) Models create
 			// 2) Models update
 			// 3) Console output
@@ -128,32 +128,39 @@ public class EolLauncher implements Runnable {
 			IModel _model = null;
 			String aliase = null; // aliase of a model is located at the beginning of an input file
 
-			if (type == EOLCandidate.MODEL_CREATE_TYPE || type == EOLCandidate.CONSOLE_TYPE) {
+			if (type == EOLCandidate.CONSOLE_TYPE) {
+				// read all input models
+				for (File f : input_files) {
+					aliase = f.getName().substring(0, f.getName().indexOf("_"));
+					_model = newEmfModel("M_IN_" + f.getName(), aliase, f.getPath(), getMetamodelUri(aliase), true, false);
+					eol.getContext().getModelRepository().addModel(_model);
+				}
+				// console output -> there is only one output
+				model_path = output_dir.getPath() + File.separatorChar + aliase + "_" + num + ".text";
+				eol.getContext().setOutputStream(new PrintStream(new FileOutputStream(model_path)));
+
+			} else if (type == EOLCandidate.MODEL_CREATE_TYPE) {
 				String loaded_input_metamodes = "";
 				// read all input models
 				for (File f : input_files) {
 					aliase = f.getName().substring(0, f.getName().indexOf("_"));
 					loaded_input_metamodes += "," + aliase;
-					_model = newEmfModel("M_IN_" + f.getName(), aliase, f.getAbsolutePath(), getMetamodelUri(aliase), true, false);
+					model_path = output_dir.getPath() + File.separatorChar + f.getName();
+					File new_f = new File(model_path);
+					Files.copy(f, new_f);
+					_model = newEmfModel("M_IN_" + f.getName(), aliase, new_f.getPath(), getMetamodelUri(aliase), true, false);
 					eol.getContext().getModelRepository().addModel(_model);
 				}
-				if (type == EOLCandidate.MODEL_CREATE_TYPE) {
-					// add all output models that their aliases were not loaded as input models
-					for (EmfMetaModel mm : getOutputMetamodelUris(loaded_input_metamodes.split(","))) {
-						model_path = output_dir.getAbsolutePath() + File.separatorChar + mm.getName() + "_" + num + "_output.xmi";
-						_model = newEmfModel("M_OUT_+" + mm.getName(), mm.getName(), new File(model_path).getPath(), mm.getMetamodelUri(), false, true);
-						eol.getContext().getModelRepository().addModel(_model);
-					}
-				} else {
-					// console output -> there is only one output
-					model_path = output_dir.getAbsolutePath() + File.separatorChar + num + "_output.text";
-					eol.getContext().setOutputStream(new PrintStream(new FileOutputStream(model_path)));
+				// add all output models that their aliases were not loaded as input models
+				for (EmfMetaModel mm : getOutputMetamodelUris(loaded_input_metamodes.split(","))) {
+					model_path = output_dir.getPath() + File.separatorChar + mm.getName() + "_" + num + ".xmi";
+					_model = newEmfModel("M_OUT_" + mm.getName() + num, mm.getName(), new File(model_path).getPath(), mm.getMetamodelUri(), false, true);
+					eol.getContext().getModelRepository().addModel(_model);
 				}
-			}
-			if (type == EOLCandidate.MODEL_UPDATE_TYPE) {
+			} else if (type == EOLCandidate.MODEL_UPDATE_TYPE) {
 				// copy all input models to output models
 				for (File f : input_files) {
-					model_path = output_dir.getAbsolutePath() + File.separatorChar + f.getName() + "_output.xmi";
+					model_path = output_dir.getPath() + File.separatorChar + f.getName();
 					Files.copy(f, new File(model_path));
 					aliase = f.getName().substring(0, f.getName().indexOf("_"));
 					_model = newEmfModel("M_" + f.getName(), aliase, model_path, getMetamodelUri(aliase), true, true);
@@ -176,10 +183,10 @@ public class EolLauncher implements Runnable {
 		}
 		logger.flush();
 		logger.close();
+
 	}
 
 	private String getMetamodelUri(String a) throws Exception {
-
 		for (EmfMetaModel mm : metamodels) {
 			if (a.equals(mm.getName())) {
 				return mm.getMetamodelUri();
@@ -266,10 +273,11 @@ public class EolLauncher implements Runnable {
 				if (!f.getName().endsWith(".xmi"))
 					continue;
 				// numbers of files reside at the end of file name before extension
-				// example: MMName_MName_input_NUM.xmi
-				// index number 3
+				// example: MMName_NUM.xmi
+				// index number 1
 				// get the number with out the extension
-				num = Short.parseShort(f.getName().substring(f.getName().lastIndexOf("_") + 1, f.getName().lastIndexOf(".xmi")));
+				String ss[] = f.getName().split("_");
+				num = Short.parseShort(ss[1].replaceAll(".xmi", ""));
 				if (!numbers.contains(num))
 					numbers.add(num);
 			}
@@ -283,11 +291,16 @@ public class EolLauncher implements Runnable {
 		short num_search;
 		if (dir.isDirectory()) {
 			for (File f : dir.listFiles()) {
-				if (!f.getName().endsWith(".xmi"))
-					continue;
-				num_search = Short.parseShort(f.getName().substring(f.getName().lastIndexOf("_") + 1, f.getName().lastIndexOf(".xmi")));
-				if (num_search == num)
-					returned.add(f);
+				if (f.getName().endsWith(".xmi")) {
+					// numbers of files reside at the end of file name before extension
+					// example: MMName_NUM.xmi
+					// index number 1
+					// get the number with out the extension
+					String ss[] = f.getName().split("_");
+					num_search = Short.parseShort(ss[1].replaceAll(".xmi", ""));
+					if (num_search == num)
+						returned.add(f);
+				}
 			}
 		}
 		return returned;

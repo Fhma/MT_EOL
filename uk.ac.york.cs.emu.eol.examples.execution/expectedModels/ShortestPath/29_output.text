@@ -1,4 +1,0 @@
-Distance of raf from raf : 0 via raf
-Distance of quinlan from raf : 307 via raf->gates->quinlan
-Distance of dniren from raf : 340 via raf->gates->quinlan->dniren
-Distance of gates from raf : 179 via raf->gates

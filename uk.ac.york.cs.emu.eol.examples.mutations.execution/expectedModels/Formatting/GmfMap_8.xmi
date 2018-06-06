@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <nodes>
+    <containmentFeature href="ECore_8.xmi#//Model/components"/>
+    <ownedChild>
+      <domainMetaElement href="ECore_8.xmi#//Component"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="GmfGraph_8.xmi#ComponentLabel"/>
+        <features href="ECore_8.xmi#//Component/name"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="GmfTool_8.xmi#//@palette/@tools.0/@tools.0"/>
+      <diagramNode href="GmfGraph_8.xmi#Component"/>
+    </ownedChild>
+  </nodes>
+  <diagram>
+    <diagramCanvas href="GmfGraph_8.xmi#rcpapp"/>
+    <domainModel href="ECore_8.xmi#/"/>
+    <domainMetaElement href="ECore_8.xmi#//Model"/>
+    <palette href="GmfTool_8.xmi#//@palette"/>
+  </diagram>
+</gmfmap:Mapping>

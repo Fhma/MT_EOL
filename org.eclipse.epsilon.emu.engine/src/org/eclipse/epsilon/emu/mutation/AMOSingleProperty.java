@@ -35,6 +35,8 @@ public abstract class AMOSingleProperty {
 		if (checkAdditionConditions(property, value).equals(IMutationChecker.VALID)) {
 			if (newValue == null)
 				return IMutationChecker.INVALID;
+			if (!property.isCompatibleValue(newValue))
+				return IMutationChecker.INVALID;
 			if (newValue.equals(value))
 				return IMutationChecker.INVALID;
 			return IMutationChecker.VALID;
@@ -54,6 +56,8 @@ public abstract class AMOSingleProperty {
 	public static Object checkReplacementConditions(IProperty property, Object value, Object newValue) {
 		if (checkReplacementConditions(property, value).equals(IMutationChecker.VALID)) {
 			if (newValue == null)
+				return IMutationChecker.INVALID;
+			if (!property.isCompatibleValue(newValue))
 				return IMutationChecker.INVALID;
 			if (newValue.equals(value))
 				return IMutationChecker.INVALID;

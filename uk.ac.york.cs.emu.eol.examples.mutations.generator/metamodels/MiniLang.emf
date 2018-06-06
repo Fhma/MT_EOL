@@ -1,0 +1,53 @@
+@namespace(uri="uk.ac.york.cs/metamodels/MiniLang", prefix="mini_lang")
+
+package mini_lang; 
+
+class MiniLang {
+ val Block block;
+}
+
+class Block {
+ val Statement[*] statements;
+}
+
+class IfStatement extends Statement {
+  val Expression[1] condition;
+  val Block[1] ifBody;
+}
+
+abstract class Statement {}
+
+class AssignmentStatement extends Statement{
+ val Expression[1] lhs;
+ val Expression[1] rhs;
+}
+
+class ExpressionStatement extends Statement{
+ val Expression[1] expr;
+}
+
+class ReturnStatement extends Statement{
+ val Expression expr;
+}
+
+abstract class Expression {}
+
+abstract class ComparisonExpression extends Expression {
+ val Expression[1] lhs;
+ val Expression[1] rhs;
+}
+
+class NotEqualsExpression extends ComparisonExpression {}
+
+class EqualsExpression extends ComparisonExpression {}
+
+class FOLCallExpression extends Expression {
+ attr EString[1] iterator;
+ attr EString[1] method;
+ val Expression[1] condition;
+ val Expression[1] target;
+}
+
+class NameExpression extends Expression {
+ attr EString[1] name;
+}

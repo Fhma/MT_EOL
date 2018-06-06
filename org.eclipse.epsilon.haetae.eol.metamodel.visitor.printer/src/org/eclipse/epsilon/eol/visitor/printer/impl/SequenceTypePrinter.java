@@ -1,5 +1,6 @@
 package org.eclipse.epsilon.eol.visitor.printer.impl;
 
+import org.eclipse.epsilon.eol.metamodel.OperationDefinition;
 import org.eclipse.epsilon.eol.metamodel.SequenceType;
 import org.eclipse.epsilon.eol.metamodel.visitor.EolVisitorController;
 import org.eclipse.epsilon.eol.metamodel.visitor.SequenceTypeVisitor;
@@ -11,7 +12,8 @@ public class SequenceTypePrinter extends SequenceTypeVisitor<EOLPrinterContext, 
 	public Object visit(SequenceType sequenceType, EOLPrinterContext context,
 			EolVisitorController<EOLPrinterContext, Object> controller) {
 		String result = "";
-		if (sequenceType.getContentType() == null) {
+		//FIXED: the collection type has no contentType at operation declaration
+		if(sequenceType.getContainer() instanceof OperationDefinition || sequenceType.getContentType() == null) {
 			result = "Sequence";
 		}
 		else {

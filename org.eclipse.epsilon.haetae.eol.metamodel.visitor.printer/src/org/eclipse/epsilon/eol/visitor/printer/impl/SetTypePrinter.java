@@ -1,5 +1,6 @@
 package org.eclipse.epsilon.eol.visitor.printer.impl;
 
+import org.eclipse.epsilon.eol.metamodel.OperationDefinition;
 import org.eclipse.epsilon.eol.metamodel.SetType;
 import org.eclipse.epsilon.eol.metamodel.visitor.EolVisitorController;
 import org.eclipse.epsilon.eol.metamodel.visitor.SetTypeVisitor;
@@ -11,7 +12,8 @@ public class SetTypePrinter extends SetTypeVisitor<EOLPrinterContext, Object>{
 	public Object visit(SetType setType, EOLPrinterContext context,
 			EolVisitorController<EOLPrinterContext, Object> controller) {
 		String result = "";
-		if (setType.getContentType() == null) {
+		//FIXED: the collection type has no contentType at operation declaration
+		if (setType.getContainer() instanceof OperationDefinition || setType.getContentType() == null) {
 			result = "Set";
 		}
 		else {

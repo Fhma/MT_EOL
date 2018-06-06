@@ -1,7 +1,7 @@
-# This Java application is to execute the mutation operators located at "operatorDefinitions" upon
-# transformations located in "uk.ac.york.cs.emu.eol.examples.mutations.generator.code".
-# The output of this stage is a collection of mutations stored in "generatedMutations" folder. A summary of this 
-# execution is stored in folder "generatedMutations_summary"
+# This Java application is to execute the mutation operators located in folder "operators" against
+# EOL code located in "uk.ac.york.cs.emu.eol.examples.mutations.generator.candidates" package.
+# The output of this stage is a collection of mutations stored in "mutations" folder. A summary of this 
+# execution is stored in a folder under the name of "mutations_summary"
 ShortestPath
 #ECore2GMF
 #ECoreUtil

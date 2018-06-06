@@ -66,6 +66,9 @@ public class EmuPatternMatcher extends PatternMatcher {
 				}
 			}
 
+			if (module.getMutantsDir() == null)
+				throw new EolRuntimeException("No mutation dircotry found.");
+
 			int index;
 			String location = module.getMutantsDir().toURI().toString();
 
@@ -91,13 +94,12 @@ public class EmuPatternMatcher extends PatternMatcher {
 					Object res = getMutationChecker().checkConditions(property, old_value, mu_action);
 
 					if (res.equals(IMutationChecker.NOT_MUTATABLE))
-						throw new IllegalArgumentException("Property [" + property.getName() + "] of type [" + property.getType() + "is unalbe to be mutated");
-
-					AST do_ = match.getPattern().getDoAst();
+						throw new IllegalArgumentException("Property [" + property.getName() + "] is unalbe to be mutated");
 
 					String operatorName = property.getContainerName() + "_" + property.getName() + "_" + mu_action;
+					AST do_ = match.getPattern().getDoAst();
 
-					if (do_ != null) {
+					if (do_ != null && res.equals(IMutationChecker.VALID)) {
 
 						context.getFrameStack().enterLocal(FrameType.UNPROTECTED, do_);
 						for (String componentName : match.getRoleBindings().keySet()) {
@@ -112,26 +114,25 @@ public class EmuPatternMatcher extends PatternMatcher {
 							context.getModelRepository().getTransactionSupport().rollbackTransaction();
 							context.getFrameStack().leaveLocal(do_);
 							module.getOperatorsMatrix().getValue(operatorName).add(INVALID_MUTATION);
-							//continue;
-							throw e;
+							continue;
 						} catch (Exception e) {
 							throw new Exception(e);
 						}
 
-						Object new_value = property.getContainerModel().getPropertyGetter().invoke(property.getContainer(), property.getName());
+						Object new_value = property.getModel().getPropertyGetter().invoke(property.getContainer(), property.getName());
 
 						valid_mutant = getMutationChecker().checkConditions(property, old_value, new_value, mu_action);
 
 						if (valid_mutant == IMutationChecker.VALID) {
 							index = module.getOperatorsMatrix().getValue(operatorName).size() + 1;
 							String mutant = location + operatorName + "_" + index + ".xmi";
+							property.getModel().store(mutant);
 							module.getOperatorsMatrix().getValue(operatorName).add(mutant);
-							property.getContainerModel().store(mutant);
 						}
 						context.getModelRepository().getTransactionSupport().rollbackTransaction();
 						context.getFrameStack().leaveLocal(do_);
 					}
-					if (valid_mutant == null || (valid_mutant != null && !valid_mutant.equals(IMutationChecker.VALID))) {
+					if (valid_mutant == null || (valid_mutant != null && valid_mutant.equals(IMutationChecker.INVALID))) {
 						module.getOperatorsMatrix().getValue(operatorName).add(INVALID_MUTATION);
 					}
 				}
@@ -166,7 +167,8 @@ public class EmuPatternMatcher extends PatternMatcher {
 			if (role != null) {
 				if (pair.getKey().equals(role))
 					isContaining = owning_model.getPropertyGetter().hasProperty(pair.getValue(), property_name);
-			} else isContaining = true;
+			} else
+				isContaining = true;
 
 			if (isContaining) {
 				bindingRole = pair.getValue();
@@ -178,8 +180,7 @@ public class EmuPatternMatcher extends PatternMatcher {
 			throw new IllegalArgumentException(msg);
 
 		property = owning_model.getProperty(bindingRole, property_name);
-		property.setContainer(bindingRole);
-		property.setContainerModel(owning_model);
+		property.prepare(owning_model, bindingRole);
 	}
 
 	private void checkAnnotations(Pattern pattern) throws Exception {

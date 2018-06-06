@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <nodes>
+    <containmentFeature href="ECore_7.xmi#//Model/people"/>
+    <ownedChild>
+      <domainMetaElement href="ECore_7.xmi#//Person"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="GmfGraph_7.xmi#PersonLabel"/>
+        <features href="ECore_7.xmi#//Person/name"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="GmfTool_7.xmi#//@palette/@tools.0/@tools.0"/>
+      <diagramNode href="GmfGraph_7.xmi#Person"/>
+    </ownedChild>
+  </nodes>
+  <diagram>
+    <diagramCanvas href="GmfGraph_7.xmi#people"/>
+    <domainModel href="ECore_7.xmi#/"/>
+    <domainMetaElement href="ECore_7.xmi#//Model"/>
+    <palette href="GmfTool_7.xmi#//@palette"/>
+  </diagram>
+</gmfmap:Mapping>

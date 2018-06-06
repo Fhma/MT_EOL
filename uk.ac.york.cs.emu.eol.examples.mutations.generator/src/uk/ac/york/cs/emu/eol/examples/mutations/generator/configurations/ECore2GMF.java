@@ -12,7 +12,7 @@ public class ECore2GMF {
 		properties = new HashMap<String, Object>();
 
 		properties.put(Configuration.EOL_NAME, "ECore2GMF");
-		properties.put(Configuration.EOL_CODE, EOLCandidate.class.getResource("ECore2GMF.eol").getPath());
+		properties.put(Configuration.EOL_CODE, EOLCandidate.LOCATION + "ECore2GMF.eol");
 
 		return properties;
 	}

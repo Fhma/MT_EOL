@@ -265,14 +265,18 @@
           <start line="12" column="1"/>
           <end line="42" column="2"/>
         </region>
-        <condition xsi:type="eol:LessThanOperatorExpression">
-          <lhs xsi:type="eol:NameExpression" name="shapeName">
+        <condition xsi:type="eol:EqualsOperatorExpression" container="//@operations.0/@body/@statements.4">
+          <region>
+            <start line="12" column="4"/>
+            <end line="12" column="25"/>
+          </region>
+          <lhs xsi:type="eol:NameExpression" container="//@operations.0/@body/@statements.4/@condition" name="shapeName">
             <region>
               <start line="12" column="4"/>
               <end line="12" column="13"/>
             </region>
           </lhs>
-          <rhs xsi:type="eol:StringExpression" value="rectangle">
+          <rhs xsi:type="eol:StringExpression" container="//@operations.0/@body/@statements.4/@condition" value="rectangle">
             <region>
               <start line="12" column="14"/>
               <end line="12" column="25"/>
@@ -1787,12 +1791,8 @@
           <start line="61" column="1"/>
           <end line="63" column="2"/>
         </region>
-        <condition xsi:type="eol:AndOperatorExpression" container="//@operations.1/@body/@statements.1">
-          <region>
-            <start line="61" column="4"/>
-            <end line="61" column="55"/>
-          </region>
-          <lhs xsi:type="eol:MethodCallExpression" container="//@operations.1/@body/@statements.1/@condition">
+        <condition xsi:type="eol:ImpliesOperatorExpression">
+          <lhs xsi:type="eol:MethodCallExpression">
             <region>
               <start line="61" column="4"/>
               <end line="61" column="21"/>
@@ -1810,7 +1810,7 @@
               </region>
             </method>
           </lhs>
-          <rhs xsi:type="eol:MethodCallExpression" container="//@operations.1/@body/@statements.1/@condition">
+          <rhs xsi:type="eol:MethodCallExpression">
             <region>
               <start line="61" column="26"/>
               <end line="61" column="55"/>

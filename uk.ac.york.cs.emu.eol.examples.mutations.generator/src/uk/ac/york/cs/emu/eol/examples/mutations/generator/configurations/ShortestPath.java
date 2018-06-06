@@ -12,7 +12,7 @@ public class ShortestPath {
 		properties = new HashMap<String, Object>();
 
 		properties.put("EOL_NAME", "ShortestPath");
-		properties.put("EOL_CODE", EOLCandidate.class.getResource("ShortestPath.eol").getPath());
+		properties.put("EOL_CODE", EOLCandidate.LOCATION + "ShortestPath.eol");
 
 		return properties;
 	}

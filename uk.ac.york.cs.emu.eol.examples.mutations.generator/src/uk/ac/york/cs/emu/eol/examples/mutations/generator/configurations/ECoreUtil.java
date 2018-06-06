@@ -12,7 +12,7 @@ public class ECoreUtil {
 		properties = new HashMap<String, Object>();
 
 		properties.put(Configuration.EOL_NAME, "ECoreUtil");
-		properties.put(Configuration.EOL_CODE, EOLCandidate.class.getResource("ECoreUtil.eol").getPath());
+		properties.put(Configuration.EOL_CODE, EOLCandidate.LOCATION + "ECoreUtil.eol");
 
 		return properties;
 	}

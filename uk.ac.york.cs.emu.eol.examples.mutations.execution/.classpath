@@ -3,7 +3,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="lib/json-20170516.jar"/>
-	<classpathentry kind="lib" path="lib/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.mutations.execution/lib/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="/Users/AFADF_F/Git/Fhma/MT_EOL/uk.ac.york.cs.emu.eol.examples.mutations.execution/lib/ecore.resources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

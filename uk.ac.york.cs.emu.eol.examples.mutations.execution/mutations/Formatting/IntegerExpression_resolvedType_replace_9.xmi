@@ -5933,7 +5933,12 @@
                   <start line="173" column="32"/>
                   <end line="173" column="33"/>
                 </region>
-                <resolvedType xsi:type="eol:RealType"/>
+                <resolvedType xsi:type="eol:IntegerType" container="//@operations.7/@body/@statements.4/@expression/@arguments.0/@arguments.0/@expression">
+                  <region>
+                    <start line="173" column="32"/>
+                    <end line="173" column="33"/>
+                  </region>
+                </resolvedType>
               </expression>
             </arguments>
             <arguments xsi:type="eol:IntegerExpression" container="//@operations.7/@body/@statements.4/@expression/@arguments.0" value="1">
@@ -6085,12 +6090,7 @@
                 <start line="175" column="31"/>
                 <end line="175" column="32"/>
               </region>
-              <resolvedType xsi:type="eol:IntegerType" container="//@operations.7/@body/@statements.6/@expression/@arguments.0/@arguments.0">
-                <region>
-                  <start line="175" column="31"/>
-                  <end line="175" column="32"/>
-                </region>
-              </resolvedType>
+              <resolvedType xsi:type="eol:RealType"/>
             </arguments>
             <arguments xsi:type="eol:NegativeOperatorExpression" container="//@operations.7/@body/@statements.6/@expression/@arguments.0">
               <region>

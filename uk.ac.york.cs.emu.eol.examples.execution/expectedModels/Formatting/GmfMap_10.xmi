@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <nodes>
+    <containmentFeature href="ECore_10.xmi#//CEPDomain/events"/>
+    <ownedChild relatedDiagrams="//@diagram">
+      <domainMetaElement href="ECore_10.xmi#//Event"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="GmfGraph_10.xmi#EventLabel"/>
+        <features href="ECore_10.xmi#//Event/typeName"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="GmfTool_10.xmi#//@palette/@tools.0/@tools.0"/>
+      <diagramNode href="GmfGraph_10.xmi#Event"/>
+      <children compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature href="ECore_10.xmi#//Event/eventProperties"/>
+        <ownedChild relatedDiagrams="//@diagram">
+          <domainMetaElement href="ECore_10.xmi#//EventProperty"/>
+          <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel href="GmfGraph_10.xmi#EventPropertyLabel"/>
+            <features href="ECore_10.xmi#//EventProperty/name"/>
+          </labelMappings>
+          <tool xsi:type="tooldef:CreationTool" href="GmfTool_10.xmi#//@palette/@tools.0/@tools.1"/>
+          <diagramNode href="GmfGraph_10.xmi#EventProperty"/>
+          <children compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0" referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+            <containmentFeature href="ECore_10.xmi#//EventProperty/eventProperties"/>
+          </children>
+          <compartments children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0">
+            <compartment href="GmfGraph_10.xmi#EventPropertyEventPropertiesCompartment"/>
+          </compartments>
+        </ownedChild>
+      </children>
+      <compartments children="//@nodes.0/@ownedChild/@children.0">
+        <compartment href="GmfGraph_10.xmi#EventEventPropertiesCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <diagram>
+    <diagramCanvas href="GmfGraph_10.xmi#domain"/>
+    <domainModel href="ECore_10.xmi#/"/>
+    <domainMetaElement href="ECore_10.xmi#//CEPDomain"/>
+    <palette href="GmfTool_10.xmi#//@palette"/>
+  </diagram>
+</gmfmap:Mapping>

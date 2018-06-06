@@ -9,12 +9,9 @@ package org.eclipse.epsilon.emu.mutation.execute;
 
 import org.eclipse.epsilon.emc.mutant.IProperty;
 import org.eclipse.epsilon.emu.mutation.IMutationChecker;
-import org.eclipse.epsilon.emu.mutation.AMOBoolean;
-import org.eclipse.epsilon.emu.mutation.AMOInteger;
 import org.eclipse.epsilon.emu.mutation.AMOMultiProperty;
-import org.eclipse.epsilon.emu.mutation.AMOReal;
+import org.eclipse.epsilon.emu.mutation.AMOPrimitiveType;
 import org.eclipse.epsilon.emu.mutation.AMOSingleProperty;
-import org.eclipse.epsilon.emu.mutation.AMOString;
 
 public class MutationCheckerImpl implements IMutationChecker {
 
@@ -29,55 +26,31 @@ public class MutationCheckerImpl implements IMutationChecker {
 			return IMutationChecker.NOT_MUTATABLE;
 
 		if (!property.isMultiValued()) {
-			if (property.isDataType()) {
+			if (isPrimitiveType(property)) {
 				if (mutation_action.equals(ADD_MUTATION_ACTION)) {
-					Object instanceClass = (Object) property.getType();
-					if (instanceClass.equals(Boolean.class) || instanceClass.equals(boolean.class))
-						return AMOBoolean.checkAdditionConditions(property, value);
-					if (instanceClass.equals(Integer.class) || instanceClass.equals(int.class))
-						return AMOInteger.checkAdditionConditions(property, value);
-					if (instanceClass.equals(Float.class) || instanceClass.equals(float.class))
-						return AMOReal.checkAdditionConditions(property, value);
-					if (instanceClass.equals(String.class))
-						return AMOString.checkAdditionConditions(property, value);
+					return AMOPrimitiveType.checkAdditionConditions(property, value);
 				}
 				if (mutation_action.equals(DEL_MUTATION_ACTION)) {
-					Object instanceClass = (Object) property.getType();
-					if (instanceClass.equals(Boolean.class) || instanceClass.equals(boolean.class))
-						return AMOBoolean.checkDeletionConditions(property, value);
-					if (instanceClass.equals(Integer.class) || instanceClass.equals(int.class))
-						return AMOInteger.checkDeletionConditions(property, value);
-					if (instanceClass.equals(Float.class) || instanceClass.equals(float.class))
-						return AMOReal.checkDeletionConditions(property, value);
-					if (instanceClass.equals(String.class))
-						return AMOString.checkDeletionConditions(property, value);
+					return AMOPrimitiveType.checkDeletionConditions(property, value);
 				}
-				if (mutation_action.equals(REPLACE_MUTATION_ACTION)) {
-					Object instanceClass = (Object) property.getType();
-					if (instanceClass.equals(Boolean.class) || instanceClass.equals(boolean.class))
-						return AMOBoolean.checkReplacementConditions(property, value);
-					if (instanceClass.equals(Integer.class) || instanceClass.equals(int.class))
-						return AMOInteger.checkReplacementConditions(property, value);
-					if (instanceClass.equals(Float.class) || instanceClass.equals(float.class))
-						return AMOReal.checkReplacementConditions(property, value);
-					if (instanceClass.equals(String.class))
-						return AMOString.checkReplacementConditions(property, value);
+				if (mutation_action.equals(REP_MUTATION_ACTION)) {
+					return AMOPrimitiveType.checkReplacementConditions(property, value);
 				}
+				return IMutationChecker.NOT_MUTATABLE;
 			} else if (property.isSingleValued()) {
 				if (mutation_action.contentEquals(ADD_MUTATION_ACTION))
 					return AMOSingleProperty.checkAdditionConditions(property, value);
 				if (mutation_action.equals(DEL_MUTATION_ACTION))
 					return AMOSingleProperty.checkDeletionConditions(property, value);
-				if (mutation_action.equals(REPLACE_MUTATION_ACTION))
+				if (mutation_action.equals(REP_MUTATION_ACTION))
 					return AMOSingleProperty.checkReplacementConditions(property, value);
-
 			}
 		} else {
 			if (mutation_action.equals(ADD_MUTATION_ACTION))
 				return AMOMultiProperty.checkAdditionConditions(property, value);
 			if (mutation_action.equals(DEL_MUTATION_ACTION))
 				return AMOMultiProperty.checkDeletionConditions(property, value);
-			if (mutation_action.equals(REPLACE_MUTATION_ACTION))
+			if (mutation_action.equals(REP_MUTATION_ACTION))
 				return AMOMultiProperty.checkReplacementConditions(property, value);
 		}
 		throw new IllegalArgumentException("Unsupported property feature type: " + property);
@@ -95,48 +68,22 @@ public class MutationCheckerImpl implements IMutationChecker {
 			return IMutationChecker.NOT_MUTATABLE;
 
 		if (!property.isMultiValued()) {
-			if (property.isDataType()) {
-				// single-valued attribute
+			if (isPrimitiveType(property)) {
 				if (mutation_action.equals(ADD_MUTATION_ACTION)) {
-					Object instanceClass = (Object) property.getType();
-					if (instanceClass.equals(Boolean.class) || instanceClass.equals(boolean.class))
-						return AMOBoolean.checkAdditionConditions(property, value, new_value);
-					if (instanceClass.equals(Integer.class) || instanceClass.equals(int.class))
-						return AMOInteger.checkAdditionConditions(property, value, new_value);
-					if (instanceClass.equals(Float.class) || instanceClass.equals(float.class))
-						return AMOReal.checkAdditionConditions(property, value, new_value);
-					if (instanceClass.equals(String.class))
-						return AMOString.checkAdditionConditions(property, value, new_value);
+					return AMOPrimitiveType.checkAdditionConditions(property, value, new_value);
 				}
 				if (mutation_action.equals(DEL_MUTATION_ACTION)) {
-					Object instanceClass = (Object) property.getType();
-					if (instanceClass.equals(Boolean.class) || instanceClass.equals(boolean.class))
-						return AMOBoolean.checkDeletionConditions(property, value, new_value);
-					if (instanceClass.equals(Integer.class) || instanceClass.equals(int.class))
-						return AMOInteger.checkDeletionConditions(property, value, new_value);
-					if (instanceClass.equals(Float.class) || instanceClass.equals(float.class))
-						return AMOReal.checkDeletionConditions(property, value, new_value);
-					if (instanceClass.equals(String.class))
-						return AMOString.checkDeletionConditions(property, value, new_value);
+					return AMOPrimitiveType.checkDeletionConditions(property, value, new_value);
 				}
-				if (mutation_action.equals(REPLACE_MUTATION_ACTION)) {
-					Object instanceClass = (Object) property.getType();
-					if (instanceClass.equals(Boolean.class) || instanceClass.equals(boolean.class))
-						return AMOBoolean.checkReplacementConditions(property, value, new_value);
-					if (instanceClass.equals(Integer.class) || instanceClass.equals(int.class))
-						return AMOInteger.checkReplacementConditions(property, value, new_value);
-					if (instanceClass.equals(Float.class) || instanceClass.equals(float.class))
-						return AMOReal.checkReplacementConditions(property, value, new_value);
-					if (instanceClass.equals(String.class))
-						return AMOString.checkReplacementConditions(property, value, new_value);
+				if (mutation_action.equals(REP_MUTATION_ACTION)) {
+					return AMOPrimitiveType.checkReplacementConditions(property, value, new_value);
 				}
 			} else {
-				// single-valued reference
 				if (mutation_action.equals(ADD_MUTATION_ACTION))
 					return AMOSingleProperty.checkAdditionConditions(property, value, new_value);
 				if (mutation_action.equals(DEL_MUTATION_ACTION))
 					return AMOSingleProperty.checkDeletionConditions(property, value, new_value);
-				if (mutation_action.equals(REPLACE_MUTATION_ACTION))
+				if (mutation_action.equals(REP_MUTATION_ACTION))
 					return AMOSingleProperty.checkReplacementConditions(property, value, new_value);
 			}
 		} else {
@@ -144,9 +91,13 @@ public class MutationCheckerImpl implements IMutationChecker {
 				return AMOMultiProperty.checkAdditionConditions(property, value, new_value);
 			if (mutation_action.equals(DEL_MUTATION_ACTION))
 				return AMOMultiProperty.checkDeletionConditions(property, value, new_value);
-			if (mutation_action.equals(REPLACE_MUTATION_ACTION))
+			if (mutation_action.equals(REP_MUTATION_ACTION))
 				return AMOMultiProperty.checkReplacementConditions(property, value, new_value);
 		}
 		throw new IllegalArgumentException("Unsupported property feature type: " + property);
+	}
+
+	private boolean isPrimitiveType(IProperty property) {
+		return property.isPrimitiveType();
 	}
 }

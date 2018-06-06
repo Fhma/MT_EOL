@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="statecharts" nsURI="http://uam.es/StateCharts" nsPrefix="schart">
+  <eClassifiers xsi:type="ecore:EClass" name="Statechart">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//Statechart/topState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="topState" lowerBound="1" eType="//AND" containment="true">
+      <eAnnotations source="https://eclipse.org/epsilon/incremental/Graph">
+        <details key="edge" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State" abstract="true">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//State/name">
+      <details key="type" value="NOTUNIQUE_HASH_INDEX"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next" upperBound="-1" eType="//State" eOpposite="//State/rnext"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rnext" upperBound="-1" eType="//State" eOpposite="//State/next"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rcontains" eType="//Compound" eOpposite="//Compound/contains"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HyperEdge" eSuperTypes="//State">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//State/name">
+      <details key="type" value="NOTUNIQUE_HASH_INDEX"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Basic" eSuperTypes="//State">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//State/next"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Compound" abstract="true" eSuperTypes="//State">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//State/rnext"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1" eType="//State" containment="true" eOpposite="//State/rcontains"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AND" eSuperTypes="//Compound">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//State/rcontains"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OR" eSuperTypes="//Compound">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//Compound/contains"/>
+  </eClassifiers>
+</ecore:EPackage>

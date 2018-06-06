@@ -1,0 +1,7 @@
+# This configuration file is read by Stage3 runnable java code. The stage3 executes the mutations located in folder "mutations", which were obtained
+# from stage1 execution of java project "uk.ac.york.cs.emu.eol.examples.mutations.generator", against the input test models located in folder "inModels"
+# and compares the output of each execution with oracles obtained from stage2. The output of this execution is a report stored in folder "execution_summary"
+ShortestPath
+ECore2GMF
+ECoreUtil
+Formatting
