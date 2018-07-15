@@ -1,0 +1,22 @@
+getRequriedImports(mainpackage,I,,,)
+mainpackage.IComponent
+getRequriedImports(mainpackage,I,,,,true)
+mainpackage.IComponent
+getRequriedImports(mainpackage,I,,,,true,true)
+mainpackage.IComponent
+mainpackage.IModelHasComponents
+mainpackage.impl.Component
+mainpackage.impl.ModelHasComponents
+getRequiredFeatureParameters(,)
+getEqualsReferences()
+org.eclipse.emf.ecore.impl.EReferenceImpl@15deb1dc (name: components) (ordered: true, unique: true, lowerBound: 0, upperBound: -1) (changeable: true, volatile: false, transient: false, defaultValueLiteral: null, unsettable: false, derived: false) (containment: true, resolveProxies: true)
+isEdge()
+true
+getRequriedImports(mainpackage,I,,,)
+getRequriedImports(mainpackage,I,,,,true)
+getRequriedImports(mainpackage,I,,,,true,true)
+mainpackage.IModel
+getRequiredFeatureParameters(,)
+getEqualsReferences()
+isEdge()
+true

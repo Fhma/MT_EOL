@@ -10,8 +10,8 @@ public class NativeTypePrinter extends NativeTypeVisitor<EOLPrinterContext, Obje
 	@Override
 	public Object visit(NativeType nativeType, EOLPrinterContext context,
 			EolVisitorController<EOLPrinterContext, Object> controller) {
-		String result = "native(" + controller.visit(nativeType.getExpression(), context) + ")";
+		//Fixed: the character 'N' in native keyword must be in upper-case
+		String result = "Native(" + controller.visit(nativeType.getExpression(), context) + ")";
 		return result;
 	}
-
 }

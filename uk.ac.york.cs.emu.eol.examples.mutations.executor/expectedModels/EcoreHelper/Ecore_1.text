@@ -1,0 +1,22 @@
+getRequriedImports(mainpackage,I,,,)
+mainpackage.IWidget
+getRequriedImports(mainpackage,I,,,,true)
+mainpackage.IWidget
+getRequriedImports(mainpackage,I,,,,true,true)
+mainpackage.ISystemHasWidgets
+mainpackage.IWidget
+mainpackage.impl.SystemHasWidgets
+mainpackage.impl.Widget
+getRequiredFeatureParameters(,)
+getEqualsReferences()
+org.eclipse.emf.ecore.impl.EReferenceImpl@7dd712e8 (name: widgets) (ordered: true, unique: true, lowerBound: 0, upperBound: -1) (changeable: true, volatile: false, transient: false, defaultValueLiteral: null, unsettable: false, derived: false) (containment: true, resolveProxies: true)
+isEdge()
+true
+getRequriedImports(mainpackage,I,,,)
+getRequriedImports(mainpackage,I,,,,true)
+getRequriedImports(mainpackage,I,,,,true,true)
+mainpackage.ISystem
+getRequiredFeatureParameters(,)
+getEqualsReferences()
+isEdge()
+true

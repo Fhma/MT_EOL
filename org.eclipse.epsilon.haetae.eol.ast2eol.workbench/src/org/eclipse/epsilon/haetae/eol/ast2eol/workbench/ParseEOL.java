@@ -24,22 +24,22 @@ public class ParseEOL {
 		for (File eol_code : model_folder.listFiles()) {
 			if (!eol_code.getName().endsWith(".eol"))
 				continue;
-			System.out.println("Parsing: "+eol_code.getName());
+			System.out.println("Parsing: " + eol_code.getName());
 			EolModule eolModule = new EolModule();
 			try {
 				eolModule.parse(eol_code.getAbsoluteFile());
+				Ast2EolContext context = new Ast2EolContext(eolModule);
+				EOLElement domElements = context.getEolElementCreatorFactory().createEOLElement(eolModule.getAst(), null, context);
+
+				ResourceSet rs = new ResourceSetImpl();
+				rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
+				Resource resource = rs.createResource(URI.createFileURI(new File(eol_code.getAbsolutePath() + ".xmi").getAbsolutePath()));
+				resource.getContents().add(domElements);
+				resource.save(null);
 			} catch (Exception e) {
+				System.err.println("Unable to parse file [" + eol_code.getName() +"]");
 				e.printStackTrace();
 			}
-
-			Ast2EolContext context = new Ast2EolContext(eolModule);
-			EOLElement domElements = context.getEolElementCreatorFactory().createEOLElement(eolModule.getAst(), null, context);
-			
-			ResourceSet rs = new ResourceSetImpl();
-			rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
-			Resource resource = rs.createResource(URI.createFileURI(new File(eol_code.getAbsolutePath() + ".xmi").getAbsolutePath()));
-			resource.getContents().add(domElements);
-			resource.save(null);
 		}
 	}
 }

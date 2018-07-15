@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<DirectedGraph:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DirectedGraph="DirectedGraph">
+  <contents xsi:type="DirectedGraph:Node" label="iosep" outgoing="//@contents.5"/>
+  <contents xsi:type="DirectedGraph:Node" label="ulla" outgoing="//@contents.6" incoming="//@contents.4"/>
+  <contents xsi:type="DirectedGraph:Node" label="quint" incoming="//@contents.6 //@contents.7"/>
+  <contents xsi:type="DirectedGraph:Node" label="corenda" outgoing="//@contents.4 //@contents.7" incoming="//@contents.5"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="164" source="//@contents.3" target="//@contents.1"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="165" source="//@contents.0" target="//@contents.3"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="128" source="//@contents.1" target="//@contents.2"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="92" source="//@contents.3" target="//@contents.2"/>
+</DirectedGraph:Graph>

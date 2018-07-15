@@ -1,14 +1,15 @@
 // operator: ExpressionList_expressions_addition
-// desc: Adds a new expression of where the values are obtained from
-// other.
+// desc: Adds a new expression where the values are obtained from
+// other expressions.
 //
 // Inherited operators: Expression, CollectionInitialisationExpression
 ////////////////////////////////////////////////////////////
 
+// 1.0. for string expressions
 @action add
 @property expressions
 pattern add_new_expression
-instance:ExpressionList {
+instance:ExpressionList in:ExpressionList.all.select(e|e.expressions.random().isTypeOf(StringExpression)){
 	do {
 		var new_string = StringExpression.createInstance();
 		new_string.resolvedType = StringType.createInstance();

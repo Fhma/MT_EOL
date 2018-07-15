@@ -1,0 +1,67 @@
+@GenModel(bundleManifest="false", modelDirectory="trainbenchmark-format-emf-model/build/xcore/main", complianceLevel="8.0", basePackage="hu.bme.mit.trainbenchmark")
+@namespace(uri="http://www.semanticweb.org/ontologies/2015/trainbenchmark", prefix="railway")
+package railway;
+
+abstract class RailwayElement {
+  !unique attr EInt ~id;
+}
+
+class RailwayContainer {
+  !resolve val Route[*] routes;
+  !resolve val Region[*] regions;
+}
+
+class Region extends RailwayElement {
+  !resolve val Sensor[*] sensors;
+  !resolve val TrackElement[*] elements;
+}
+
+class Route extends RailwayElement {
+  !unique attr EBoolean active;
+  !resolve val SwitchPosition[*]#route follows;
+  ref Sensor[2..*] requires;
+  ref Semaphore entry;
+  ref Semaphore exit;
+}
+
+class Sensor extends RailwayElement {
+  ref TrackElement[*]#monitoredBy monitors;
+}
+
+abstract class TrackElement extends RailwayElement {
+  ref Sensor[*]#monitors monitoredBy;
+  ref TrackElement[*] connectsTo;
+}
+
+class Segment extends TrackElement {
+  !unique attr EInt length;
+  !resolve val Semaphore[*] semaphores;
+}
+
+class Switch extends TrackElement {
+  !unique attr Position currentPosition;
+  ref SwitchPosition[*]#target positions;
+}
+
+class SwitchPosition extends RailwayElement {
+  !unique attr Position position;
+  ref Route#follows route;
+  ref Switch#positions target;
+}
+
+class Semaphore extends RailwayElement {
+  !unique attr Signal signal;
+}
+
+enum Position {
+  FAILURE = 0;
+  STRAIGHT = 1;
+  DIVERGING = 2;
+}
+
+enum Signal {
+  FAILURE = 0;
+  STOP = 1;
+  GO = 2;
+}
+

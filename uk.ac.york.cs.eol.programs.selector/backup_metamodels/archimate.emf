@@ -1,0 +1,518 @@
+@namespace(uri="http://www.archimatetool.com/archimate", prefix="archimate")
+package model;
+
+transient datatype File : java.io.File;
+
+abstract interface Adapter {
+  op EJavaObject getAdapter(EJavaObject adapter);
+  op void setAdapter(EJavaObject adapter, EJavaObject object);
+}
+
+abstract interface Identifier {
+  id attr String ~id;
+}
+
+class Property {
+  attr String key = "";
+  attr String value = "";
+}
+
+abstract interface Properties {
+
+  @ExtendedMetaData(name="property", kind="element")
+  !resolve val Property[*] properties;
+}
+
+class Metadata {
+
+  @ExtendedMetaData(name="entry", kind="element")
+  !resolve val Property[*] entries;
+}
+
+abstract interface Nameable {
+  attr String name = "";
+}
+
+abstract interface TextContent {
+
+  @ExtendedMetaData(kind="element")
+  attr String content = "";
+}
+
+abstract interface Documentable {
+
+  @ExtendedMetaData(kind="element")
+  attr String documentation = "";
+}
+
+abstract interface Cloneable {
+  op EObject getCopy();
+}
+
+enum FolderType {
+  user = 0;
+  strategy = 1;
+  business = 2;
+  application = 3;
+  technology = 4;
+  relations = 5;
+  other = 6;
+  diagrams = 7;
+  motivation = 8;
+  implementation_migration = 9;
+}
+
+abstract interface FolderContainer {
+
+  @ExtendedMetaData(name="folder", kind="element")
+  !resolve val Folder[*] folders;
+}
+
+class Folder extends ArchimateModelObject, FolderContainer, Documentable, Properties {
+
+  @ExtendedMetaData(name="element", kind="element")
+  !resolve val EObject[*] elements;
+  attr FolderType type;
+}
+
+abstract interface ArchimateModelObject extends Adapter, Nameable, Identifier {
+  op ArchimateModel getArchimateModel();
+}
+
+abstract class ArchimateConcept extends ArchimateModelObject, Cloneable, Documentable, Properties {
+}
+
+abstract class ArchimateElement extends ArchimateConcept {
+}
+
+abstract class ArchimateRelationship extends ArchimateConcept {
+  op void connect(ArchimateConcept source, ArchimateConcept target);
+  op void reconnect();
+  op void disconnect();
+  !resolve ref ArchimateConcept source;
+  !resolve ref ArchimateConcept target;
+}
+
+abstract interface StrategyElement extends ArchimateElement {
+}
+
+abstract interface BusinessElement extends ArchimateElement {
+}
+
+abstract interface ApplicationElement extends ArchimateElement {
+}
+
+abstract interface TechnologyElement extends ArchimateElement {
+}
+
+abstract interface TechnologyObject extends TechnologyElement, PassiveStructureElement {
+}
+
+abstract interface PhysicalElement extends ArchimateElement {
+}
+
+abstract interface MotivationElement extends ArchimateElement {
+}
+
+abstract interface ImplementationMigrationElement extends ArchimateElement {
+}
+
+abstract interface CompositeElement extends ArchimateElement {
+}
+
+abstract interface BehaviorElement extends ArchimateElement {
+}
+
+abstract interface StructureElement extends ArchimateElement {
+}
+
+abstract interface ActiveStructureElement extends StructureElement {
+}
+
+abstract interface PassiveStructureElement extends StructureElement {
+}
+
+abstract interface StructuralRelationship extends ArchimateRelationship {
+}
+
+abstract interface DependendencyRelationship extends ArchimateRelationship {
+}
+
+abstract interface DynamicRelationship extends ArchimateRelationship {
+}
+
+abstract interface OtherRelationship extends ArchimateRelationship {
+}
+
+@ExtendedMetaData(name="model")
+class ArchimateModel extends FolderContainer, ArchimateModelObject, Properties {
+  op void setDefaults();
+  op Folder getDefaultFolderForObject(EObject[1] object);
+  op DiagramModel getDefaultDiagramModel();
+  op DiagramModel[*] getDiagramModels();
+  op Folder getFolder(FolderType type);
+
+  @ExtendedMetaData(kind="element")
+  attr String purpose = "";
+  transient attr File file;
+  attr String version = "";
+  !resolve val Metadata metadata;
+}
+
+class Junction extends ArchimateElement {
+  attr String type = "";
+}
+
+class ApplicationCollaboration extends ApplicationElement, ActiveStructureElement {
+}
+
+class ApplicationComponent extends ApplicationElement, ActiveStructureElement {
+}
+
+class ApplicationEvent extends ApplicationElement, BehaviorElement {
+}
+
+class ApplicationFunction extends ApplicationElement, BehaviorElement {
+}
+
+class ApplicationInteraction extends ApplicationElement, BehaviorElement {
+}
+
+class ApplicationInterface extends ApplicationElement, ActiveStructureElement {
+}
+
+class ApplicationProcess extends ApplicationElement, BehaviorElement {
+}
+
+class ApplicationService extends ApplicationElement, BehaviorElement {
+}
+
+class Artifact extends TechnologyObject {
+}
+
+class Assessment extends MotivationElement {
+}
+
+class BusinessActor extends BusinessElement, ActiveStructureElement {
+}
+
+class BusinessCollaboration extends BusinessElement, ActiveStructureElement {
+}
+
+class BusinessEvent extends BusinessElement, BehaviorElement {
+}
+
+class BusinessFunction extends BusinessElement, BehaviorElement {
+}
+
+class BusinessInteraction extends BusinessElement, BehaviorElement {
+}
+
+class BusinessInterface extends BusinessElement, ActiveStructureElement {
+}
+
+class BusinessObject extends BusinessElement, PassiveStructureElement {
+}
+
+class BusinessProcess extends BusinessElement, BehaviorElement {
+}
+
+class BusinessRole extends BusinessElement, ActiveStructureElement {
+}
+
+class BusinessService extends BusinessElement, BehaviorElement {
+}
+
+class Capability extends StrategyElement, BehaviorElement {
+}
+
+class CommunicationNetwork extends TechnologyElement, ActiveStructureElement {
+}
+
+class Contract extends BusinessElement, PassiveStructureElement {
+}
+
+class Constraint extends MotivationElement {
+}
+
+class CourseOfAction extends StrategyElement, BehaviorElement {
+}
+
+class DataObject extends ApplicationElement, PassiveStructureElement {
+}
+
+class Deliverable extends ImplementationMigrationElement, PassiveStructureElement {
+}
+
+class Device extends TechnologyElement, ActiveStructureElement {
+}
+
+class DistributionNetwork extends PhysicalElement, ActiveStructureElement {
+}
+
+class Driver extends MotivationElement {
+}
+
+class Equipment extends PhysicalElement, ActiveStructureElement {
+}
+
+class Facility extends PhysicalElement, ActiveStructureElement {
+}
+
+class Gap extends ImplementationMigrationElement, PassiveStructureElement {
+}
+
+class Goal extends MotivationElement {
+}
+
+class Grouping extends CompositeElement {
+}
+
+class ImplementationEvent extends ImplementationMigrationElement {
+}
+
+class Location extends CompositeElement {
+}
+
+class Material extends PhysicalElement, PassiveStructureElement {
+}
+
+class Meaning extends MotivationElement {
+}
+
+class Node extends TechnologyElement, ActiveStructureElement {
+}
+
+class Outcome extends MotivationElement {
+}
+
+class Path extends TechnologyElement {
+}
+
+class Plateau extends ImplementationMigrationElement, CompositeElement {
+}
+
+class Principle extends MotivationElement {
+}
+
+class Product extends BusinessElement, CompositeElement {
+}
+
+class Representation extends BusinessElement, PassiveStructureElement {
+}
+
+class Resource extends StrategyElement, StructureElement {
+}
+
+class Requirement extends MotivationElement {
+}
+
+class Stakeholder extends MotivationElement, ActiveStructureElement {
+}
+
+class SystemSoftware extends TechnologyElement, ActiveStructureElement {
+}
+
+class TechnologyCollaboration extends TechnologyElement, ActiveStructureElement {
+}
+
+class TechnologyEvent extends TechnologyElement, BehaviorElement {
+}
+
+class TechnologyFunction extends TechnologyElement, BehaviorElement {
+}
+
+class TechnologyInterface extends TechnologyElement, ActiveStructureElement {
+}
+
+class TechnologyInteraction extends TechnologyElement, BehaviorElement {
+}
+
+class TechnologyProcess extends TechnologyElement, BehaviorElement {
+}
+
+class TechnologyService extends TechnologyElement, BehaviorElement {
+}
+
+class Value extends MotivationElement {
+}
+
+class WorkPackage extends ImplementationMigrationElement, BehaviorElement {
+}
+
+class AccessRelationship extends DependendencyRelationship {
+  attr int accessType = 0;
+}
+
+class AggregationRelationship extends StructuralRelationship {
+}
+
+class AssignmentRelationship extends StructuralRelationship {
+}
+
+class AssociationRelationship extends OtherRelationship {
+}
+
+class CompositionRelationship extends StructuralRelationship {
+}
+
+class FlowRelationship extends DynamicRelationship {
+}
+
+class InfluenceRelationship extends DependendencyRelationship {
+  attr String strength = "";
+}
+
+class RealizationRelationship extends StructuralRelationship {
+}
+
+class ServingRelationship extends DependendencyRelationship {
+}
+
+class SpecializationRelationship extends OtherRelationship {
+}
+
+class TriggeringRelationship extends DynamicRelationship {
+}
+
+abstract class DiagramModelComponent extends Identifier, Cloneable, Adapter, Nameable, ArchimateModelObject {
+  op DiagramModel getDiagramModel();
+}
+
+abstract class Connectable extends DiagramModelComponent {
+  op void addConnection(DiagramModelConnection connection);
+  op void removeConnection(DiagramModelConnection connection);
+
+  @ExtendedMetaData(name="sourceConnection", kind="element")
+  !resolve val DiagramModelConnection[*] sourceConnections;
+  !resolve ref DiagramModelConnection[*] targetConnections;
+}
+
+abstract interface DiagramModelContainer extends DiagramModelComponent {
+
+  @ExtendedMetaData(name="child", kind="element")
+  !resolve val DiagramModelObject[*] children;
+}
+
+abstract class DiagramModel extends ArchimateModelObject, DiagramModelContainer, Documentable, Properties {
+  attr int connectionRouterType;
+}
+
+class DiagramModelReference extends DiagramModelObject, TextPosition {
+
+  @ExtendedMetaData(name="model", kind="attribute")
+  !resolve ref DiagramModel referencedModel;
+}
+
+abstract class DiagramModelObject extends Connectable, FontAttribute, LineObject, TextAlignment {
+  op void setBounds(int x, int y, int width, int height);
+  !resolve val Bounds bounds;
+  attr String fillColor;
+  attr int alpha = 255;
+}
+
+@ExtendedMetaData(name="Group")
+class DiagramModelGroup extends DiagramModelObject, DiagramModelContainer, Documentable, Properties {
+}
+
+@ExtendedMetaData(name="Note")
+class DiagramModelNote extends DiagramModelObject, TextContent, TextPosition {
+  attr int borderType;
+}
+
+class DiagramModelImage extends DiagramModelObject, BorderObject, DiagramModelImageProvider {
+}
+
+class DiagramModelConnection extends Connectable, FontAttribute, Properties, Documentable, LineObject {
+  op void connect(Connectable source, Connectable target);
+  op void disconnect();
+  op void reconnect();
+  transient attr String text = "";
+  attr int textPosition;
+  !resolve ref Connectable source;
+  !resolve ref Connectable target;
+
+  @ExtendedMetaData(name="bendpoint", kind="element")
+  !resolve val DiagramModelBendpoint[*] bendpoints;
+  attr int type;
+}
+
+class DiagramModelBendpoint extends Cloneable {
+  attr int startX;
+  attr int startY;
+  attr int endX;
+  attr int endY;
+}
+
+abstract interface LineObject {
+  attr int lineWidth = 1;
+  attr String lineColor;
+}
+
+abstract interface FontAttribute {
+  attr String font;
+  attr String fontColor;
+}
+
+abstract interface TextPosition {
+  attr int textPosition;
+}
+
+abstract interface TextAlignment {
+  attr int textAlignment = 2;
+}
+
+abstract interface BorderObject {
+  attr String borderColor;
+}
+
+abstract interface DiagramModelImageProvider {
+  attr String imagePath;
+}
+
+class Bounds {
+  op void setLocation(int x, int y);
+  op void setSize(int width, int height);
+  op Bounds getCopy();
+  attr int x;
+  attr int y;
+  attr int width = -1;
+  attr int height = -1;
+}
+
+abstract interface Lockable {
+  attr boolean locked;
+}
+
+class ArchimateDiagramModel extends DiagramModel {
+  attr String viewpoint = "";
+}
+
+abstract interface DiagramModelArchimateComponent extends Connectable {
+  op ArchimateConcept getArchimateConcept();
+  op void setArchimateConcept(ArchimateConcept concept);
+  op void addArchimateConceptToModel(Folder parent);
+  op void removeArchimateConceptFromModel();
+}
+
+@ExtendedMetaData(name="DiagramObject")
+class DiagramModelArchimateObject extends DiagramModelObject, DiagramModelContainer, DiagramModelArchimateComponent, TextPosition {
+  volatile !resolve ref ArchimateElement archimateElement;
+  attr int type = 0;
+}
+
+@ExtendedMetaData(name="Connection")
+class DiagramModelArchimateConnection extends DiagramModelConnection, DiagramModelArchimateComponent {
+  volatile !resolve ref ArchimateRelationship archimateRelationship;
+}
+
+class SketchModel extends DiagramModel {
+  attr int background = 1;
+}
+
+class SketchModelSticky extends DiagramModelObject, DiagramModelContainer, TextContent, Properties, TextPosition {
+}
+
+class SketchModelActor extends DiagramModelObject, Documentable, Properties {
+}
+

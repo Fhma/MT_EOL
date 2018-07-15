@@ -1,0 +1,1292 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate">
+  <archimate:Folder name="Business">
+    <elements xsi:type="archimate:BusinessRole" name="ryley" id="b728211378"/>
+    <elements xsi:type="archimate:BusinessRole" name="nannie" id="b393147476"/>
+    <elements xsi:type="archimate:BusinessRole" name="conan" id="b657578836"/>
+    <elements xsi:type="archimate:BusinessRole" name="jaquenetta" id="b273413152"/>
+    <elements xsi:type="archimate:BusinessFunction" name="juliet" id="b648785040"/>
+    <elements xsi:type="archimate:BusinessFunction" name="christoph" id="b859177764"/>
+    <elements xsi:type="archimate:BusinessFunction" name="ruy" id="b106875260"/>
+    <elements xsi:type="archimate:BusinessFunction" name="jervis" id="b884969127"/>
+    <elements xsi:type="archimate:BusinessObject" name="Car Insurance Policy" id="b198784861"/>
+    <elements xsi:type="archimate:BusinessObject" name="chick" id="b862610689"/>
+    <elements xsi:type="archimate:BusinessObject" name="madlin" id="b971493640"/>
+    <elements xsi:type="archimate:BusinessObject" name="gisele" id="b38066636"/>
+    <elements xsi:type="archimate:BusinessProcess" name="karoly" id="b98412986"/>
+    <elements xsi:type="archimate:BusinessProcess" name="gabe" id="b850637592"/>
+    <elements xsi:type="archimate:BusinessProcess" name="marris" id="b921400148"/>
+    <elements xsi:type="archimate:BusinessProcess" name="shelli" id="b187142274"/>
+    <elements xsi:type="archimate:BusinessActor" name="meier" id="a373184784"/>
+    <elements xsi:type="archimate:BusinessActor" name="gillan" id="a387467683"/>
+    <elements xsi:type="archimate:BusinessActor" name="guy" id="a21035487"/>
+    <elements xsi:type="archimate:BusinessActor" name="gabriela" id="a13227733"/>
+  </archimate:Folder>
+  <archimate:Folder name="Application">
+    <elements xsi:type="archimate:ApplicationFunction" name="cristina" id="a3985605"/>
+    <elements xsi:type="archimate:ApplicationFunction" name="arnuad" id="a305379989"/>
+    <elements xsi:type="archimate:ApplicationFunction" name="ichabod" id="a908478489"/>
+    <elements xsi:type="archimate:ApplicationFunction" name="maren" id="a47474979"/>
+    <elements xsi:type="archimate:ApplicationComponent" name="lilla" id="a630796931"/>
+    <elements xsi:type="archimate:ApplicationComponent" name="alexa" id="a113681270"/>
+    <elements xsi:type="archimate:ApplicationComponent" name="paco" id="a603714450"/>
+    <elements xsi:type="archimate:ApplicationComponent" name="christoph" id="a510160487"/>
+    <elements xsi:type="archimate:DataObject" name="jefferey" id="a509328430"/>
+    <elements xsi:type="archimate:DataObject" name="gregoor" id="a88860873"/>
+    <elements xsi:type="archimate:DataObject" name="shelli" id="a283257050"/>
+    <elements xsi:type="archimate:DataObject" name="quincy" id="a284719815"/>
+  </archimate:Folder>
+  <archimate:Folder name="Technology">
+    <elements xsi:type="archimate:CommunicationNetwork" name="violetta" id="t588049956"/>
+    <elements xsi:type="archimate:CommunicationNetwork" name="kiley" id="t726378219"/>
+    <elements xsi:type="archimate:CommunicationNetwork" name="storm" id="t129328375"/>
+    <elements xsi:type="archimate:CommunicationNetwork" name="johna" id="t585038368"/>
+    <elements xsi:type="archimate:SystemSoftware" name="amalita" id="t224228347"/>
+    <elements xsi:type="archimate:SystemSoftware" name="chick" id="t692161457"/>
+    <elements xsi:type="archimate:SystemSoftware" name="mallory" id="t712674400"/>
+    <elements xsi:type="archimate:SystemSoftware" name="penn" id="t604034376"/>
+    <elements xsi:type="archimate:TechnologyService" name="joseph" id="t79406012"/>
+    <elements xsi:type="archimate:TechnologyService" name="miriam" id="t999893217"/>
+    <elements xsi:type="archimate:TechnologyService" name="marcus" id="t591946553"/>
+    <elements xsi:type="archimate:TechnologyService" name="averil" id="t975069777"/>
+  </archimate:Folder>
+  <archimate:Folder name="Motivation">
+    <elements xsi:type="archimate:Principle" name="rutledge" id="m312280053"/>
+    <elements xsi:type="archimate:Principle" name="pauly" id="m538558057"/>
+    <elements xsi:type="archimate:Principle" name="silvio" id="m352373029"/>
+    <elements xsi:type="archimate:Principle" name="adella" id="m786286931"/>
+  </archimate:Folder>
+  <archimate:Folder name="Relations">
+    <elements xsi:type="archimate:RealizationRelationship" name="faustine" id="r6329560" source="t726378219" target="b862610689"/>
+    <elements xsi:type="archimate:RealizationRelationship" name="sena" id="r945750987" source="a509328430" target="t588049956"/>
+    <elements xsi:type="archimate:RealizationRelationship" name="ulrikaumeko" id="r607794543" source="t591946553" target="b728211378"/>
+    <elements xsi:type="archimate:RealizationRelationship" name="rodolphe" id="r476703834" source="t975069777" target="a373184784"/>
+    <elements xsi:type="archimate:AggregationRelationship" name="jammal" id="r956721790" source="t585038368" target="b198784861"/>
+    <elements xsi:type="archimate:AggregationRelationship" name="tamqrah" id="r637833261" source="b198784861" target="a603714450"/>
+    <elements xsi:type="archimate:AggregationRelationship" name="aryn" id="r908701195" source="a387467683" target="t588049956"/>
+    <elements xsi:type="archimate:AggregationRelationship" name="mariska" id="r659128373" source="t79406012" target="a908478489"/>
+    <elements xsi:type="archimate:ServingRelationship" name="marcus" id="r843764163" source="t585038368" target="m786286931"/>
+    <elements xsi:type="archimate:ServingRelationship" name="lanae" id="r210606716" source="b106875260" target="b98412986"/>
+    <elements xsi:type="archimate:ServingRelationship" name="florencia" id="r236018586" source="b884969127" target="b971493640"/>
+    <elements xsi:type="archimate:ServingRelationship" name="maridel" id="r60649050" source="a88860873" target="a305379989"/>
+  </archimate:Folder>
+  <archimate:Folder name="Views">
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="nichole" id="model447664317" viewpoint="5204">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject691295191" archimateElement="b38066636">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect234133990" source="DMAObject691295191" target="DMAObject738574033" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect556285551" source="DMAObject691295191" target="DMAObject186200209" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject780477368" archimateElement="t712674400">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect402027192" source="DMAObject780477368" target="DMAObject455203887" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect531010343" source="DMAObject780477368" target="DMAObject591432305" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect263981702" source="DMAObject780477368" target="DMAObject689714779" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="myrna" id="model879158179" viewpoint="2948">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject738574033" archimateElement="a283257050">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect440939857" source="DMAObject738574033" target="DMAObject792681726" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect350990572" source="DMAObject738574033" target="DMAObject800167555" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect86106317" source="DMAObject738574033" target="DMAObject202061510" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject34238452" archimateElement="b187142274">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect787459044" source="DMAObject34238452" target="DMAObject416779346" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect586184208" source="DMAObject34238452" target="DMAObject168892975" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject641816728" archimateElement="b648785040">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect742463817" source="DMAObject641816728" target="DMAObject665391874" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect543438581" source="DMAObject641816728" target="DMAObject272456380" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect813138310" source="DMAObject641816728" target="DMAObject171029541" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="rriocard" id="model706008614" viewpoint="1321">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject816483934" archimateElement="m538558057">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect603882810" source="DMAObject816483934" target="DMAObject419723388" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect245447839" source="DMAObject816483934" target="DMAObject190928012" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect498438549" source="DMAObject816483934" target="DMAObject196840401" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject949495247" archimateElement="a509328430">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect349577565" source="DMAObject949495247" target="DMAObject425001242" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect498678906" source="DMAObject949495247" target="DMAObject357679663" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect908250517" source="DMAObject949495247" target="DMAObject383114401" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject761789608" archimateElement="a47474979">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect715578059" source="DMAObject761789608" target="DMAObject401431207" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="tootsie" id="model80031618" viewpoint="5360">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject592471157" archimateElement="b884969127">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect921155053" source="DMAObject592471157" target="DMAObject110776565" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject905303481" archimateElement="a113681270">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect616413395" source="DMAObject905303481" target="DMAObject182213005" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect302815350" source="DMAObject905303481" target="DMAObject731335957" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject972939507" archimateElement="b971493640">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect474073272" source="DMAObject972939507" target="DMAObject202061510" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect518197437" source="DMAObject972939507" target="DMAObject171181882" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject917062420" archimateElement="a21035487">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect928580790" source="DMAObject917062420" target="DMAObject515185228" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect24298104" source="DMAObject917062420" target="DMAObject833801721" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject689714779" archimateElement="a88860873">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect467930103" source="DMAObject689714779" target="DMAObject275533017" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect993724485" source="DMAObject689714779" target="DMAObject446221201" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject398771496" archimateElement="b862610689">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect946501012" source="DMAObject398771496" target="connect1158168" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect652455965" source="DMAObject398771496" target="DMAObject266662730" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="gabriela" id="model35202180" viewpoint="3050">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject841501659" archimateElement="b393147476">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect701847278" source="DMAObject841501659" target="DMAObject139352138" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject52269121" archimateElement="b393147476">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect785086519" source="DMAObject52269121" target="DMAObject904642664" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect72924963" source="DMAObject52269121" target="DMAObject348408926" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject746483147" archimateElement="b862610689">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect799439098" source="DMAObject746483147" target="DMAObject928859845" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect565830610" source="DMAObject746483147" target="DMAObject118156987" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect638539944" source="DMAObject746483147" target="DMAObject641816728" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="almire" id="model289093398" viewpoint="7740">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject190928012" archimateElement="a387467683">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect2931445" source="DMAObject190928012" target="DMAObject144009527" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject640108299" archimateElement="a3985605">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect442237083" source="DMAObject640108299" target="DMAObject174731408" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect219017060" source="DMAObject640108299" target="DMAObject181340702" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject699990050" archimateElement="a47474979">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect594829897" source="DMAObject699990050" target="DMAObject545211728" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect587913347" source="DMAObject699990050" target="DMAObject828603212" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject61551600" archimateElement="a47474979">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect667860925" source="DMAObject61551600" target="DMAObject949495247" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect793198414" source="DMAObject61551600" target="DMAObject53034441" archimateRelationship="r236018586">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject674147458" archimateElement="a3985605">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect398226539" source="DMAObject674147458" target="DMAObject972939507" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect365003465" source="DMAObject674147458" target="DMAObject592956607" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject646715977" archimateElement="a283257050">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect450638649" source="DMAObject646715977" target="DMAObject559708212" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect313930515" source="DMAObject646715977" target="DMAObject691295191" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect258760524" source="DMAObject646715977" target="DMAObject937236206" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject83489171" archimateElement="b648785040">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect697002300" source="DMAObject83489171" target="DMAObject904642664" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect204498196" source="DMAObject83489171" target="DMAObject460615831" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="arte" id="model925556014" viewpoint="2155">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject848893832" archimateElement="b273413152">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect703635598" source="DMAObject848893832" target="DMAObject885123919" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect76596533" source="DMAObject848893832" target="DMAObject451567379" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect159595385" source="DMAObject848893832" target="DMAObject904642664" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject86883634" archimateElement="t588049956">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect791162101" source="DMAObject86883634" target="DMAObject291597475" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect900316834" source="DMAObject86883634" target="DMAObject189362544" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect842570129" source="DMAObject86883634" target="DMAObject689714779" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject524960895" archimateElement="a284719815">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect734335056" source="DMAObject524960895" target="DMAObject416779346" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="lucita" id="model635102460" viewpoint="680">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject689792433" archimateElement="a113681270">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect752710941" source="DMAObject689792433" target="DMAObject733441069" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject272456380" archimateElement="b648785040">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect376511378" source="DMAObject272456380" target="DMAObject144009527" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect363118766" source="DMAObject272456380" target="DMAObject545211728" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect738159367" source="DMAObject272456380" target="DMAObject852447548" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject562102970" archimateElement="t999893217">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect295636594" source="DMAObject562102970" target="DMAObject209312259" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect267397629" source="DMAObject562102970" target="DMAObject972560968" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect230836887" source="DMAObject562102970" target="DMAObject446221201" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject171181882" archimateElement="t692161457">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect868568036" source="DMAObject171181882" target="DMAObject439600113" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect191545576" source="DMAObject171181882" target="DMAObject171029541" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject110241620" archimateElement="b198784861">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect737777607" source="DMAObject110241620" target="DMAObject958740831" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect59973109" source="DMAObject110241620" target="DMAObject171181882" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect532645209" source="DMAObject110241620" target="DMAObject671009284" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject275533017" archimateElement="m352373029">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect850042197" source="DMAObject275533017" target="DMAObject351541028" archimateRelationship="r236018586">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect824795306" source="DMAObject275533017" target="DMAObject368564207" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject338586768" archimateElement="b38066636">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect298249562" source="DMAObject338586768" target="DMAObject665391874" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect269215579" source="DMAObject338586768" target="DMAObject416779346" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect665880470" source="DMAObject338586768" target="DMAObject885123919" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="torrence" id="model897136209" viewpoint="322">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject960116286" archimateElement="a21035487">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect537126968" source="DMAObject960116286" target="DMAObject630079102" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect341312793" source="DMAObject960116286" target="DMAObject75379404" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect283364106" source="DMAObject960116286" target="DMAObject401431207" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject76597053" archimateElement="a603714450">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect927571925" source="DMAObject76597053" target="DMAObject833801721" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect63010016" source="DMAObject76597053" target="DMAObject254008555" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="corenda" id="model640879020" viewpoint="4816">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject194819369" archimateElement="t726378219">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect256478735" source="DMAObject194819369" target="DMAObject665391874" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect402346933" source="DMAObject194819369" target="DMAObject261290497" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="hewe" id="model155665511" viewpoint="6774">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject209312259" archimateElement="a373184784">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect94513720" source="DMAObject209312259" target="DMAObject636993233" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect750276421" source="DMAObject209312259" target="DMAObject559708212" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject624172904" archimateElement="t975069777">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect660869249" source="DMAObject624172904" target="DMAObject761789608" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect597444385" source="DMAObject624172904" target="DMAObject482575601" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect507478326" source="DMAObject624172904" target="DMAObject357679663" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject451567379" archimateElement="b884969127">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect366058487" source="DMAObject451567379" target="DMAObject689714779" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect899209661" source="DMAObject451567379" target="DMAObject383114401" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect427476468" source="DMAObject451567379" target="DMAObject559708212" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject554437484" archimateElement="t692161457">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect628069702" source="DMAObject554437484" target="DMAObject61551600" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect379822027" source="DMAObject554437484" target="DMAObject885123919" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject592956607" archimateElement="b850637592">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect619713057" source="DMAObject592956607" target="DMAObject86883634" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject550540303" archimateElement="b38066636">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect441068180" source="DMAObject550540303" target="DMAObject671009284" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject32484091" archimateElement="t224228347">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect140569727" source="DMAObject32484091" target="DMAObject689792433" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect1117292" source="DMAObject32484091" target="DMAObject266662730" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect558578946" source="DMAObject32484091" target="DMAObject67206015" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="nicolas" id="model898236085" viewpoint="4935">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject937236206" archimateElement="t585038368">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect117658884" source="DMAObject937236206" target="DMAObject261290497" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect205136215" source="DMAObject937236206" target="DMAObject800167555" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect860243700" source="DMAObject937236206" target="DMAObject348408926" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="creight" id="model458394705" viewpoint="2452">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject67206015" archimateElement="m538558057">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect227742689" source="DMAObject67206015" target="DMAObject261290497" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect190246940" source="DMAObject67206015" target="DMAObject451567379" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect940083075" source="DMAObject67206015" target="DMAObject357679663" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject439600113" archimateElement="t975069777">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect861151288" source="DMAObject439600113" target="DMAObject759860576" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject852447548" archimateElement="t604034376">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect870016369" source="DMAObject852447548" target="DMAObject828603212" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect982725811" source="DMAObject852447548" target="DMAObject738574033" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject343721312" archimateElement="b728211378">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect660736290" source="DMAObject343721312" target="DMAObject368564207" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject928859845" archimateElement="a373184784">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect896743750" source="DMAObject928859845" target="DMAObject110776565" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect872932886" source="DMAObject928859845" target="DMAObject83489171" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject852370995" archimateElement="b98412986">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect649253076" source="DMAObject852370995" target="DMAObject53034441" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect185225049" source="DMAObject852370995" target="DMAObject878533090" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect317023420" source="DMAObject852370995" target="DMAObject171029541" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject885513600" archimateElement="a305379989">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect61486634" source="DMAObject885513600" target="DMAObject691295191" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="miguelita" id="model153156071" viewpoint="4651">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject261290497" archimateElement="t224228347">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect673714279" source="DMAObject261290497" target="DMAObject32484091" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect904512858" source="DMAObject261290497" target="DMAObject852447548" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject885123919" archimateElement="a3985605">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect226220041" source="DMAObject885123919" target="DMAObject792681726" archimateRelationship="r236018586">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect128740570" source="DMAObject885123919" target="DMAObject308334389" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect434160395" source="DMAObject885123919" target="DMAObject455203887" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject731335957" archimateElement="t585038368">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect641258681" source="DMAObject731335957" target="DMAObject564243150" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject449489798" archimateElement="a510160487">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect750279547" source="DMAObject449489798" target="DMAObject960116286" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject544150060" archimateElement="t129328375">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect681579039" source="DMAObject544150060" target="DMAObject308334389" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect642897345" source="DMAObject544150060" target="DMAObject32484091" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect592850837" source="DMAObject544150060" target="DMAObject181340702" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject446221201" archimateElement="m786286931">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect804676654" source="DMAObject446221201" target="DMAObject759860576" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect27006746" source="DMAObject446221201" target="DMAObject308334389" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="nicolas" id="model616676875" viewpoint="6699">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject351541028" archimateElement="t975069777">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect690795792" source="DMAObject351541028" target="DMAObject171181882" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject759860576" archimateElement="a3985605">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect146419167" source="DMAObject759860576" target="DMAObject689714779" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject348408926" archimateElement="b657578836">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect758195762" source="DMAObject348408926" target="DMAObject482575601" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="juliet" id="model231810070" viewpoint="5879">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject259893168" archimateElement="t692161457">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect927409143" source="DMAObject259893168" target="DMAObject368564207" archimateRelationship="r236018586">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect266483577" source="DMAObject259893168" target="DMAObject640108299" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect591979027" source="DMAObject259893168" target="DMAObject61551600" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject569345571" archimateElement="a88860873">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect350864389" source="DMAObject569345571" target="DMAObject275533017" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect157416321" source="DMAObject569345571" target="DMAObject266662730" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject708588928" archimateElement="a283257050">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect898255382" source="DMAObject708588928" target="DMAObject726778933" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="emanuel" id="model389950051" viewpoint="3274">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject712307466" archimateElement="t588049956">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect916297896" source="DMAObject712307466" target="DMAObject871202606" archimateRelationship="r236018586">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject220675295" archimateElement="t585038368">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect701492521" source="DMAObject220675295" target="DMAObject224339869" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect143554405" source="DMAObject220675295" target="DMAObject67206015" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect844567329" source="DMAObject220675295" target="DMAObject196195907" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject512047005" archimateElement="b862610689">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect564734050" source="DMAObject512047005" target="DMAObject624172904" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect282844893" source="DMAObject512047005" target="DMAObject138500537" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect515559947" source="DMAObject512047005" target="DMAObject731335957" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="elsinore" id="model381984594" viewpoint="6855">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject482575601" archimateElement="a283257050">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect945882480" source="DMAObject482575601" target="DMAObject419723388" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect764440705" source="DMAObject482575601" target="DMAObject449489798" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect12299071" source="DMAObject482575601" target="DMAObject885513600" archimateRelationship="r236018586">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="corenda" id="model947225776" viewpoint="9442">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject899694306" archimateElement="b862610689">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect140515431" source="DMAObject899694306" target="DMAObject186200209" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect876234910" source="DMAObject899694306" target="DMAObject640108299" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect304740117" source="DMAObject899694306" target="DMAObject691295191" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject357679663" archimateElement="b728211378">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect844359028" source="DMAObject357679663" target="DMAObject293494380" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect656074729" source="DMAObject357679663" target="DMAObject174756090" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect293373707" source="DMAObject357679663" target="DMAObject118156987" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject792681726" archimateElement="b728211378">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect471782701" source="DMAObject792681726" target="DMAObject358661245" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect7926177" source="DMAObject792681726" target="DMAObject731335957" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject639408953" archimateElement="m352373029">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect87141003" source="DMAObject639408953" target="DMAObject110241620" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect550130685" source="DMAObject639408953" target="DMAObject738574033" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="elsbeth" id="model935016208" viewpoint="3854">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject416779346" archimateElement="t588049956">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect562968108" source="DMAObject416779346" target="DMAObject699990050" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect365619360" source="DMAObject416779346" target="DMAObject398771496" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect234439184" source="DMAObject416779346" target="DMAObject738574033" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject401431207" archimateElement="b648785040">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect779505507" source="DMAObject401431207" target="DMAObject308334389" archimateRelationship="r236018586">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect292158445" source="DMAObject401431207" target="DMAObject181340702" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect932006266" source="DMAObject401431207" target="DMAObject689714779" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject460615831" archimateElement="t604034376">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect427653988" source="DMAObject460615831" target="DMAObject674147458" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect468259802" source="DMAObject460615831" target="DMAObject196195907" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect72169608" source="DMAObject460615831" target="DMAObject86883634" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="forester" id="model647723609" viewpoint="6474">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject950703793" archimateElement="t712674400">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect587744557" source="DMAObject950703793" target="DMAObject209312259" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect796827645" source="DMAObject950703793" target="DMAObject138500537" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject671009284" archimateElement="a509328430">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect279370699" source="DMAObject671009284" target="DMAObject639408953" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="ulysses" id="model108944209" viewpoint="358">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject308334389" archimateElement="b728211378">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect140482321" source="DMAObject308334389" target="DMAObject689714779" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect971591263" source="DMAObject308334389" target="DMAObject416779346" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect963585974" source="DMAObject308334389" target="DMAObject261290497" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject396713358" archimateElement="t999893217">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect774942446" source="DMAObject396713358" target="DMAObject190928012" archimateRelationship="r236018586">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject636993233" archimateElement="a284719815">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect12398557" source="DMAObject636993233" target="DMAObject451567379" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect235957555" source="DMAObject636993233" target="DMAObject259893168" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject828603212" archimateElement="a3985605">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect64681857" source="DMAObject828603212" target="DMAObject885123919" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject425001242" archimateElement="b393147476">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect484344744" source="DMAObject425001242" target="DMAObject86883634" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect874578910" source="DMAObject425001242" target="DMAObject139352138" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect684218345" source="DMAObject425001242" target="DMAObject816483934" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject358661245" archimateElement="b859177764">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect789766362" source="DMAObject358661245" target="DMAObject569345571" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect449172408" source="DMAObject358661245" target="DMAObject687367264" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject53034441" archimateElement="m312280053">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect937003498" source="DMAObject53034441" target="DMAObject392732806" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect80784393" source="DMAObject53034441" target="DMAObject86883634" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect605888129" source="DMAObject53034441" target="DMAObject972939507" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="otha" id="model990579174" viewpoint="5692">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject871999274" archimateElement="b884969127">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect349514238" source="DMAObject871999274" target="DMAObject699990050" archimateRelationship="r236018586">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect450127332" source="DMAObject871999274" target="DMAObject449489798" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect708815461" source="DMAObject871999274" target="DMAObject671009284" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject75379404" archimateElement="m538558057">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect993028795" source="DMAObject75379404" target="DMAObject804240500" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect638977939" source="DMAObject75379404" target="DMAObject687367264" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect980584610" source="DMAObject75379404" target="DMAObject731335957" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject118156987" archimateElement="b98412986">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect644138708" source="DMAObject118156987" target="DMAObject254008555" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject293494380" archimateElement="m352373029">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect623775545" source="DMAObject293494380" target="DMAObject392732806" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect282577676" source="DMAObject293494380" target="DMAObject639408953" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject171029541" archimateElement="t588049956">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect245866821" source="DMAObject171029541" target="DMAObject738574033" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect573759053" source="DMAObject171029541" target="DMAObject190928012" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect193493926" source="DMAObject171029541" target="DMAObject383114401" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject196840401" archimateElement="t585038368">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect917476193" source="DMAObject196840401" target="DMAObject885123919" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect52560653" source="DMAObject196840401" target="DMAObject841501659" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="korie" id="model710163171" viewpoint="5317">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject958740831" archimateElement="b657578836">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect680829821" source="DMAObject958740831" target="DMAObject190928012" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect157582713" source="DMAObject958740831" target="DMAObject110776565" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject168892975" archimateElement="b273413152">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect793697680" source="DMAObject168892975" target="DMAObject691295191" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="suzi" id="model176471827" viewpoint="3597">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject591432305" archimateElement="a305379989">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect102881276" source="DMAObject591432305" target="DMAObject32484091" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject174756090" archimateElement="a283257050">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect137587841" source="DMAObject174756090" target="DMAObject446221201" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect746144413" source="DMAObject174756090" target="DMAObject482575601" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject291597475" archimateElement="a603714450">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect824481210" source="DMAObject291597475" target="DMAObject841501659" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject254008555" archimateElement="a509328430">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect993134184" source="DMAObject254008555" target="DMAObject841501659" archimateRelationship="r236018586">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect725179731" source="DMAObject254008555" target="DMAObject731335957" archimateRelationship="r236018586">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect715923389" source="DMAObject254008555" target="DMAObject168892975" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="opaline" id="model605629044" viewpoint="7442">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject564243150" archimateElement="t975069777">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect953102609" source="DMAObject564243150" target="DMAObject398771496" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject777047379" archimateElement="a47474979">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect114157070" source="DMAObject777047379" target="DMAObject53034441" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect517227572" source="DMAObject777047379" target="DMAObject291597475" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject687367264" archimateElement="b98412986">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect139393302" source="DMAObject687367264" target="DMAObject726778933" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect636347239" source="DMAObject687367264" target="DMAObject591432305" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect265490697" source="DMAObject687367264" target="DMAObject190928012" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="arnuad" id="model121522009" viewpoint="3648">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject766635823" archimateElement="b884969127">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect322951042" source="DMAObject766635823" target="DMAObject392732806" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject419723388" archimateElement="a387467683">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect91126188" source="DMAObject419723388" target="DMAObject275533017" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect211293399" source="DMAObject419723388" target="DMAObject665391874" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="gregoor" id="model418190210" viewpoint="2637">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject929310001" archimateElement="t604034376">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect753781505" source="DMAObject929310001" target="DMAObject960116286" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect62907035" source="DMAObject929310001" target="DMAObject871202606" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect700222130" source="DMAObject929310001" target="DMAObject792681726" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject266662730" archimateElement="a373184784">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect36266095" source="DMAObject266662730" target="DMAObject76597053" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject229149118" archimateElement="b393147476">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect183676292" source="DMAObject229149118" target="DMAObject419723388" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject110776565" archimateElement="b921400148">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect713515710" source="DMAObject110776565" target="DMAObject118156987" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect916902462" source="DMAObject110776565" target="DMAObject544150060" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject559708212" archimateElement="a509328430">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect954027134" source="DMAObject559708212" target="DMAObject665391874" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect582745126" source="DMAObject559708212" target="DMAObject202061510" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect412075963" source="DMAObject559708212" target="DMAObject871202606" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject383114401" archimateElement="t79406012">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect524215829" source="DMAObject383114401" target="DMAObject181340702" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject630079102" archimateElement="a387467683">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect323378652" source="DMAObject630079102" target="DMAObject733441069" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect653856300" source="DMAObject630079102" target="DMAObject841501659" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect144133974" source="DMAObject630079102" target="DMAObject871999274" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="gregoor" id="model796618620" viewpoint="4833">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject144009527" archimateElement="a284719815">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect668534137" source="DMAObject144009527" target="DMAObject591432305" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect315589637" source="DMAObject144009527" target="DMAObject639408953" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect354263950" source="DMAObject144009527" target="DMAObject712307466" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject368564207" archimateElement="a908478489">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect854010789" source="DMAObject368564207" target="DMAObject259893168" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect970244344" source="DMAObject368564207" target="DMAObject53034441" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject224339869" archimateElement="t224228347">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect476890947" source="DMAObject224339869" target="DMAObject181340702" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect110184119" source="DMAObject224339869" target="DMAObject544150060" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect824754686" source="DMAObject224339869" target="DMAObject42119495" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject545211728" archimateElement="a113681270">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect165334957" source="DMAObject545211728" target="DMAObject871202606" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect568168475" source="DMAObject545211728" target="DMAObject731335957" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject202061510" archimateElement="t224228347">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect206589133" source="DMAObject202061510" target="DMAObject455203887" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect732454881" source="DMAObject202061510" target="DMAObject186200209" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect768198367" source="DMAObject202061510" target="DMAObject348408926" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject182213005" archimateElement="a630796931">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect359100917" source="DMAObject182213005" target="DMAObject358661245" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect65228040" source="DMAObject182213005" target="DMAObject189362544" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="delphine" id="model537814380" viewpoint="951">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject392732806" archimateElement="b648785040">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect279805272" source="DMAObject392732806" target="DMAObject878533090" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect368589397" source="DMAObject392732806" target="DMAObject792681726" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject42119495" archimateElement="a373184784">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect556173388" source="DMAObject42119495" target="DMAObject972939507" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject63875010" archimateElement="b728211378">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect112061050" source="DMAObject63875010" target="DMAObject852370995" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="lulita" id="model235730841" viewpoint="331">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject515185228" archimateElement="a387467683">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect384175588" source="DMAObject515185228" target="DMAObject293494380" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect334762716" source="DMAObject515185228" target="DMAObject641816728" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect405998922" source="DMAObject515185228" target="DMAObject640108299" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject733441069" archimateElement="b884969127">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect865169292" source="DMAObject733441069" target="DMAObject75379404" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect100180188" source="DMAObject733441069" target="DMAObject641816728" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject189362544" archimateElement="a3985605">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect421531417" source="DMAObject189362544" target="DMAObject75379404" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect696916458" source="DMAObject189362544" target="DMAObject827468153" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject181340702" archimateElement="t585038368">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect472805378" source="DMAObject181340702" target="DMAObject949495247" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject174731408" archimateElement="b98412986">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect213986841" source="DMAObject174731408" target="DMAObject871202606" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject138500537" archimateElement="b657578836">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect759835430" source="DMAObject138500537" target="DMAObject272456380" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect67823731" source="DMAObject138500537" target="DMAObject624172904" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect529808810" source="DMAObject138500537" target="DMAObject449489798" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject186200209" archimateElement="a88860873">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect689725453" source="DMAObject186200209" target="DMAObject841501659" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect694076202" source="DMAObject186200209" target="DMAObject554437484" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect631671673" source="DMAObject186200209" target="DMAObject592956607" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="miner" id="model861532222" viewpoint="4025">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject827468153" archimateElement="a510160487">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect797873113" source="DMAObject827468153" target="DMAObject972939507" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect637029527" source="DMAObject827468153" target="DMAObject544150060" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="ryley" id="model953546685" viewpoint="5722">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject726778933" archimateElement="b187142274">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect508267053" source="DMAObject726778933" target="DMAObject455203887" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect964873432" source="DMAObject726778933" target="DMAObject691295191" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect479075648" source="DMAObject726778933" target="DMAObject689792433" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject871202606" archimateElement="b198784861">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect1158168" source="DMAObject871202606" target="DMAObject852447548" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject972560968" archimateElement="m786286931">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect231777923" source="DMAObject972560968" target="DMAObject275533017" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect118726085" source="DMAObject972560968" target="DMAObject878533090" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect259791515" source="DMAObject972560968" target="DMAObject554437484" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject455203887" archimateElement="t588049956">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect473566881" source="DMAObject455203887" target="DMAObject559708212" archimateRelationship="r6329560">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect591938519" source="DMAObject455203887" target="DMAObject624172904" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject878533090" archimateElement="b850637592">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect836235729" source="DMAObject878533090" target="DMAObject928859845" archimateRelationship="r476703834">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect833532084" source="DMAObject878533090" target="DMAObject220675295" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject833801721" archimateElement="m786286931">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect894360848" source="DMAObject833801721" target="DMAObject804240500" archimateRelationship="r637833261">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect961360541" source="DMAObject833801721" target="DMAObject937236206" archimateRelationship="r236018586">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect781343152" source="DMAObject833801721" target="DMAObject76597053" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+    <elements xsi:type="archimate:ArchimateDiagramModel" name="quint" id="model665951008" viewpoint="2940">
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject139352138" archimateElement="b862610689">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect539442771" source="DMAObject139352138" target="DMAObject110241620" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect264280179" source="DMAObject139352138" target="DMAObject401431207" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect804655495" source="DMAObject139352138" target="DMAObject396713358" archimateRelationship="r843764163">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject804240500" archimateElement="a13227733">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect135841146" source="DMAObject804240500" target="DMAObject190928012" archimateRelationship="r60649050">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject196195907" archimateElement="a3985605">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect559998352" source="DMAObject196195907" target="DMAObject174731408" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject800167555" archimateElement="b862610689">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect105081895" source="DMAObject800167555" target="DMAObject766635823" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect209898207" source="DMAObject800167555" target="DMAObject110241620" archimateRelationship="r607794543">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject904642664" archimateElement="t604034376">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect99079087" source="DMAObject904642664" target="DMAObject53034441" archimateRelationship="r956721790">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect869648809" source="DMAObject904642664" target="DMAObject348408926" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject866899135" archimateElement="a284719815">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect767564543" source="DMAObject866899135" target="DMAObject554437484" archimateRelationship="r210606716">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="archimate:DiagramModelArchimateObject" id="DMAObject665391874" archimateElement="a373184784">
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect138775178" source="DMAObject665391874" target="DMAObject202061510" archimateRelationship="r908701195">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect319094444" source="DMAObject665391874" target="DMAObject275533017" archimateRelationship="r659128373">
+          <bendpoints/>
+        </sourceConnections>
+        <sourceConnections xsi:type="archimate:DiagramModelArchimateConnection" id="connect798748456" source="DMAObject665391874" target="DMAObject460615831" archimateRelationship="r945750987">
+          <bendpoints/>
+        </sourceConnections>
+      </children>
+    </elements>
+  </archimate:Folder>
+</xmi:XMI>

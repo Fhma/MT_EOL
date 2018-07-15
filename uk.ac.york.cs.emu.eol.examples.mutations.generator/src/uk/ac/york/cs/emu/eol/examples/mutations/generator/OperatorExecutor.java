@@ -20,9 +20,7 @@ import org.eclipse.epsilon.emc.emf.EmfModel;
 import org.eclipse.epsilon.emc.mutant.IMutant;
 import org.eclipse.epsilon.emc.mutant.emf.EmfMutant;
 import org.eclipse.epsilon.eol.models.IRelativePathResolver;
-
 import uk.ac.york.cs.emu.eol.examples.mutations.generator.configurations.Configuration;
-import uk.ac.york.cs.emu.eol.examples.mutations.generator.metamodels.EcoreModel;
 import org.eclipse.epsilon.eol.EolModule;
 import org.eclipse.epsilon.eol.ast2eol.context.Ast2EolContext;
 import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
@@ -33,6 +31,7 @@ import java.net.URISyntaxException;
 public class OperatorExecutor implements Runnable {
 
 	public static final String MUTATIONS_DIR = "mutations" + File.separatorChar;
+	public static final String METAMODEL_DIR = "metamodels" + File.separatorChar;
 	public static final String MUTATIONS_SUMMARY_DIR = "mutations_summary" + File.separatorChar;
 	public static final String OPERATORS_DIR = "operators" + File.separatorChar;
 
@@ -70,7 +69,7 @@ public class OperatorExecutor implements Runnable {
 		String model_path = null;
 		model_path = parseEolCodeToModel();
 
-		// File emu_programs_dir = new File(OPERATORSDIR);
+		// File emu_programs_dir = new File(OPERATORS_DIR);
 		File emu_programs_dir = new File(OPERATORS_DIR + "final" + File.separatorChar);
 		final File emu_programs[] = emu_programs_dir.listFiles();
 
@@ -89,10 +88,15 @@ public class OperatorExecutor implements Runnable {
 					logger.close();
 					throw new Exception("Unable to parse file: " + entry.getName() + "\n" + module.getParseProblems().toString() + "\n");
 				}
-				emfModel = createEmfModel("Eol_" + eol_name, model_path, EcoreModel.class.getResource("EOL.ecore").getPath(), true, false);
+				emfModel = createEmfModel("Eol_" + eol_name, model_path, METAMODEL_DIR + File.separatorChar + "EOL.ecore", true, false);
 				module.getContext().getModelRepository().addModel(emfModel);
 				module.setRepeatWhileMatches(false);
-				module.execute();
+				try {
+					module.execute();
+				} catch (Exception e) {
+					logger.write("Exception while executing EMU program: " + entry.getName() + "\n");
+					logger.write(e.toString());
+				}
 				module.getContext().getModelRepository().dispose();
 			}
 		} // end of executing mutation operators

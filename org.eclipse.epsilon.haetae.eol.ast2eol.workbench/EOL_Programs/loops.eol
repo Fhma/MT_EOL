@@ -1,0 +1,23 @@
+
+operation hasLoop(n) : Boolean  {
+	for(n in Node.all) {
+		n.~status = 0;
+	}
+	return hasLoopAux(n);
+}
+operation hasLoopAux(n) : Boolean  {
+	if(n.~status=2) {
+		return false;
+	}
+	else if(n.~status=1) {
+		return true;
+	}
+	n.~status = 1;
+	for(e in n.outgoing) {
+		if(hasLoopAux(e.target)) {
+			return true;
+		}
+	}
+	n.~status = 2;
+	return false;
+}

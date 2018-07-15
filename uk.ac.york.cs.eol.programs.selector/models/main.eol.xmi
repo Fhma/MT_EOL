@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eol:EOLModule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eol="http://www.eclipse.org/epsilon/eol">
+  <region>
+    <start line="1"/>
+    <end line="1" column="60"/>
+  </region>
+  <block container="/">
+    <region>
+      <start line="1"/>
+      <end line="1" column="60"/>
+    </region>
+    <statements xsi:type="eol:ExpressionStatement" container="//@block">
+      <region>
+        <start line="1"/>
+        <end line="1" column="60"/>
+      </region>
+      <expression xsi:type="eol:MethodCallExpression" container="//@block/@statements.0">
+        <region>
+          <start line="1"/>
+          <end line="1" column="60"/>
+        </region>
+        <target xsi:type="eol:PropertyCallExpression" container="//@block/@statements.0/@expression">
+          <region>
+            <start line="1"/>
+            <end line="1" column="21"/>
+          </region>
+          <target xsi:type="eol:PropertyCallExpression" container="//@block/@statements.0/@expression/@target">
+            <region>
+              <start line="1"/>
+              <end line="1" column="16"/>
+            </region>
+            <target xsi:type="eol:PropertyCallExpression" container="//@block/@statements.0/@expression/@target/@target">
+              <region>
+                <start line="1"/>
+                <end line="1" column="10"/>
+              </region>
+              <target xsi:type="eol:NameExpression" container="//@block/@statements.0/@expression/@target/@target/@target" name="Family">
+                <region>
+                  <start line="1"/>
+                  <end line="1" column="6"/>
+                </region>
+              </target>
+              <property container="//@block/@statements.0/@expression/@target/@target/@target" name="all">
+                <region>
+                  <start line="1" column="7"/>
+                  <end line="1" column="10"/>
+                </region>
+              </property>
+            </target>
+            <property container="//@block/@statements.0/@expression/@target/@target" name="first">
+              <region>
+                <start line="1" column="11"/>
+                <end line="1" column="16"/>
+              </region>
+            </property>
+          </target>
+          <property container="//@block/@statements.0/@expression/@target" name="name">
+            <region>
+              <start line="1" column="17"/>
+              <end line="1" column="21"/>
+            </region>
+          </property>
+        </target>
+        <arguments xsi:type="eol:StringExpression" container="//@block/@statements.0/@expression" value="Name of the first family: ">
+          <region>
+            <start line="1" column="30"/>
+            <end line="1" column="58"/>
+          </region>
+          <resolvedType xsi:type="eol:StringType" container="//@block/@statements.0/@expression/@arguments.0">
+            <region>
+              <start line="1" column="30"/>
+              <end line="1" column="58"/>
+            </region>
+          </resolvedType>
+        </arguments>
+        <method container="//@block/@statements.0/@expression" name="println">
+          <region>
+            <start line="1" column="22"/>
+            <end line="1" column="59"/>
+          </region>
+        </method>
+      </expression>
+    </statements>
+  </block>
+</eol:EOLModule>

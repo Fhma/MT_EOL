@@ -1,9 +1,0 @@
-# This configuration file is read by Stage2 runnable java code. The Stage2 executes the original execution of an EOL program located 
-# in "uk.ac.york.cs.emu.eol.examples.execution.candidates" package. The execution involves executing each candidate EOL program against a set of input 
-# models located in "inModels". The outcomes is a set of output (whether is texts or models) that are stored in "expectedModels" folder, which then 
-# are considered as oracles for testing in mutations execution stage (stage3).
-#
-ShortestPath
-#ECore2GMF
-#ECoreUtil
-#Formatting

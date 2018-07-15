@@ -1,0 +1,17 @@
+var m : new Model;
+m.name = 'm';
+for(i in 1.to(5)) {
+	var package : Package = new Package;
+	package.name = 'p' + i;
+	package.package = m;
+	for(j in 1.to(3)) {
+		var class : Class = new Class;
+		class.name = 'c' + i + '' + j;
+		class.isAbstract = false;
+		class.package = package;
+	}
+}
+for(c in Class.allInstances) {
+	c.extends = Class.allInstances.random();
+}
+

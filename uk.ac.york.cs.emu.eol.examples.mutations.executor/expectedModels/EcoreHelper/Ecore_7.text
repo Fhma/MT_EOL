@@ -1,0 +1,22 @@
+getRequriedImports(mainpackage,I,,,)
+mainpackage.IPerson
+getRequriedImports(mainpackage,I,,,,true)
+mainpackage.IPerson
+getRequriedImports(mainpackage,I,,,,true,true)
+mainpackage.IModelHasPeople
+mainpackage.IPerson
+mainpackage.impl.ModelHasPeople
+mainpackage.impl.Person
+getRequiredFeatureParameters(,)
+getEqualsReferences()
+org.eclipse.emf.ecore.impl.EReferenceImpl@11963225 (name: people) (ordered: true, unique: true, lowerBound: 0, upperBound: -1) (changeable: true, volatile: false, transient: false, defaultValueLiteral: null, unsettable: false, derived: false) (containment: true, resolveProxies: true)
+isEdge()
+true
+getRequriedImports(mainpackage,I,,,)
+getRequriedImports(mainpackage,I,,,,true)
+getRequriedImports(mainpackage,I,,,,true,true)
+mainpackage.IModel
+getRequiredFeatureParameters(,)
+getEqualsReferences()
+isEdge()
+true

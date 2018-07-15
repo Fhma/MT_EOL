@@ -1,0 +1,15 @@
+# This Java application executes the mutation operators located in folder "operators" against
+# EOL programs located in "candidates" folder.
+# The output of this stage is a collection of mutations stored in "mutations" folder. A summary of the 
+# execution is stored in a folder under the name of "mutations_summary"
+
+# Required resources are: 
+#	1) candidates EOL programs stored in "candidates" folder
+#	2) mutation operators (EMU programs) stored in "operators" folder
+#	3) EOL metamodel in Ecore and stored in "metamodels" folder
+#
+ShortestPath
+#ECore2GMF
+#ECoreUtil
+#Formatting
+#EcoreHelper

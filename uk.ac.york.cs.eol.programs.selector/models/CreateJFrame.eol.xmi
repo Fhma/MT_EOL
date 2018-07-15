@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eol:EOLModule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eol="http://www.eclipse.org/epsilon/eol">
+  <region>
+    <start line="1"/>
+    <end line="4" column="21"/>
+  </region>
+  <block container="/">
+    <region>
+      <start line="1"/>
+      <end line="4" column="21"/>
+    </region>
+    <statements xsi:type="eol:AssignmentStatement" container="//@block">
+      <region>
+        <start line="1"/>
+        <end line="1" column="45"/>
+      </region>
+      <lhs xsi:type="eol:VariableDeclarationExpression" container="//@block/@statements.0">
+        <region>
+          <start line="1"/>
+          <end line="1" column="9"/>
+        </region>
+        <resolvedType xsi:type="eol:AnyType" container="//@block/@statements.0/@lhs">
+          <region>
+            <start line="1"/>
+            <end line="1" column="9"/>
+          </region>
+        </resolvedType>
+        <name container="//@block/@statements.0/@lhs" name="frame">
+          <region>
+            <start line="1" column="4"/>
+            <end line="1" column="9"/>
+          </region>
+        </name>
+      </lhs>
+      <rhs xsi:type="eol:NewExpression" container="//@block/@statements.0">
+        <region>
+          <start line="1" column="12"/>
+          <end line="1" column="44"/>
+        </region>
+        <resolvedType xsi:type="eol:NativeType" container="//@block/@statements.0/@rhs">
+          <region>
+            <start line="1" column="16"/>
+            <end line="1" column="44"/>
+          </region>
+          <expression container="//@block/@statements.0/@rhs/@resolvedType" value="javax.swing.JFrame">
+            <region>
+              <start line="1" column="23"/>
+              <end line="1" column="43"/>
+            </region>
+            <resolvedType xsi:type="eol:StringType" container="//@block/@statements.0/@rhs/@resolvedType/@expression">
+              <region>
+                <start line="1" column="23"/>
+                <end line="1" column="43"/>
+              </region>
+            </resolvedType>
+          </expression>
+        </resolvedType>
+      </rhs>
+    </statements>
+    <statements xsi:type="eol:ExpressionStatement" container="//@block">
+      <region>
+        <start line="2"/>
+        <end line="2" column="33"/>
+      </region>
+      <expression xsi:type="eol:MethodCallExpression" container="//@block/@statements.1">
+        <region>
+          <start line="2"/>
+          <end line="2" column="33"/>
+        </region>
+        <target xsi:type="eol:NameExpression" container="//@block/@statements.1/@expression" name="frame">
+          <region>
+            <start line="2"/>
+            <end line="2" column="5"/>
+          </region>
+        </target>
+        <arguments xsi:type="eol:IntegerExpression" container="//@block/@statements.1/@expression" value="100">
+          <region>
+            <start line="2" column="16"/>
+            <end line="2" column="19"/>
+          </region>
+          <resolvedType xsi:type="eol:IntegerType" container="//@block/@statements.1/@expression/@arguments.0">
+            <region>
+              <start line="2" column="16"/>
+              <end line="2" column="19"/>
+            </region>
+          </resolvedType>
+        </arguments>
+        <arguments xsi:type="eol:IntegerExpression" container="//@block/@statements.1/@expression" value="100">
+          <region>
+            <start line="2" column="20"/>
+            <end line="2" column="23"/>
+          </region>
+          <resolvedType xsi:type="eol:IntegerType" container="//@block/@statements.1/@expression/@arguments.1">
+            <region>
+              <start line="2" column="20"/>
+              <end line="2" column="23"/>
+            </region>
+          </resolvedType>
+        </arguments>
+        <arguments xsi:type="eol:IntegerExpression" container="//@block/@statements.1/@expression" value="200">
+          <region>
+            <start line="2" column="24"/>
+            <end line="2" column="27"/>
+          </region>
+          <resolvedType xsi:type="eol:IntegerType" container="//@block/@statements.1/@expression/@arguments.2">
+            <region>
+              <start line="2" column="24"/>
+              <end line="2" column="27"/>
+            </region>
+          </resolvedType>
+        </arguments>
+        <arguments xsi:type="eol:IntegerExpression" container="//@block/@statements.1/@expression" value="200">
+          <region>
+            <start line="2" column="28"/>
+            <end line="2" column="31"/>
+          </region>
+          <resolvedType xsi:type="eol:IntegerType" container="//@block/@statements.1/@expression/@arguments.3">
+            <region>
+              <start line="2" column="28"/>
+              <end line="2" column="31"/>
+            </region>
+          </resolvedType>
+        </arguments>
+        <method container="//@block/@statements.1/@expression" name="setBounds">
+          <region>
+            <start line="2" column="6"/>
+            <end line="2" column="32"/>
+          </region>
+        </method>
+      </expression>
+    </statements>
+    <statements xsi:type="eol:AssignmentStatement" container="//@block">
+      <region>
+        <start line="3"/>
+        <end line="3" column="32"/>
+      </region>
+      <lhs xsi:type="eol:PropertyCallExpression" container="//@block/@statements.2">
+        <region>
+          <start line="3"/>
+          <end line="3" column="11"/>
+        </region>
+        <target xsi:type="eol:NameExpression" container="//@block/@statements.2/@lhs" name="frame">
+          <region>
+            <start line="3"/>
+            <end line="3" column="5"/>
+          </region>
+        </target>
+        <property container="//@block/@statements.2/@lhs" name="title">
+          <region>
+            <start line="3" column="6"/>
+            <end line="3" column="11"/>
+          </region>
+        </property>
+      </lhs>
+      <rhs xsi:type="eol:StringExpression" container="//@block/@statements.2" value="Opened from EOL">
+        <region>
+          <start line="3" column="14"/>
+          <end line="3" column="31"/>
+        </region>
+        <resolvedType xsi:type="eol:StringType" container="//@block/@statements.2/@rhs">
+          <region>
+            <start line="3" column="14"/>
+            <end line="3" column="31"/>
+          </region>
+        </resolvedType>
+      </rhs>
+    </statements>
+    <statements xsi:type="eol:AssignmentStatement" container="//@block">
+      <region>
+        <start line="4"/>
+        <end line="4" column="21"/>
+      </region>
+      <lhs xsi:type="eol:PropertyCallExpression" container="//@block/@statements.3">
+        <region>
+          <start line="4"/>
+          <end line="4" column="13"/>
+        </region>
+        <target xsi:type="eol:NameExpression" container="//@block/@statements.3/@lhs" name="frame">
+          <region>
+            <start line="4"/>
+            <end line="4" column="5"/>
+          </region>
+        </target>
+        <property container="//@block/@statements.3/@lhs" name="visible">
+          <region>
+            <start line="4" column="6"/>
+            <end line="4" column="13"/>
+          </region>
+        </property>
+      </lhs>
+      <rhs xsi:type="eol:BooleanExpression" container="//@block/@statements.3" value="true">
+        <region>
+          <start line="4" column="16"/>
+          <end line="4" column="20"/>
+        </region>
+        <resolvedType xsi:type="eol:BooleanType" container="//@block/@statements.3/@rhs">
+          <region>
+            <start line="4" column="16"/>
+            <end line="4" column="20"/>
+          </region>
+        </resolvedType>
+      </rhs>
+    </statements>
+  </block>
+</eol:EOLModule>

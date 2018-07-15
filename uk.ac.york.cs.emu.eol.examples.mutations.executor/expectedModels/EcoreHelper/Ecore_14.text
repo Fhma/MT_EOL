@@ -1,0 +1,22 @@
+getRequriedImports(mainpackage,I,,,)
+mainpackage.IUnit
+getRequriedImports(mainpackage,I,,,,true)
+mainpackage.IUnit
+getRequriedImports(mainpackage,I,,,,true,true)
+mainpackage.IArmyHasUnits
+mainpackage.IUnit
+mainpackage.impl.ArmyHasUnits
+mainpackage.impl.Unit
+getRequiredFeatureParameters(,)
+getEqualsReferences()
+org.eclipse.emf.ecore.impl.EReferenceImpl@a23a01d (name: units) (ordered: true, unique: true, lowerBound: 0, upperBound: -1) (changeable: true, volatile: false, transient: false, defaultValueLiteral: null, unsettable: false, derived: false) (containment: true, resolveProxies: true)
+isEdge()
+true
+getRequriedImports(mainpackage,I,,,)
+getRequriedImports(mainpackage,I,,,,true)
+getRequriedImports(mainpackage,I,,,,true,true)
+mainpackage.IArmy
+getRequiredFeatureParameters(,)
+getEqualsReferences()
+isEdge()
+true

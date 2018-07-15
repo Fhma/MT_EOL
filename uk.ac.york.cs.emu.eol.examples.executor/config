@@ -1,0 +1,16 @@
+# This configuration file is read by Stage2 runnable java code. The Stage2 executes the original EOL programs located 
+# in "candidates" folder. It executes each EOL program candidate against a set of input 
+# models located in "inModels" folder. The outcomes is a set of outputs (whether are texts or xmi models) that are stored in "expectedModels" folder, which then 
+# are considered as oracles for mutations analysis using mutation execution stage (Stage3).
+#
+# Required resources are: 
+#	1) candidates EOL programs stored in "candidates" folder
+#	2) input models of EOL programs stored in "inModels" folder using the following structure
+#	<EOLMODULENAME>/<INPUTMODELNAME>
+#	3) metamodels of input models stored in "metamodels" folder
+#
+#ShortestPath
+#ECore2GMF
+#ECoreUtil
+#Formatting
+EcoreHelper

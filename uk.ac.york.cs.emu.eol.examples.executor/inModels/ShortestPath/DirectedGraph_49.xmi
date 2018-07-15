@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<DirectedGraph:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DirectedGraph="DirectedGraph">
+  <contents xsi:type="DirectedGraph:Node" label="iosep" outgoing="//@contents.10 //@contents.15"/>
+  <contents xsi:type="DirectedGraph:Node" label="ulla" outgoing="//@contents.14"/>
+  <contents xsi:type="DirectedGraph:Node" label="quint" incoming="//@contents.15"/>
+  <contents xsi:type="DirectedGraph:Node" label="corenda" outgoing="//@contents.12" incoming="//@contents.11 //@contents.13 //@contents.14"/>
+  <contents xsi:type="DirectedGraph:Node" label="dorey" outgoing="//@contents.8" incoming="//@contents.10 //@contents.12"/>
+  <contents xsi:type="DirectedGraph:Node" label="jessalyn" outgoing="//@contents.9" incoming="//@contents.8"/>
+  <contents xsi:type="DirectedGraph:Node" label="florencia" outgoing="//@contents.11"/>
+  <contents xsi:type="DirectedGraph:Node" label="ebony" outgoing="//@contents.13" incoming="//@contents.9"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="76" source="//@contents.4" target="//@contents.5"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="90" source="//@contents.5" target="//@contents.7"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="181" source="//@contents.0" target="//@contents.4"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="187" source="//@contents.6" target="//@contents.3"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="136" source="//@contents.3" target="//@contents.4"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="75" source="//@contents.7" target="//@contents.3"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="114" source="//@contents.1" target="//@contents.3"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="179" source="//@contents.0" target="//@contents.2"/>
+</DirectedGraph:Graph>

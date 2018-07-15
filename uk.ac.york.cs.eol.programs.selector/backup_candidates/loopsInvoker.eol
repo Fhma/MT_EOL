@@ -1,0 +1,8 @@
+import 'loops.eol';
+
+for(n in Node.all){
+	"hasLoop...".println();
+	hasLoop(n).println();
+	"hasLoopAux...".println();
+	hasLoopAux(n).println();
+}

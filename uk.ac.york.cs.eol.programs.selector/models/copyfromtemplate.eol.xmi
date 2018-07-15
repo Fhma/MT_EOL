@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eol:EOLModule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eol="http://www.eclipse.org/epsilon/eol">
+  <region>
+    <start line="2"/>
+    <end line="11" column="28"/>
+  </region>
+  <block container="/">
+    <region>
+      <start line="2"/>
+      <end line="11" column="28"/>
+    </region>
+    <statements xsi:type="eol:AssignmentStatement" container="//@block">
+      <region>
+        <start line="2"/>
+        <end line="2" column="47"/>
+      </region>
+      <lhs xsi:type="eol:VariableDeclarationExpression" container="//@block/@statements.0">
+        <region>
+          <start line="2"/>
+          <end line="2" column="12"/>
+        </region>
+        <resolvedType xsi:type="eol:AnyType" container="//@block/@statements.0/@lhs">
+          <region>
+            <start line="2"/>
+            <end line="2" column="12"/>
+          </region>
+        </resolvedType>
+        <name container="//@block/@statements.0/@lhs" name="contacts">
+          <region>
+            <start line="2" column="4"/>
+            <end line="2" column="12"/>
+          </region>
+        </name>
+      </lhs>
+      <rhs xsi:type="eol:MethodCallExpression" container="//@block/@statements.0">
+        <region>
+          <start line="2" column="15"/>
+          <end line="2" column="46"/>
+        </region>
+        <target xsi:type="eol:PropertyCallExpression" container="//@block/@statements.0/@rhs">
+          <region>
+            <start line="2" column="15"/>
+            <end line="2" column="38"/>
+          </region>
+          <target xsi:type="eol:NameExpression" container="//@block/@statements.0/@rhs/@target" name="Contacts!t_contacts">
+            <region>
+              <start line="2" column="15"/>
+              <end line="2" column="34"/>
+            </region>
+          </target>
+          <property container="//@block/@statements.0/@rhs/@target" name="all">
+            <region>
+              <start line="2" column="35"/>
+              <end line="2" column="38"/>
+            </region>
+          </property>
+        </target>
+        <method container="//@block/@statements.0/@rhs" name="first">
+          <region>
+            <start line="2" column="39"/>
+            <end line="2" column="46"/>
+          </region>
+        </method>
+      </rhs>
+    </statements>
+    <statements xsi:type="eol:AssignmentStatement" container="//@block">
+      <region>
+        <start line="5"/>
+        <end line="5" column="42"/>
+      </region>
+      <lhs xsi:type="eol:VariableDeclarationExpression" container="//@block/@statements.1">
+        <region>
+          <start line="5"/>
+          <end line="5" column="9"/>
+        </region>
+        <resolvedType xsi:type="eol:AnyType" container="//@block/@statements.1/@lhs">
+          <region>
+            <start line="5"/>
+            <end line="5" column="9"/>
+          </region>
+        </resolvedType>
+        <name container="//@block/@statements.1/@lhs" name="vcard">
+          <region>
+            <start line="5" column="4"/>
+            <end line="5" column="9"/>
+          </region>
+        </name>
+      </lhs>
+      <rhs xsi:type="eol:MethodCallExpression" container="//@block/@statements.1">
+        <region>
+          <start line="5" column="12"/>
+          <end line="5" column="41"/>
+        </region>
+        <target xsi:type="eol:PropertyCallExpression" container="//@block/@statements.1/@rhs">
+          <region>
+            <start line="5" column="12"/>
+            <end line="5" column="33"/>
+          </region>
+          <target xsi:type="eol:NameExpression" container="//@block/@statements.1/@rhs/@target" name="Templates!t_vcard">
+            <region>
+              <start line="5" column="12"/>
+              <end line="5" column="29"/>
+            </region>
+          </target>
+          <property container="//@block/@statements.1/@rhs/@target" name="all">
+            <region>
+              <start line="5" column="30"/>
+              <end line="5" column="33"/>
+            </region>
+          </property>
+        </target>
+        <method container="//@block/@statements.1/@rhs" name="first">
+          <region>
+            <start line="5" column="34"/>
+            <end line="5" column="41"/>
+          </region>
+        </method>
+      </rhs>
+    </statements>
+    <statements xsi:type="eol:AssignmentStatement" container="//@block">
+      <region>
+        <start line="8"/>
+        <end line="8" column="54"/>
+      </region>
+      <lhs xsi:type="eol:VariableDeclarationExpression" container="//@block/@statements.2">
+        <region>
+          <start line="8"/>
+          <end line="8" column="9"/>
+        </region>
+        <resolvedType xsi:type="eol:AnyType" container="//@block/@statements.2/@lhs">
+          <region>
+            <start line="8"/>
+            <end line="8" column="9"/>
+          </region>
+        </resolvedType>
+        <name container="//@block/@statements.2/@lhs" name="clone">
+          <region>
+            <start line="8" column="4"/>
+            <end line="8" column="9"/>
+          </region>
+        </name>
+      </lhs>
+      <rhs xsi:type="eol:MethodCallExpression" container="//@block/@statements.2">
+        <region>
+          <start line="8" column="12"/>
+          <end line="8" column="53"/>
+        </region>
+        <target xsi:type="eol:PropertyCallExpression" container="//@block/@statements.2/@rhs">
+          <region>
+            <start line="8" column="12"/>
+            <end line="8" column="29"/>
+          </region>
+          <target xsi:type="eol:NameExpression" container="//@block/@statements.2/@rhs/@target" name="Contacts">
+            <region>
+              <start line="8" column="12"/>
+              <end line="8" column="20"/>
+            </region>
+          </target>
+          <property container="//@block/@statements.2/@rhs/@target" name="document">
+            <region>
+              <start line="8" column="21"/>
+              <end line="8" column="29"/>
+            </region>
+          </property>
+        </target>
+        <arguments xsi:type="eol:NameExpression" container="//@block/@statements.2/@rhs" name="vcard">
+          <region>
+            <start line="8" column="41"/>
+            <end line="8" column="46"/>
+          </region>
+        </arguments>
+        <arguments xsi:type="eol:BooleanExpression" container="//@block/@statements.2/@rhs" value="true">
+          <region>
+            <start line="8" column="48"/>
+            <end line="8" column="52"/>
+          </region>
+          <resolvedType xsi:type="eol:BooleanType" container="//@block/@statements.2/@rhs/@arguments.1">
+            <region>
+              <start line="8" column="48"/>
+              <end line="8" column="52"/>
+            </region>
+          </resolvedType>
+        </arguments>
+        <method container="//@block/@statements.2/@rhs" name="importNode">
+          <region>
+            <start line="8" column="30"/>
+            <end line="8" column="53"/>
+          </region>
+        </method>
+      </rhs>
+    </statements>
+    <statements xsi:type="eol:ExpressionStatement" container="//@block">
+      <region>
+        <start line="11"/>
+        <end line="11" column="28"/>
+      </region>
+      <expression xsi:type="eol:MethodCallExpression" container="//@block/@statements.3">
+        <region>
+          <start line="11"/>
+          <end line="11" column="28"/>
+        </region>
+        <target xsi:type="eol:NameExpression" container="//@block/@statements.3/@expression" name="contacts">
+          <region>
+            <start line="11"/>
+            <end line="11" column="8"/>
+          </region>
+        </target>
+        <arguments xsi:type="eol:NameExpression" container="//@block/@statements.3/@expression" name="clone">
+          <region>
+            <start line="11" column="21"/>
+            <end line="11" column="26"/>
+          </region>
+        </arguments>
+        <method container="//@block/@statements.3/@expression" name="appendChild">
+          <region>
+            <start line="11" column="9"/>
+            <end line="11" column="27"/>
+          </region>
+        </method>
+      </expression>
+    </statements>
+  </block>
+</eol:EOLModule>

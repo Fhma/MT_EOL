@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eol:EOLModule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eol="http://www.eclipse.org/epsilon/eol">
+  <region>
+    <start line="1"/>
+    <end line="6" column="19"/>
+  </region>
+  <block container="/">
+    <region>
+      <start line="1"/>
+      <end line="6" column="19"/>
+    </region>
+    <statements xsi:type="eol:AssignmentStatement" container="//@block">
+      <region>
+        <start line="1"/>
+        <end line="1" column="77"/>
+      </region>
+      <lhs xsi:type="eol:VariableDeclarationExpression" container="//@block/@statements.0">
+        <region>
+          <start line="1"/>
+          <end line="1" column="14"/>
+        </region>
+        <resolvedType xsi:type="eol:AnyType" container="//@block/@statements.0/@lhs">
+          <region>
+            <start line="1"/>
+            <end line="1" column="14"/>
+          </region>
+        </resolvedType>
+        <name container="//@block/@statements.0/@lhs" name="sampleTool">
+          <region>
+            <start line="1" column="4"/>
+            <end line="1" column="14"/>
+          </region>
+        </name>
+      </lhs>
+      <rhs xsi:type="eol:NewExpression" container="//@block/@statements.0">
+        <region>
+          <start line="1" column="17"/>
+          <end line="1" column="76"/>
+        </region>
+        <resolvedType xsi:type="eol:NativeType" container="//@block/@statements.0/@rhs">
+          <region>
+            <start line="1" column="21"/>
+            <end line="1" column="76"/>
+          </region>
+          <expression container="//@block/@statements.0/@rhs/@resolvedType" value="org.eclipse.epsilon.examples.tools.SampleTool">
+            <region>
+              <start line="1" column="28"/>
+              <end line="1" column="75"/>
+            </region>
+            <resolvedType xsi:type="eol:StringType" container="//@block/@statements.0/@rhs/@resolvedType/@expression">
+              <region>
+                <start line="1" column="28"/>
+                <end line="1" column="75"/>
+              </region>
+            </resolvedType>
+          </expression>
+        </resolvedType>
+      </rhs>
+    </statements>
+    <statements xsi:type="eol:AssignmentStatement" container="//@block">
+      <region>
+        <start line="2"/>
+        <end line="2" column="27"/>
+      </region>
+      <lhs xsi:type="eol:PropertyCallExpression" container="//@block/@statements.1">
+        <region>
+          <start line="2"/>
+          <end line="2" column="15"/>
+        </region>
+        <target xsi:type="eol:NameExpression" container="//@block/@statements.1/@lhs" name="sampleTool">
+          <region>
+            <start line="2"/>
+            <end line="2" column="10"/>
+          </region>
+        </target>
+        <property container="//@block/@statements.1/@lhs" name="name">
+          <region>
+            <start line="2" column="11"/>
+            <end line="2" column="15"/>
+          </region>
+        </property>
+      </lhs>
+      <rhs xsi:type="eol:StringExpression" container="//@block/@statements.1" value="George">
+        <region>
+          <start line="2" column="18"/>
+          <end line="2" column="26"/>
+        </region>
+        <resolvedType xsi:type="eol:StringType" container="//@block/@statements.1/@rhs">
+          <region>
+            <start line="2" column="18"/>
+            <end line="2" column="26"/>
+          </region>
+        </resolvedType>
+      </rhs>
+    </statements>
+    <statements xsi:type="eol:ExpressionStatement" container="//@block">
+      <region>
+        <start line="3"/>
+        <end line="3" column="32"/>
+      </region>
+      <expression xsi:type="eol:MethodCallExpression" container="//@block/@statements.2">
+        <region>
+          <start line="3"/>
+          <end line="3" column="32"/>
+        </region>
+        <target xsi:type="eol:MethodCallExpression" container="//@block/@statements.2/@expression">
+          <region>
+            <start line="3"/>
+            <end line="3" column="21"/>
+          </region>
+          <target xsi:type="eol:NameExpression" container="//@block/@statements.2/@expression/@target" name="sampleTool">
+            <region>
+              <start line="3"/>
+              <end line="3" column="10"/>
+            </region>
+          </target>
+          <method container="//@block/@statements.2/@expression/@target" name="sayHello">
+            <region>
+              <start line="3" column="11"/>
+              <end line="3" column="21"/>
+            </region>
+          </method>
+        </target>
+        <method container="//@block/@statements.2/@expression" name="println">
+          <region>
+            <start line="3" column="22"/>
+            <end line="3" column="31"/>
+          </region>
+        </method>
+      </expression>
+    </statements>
+    <statements xsi:type="eol:ExpressionStatement" container="//@block">
+      <region>
+        <start line="5"/>
+        <end line="5" column="42"/>
+      </region>
+      <expression xsi:type="eol:MethodCallExpression" container="//@block/@statements.3">
+        <region>
+          <start line="5"/>
+          <end line="5" column="42"/>
+        </region>
+        <target xsi:type="eol:NameExpression" container="//@block/@statements.3/@expression" name="sampleTool">
+          <region>
+            <start line="5"/>
+            <end line="5" column="10"/>
+          </region>
+        </target>
+        <arguments xsi:type="eol:StringExpression" container="//@block/@statements.3/@expression" value="greeting">
+          <region>
+            <start line="5" column="30"/>
+            <end line="5" column="40"/>
+          </region>
+          <resolvedType xsi:type="eol:StringType" container="//@block/@statements.3/@expression/@arguments.0">
+            <region>
+              <start line="5" column="30"/>
+              <end line="5" column="40"/>
+            </region>
+          </resolvedType>
+        </arguments>
+        <method container="//@block/@statements.3/@expression" name="sayHelloAsVariable">
+          <region>
+            <start line="5" column="11"/>
+            <end line="5" column="41"/>
+          </region>
+        </method>
+      </expression>
+    </statements>
+    <statements xsi:type="eol:ExpressionStatement" container="//@block">
+      <region>
+        <start line="6"/>
+        <end line="6" column="19"/>
+      </region>
+      <expression xsi:type="eol:MethodCallExpression" container="//@block/@statements.4">
+        <region>
+          <start line="6"/>
+          <end line="6" column="19"/>
+        </region>
+        <target xsi:type="eol:NameExpression" container="//@block/@statements.4/@expression" name="greeting">
+          <region>
+            <start line="6"/>
+            <end line="6" column="8"/>
+          </region>
+        </target>
+        <method container="//@block/@statements.4/@expression" name="println">
+          <region>
+            <start line="6" column="9"/>
+            <end line="6" column="18"/>
+          </region>
+        </method>
+      </expression>
+    </statements>
+  </block>
+</eol:EOLModule>
