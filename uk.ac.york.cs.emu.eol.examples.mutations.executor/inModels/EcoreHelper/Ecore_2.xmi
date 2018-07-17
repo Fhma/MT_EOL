@@ -1,38 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="endlabels" nsURI="endlabels" nsPrefix="endlabels">
-  <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//Model/asociations"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="clases" upperBound="-1" eType="//Class" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="asociations" upperBound="-1" eType="//Association" containment="true"/>
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ecore" nsURI="http://www.eclipse.org/emf/2002/Ecore" nsPrefix="Ecore">
+  <eClassifiers xsi:type="ecore:EClass" name="ryley" eSuperTypes="//conan">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="norry" lowerBound="9" upperBound="9" eType="//nannie"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//NamedElement/name">
-      <details key="type" value="NOTUNIQUE_HASH_INDEX"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="nannie">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//nannie/cristina"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="corenda" upperBound="4">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
     </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="//NamedElement">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//NamedElement/name">
-      <details key="type" value="NOTUNIQUE_HASH_INDEX"/>
-    </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="//NamedElement">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//Association/targetLabel">
-      <details key="type" value="NOTUNIQUE_HASH_INDEX"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="//Class"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="//Class">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruy" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cristina" upperBound="6" eType="//conan">
       <eAnnotations source="https://eclipse.org/epsilon/incremental/Graph">
         <details key="edge" value="true"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceLabel">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="conan">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guy" lowerBound="2" upperBound="2">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetLabel">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gisele" lowerBound="4" upperBound="7" eType="//ryley" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mariska" lowerBound="4" upperBound="6" eType="//conan" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

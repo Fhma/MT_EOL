@@ -1,55 +1,27 @@
 <?xml version="1.0" encoding="ASCII"?>
-<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
-  <nodes>
-    <containmentFeature href="ECore_3.xmi#//Configuration/features"/>
-    <ownedChild relatedDiagrams="//@diagram">
-      <domainMetaElement href="ECore_3.xmi#//Feature"/>
-      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel href="GmfGraph_3.xmi#FeatureLabel"/>
-        <features href="ECore_3.xmi#//NamedElement/name"/>
-      </labelMappings>
-      <tool xsi:type="tooldef:CreationTool" href="GmfTool_3.xmi#//@palette/@tools.0/@tools.0"/>
-      <diagramNode href="GmfGraph_3.xmi#Feature"/>
-      <children compartment="//@nodes.0/@ownedChild/@compartments.0" referencedChild="//@nodes.1/@ownedChild">
-        <containmentFeature href="ECore_3.xmi#//Feature/plugins"/>
-      </children>
-      <compartments children="//@nodes.0/@ownedChild/@children.0">
-        <compartment href="GmfGraph_3.xmi#FeaturePluginsCompartment"/>
-      </compartments>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature href="ECore_3.xmi#//Configuration/plugins"/>
-    <ownedChild>
-      <domainMetaElement href="ECore_3.xmi#//Plugin"/>
-      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel href="GmfGraph_3.xmi#PluginLabel"/>
-        <features href="ECore_3.xmi#//NamedElement/name"/>
-      </labelMappings>
-      <tool xsi:type="tooldef:CreationTool" href="GmfTool_3.xmi#//@palette/@tools.0/@tools.1"/>
-      <diagramNode href="GmfGraph_3.xmi#Plugin"/>
-    </ownedChild>
-  </nodes>
+<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <links>
-    <labelMappings xsi:type="gmfmap:DesignLabelMapping" readOnly="true">
-      <diagramLabel href="GmfGraph_3.xmi#FeatureDependsExternalLabel"/>
-    </labelMappings>
-    <tool xsi:type="tooldef:CreationTool" href="GmfTool_3.xmi#//@palette/@tools.1/@tools.0"/>
-    <diagramLink href="GmfGraph_3.xmi#FeatureDepends"/>
-    <linkMetaFeature xsi:type="ecore:EReference" href="ECore_3.xmi#//Feature/depends"/>
+    <domainMetaElement href="ECore_3.xmi#//juliet"/>
+    <containmentFeature href="ECore_3.xmi#//juliet/ichabod"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_3.xmi#//@palette/@tools.1/@tools.1"/>
+    <diagramLink href="GmfGraph_3.xmi#juliet"/>
   </links>
   <links>
-    <labelMappings xsi:type="gmfmap:DesignLabelMapping" readOnly="true">
-      <diagramLabel href="GmfGraph_3.xmi#FeatureIncludesExternalLabel"/>
-    </labelMappings>
-    <tool xsi:type="tooldef:CreationTool" href="GmfTool_3.xmi#//@palette/@tools.1/@tools.1"/>
-    <diagramLink href="GmfGraph_3.xmi#FeatureIncludes"/>
-    <linkMetaFeature xsi:type="ecore:EReference" href="ECore_3.xmi#//Feature/includes"/>
+    <domainMetaElement href="ECore_3.xmi#//jaquenetta"/>
+    <containmentFeature href="ECore_3.xmi#//nannie/gabe"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_3.xmi#//@palette/@tools.1/@tools.0"/>
+    <diagramLink href="GmfGraph_3.xmi#jaquenetta"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_3.xmi#//jaquenetta"/>
+    <containmentFeature href="ECore_3.xmi#//jaquenetta/lucita"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_3.xmi#//@palette/@tools.1/@tools.0"/>
+    <diagramLink href="GmfGraph_3.xmi#jaquenetta"/>
   </links>
   <diagram>
-    <diagramCanvas href="GmfGraph_3.xmi#fed"/>
+    <diagramCanvas href="GmfGraph_3.xmi#ecore"/>
     <domainModel href="ECore_3.xmi#/"/>
-    <domainMetaElement href="ECore_3.xmi#//Configuration"/>
+    <domainMetaElement href="ECore_3.xmi#//juliet"/>
     <palette href="GmfTool_3.xmi#//@palette"/>
   </diagram>
 </gmfmap:Mapping>

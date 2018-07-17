@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="flowchart" nsURI="flowchart" nsPrefix="flowchart">
+  <eClassifiers xsi:type="ecore:EClass" name="Flowchart">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//Flowchart/nodes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1" eType="//Node" containment="true">
+      <eAnnotations source="https://eclipse.org/epsilon/incremental/Graph">
+        <details key="edge" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1" eType="//Transition" containment="true">
+      <eAnnotations source="https://eclipse.org/epsilon/incremental/Graph">
+        <details key="edge" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//Node/outgoing"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1" eType="//Transition" eOpposite="//Transition/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" upperBound="-1" eType="//Transition" eOpposite="//Transition/target"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//Transition/target"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="//Node" eOpposite="//Node/outgoing"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="//Node" eOpposite="//Node/incoming"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Subflow" eSuperTypes="//Flowchart //Node">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//Node/incoming"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="//Node">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//Node/outgoing"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Decision" eSuperTypes="//Node">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//Node/incoming"/>
+  </eClassifiers>
+</ecore:EPackage>

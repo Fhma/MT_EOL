@@ -1,40 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="state" nsURI="http://se.cs.toronto.edu/modelepedia/State" nsPrefix="state">
-  <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="//AdministrativeDivision">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//NamedElement/name">
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ecore" nsURI="http://www.eclipse.org/emf/2002/Ecore" nsPrefix="Ecore">
+  <eClassifiers xsi:type="ecore:EClass" name="ryley">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//ryley/quint">
       <details key="type" value="NOTUNIQUE_HASH_INDEX"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="regions" lowerBound="1" upperBound="-1" eType="//Region" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quint" lowerBound="2" upperBound="2">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//NamedElement/name">
-      <details key="type" value="NOTUNIQUE_HASH_INDEX"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1">
+  <eClassifiers xsi:type="ecore:EClass" name="nannie" eSuperTypes="//ryley">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//nannie/madlin"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="christoph" upperBound="5">
       <eAnnotations source="https://eclipse.org/epsilon/incremental/Graph">
         <details key="edge" value="true"/>
       </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AdministrativeDivision" abstract="true" eSuperTypes="//NamedElement">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//NamedElement/name">
-      <details key="type" value="NOTUNIQUE_HASH_INDEX"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="capital" lowerBound="1" eType="//City"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="//AdministrativeDivision">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//NamedElement/name">
-      <details key="type" value="NOTUNIQUE_HASH_INDEX"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cities" lowerBound="1" upperBound="-1" eType="//City" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="City" eSuperTypes="//NamedElement">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//City/population">
-      <details key="type" value="NOTUNIQUE_HASH_INDEX"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="population" lowerBound="1">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ebony" lowerBound="1" upperBound="6" eType="//nannie" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="madlin" eType="//ryley"/>
   </eClassifiers>
 </ecore:EPackage>

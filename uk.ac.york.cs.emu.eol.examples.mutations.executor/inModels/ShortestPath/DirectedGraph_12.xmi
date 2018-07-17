@@ -1,35 +1,19 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:DirectedGraph="DirectedGraph">
-  <DirectedGraph:Node label="baldwin" outgoing="/23" incoming="/24"/>
-  <DirectedGraph:Node label="donni" outgoing="/24" incoming="/29"/>
-  <DirectedGraph:Node label="johna" outgoing="/21 /31"/>
-  <DirectedGraph:Node label="robbyn" incoming="/28 /30"/>
-  <DirectedGraph:Node label="miguelita" outgoing="/16"/>
-  <DirectedGraph:Node label="blaine" incoming="/26"/>
-  <DirectedGraph:Node label="baldwin" outgoing="/27"/>
-  <DirectedGraph:Node label="gates" outgoing="/19 /20" incoming="/27"/>
-  <DirectedGraph:Node label="juliet" outgoing="/22 /28 /29 /30" incoming="/17"/>
-  <DirectedGraph:Node label="meier" outgoing="/25" incoming="/18"/>
-  <DirectedGraph:Node label="bennett" incoming="/21"/>
-  <DirectedGraph:Node label="ronalda" outgoing="/26" incoming="/31"/>
-  <DirectedGraph:Node label="ilise" incoming="/16"/>
-  <DirectedGraph:Node label="dorey" outgoing="/17 /18" incoming="/25"/>
-  <DirectedGraph:Node label="curt" incoming="/19 /22 /23"/>
-  <DirectedGraph:Node label="saraann" incoming="/20"/>
-  <DirectedGraph:Edge weight="28" source="/4" target="/12"/>
-  <DirectedGraph:Edge weight="94" source="/13" target="/8"/>
-  <DirectedGraph:Edge weight="166" source="/13" target="/9"/>
-  <DirectedGraph:Edge weight="142" source="/7" target="/14"/>
-  <DirectedGraph:Edge weight="37" source="/7" target="/15"/>
-  <DirectedGraph:Edge weight="53" source="/2" target="/10"/>
-  <DirectedGraph:Edge weight="47" source="/8" target="/14"/>
-  <DirectedGraph:Edge weight="143" source="/0" target="/14"/>
-  <DirectedGraph:Edge weight="124" source="/1" target="/0"/>
-  <DirectedGraph:Edge weight="54" source="/9" target="/13"/>
-  <DirectedGraph:Edge weight="90" source="/11" target="/5"/>
-  <DirectedGraph:Edge weight="136" source="/6" target="/7"/>
-  <DirectedGraph:Edge weight="151" source="/8" target="/3"/>
-  <DirectedGraph:Edge weight="96" source="/8" target="/1"/>
-  <DirectedGraph:Edge weight="86" source="/8" target="/3"/>
-  <DirectedGraph:Edge weight="7" source="/2" target="/11"/>
-</xmi:XMI>
+<DirectedGraph:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DirectedGraph="DirectedGraph">
+  <contents xsi:type="DirectedGraph:Node" label="iosep" outgoing="//@contents.10 //@contents.15"/>
+  <contents xsi:type="DirectedGraph:Node" label="ulla" outgoing="//@contents.14"/>
+  <contents xsi:type="DirectedGraph:Node" label="quint" incoming="//@contents.15"/>
+  <contents xsi:type="DirectedGraph:Node" label="corenda" outgoing="//@contents.12" incoming="//@contents.11 //@contents.13 //@contents.14"/>
+  <contents xsi:type="DirectedGraph:Node" label="dorey" outgoing="//@contents.8" incoming="//@contents.10 //@contents.12"/>
+  <contents xsi:type="DirectedGraph:Node" label="jessalyn" outgoing="//@contents.9" incoming="//@contents.8"/>
+  <contents xsi:type="DirectedGraph:Node" label="florencia" outgoing="//@contents.11"/>
+  <contents xsi:type="DirectedGraph:Node" label="ebony" outgoing="//@contents.13" incoming="//@contents.9"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="76" source="//@contents.4" target="//@contents.5"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="90" source="//@contents.5" target="//@contents.7"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="181" source="//@contents.0" target="//@contents.4"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="187" source="//@contents.6" target="//@contents.3"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="136" source="//@contents.3" target="//@contents.4"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="75" source="//@contents.7" target="//@contents.3"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="114" source="//@contents.1" target="//@contents.3"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="179" source="//@contents.0" target="//@contents.2"/>
+</DirectedGraph:Graph>

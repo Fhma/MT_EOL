@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:DirectedGraph="DirectedGraph">
+  <DirectedGraph:Node label="norry" incoming="/2 /3"/>
+  <DirectedGraph:Node label="florance" outgoing="/2 /3"/>
+  <DirectedGraph:Edge weight="143" source="/1" target="/0"/>
+  <DirectedGraph:Edge weight="45" source="/1" target="/0"/>
+</xmi:XMI>

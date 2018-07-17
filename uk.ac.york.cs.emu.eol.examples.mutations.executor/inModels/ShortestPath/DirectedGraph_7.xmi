@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:DirectedGraph="DirectedGraph">
-  <DirectedGraph:Node label="jessalyn" incoming="/5 /7"/>
-  <DirectedGraph:Node label="lucita" outgoing="/5" incoming="/6"/>
-  <DirectedGraph:Node label="rriocard" outgoing="/4"/>
-  <DirectedGraph:Node label="maren" outgoing="/6 /7" incoming="/4"/>
-  <DirectedGraph:Edge weight="148" source="/2" target="/3"/>
-  <DirectedGraph:Edge weight="102" source="/1" target="/0"/>
-  <DirectedGraph:Edge weight="81" source="/3" target="/1"/>
-  <DirectedGraph:Edge weight="43" source="/3" target="/0"/>
-</xmi:XMI>
+<DirectedGraph:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DirectedGraph="DirectedGraph">
+  <contents xsi:type="DirectedGraph:Node" label="iosep" outgoing="//@contents.2"/>
+  <contents xsi:type="DirectedGraph:Node" label="ulla" incoming="//@contents.2"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="133" source="//@contents.0" target="//@contents.1"/>
+</DirectedGraph:Graph>

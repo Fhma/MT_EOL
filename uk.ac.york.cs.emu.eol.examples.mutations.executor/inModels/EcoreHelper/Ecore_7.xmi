@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="people" nsURI="www.eclipse.org/epsilon/examples/svg" nsPrefix="p">
-  <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//Model/people"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="people" upperBound="-1" eType="//Person" containment="true">
-      <eAnnotations source="https://eclipse.org/epsilon/incremental/Graph">
-        <details key="edge" value="true"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Person">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//Person/name">
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ecore" nsURI="http://www.eclipse.org/emf/2002/Ecore" nsPrefix="Ecore">
+  <eClassifiers xsi:type="ecore:EClass" name="ryley">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//ryley/quint">
       <details key="type" value="NOTUNIQUE_HASH_INDEX"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quint" lowerBound="2" upperBound="2">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="nannie" eSuperTypes="//ryley">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//nannie/madlin"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="christoph" upperBound="5">
       <eAnnotations source="https://eclipse.org/epsilon/incremental/Graph">
         <details key="edge" value="true"/>
       </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ebony" lowerBound="1" upperBound="6" eType="//nannie" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="madlin" eType="//ryley"/>
   </eClassifiers>
 </ecore:EPackage>

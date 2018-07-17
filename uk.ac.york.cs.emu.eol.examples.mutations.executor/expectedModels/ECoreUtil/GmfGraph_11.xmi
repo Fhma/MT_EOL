@@ -1,85 +1,148 @@
 <?xml version="1.0" encoding="ASCII"?>
-<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="statecharts">
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="ecore">
   <figures name="Default">
-    <figures xsi:type="gmfgraph:PolylineDecoration" name="StateNextFigureTargetDecoration"/>
-    <descriptors name="HyperEdgeFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="HyperEdgeFigure">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
-        <backgroundColor xsi:type="gmfgraph:RGBColor"/>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Sqare">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template y="1"/>
+      <template x="-1" y="1"/>
+      <template x="-1" y="-1"/>
+      <template y="-1"/>
+      <template y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledClosedArrow">
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledRhomb">
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Rhomb">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledClosedArrow">
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledSqare">
+      <template y="1"/>
+      <template x="-1" y="1"/>
+      <template x="-1" y="-1"/>
+      <template y="-1"/>
+      <template y="1"/>
+    </figures>
+    <descriptors name="ryleyFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ryleyFigure" lineWidth="10" lineKind="LINE_DOT">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="143" green="55" blue="68"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="78" green="149" blue="1"/>
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="HyperEdgeLabelFigure" text="HyperEdge"/>
+        <children xsi:type="gmfgraph:Label" name="ryleyLabelFigure" text="ryley"/>
       </actualFigure>
-      <accessors accessor="getFigureHyperEdgeLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureryleyLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="BasicFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="BasicFigure">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors name="jaquenettaFigure">
+      <actualFigure xsi:type="gmfgraph:ScalablePolygon" name="jaquenettaFigure" lineWidth="7" lineKind="LINE_DASH">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="128" green="35" blue="139"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="181" green="88" blue="136"/>
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="BasicLabelFigure" text="Basic"/>
+        <children xsi:type="gmfgraph:Label" name="jaquenettaLabelFigure" text="jaquenetta"/>
+        <template x="5" y="2"/>
       </actualFigure>
-      <accessors accessor="getFigureBasicLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors accessor="getFigurejaquenettaLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="ANDFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="ANDFigure">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
-        <preferredSize dx="250" dy="250"/>
+    <descriptors name="christophFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="christophFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="105" green="104" blue="18"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="16" green="112" blue="136"/>
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="ANDLabelFigure" text="AND">
-          <maximumSize dx="10000" dy="50"/>
-        </children>
-        <children xsi:type="gmfgraph:Rectangle" name="ANDContainsCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Label" name="christophLabelFigure" text="christoph"/>
       </actualFigure>
-      <accessors accessor="getFigureANDLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
-      <accessors accessor="getANDContainsCompartmentFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+      <accessors accessor="getFigurechristophLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="ORFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="ORFigure" lineKind="LINE_DASH">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
-        <preferredSize dx="150" dy="150"/>
+    <descriptors name="giseleFigure">
+      <actualFigure xsi:type="gmfgraph:SVGFigure" name="giseleFigure" documentURI="platform:/plugin/my.plugin/trixie">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="171" green="24" blue="143"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="53" green="91" blue="87"/>
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="ORLabelFigure" text="OR">
-          <maximumSize dx="10000" dy="50"/>
-        </children>
-        <children xsi:type="gmfgraph:Rectangle" name="ORContainsCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Label" name="giseleLabelFigure" text="gisele"/>
       </actualFigure>
-      <accessors accessor="getFigureORLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
-      <accessors accessor="getORContainsCompartmentFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
+      <accessors accessor="getFiguregiseleLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="StateNextFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="StateNextFigure" targetDecoration="//@figures.0/@figures.0">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors name="shelliFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="shelliFigure" lineWidth="7" lineKind="LINE_DOT">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="2" blue="214"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="7" green="19" blue="122"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="shelliLabelFigure" text="shelli"/>
+      </actualFigure>
+      <accessors accessor="getFigureshelliLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="nannieFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="nannieFigure" lineWidth="3" lineKind="LINE_DASH" sourceDecoration="//@figures.0/@figures.0" targetDecoration="//@figures.0/@figures.1">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="77" green="228" blue="151"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="StateNextExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="StateNextExternalLabel"/>
+    <descriptors name="julietFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="julietFigure" lineWidth="5" lineKind="LINE_DOT" sourceDecoration="//@figures.0/@figures.2">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="181" green="209" blue="206"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="julietLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="julietLabelLabel" text="juliet"/>
+    </descriptors>
+    <descriptors name="karolyFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="karolyFigure" lineWidth="10" sourceDecoration="//@figures.0/@figures.3" targetDecoration="//@figures.0/@figures.4">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="153" green="105" blue="125"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="marrisFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="marrisFigure" lineWidth="4" lineKind="LINE_DASH" sourceDecoration="//@figures.0/@figures.5" targetDecoration="//@figures.0/@figures.6">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="149" green="37" blue="166"/>
+      </actualFigure>
     </descriptors>
   </figures>
-  <nodes name="HyperEdge" figure="HyperEdgeFigure"/>
-  <nodes name="Basic" figure="BasicFigure"/>
-  <nodes name="AND" figure="ANDFigure">
-    <facets xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize dx="250" dy="250"/>
-    </facets>
-  </nodes>
-  <nodes name="OR" figure="ORFigure">
-    <facets xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize dx="150" dy="150"/>
-    </facets>
-  </nodes>
-  <connections name="StateNext" figure="StateNextFigure"/>
-  <compartments name="ANDContainsCompartment" figure="ANDFigure" collapsible="true" accessor="//@figures.0/@descriptors.2/@accessors.1"/>
-  <compartments name="ORContainsCompartment" figure="ORFigure" collapsible="true" accessor="//@figures.0/@descriptors.3/@accessors.1"/>
-  <labels name="HyperEdgeLabel" figure="HyperEdgeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels name="BasicLabel" figure="BasicFigure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
-  <labels name="ANDLabel" figure="ANDFigure" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
-  <labels name="ORLabel" figure="ORFigure" elementIcon="false" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
-  <labels name="StateNextExternalLabel" figure="StateNextExternalLabelFigure" elementIcon="false"/>
+  <nodes name="ryley" figure="ryleyFigure"/>
+  <nodes name="jaquenetta" figure="jaquenettaFigure"/>
+  <nodes name="christoph" figure="christophFigure"/>
+  <nodes name="gisele" figure="giseleFigure"/>
+  <nodes name="shelli" figure="shelliFigure"/>
+  <connections name="nannie" figure="nannieFigure"/>
+  <connections name="juliet" figure="julietFigure"/>
+  <connections name="karoly" figure="karolyFigure"/>
+  <connections name="marris" figure="marrisFigure"/>
+  <labels name="ryleyLabel" figure="ryleyFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="jaquenettaLabel" figure="jaquenettaFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="christophLabel" figure="christophFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="giseleLabel" figure="giseleFigure" elementIcon="false" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="shelliLabel" figure="shelliFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels name="julietLabel" figure="julietLabelFigure" elementIcon="false"/>
 </gmfgraph:Canvas>

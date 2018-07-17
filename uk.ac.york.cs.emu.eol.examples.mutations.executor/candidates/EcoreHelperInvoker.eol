@@ -1,13 +1,3 @@
-// Main operations to invoke
-// 1. getRequriedImports
-// 1.1. operation EClass getRequriedImports(5) called from EClass2Interace.egl
-// 1.2. operation EClass getRequriedImports(7) called from EClass2DtoImpl.egl
-// 2. EClass getRequiredFeatureParameters(2) called EClass2Interace.egl and EClass2DtoImpl.egl, EClass2Interface.egl, Ecore2JavaTemplates.egl
-// 3. EClass getEqualsReferences() called EClass2DtoImpl.egl
-// 4. EReference isEdge called from EClass2EolGremlinImpl.egl, EClass2EvlGremlinImpl.egl, EPackage2DaoInterface.egl
-// 5. EClass getSelect()
-// 6. EClass getIndex()
-
 import 'EcoreHelper.eol';
 
 var classes = EClass.allInstances();
@@ -32,18 +22,96 @@ for(c in classes) {
 	for(item in returned){
 		item.println();
 	}
+	
+	"getCorrectPackage(mainpackage, self)".println();
+	returned = c.getCorrectPackage("basePackage",c);
+	returned.println();
+		
+	"getContainerReference".println();
+	returned = c.getContainerReference();
+	for(item in returned){
+		item.println();
+	}
+		
 	"getEqualsReferences()".println();
 	returned = c.getEqualsReferences();
 	for(item in returned){
 		item.println();
 	}
-		
-	"isEdge()".println();
-	for(r in EReference.allInstances()) {
-		r.isEdge().println();
+	
+	"getRequiredFeatures".println();
+	returned = c.getRequiredFeatures();
+	for(item in returned){
+		item.println();
+	}
+	
+	"getSelect".println();
+	returned = c.getSelect();
+	for(item in returned){
+		item.println();
+	}
+	
+	"getIndex".println();
+	returned = c.getIndex();
+	for(item in returned){
+		item.println();
+	}
+	
+	"getIndexAttributes".println();
+	returned = c.getIndexAttributes();
+	for(item in returned){
+		item.println();
+	}
+	
+	"findIndexAnnotation".println();
+	returned = c.findIndexAnnotation();
+	if(returned.isDefined()){
+		if(returned.source = "https://eclipse.org/epsilon/incremental/OrientDbIndex")
+			"https://eclipse.org/epsilon/incremental/OrientDbIndex".println();
+		if(returned.details.get("type") = "NOTUNIQUE_HASH_INDEX")
+			"NOTUNIQUE_HASH_INDEX".println();
+	}
+	
+	"getEAllSubclasses".println();
+	returned = c.getEAllSubclasses();
+	for(item in returned){
+		item.println();
+	}
+} // end eclass
+
+for(es in EStructuralFeature.all){
+	"getRequiredImports(true)".println();
+	var returned = es.getRequiredImports(true);
+	for(item in returned){
+		item.println();
+	}
+	
+	"getRequiredImports(false)".println();
+	returned = es.getRequiredImports(false);
+	for(item in returned){
+		item.println();
 	}
 }
 
+for(attr in EAttribute.all) {
+	"getImports(true)".println();
+	var returned = attr.getImports(true);
+	for(item in returned){
+		item.println();
+	}
+	"getImports(false)".println();
+	returned = attr.getImports(false);
+	for(item in returned){
+		item.println();
+	}
+}
 
-
-
+"isEdge()".println();
+for(r in EReference.allInstances()) {
+	r.isEdge().println();
+}
+	
+"getJavaClassName".println();
+for(dt in EDataType.all){
+	dt.getJavaClassName().println();
+}

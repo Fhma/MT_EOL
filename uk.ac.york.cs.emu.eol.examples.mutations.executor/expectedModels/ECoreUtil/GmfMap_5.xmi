@@ -1,57 +1,137 @@
 <?xml version="1.0" encoding="ASCII"?>
-<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
-  <nodes>
-    <containmentFeature href="ECore_5.xmi#//Flowchart/nodes"/>
-    <ownedChild>
-      <domainMetaElement href="ECore_5.xmi#//Subflow"/>
-      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel href="GmfGraph_5.xmi#SubflowLabel"/>
-        <features href="ECore_5.xmi#//Node/name"/>
-      </labelMappings>
-      <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.0/@tools.2"/>
-      <diagramNode href="GmfGraph_5.xmi#Subflow"/>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature href="ECore_5.xmi#//Flowchart/nodes"/>
-    <ownedChild>
-      <domainMetaElement href="ECore_5.xmi#//Action"/>
-      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel href="GmfGraph_5.xmi#ActionLabel"/>
-        <features href="ECore_5.xmi#//Node/name"/>
-      </labelMappings>
-      <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.0/@tools.0"/>
-      <diagramNode href="GmfGraph_5.xmi#Action"/>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature href="ECore_5.xmi#//Flowchart/nodes"/>
-    <ownedChild>
-      <domainMetaElement href="ECore_5.xmi#//Decision"/>
-      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel href="GmfGraph_5.xmi#DecisionLabel"/>
-        <features href="ECore_5.xmi#//Node/name"/>
-      </labelMappings>
-      <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.0/@tools.1"/>
-      <diagramNode href="GmfGraph_5.xmi#Decision"/>
-    </ownedChild>
-  </nodes>
+<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <links>
-    <domainMetaElement href="ECore_5.xmi#//Transition"/>
+    <domainMetaElement href="ECore_5.xmi#//joseph"/>
+    <containmentFeature href="ECore_5.xmi#//forester/florance"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.2"/>
+    <diagramLink href="GmfGraph_5.xmi#joseph"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//joseph"/>
+    <containmentFeature href="ECore_5.xmi#//rodolphe/aindrea"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.2"/>
+    <diagramLink href="GmfGraph_5.xmi#joseph"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//joseph"/>
+    <containmentFeature href="ECore_5.xmi#//cathee/nichole"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.2"/>
+    <diagramLink href="GmfGraph_5.xmi#joseph"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//joseph"/>
     <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
-      <diagramLabel href="GmfGraph_5.xmi#TransitionLabel"/>
-      <features href="ECore_5.xmi#//Transition/name"/>
+      <diagramLabel href="GmfGraph_5.xmi#josephLabel"/>
+      <features href="ECore_5.xmi#//joseph/violetta"/>
     </labelMappings>
-    <containmentFeature href="ECore_5.xmi#//Flowchart/transitions"/>
+    <containmentFeature href="ECore_5.xmi#//bartram/ilise"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.2"/>
+    <diagramLink href="GmfGraph_5.xmi#joseph"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//kennith"/>
+    <containmentFeature href="ECore_5.xmi#//forester/florance"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.3"/>
+    <diagramLink href="GmfGraph_5.xmi#kennith"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//kennith"/>
+    <containmentFeature href="ECore_5.xmi#//rodolphe/aindrea"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.3"/>
+    <diagramLink href="GmfGraph_5.xmi#kennith"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//kennith"/>
+    <containmentFeature href="ECore_5.xmi#//cathee/nichole"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.3"/>
+    <diagramLink href="GmfGraph_5.xmi#kennith"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//kennith"/>
+    <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel href="GmfGraph_5.xmi#kennithLabel"/>
+      <features href="ECore_5.xmi#//shelli/rufus"/>
+    </labelMappings>
+    <containmentFeature href="ECore_5.xmi#//bartram/ilise"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.3"/>
+    <diagramLink href="GmfGraph_5.xmi#kennith"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//shelli"/>
+    <containmentFeature href="ECore_5.xmi#//rodolphe/aindrea"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.5"/>
+    <diagramLink href="GmfGraph_5.xmi#shelli"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//shelli"/>
+    <containmentFeature href="ECore_5.xmi#//cathee/nichole"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.5"/>
+    <diagramLink href="GmfGraph_5.xmi#shelli"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//shelli"/>
+    <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel href="GmfGraph_5.xmi#shelliLabel"/>
+      <features href="ECore_5.xmi#//shelli/rufus"/>
+    </labelMappings>
+    <containmentFeature href="ECore_5.xmi#//bartram/ilise"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.5"/>
+    <diagramLink href="GmfGraph_5.xmi#shelli"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//cathee"/>
+    <containmentFeature href="ECore_5.xmi#//conan/esmeralda"/>
     <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.0"/>
-    <diagramLink href="GmfGraph_5.xmi#Transition"/>
-    <sourceMetaFeature xsi:type="ecore:EReference" href="ECore_5.xmi#//Transition/source"/>
-    <linkMetaFeature xsi:type="ecore:EReference" href="ECore_5.xmi#//Transition/target"/>
+    <diagramLink href="GmfGraph_5.xmi#cathee"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//cathee"/>
+    <containmentFeature href="ECore_5.xmi#//jervis/quincy"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.0"/>
+    <diagramLink href="GmfGraph_5.xmi#cathee"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//cathee"/>
+    <containmentFeature href="ECore_5.xmi#//ed/saraann"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.0"/>
+    <diagramLink href="GmfGraph_5.xmi#cathee"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//cathee"/>
+    <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel href="GmfGraph_5.xmi#catheeLabel"/>
+      <features href="ECore_5.xmi#//meier/chrysa"/>
+    </labelMappings>
+    <containmentFeature href="ECore_5.xmi#//tootsie/baldwin"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.0"/>
+    <diagramLink href="GmfGraph_5.xmi#cathee"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//tootsie"/>
+    <containmentFeature href="ECore_5.xmi#//vivia/ulrikaumeko"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.6"/>
+    <diagramLink href="GmfGraph_5.xmi#tootsie"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//christoph"/>
+    <containmentFeature href="ECore_5.xmi#//kennith/jaquenetta"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.1"/>
+    <diagramLink href="GmfGraph_5.xmi#christoph"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_5.xmi#//meier"/>
+    <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel href="GmfGraph_5.xmi#meierLabel"/>
+      <features href="ECore_5.xmi#//meier/chrysa"/>
+    </labelMappings>
+    <containmentFeature href="ECore_5.xmi#//ed/saraann"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_5.xmi#//@palette/@tools.1/@tools.4"/>
+    <diagramLink href="GmfGraph_5.xmi#meier"/>
   </links>
   <diagram>
-    <diagramCanvas href="GmfGraph_5.xmi#flowchart"/>
+    <diagramCanvas href="GmfGraph_5.xmi#ecore"/>
     <domainModel href="ECore_5.xmi#/"/>
-    <domainMetaElement href="ECore_5.xmi#//Flowchart"/>
+    <domainMetaElement href="ECore_5.xmi#//juliet"/>
     <palette href="GmfTool_5.xmi#//@palette"/>
   </diagram>
 </gmfmap:Mapping>

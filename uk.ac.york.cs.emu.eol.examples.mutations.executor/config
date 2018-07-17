@@ -14,8 +14,8 @@
 #	Java package. The mutations should be organised according to the following structure.
 #	<EOLMODULENAME>/<MUTANTNAME>
 #
-ShortestPath
-#ECore2GMF
+#ShortestPath
+ECore2GMF
 #ECoreUtil
 #Formatting
 #EcoreHelper

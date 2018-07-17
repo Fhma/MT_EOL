@@ -1,20 +1,58 @@
 <?xml version="1.0" encoding="ASCII"?>
-<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="endlabels">
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="ecore">
   <figures name="Default">
-    <descriptors name="ClassFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ClassFigure">
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledRhomb">
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledRhomb">
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
+    <descriptors name="ryleyFigure">
+      <actualFigure xsi:type="gmfgraph:ScalablePolygon" name="ryleyFigure" lineWidth="4">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="132" green="167" blue="157"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="8" green="154" blue="13"/>
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="ClassLabelFigure" text="Class"/>
+        <children xsi:type="gmfgraph:Label" name="ryleyLabelFigure" text="ryley"/>
+        <template x="2" y="7"/>
       </actualFigure>
-      <accessors accessor="getFigureClassLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureryleyLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="AssociationFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="AssociationFigure"/>
+    <descriptors name="julietFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="julietFigure" lineWidth="2">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="226" green="201" blue="19"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="147" green="164" blue="98"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="julietLabelFigure" text="juliet"/>
+      </actualFigure>
+      <accessors accessor="getFigurejulietLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="nannieFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="nannieFigure" lineWidth="3" lineKind="LINE_DOT" sourceDecoration="//@figures.0/@figures.0">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="240" green="129" blue="43"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="jaquenettaFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="jaquenettaFigure" lineWidth="3" lineKind="LINE_DOT" sourceDecoration="//@figures.0/@figures.1">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="240" green="129" blue="43"/>
+      </actualFigure>
     </descriptors>
   </figures>
-  <nodes name="Class" figure="ClassFigure"/>
-  <connections name="Association" figure="AssociationFigure"/>
-  <labels name="ClassLabel" figure="ClassFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <nodes name="ryley" figure="ryleyFigure"/>
+  <nodes name="juliet" figure="julietFigure"/>
+  <connections name="nannie" figure="nannieFigure"/>
+  <connections name="jaquenetta" figure="jaquenettaFigure"/>
+  <labels name="ryleyLabel" figure="ryleyFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="julietLabel" figure="julietFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
 </gmfgraph:Canvas>

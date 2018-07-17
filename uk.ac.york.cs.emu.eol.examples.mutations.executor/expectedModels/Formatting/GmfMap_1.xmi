@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="ASCII"?>
 <gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
-  <nodes>
-    <containmentFeature href="ECore_1.xmi#//System/widgets"/>
-    <ownedChild>
-      <domainMetaElement href="ECore_1.xmi#//Widget"/>
-      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel href="GmfGraph_1.xmi#WidgetLabel"/>
-        <features href="ECore_1.xmi#//Widget/name"/>
-      </labelMappings>
-      <tool xsi:type="tooldef:CreationTool" href="GmfTool_1.xmi#//@palette/@tools.0/@tools.0"/>
-      <diagramNode href="GmfGraph_1.xmi#Widget"/>
-    </ownedChild>
-  </nodes>
+  <links>
+    <domainMetaElement href="ECore_1.xmi#//juliet"/>
+    <containmentFeature href="ECore_1.xmi#//juliet/ichabod"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_1.xmi#//@palette/@tools.1/@tools.1"/>
+    <diagramLink href="GmfGraph_1.xmi#juliet"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_1.xmi#//jaquenetta"/>
+    <containmentFeature href="ECore_1.xmi#//nannie/gabe"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_1.xmi#//@palette/@tools.1/@tools.0"/>
+    <diagramLink href="GmfGraph_1.xmi#jaquenetta"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_1.xmi#//jaquenetta"/>
+    <containmentFeature href="ECore_1.xmi#//jaquenetta/lucita"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_1.xmi#//@palette/@tools.1/@tools.0"/>
+    <diagramLink href="GmfGraph_1.xmi#jaquenetta"/>
+  </links>
   <diagram>
-    <diagramCanvas href="GmfGraph_1.xmi#widgets"/>
+    <diagramCanvas href="GmfGraph_1.xmi#ecore"/>
     <domainModel href="ECore_1.xmi#/"/>
-    <domainMetaElement href="ECore_1.xmi#//System"/>
+    <domainMetaElement href="ECore_1.xmi#//juliet"/>
     <palette href="GmfTool_1.xmi#//@palette"/>
   </diagram>
 </gmfmap:Mapping>

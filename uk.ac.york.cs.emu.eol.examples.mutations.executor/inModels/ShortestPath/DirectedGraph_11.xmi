@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:DirectedGraph="DirectedGraph">
-  <DirectedGraph:Node label="esra" outgoing="/9 /12 /15" incoming="/14"/>
-  <DirectedGraph:Node label="hastings" incoming="/13"/>
-  <DirectedGraph:Node label="seward" outgoing="/11 /13"/>
-  <DirectedGraph:Node label="mead" outgoing="/14"/>
-  <DirectedGraph:Node label="myranda" incoming="/8 /10"/>
-  <DirectedGraph:Node label="foss" incoming="/11"/>
-  <DirectedGraph:Node label="katrina" outgoing="/10" incoming="/12"/>
-  <DirectedGraph:Node label="mariska" outgoing="/8" incoming="/9 /15"/>
-  <DirectedGraph:Edge weight="69" source="/7" target="/4"/>
-  <DirectedGraph:Edge weight="126" source="/0" target="/7"/>
-  <DirectedGraph:Edge weight="101" source="/6" target="/4"/>
-  <DirectedGraph:Edge weight="101" source="/2" target="/5"/>
-  <DirectedGraph:Edge weight="81" source="/0" target="/6"/>
-  <DirectedGraph:Edge weight="52" source="/2" target="/1"/>
-  <DirectedGraph:Edge weight="101" source="/3" target="/0"/>
-  <DirectedGraph:Edge weight="119" source="/0" target="/7"/>
-</xmi:XMI>
+<DirectedGraph:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DirectedGraph="DirectedGraph">
+  <contents xsi:type="DirectedGraph:Node" label="iosep" outgoing="//@contents.5"/>
+  <contents xsi:type="DirectedGraph:Node" label="ulla" outgoing="//@contents.6" incoming="//@contents.4"/>
+  <contents xsi:type="DirectedGraph:Node" label="quint" incoming="//@contents.6 //@contents.7"/>
+  <contents xsi:type="DirectedGraph:Node" label="corenda" outgoing="//@contents.4 //@contents.7" incoming="//@contents.5"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="164" source="//@contents.3" target="//@contents.1"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="165" source="//@contents.0" target="//@contents.3"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="128" source="//@contents.1" target="//@contents.2"/>
+  <contents xsi:type="DirectedGraph:Edge" weight="92" source="//@contents.3" target="//@contents.2"/>
+</DirectedGraph:Graph>

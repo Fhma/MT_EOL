@@ -1,16 +1,785 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="army" nsURI="http://se.cs.toronto.edu/modelepedia/Army" nsPrefix="army">
-  <eClassifiers xsi:type="ecore:EClass" name="Army">
-    <eAnnotations source="gmf.diagram"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="units" upperBound="-1"
-        eType="#//Unit" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Unit">
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ecore" nsURI="http://www.eclipse.org/emf/2002/Ecore" nsPrefix="Ecore">
+  <eAnnotations source="gmf"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ryley" eSuperTypes="//paco">
     <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
+      <details key="border.color" value="20,218,93"/>
+      <details key="border.style" value="dash"/>
+      <details key="border.width" value="5"/>
+      <details key="" value=""/>
+      <details key="color" value="195,155,146"/>
+      <details key="figure" value="polygon"/>
+      <details key="polygon.x" value="9"/>
+      <details key="polygon.y" value="7"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eAnnotations source="gmf.link">
+      <details key="color" value="119,28,206"/>
+      <details key="style" value="solid"/>
+      <details key="source.decoration" value="closedarrow"/>
+      <details key="target.decoration" value="arrow"/>
+      <details key="width" value="1"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arabele" upperBound="4" eType="//viola"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="nannie">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="6,225,218"/>
+      <details key="border.style" value="dash"/>
+      <details key="border.width" value="2"/>
+      <details key="" value=""/>
+      <details key="color" value="104,194,125"/>
+      <details key="figure" value="rectangle"/>
+    </eAnnotations>
+    <eAnnotations source="gmf.link">
+      <details key="color" value="59,169,223"/>
+      <details key="style" value="dash"/>
+      <details key="source.decoration" value="filledsquare"/>
+      <details key="target.decoration" value="none"/>
+      <details key="width" value="1"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="velvet" eType="//lyon" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="conan">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="172,40,16"/>
+      <details key="border.style" value="solid"/>
+      <details key="border.width" value="2"/>
+      <details key="" value=""/>
+      <details key="color" value="190,131,42"/>
+      <details key="figure" value="rectangle"/>
+    </eAnnotations>
+    <eAnnotations source="gmf.link">
+      <details key="color" value="200,223,107"/>
+      <details key="style" value="dot"/>
+      <details key="source.decoration" value="arrow"/>
+      <details key="target.decoration" value="filledsquare"/>
+      <details key="width" value="4"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rutledge" upperBound="3" eType="//kent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="esmeralda" lowerBound="1" upperBound="4" eType="//cathee" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="collapsible" value="false"/>
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="averil" lowerBound="3" upperBound="3" eType="//maren"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="jaquenetta">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="43,254,79"/>
+      <details key="border.style" value="dot"/>
+      <details key="border.width" value="1"/>
+      <details key="" value=""/>
+      <details key="color" value="83,248,97"/>
+      <details key="figure" value="polygon"/>
+      <details key="label" value="donni"/>
+      <details key="label.color" value="64,201,236"/>
+      <details key="label.icon" value="false"/>
+      <details key="polygon.x" value="9"/>
+      <details key="polygon.y" value="6"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="donni" lowerBound="1" upperBound="10">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="juliet">
+    <eAnnotations source="gmf.diagram">
+      <details key="diagram.extension" value="model"/>
+      <details key="model.extension" value="model"/>
+      <details key="onefile" value="false"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theadora" upperBound="9" eType="//maren"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="christoph">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="112,69,23"/>
+      <details key="border.style" value="solid"/>
+      <details key="border.width" value="3"/>
+      <details key="" value=""/>
+      <details key="color" value="72,188,103"/>
+      <details key="figure" value="polygon"/>
+      <details key="polygon.x" value="8"/>
+      <details key="polygon.y" value="1"/>
+    </eAnnotations>
+    <eAnnotations source="gmf.link">
+      <details key="color" value="97,99,214"/>
+      <details key="style" value="dash"/>
+      <details key="source.decoration" value="none"/>
+      <details key="target.decoration" value="filledrhomb"/>
+      <details key="width" value="7"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ruy">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="192,158,41"/>
+      <details key="border.style" value="dash"/>
+      <details key="border.width" value="10"/>
+      <details key="" value=""/>
+      <details key="color" value="52,204,17"/>
+      <details key="figure" value="polygon"/>
+      <details key="polygon.x" value="5"/>
+      <details key="polygon.y" value="10"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="jervis" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="quincy" lowerBound="7" upperBound="8" eType="//cathee" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="nehemiah" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="chick" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruthe" lowerBound="3" upperBound="3" eType="//tamqrah" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="madlin" eSuperTypes="//juliet">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="172,181,67"/>
+      <details key="border.style" value="solid"/>
+      <details key="border.width" value="6"/>
+      <details key="" value=""/>
+      <details key="color" value="106,42,206"/>
+      <details key="figure" value="svg"/>
+      <details key="svg.uri" value="platform:/plugin/my.plugin/jimmie"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lilia" lowerBound="1" upperBound="10" eType="//gillan"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="gisele" eSuperTypes="//holmes">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="74,225,165"/>
+      <details key="border.style" value="dot"/>
+      <details key="border.width" value="1"/>
+      <details key="" value=""/>
+      <details key="color" value="243,169,178"/>
+      <details key="figure" value="rounded"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jemimah" eType="//tamqrah" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="karoly">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="20,5,92"/>
+      <details key="border.style" value="dot"/>
+      <details key="border.width" value="2"/>
+      <details key="" value=""/>
+      <details key="color" value="247,47,164"/>
+      <details key="figure" value="svg"/>
+      <details key="label" value="alexa"/>
+      <details key="label.color" value="196,29,171"/>
+      <details key="label.icon" value="false"/>
+      <details key="svg.uri" value="platform:/plugin/my.plugin/foss"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alexa" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EByte"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="gabe">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="204,79,71"/>
+      <details key="border.style" value="dot"/>
+      <details key="border.width" value="3"/>
+      <details key="" value=""/>
+      <details key="color" value="73,127,142"/>
+      <details key="figure" value="ellipse"/>
+    </eAnnotations>
+    <eAnnotations source="gmf.link">
+      <details key="color" value="112,102,204"/>
+      <details key="style" value="dot"/>
+      <details key="source.decoration" value="filledrhomb"/>
+      <details key="target.decoration" value="filledrhomb"/>
+      <details key="width" value="7"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gunter" lowerBound="2" upperBound="5" eType="//ilise" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="marris">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="59,193,209"/>
+      <details key="border.style" value="dash"/>
+      <details key="border.width" value="4"/>
+      <details key="" value=""/>
+      <details key="color" value="37,86,104"/>
+      <details key="figure" value="rounded"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="shelli" eSuperTypes="//alexa">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="166,243,153"/>
+      <details key="border.style" value="solid"/>
+      <details key="border.width" value="1"/>
+      <details key="" value=""/>
+      <details key="color" value="234,224,11"/>
+      <details key="figure" value="rounded"/>
+      <details key="label" value="anders"/>
+      <details key="label.color" value="174,165,162"/>
+      <details key="label.icon" value="false"/>
+    </eAnnotations>
+    <eAnnotations source="gmf.link">
+      <details key="color" value="20,255,102"/>
+      <details key="style" value="solid"/>
+      <details key="label" value="rufus"/>
+      <details key="source.decoration" value="filledrhomb"/>
+      <details key="target.decoration" value="rhomb"/>
+      <details key="width" value="9"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="seward" upperBound="2">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rufus" lowerBound="2" upperBound="5">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anders" lowerBound="3" upperBound="5">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loleta" lowerBound="1" upperBound="7" eType="//cornela"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="cristina" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lucita" lowerBound="5" upperBound="6">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EShortObject"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="arnuad" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annalise" lowerBound="2" upperBound="10" eType="//ronalda"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ichabod" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="maren" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jolee" lowerBound="6" upperBound="10" eType="//viola" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="marris" upperBound="5" eType="//paco"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="meier">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="185,114,247"/>
+      <details key="border.style" value="dash"/>
+      <details key="border.width" value="1"/>
+      <details key="" value=""/>
+      <details key="color" value="90,39,200"/>
+      <details key="figure" value="rounded"/>
+      <details key="label" value="chrysa"/>
+      <details key="label.color" value="10,110,112"/>
+      <details key="label.icon" value="false"/>
+    </eAnnotations>
+    <eAnnotations source="gmf.link">
+      <details key="color" value="201,87,252"/>
+      <details key="style" value="dash"/>
+      <details key="label" value="chrysa"/>
+      <details key="source.decoration" value="none"/>
+      <details key="target.decoration" value="filledsquare"/>
+      <details key="width" value="6"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="chrysa" lowerBound="1" upperBound="7">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kellen" lowerBound="8" upperBound="8" eType="//guilbert" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="collapsible" value="false"/>
+        <details key="layout" value="free"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="florida" lowerBound="3" upperBound="6" eType="//conan"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="gillan" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="emanuel" lowerBound="5" upperBound="10">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sophia" lowerBound="3" upperBound="10">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dan" lowerBound="5" upperBound="8" eType="//paco"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="guy" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="gabriela" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cristina" lowerBound="1" upperBound="2">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="lilla" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nevile" lowerBound="3" upperBound="6" eType="//baldwin"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lucille" lowerBound="4" upperBound="8" eType="//gabriela"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="doe" lowerBound="3" upperBound="7" eType="//shelli"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="alexa">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="94,55,159"/>
+      <details key="border.style" value="dot"/>
+      <details key="border.width" value="4"/>
+      <details key="" value=""/>
+      <details key="color" value="209,10,139"/>
+      <details key="figure" value="svg"/>
+      <details key="svg.uri" value="platform:/plugin/my.plugin/elissa"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="averil" eType="//jaquenetta" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="collapsible" value="true"/>
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="paco">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="95,129,226"/>
+      <details key="border.style" value="solid"/>
+      <details key="border.width" value="4"/>
+      <details key="" value=""/>
+      <details key="color" value="223,134,198"/>
+      <details key="figure" value="svg"/>
+      <details key="label" value="kare"/>
+      <details key="label.color" value="189,254,52"/>
+      <details key="label.icon" value="false"/>
+      <details key="svg.uri" value="platform:/plugin/my.plugin/kelbee"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kare" lowerBound="1" upperBound="2">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="bennett" eSuperTypes="//alexa">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="early" upperBound="6" eType="//tamqrah" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="hale" eSuperTypes="//ronalda">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="10,127,23"/>
+      <details key="border.style" value="solid"/>
+      <details key="border.width" value="6"/>
+      <details key="" value=""/>
+      <details key="color" value="4,225,140"/>
+      <details key="figure" value="svg"/>
+      <details key="label" value="tamqrah"/>
+      <details key="label.color" value="230,62,224"/>
+      <details key="label.icon" value="true"/>
+      <details key="svg.uri" value="platform:/plugin/my.plugin/bennett"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kent" lowerBound="7" upperBound="8">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tamqrah" lowerBound="1" upperBound="2">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="emmie" lowerBound="4" upperBound="5">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lonnie" lowerBound="2" upperBound="6" eType="//ilise"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="seward" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="brooke" lowerBound="8" upperBound="10" eType="//lilla"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="forester" eSuperTypes="//ruy">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="176,25,120"/>
+      <details key="border.style" value="dot"/>
+      <details key="border.width" value="8"/>
+      <details key="" value=""/>
+      <details key="color" value="96,203,224"/>
+      <details key="figure" value="svg"/>
+      <details key="svg.uri" value="platform:/plugin/my.plugin/hunter"/>
+    </eAnnotations>
+    <eAnnotations source="gmf.link">
+      <details key="color" value="199,156,248"/>
+      <details key="style" value="dot"/>
+      <details key="source.decoration" value="closedarrow"/>
+      <details key="target.decoration" value="filledrhomb"/>
+      <details key="width" value="7"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="florance" eType="//kennith" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="marcus" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="creight" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mallory" eType="//vivia"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="jolee">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="172,210,245"/>
+      <details key="border.style" value="dot"/>
+      <details key="border.width" value="5"/>
+      <details key="" value=""/>
+      <details key="color" value="102,105,32"/>
+      <details key="figure" value="svg"/>
+      <details key="label" value="elsinore"/>
+      <details key="label.color" value="223,12,138"/>
+      <details key="label.icon" value="false"/>
+      <details key="svg.uri" value="platform:/plugin/my.plugin/gabe"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elsinore" lowerBound="4" upperBound="5">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sena" lowerBound="1" upperBound="8">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vivia" lowerBound="1" eType="//marcus" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cathee" eType="//lyon" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="collapsible" value="false"/>
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruthe" lowerBound="1" upperBound="10" eType="//andrew"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="vivia" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gunter" lowerBound="4" upperBound="4">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ulrikaumeko" lowerBound="2" upperBound="10" eType="//tootsie" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="corry" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alexa" lowerBound="6" upperBound="6">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="devlin" upperBound="2" eType="//arnuad"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="lyon" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lonnie" lowerBound="1" upperBound="10">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kimmy" lowerBound="3" upperBound="6" eType="//ed" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="collapsible" value="false"/>
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aryn" lowerBound="6" upperBound="6" eType="//gillan"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="kennith" eSuperTypes="//shelli">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="182,20,196"/>
+      <details key="border.style" value="solid"/>
+      <details key="border.width" value="10"/>
+      <details key="" value=""/>
+      <details key="color" value="173,226,63"/>
+      <details key="figure" value="ellipse"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jaquenetta" lowerBound="1" upperBound="4" eType="//christoph" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="collapsible" value="true"/>
+        <details key="layout" value="free"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="alleen" eSuperTypes="//ulrikaumeko">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="21,158,152"/>
+      <details key="border.style" value="dot"/>
+      <details key="border.width" value="8"/>
+      <details key="" value=""/>
+      <details key="color" value="153,111,8"/>
+      <details key="figure" value="ellipse"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="violetta" lowerBound="8" upperBound="8" eType="//jervis" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="collapsible" value="true"/>
+        <details key="layout" value="free"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arnuad" lowerBound="6" upperBound="10" eType="//adella" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jesselyn" lowerBound="8" upperBound="8" eType="//rutledge"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="whitney" lowerBound="2" upperBound="7" eType="//esmeralda"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="joseph" eSuperTypes="//kennith">
+    <eAnnotations source="gmf.link">
+      <details key="color" value="122,217,33"/>
+      <details key="style" value="dot"/>
+      <details key="label" value="violetta"/>
+      <details key="source.decoration" value="filledsquare"/>
+      <details key="target.decoration" value="square"/>
+      <details key="width" value="8"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="violetta" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hastings" lowerBound="4" upperBound="8">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="whitney" lowerBound="1" eType="//mariska" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="miriam" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reg" upperBound="3">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="francisco" lowerBound="1" upperBound="5" eType="//adella" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gabe" lowerBound="1" upperBound="10" eType="//silvio" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="kent" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="land">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="donni" lowerBound="5" upperBound="7" eType="//pauly" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cornall" upperBound="4" eType="//aryn"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kellen" lowerBound="3" upperBound="5" eType="//seward"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="lanette" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hayyim">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trixie" lowerBound="1" upperBound="3">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="rutledge" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="pauly" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="adella" lowerBound="3" upperBound="9" eType="//madlin" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="silvio" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="woody" lowerBound="2" upperBound="2" eType="//guy" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kathryn" lowerBound="4" upperBound="4" eType="//juliet"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="adella" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jervis" lowerBound="2" upperBound="10" eType="//sena" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="faustine" eSuperTypes="//ronalda"/>
+  <eClassifiers xsi:type="ecore:EClass" name="andrew" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="sena" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nicolas" lowerBound="2" upperBound="3" eType="//gisele"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="lilia" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="holmes">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="56,224,136"/>
+      <details key="border.style" value="solid"/>
+      <details key="border.width" value="3"/>
+      <details key="" value=""/>
+      <details key="color" value="73,237,233"/>
+      <details key="figure" value="rectangle"/>
+      <details key="label" value="angil"/>
+      <details key="label.color" value="157,109,79"/>
+      <details key="label.icon" value="true"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="angil" lowerBound="7" upperBound="10">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EByteObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lynett" lowerBound="4" upperBound="4" eType="//alexa"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="rodolphe" eSuperTypes="//alexa">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="10,89,23"/>
+      <details key="border.style" value="solid"/>
+      <details key="border.width" value="4"/>
+      <details key="" value=""/>
+      <details key="color" value="208,203,207"/>
+      <details key="figure" value="svg"/>
+      <details key="svg.uri" value="platform:/plugin/my.plugin/tootsie"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aindrea" lowerBound="3" upperBound="8" eType="//shelli" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aryn" lowerBound="7" upperBound="9" eType="//bartram"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="nevile">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="174,34,108"/>
+      <details key="border.style" value="dot"/>
+      <details key="border.width" value="6"/>
+      <details key="" value=""/>
+      <details key="color" value="156,187,116"/>
+      <details key="figure" value="rectangle"/>
+      <details key="label" value="lanette"/>
+      <details key="label.color" value="38,233,228"/>
+      <details key="label.icon" value="true"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lanette" lowerBound="5" upperBound="8">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EByteArray"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tamqrah" eType="//jervis"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="jammal" eSuperTypes="//conan">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="256,176,253"/>
+      <details key="border.style" value="solid"/>
+      <details key="border.width" value="10"/>
+      <details key="" value=""/>
+      <details key="color" value="5,145,107"/>
+      <details key="figure" value="rectangle"/>
+      <details key="label" value="guilbert"/>
+      <details key="label.color" value="43,123,55"/>
+      <details key="label.icon" value="true"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guilbert" upperBound="5">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EByteObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="marcus" lowerBound="7" upperBound="7" eType="//marris" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gregoor" lowerBound="1" upperBound="3" eType="//seward" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="collapsible" value="false"/>
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ed">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="72,242,86"/>
+      <details key="border.style" value="dot"/>
+      <details key="border.width" value="2"/>
+      <details key="" value=""/>
+      <details key="color" value="147,219,45"/>
+      <details key="figure" value="rectangle"/>
+      <details key="label" value="dan"/>
+      <details key="label.color" value="234,168,203"/>
+      <details key="label.icon" value="false"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dan" lowerBound="2" upperBound="9">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="saraann" lowerBound="2" upperBound="2" eType="//meier" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="tamqrah" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hort" lowerBound="3" upperBound="9">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ilise" upperBound="9" eType="//aryn" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="esmeralda" eSuperTypes="//jolee">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keith" lowerBound="1" upperBound="4" eType="//gabriela"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="aryn" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="brooke" lowerBound="1" eType="//conan"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="viola">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="37,65,55"/>
+      <details key="border.style" value="solid"/>
+      <details key="border.width" value="10"/>
+      <details key="" value=""/>
+      <details key="color" value="159,176,100"/>
+      <details key="figure" value="rounded"/>
+      <details key="label" value="ichabod"/>
+      <details key="label.color" value="246,18,39"/>
+      <details key="label.icon" value="true"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="law" lowerBound="2" upperBound="3">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EByteObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ichabod" lowerBound="3" upperBound="7">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="webster" upperBound="10" eType="//jaquenetta" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="collapsible" value="false"/>
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="mariska" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="atlante" lowerBound="2" upperBound="3">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="emlynne" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="masha" lowerBound="1" upperBound="3" eType="//creight"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="curt" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="cathee" eSuperTypes="//meier">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="34,76,99"/>
+      <details key="border.style" value="dash"/>
+      <details key="border.width" value="3"/>
+      <details key="" value=""/>
+      <details key="color" value="9,214,7"/>
+      <details key="figure" value="ellipse"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nichole" lowerBound="3" upperBound="3" eType="//alexa" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cyrill" lowerBound="5" upperBound="6" eType="//maren" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="collapsible" value="false"/>
+        <details key="layout" value="free"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umberto" lowerBound="1" upperBound="3" eType="//cristina"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bertie" lowerBound="1" eType="//alexa"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="tootsie" eSuperTypes="//ruy">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="11,113,76"/>
+      <details key="border.style" value="dash"/>
+      <details key="border.width" value="3"/>
+      <details key="" value=""/>
+      <details key="color" value="238,158,240"/>
+      <details key="figure" value="ellipse"/>
+    </eAnnotations>
+    <eAnnotations source="gmf.link">
+      <details key="color" value="191,42,252"/>
+      <details key="style" value="dash"/>
+      <details key="source.decoration" value="square"/>
+      <details key="target.decoration" value="square"/>
+      <details key="width" value="9"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kennith" lowerBound="2" upperBound="9" eType="//viola" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baldwin" lowerBound="1" upperBound="5" eType="//cathee" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ulrikaumeko" lowerBound="2" upperBound="2" eType="//arnuad"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="jemimah" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rodolphe" lowerBound="2" upperBound="4">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EByteArray"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="quincy" lowerBound="7" upperBound="8" eType="//alexa"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="bartram" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ilise" lowerBound="3" upperBound="5" eType="//shelli" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="konrad" lowerBound="4" upperBound="4" eType="//bennett"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="karl" lowerBound="2" upperBound="4" eType="//lanette"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ulrikaumeko">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="162,252,30"/>
+      <details key="border.style" value="dash"/>
+      <details key="border.width" value="2"/>
+      <details key="" value=""/>
+      <details key="color" value="233,3,194"/>
+      <details key="figure" value="svg"/>
+      <details key="label" value="wenda"/>
+      <details key="label.color" value="20,215,104"/>
+      <details key="label.icon" value="true"/>
+      <details key="svg.uri" value="platform:/plugin/my.plugin/arnoldo"/>
+    </eAnnotations>
+    <eAnnotations source="gmf.link">
+      <details key="color" value="173,224,5"/>
+      <details key="style" value="solid"/>
+      <details key="label" value="wenda"/>
+      <details key="source.decoration" value="none"/>
+      <details key="target.decoration" value="closedarrow"/>
+      <details key="width" value="2"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wenda" lowerBound="4" upperBound="7">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="emanuel" lowerBound="1" upperBound="9" eType="//juliet"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="dorey" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="baldwin" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nedda" lowerBound="3" upperBound="5">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alexa" lowerBound="6" upperBound="8" eType="//ed" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="collapsible" value="false"/>
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loleta" eType="//karoly" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fleur" lowerBound="3" upperBound="3" eType="//faustine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="nichole" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gelya" lowerBound="2" upperBound="3">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EShortObject"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="esra" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ilise" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="brooke" lowerBound="5" upperBound="10">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ECharacterObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="emlynne" lowerBound="1" upperBound="8">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="guilbert">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="6,108,120"/>
+      <details key="border.style" value="solid"/>
+      <details key="border.width" value="9"/>
+      <details key="" value=""/>
+      <details key="color" value="171,39,207"/>
+      <details key="figure" value="rectangle"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="amalita" lowerBound="2" upperBound="3" eType="//jolee"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="donni"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ronalda">
+    <eAnnotations source="gmf.node">
+      <details key="border.color" value="40,141,126"/>
+      <details key="border.style" value="dash"/>
+      <details key="border.width" value="10"/>
+      <details key="" value=""/>
+      <details key="color" value="89,14,32"/>
+      <details key="figure" value="ellipse"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="cornela" abstract="true"/>
 </ecore:EPackage>

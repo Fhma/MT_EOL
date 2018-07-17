@@ -1,70 +1,22 @@
 <?xml version="1.0" encoding="ASCII"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ecore" nsURI="http://www.eclipse.org/emf/2002/Ecore" nsPrefix="Ecore">
-  <eClassifiers xsi:type="ecore:EClass" name="ryley"/>
-  <eClassifiers xsi:type="ecore:EClass" name="nannie">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//nannie/sena"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="corry" lowerBound="6" upperBound="6" eType="//christoph" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sena" lowerBound="7" upperBound="8" eType="//juliet" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="miriam" lowerBound="2" upperBound="3" eType="//jaquenetta"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="conan">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="aryn" lowerBound="2" upperBound="6" eType="//conan"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="quincy" lowerBound="2" upperBound="7" eType="//jervis"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="jaquenetta">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="averil" lowerBound="1" upperBound="3" eType="//nannie" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pauly" lowerBound="3" upperBound="8" eType="//chick" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="kare" lowerBound="8" upperBound="8" eType="//ruy"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="juliet">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lucille" upperBound="2">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nevile" lowerBound="1" upperBound="7" eType="//ryley"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="jemimah" lowerBound="6" upperBound="6" eType="//nannie"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="christoph">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="saundra" eType="//ruy" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arnoldo" lowerBound="5" upperBound="10" eType="//christoph" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ruy" eSuperTypes="//juliet">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ryley">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EByteObject"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gabe" lowerBound="1" upperBound="3">
+  <eClassifiers xsi:type="ecore:EClass" name="ryley">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//ryley/quint">
+      <details key="type" value="NOTUNIQUE_HASH_INDEX"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quint" lowerBound="2" upperBound="2">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kiley" lowerBound="10" upperBound="10">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
-    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="jervis" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gabriela" lowerBound="2" upperBound="4">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="jefferey" lowerBound="1">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mallory" eType="//ruy" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="opaline" lowerBound="2" upperBound="6" eType="//juliet"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="nehemiah" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lucita">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rodolphe" lowerBound="3" upperBound="9">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="chick" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ichabod" lowerBound="1" upperBound="10">
+  <eClassifiers xsi:type="ecore:EClass" name="nannie" eSuperTypes="//ryley">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//nannie/madlin"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="christoph" upperBound="5">
       <eAnnotations source="https://eclipse.org/epsilon/incremental/Graph">
         <details key="edge" value="true"/>
       </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EByteObject"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forester" lowerBound="2" upperBound="3">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ebony" lowerBound="1" upperBound="6" eType="//nannie" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="madlin" eType="//ryley"/>
   </eClassifiers>
 </ecore:EPackage>

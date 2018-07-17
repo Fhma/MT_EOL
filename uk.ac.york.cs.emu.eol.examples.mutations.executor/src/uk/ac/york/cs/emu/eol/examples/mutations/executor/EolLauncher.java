@@ -183,6 +183,7 @@ public class EolLauncher implements Runnable {
 						input_files = getInputFilesOfNumber(num);
 						boolean killed = false;
 
+						// parsing EOL code here is very bad
 						EolModule eol = new EolModule();
 						eol.parse(mainModule.getAbsoluteFile());
 						if (eol.getParseProblems().size() > 0) {
@@ -190,6 +191,7 @@ public class EolLauncher implements Runnable {
 							valid_mutant = false;
 							break;
 						}
+
 						MutationExecutionController exe_controller = new MutationExecutionController();
 						eol.getContext().getExecutorFactory().setExecutionController(exe_controller);
 
@@ -214,7 +216,7 @@ public class EolLauncher implements Runnable {
 								eol.getContext().getModelRepository().addModel(_model);
 							}
 							// console output -> there is only one output
-							model_path = eol_name + "_" + n + "_" + num + ".text";
+							model_path = eol_name + "_" + num + ".text";
 							output_models.put(aliase, new ModelPair());
 							output_models.get(aliase).setActual(model_path);
 							eol.getContext().setOutputStream(new PrintStream(new FileOutputStream(model_path)));
@@ -227,18 +229,19 @@ public class EolLauncher implements Runnable {
 								// aliase = f.getName().substring(0, f.getName().indexOf("_"));
 								loaded_input_metamodes += "," + aliase;
 								// model_path = f.getPath();
-								model_path = aliase + "_" + num + "_" + n + ".xmi";
-								File new_f = new File(model_path);
-								Files.copy(f.toPath(), new_f.toPath(), StandardCopyOption.REPLACE_EXISTING);
-								_model = newEmfModel("M_IN_" + aliase + "_" + n, aliase, new_f.getPath(), getMetamodelUri(aliase), true, false);
+								model_path = aliase + "_" + num + ".xmi";
+								// File new_f = new File(model_path);
+								// Files.copy(f.toPath(), new_f.toPath(), StandardCopyOption.REPLACE_EXISTING);
+								// _model = newEmfModel("M_IN_" + aliase + "_" + n, aliase, new_f.getPath(), getMetamodelUri(aliase), true, false);
+								_model = newEmfModel("M_IN_" + aliase + "_" + n, aliase, f.getPath(), getMetamodelUri(aliase), true, false);
 								eol.getContext().getModelRepository().addModel(_model);
 							}
 
 							// add all output models that their aliases were not loaded as input models
 							for (EmfMetaModel mm : getOutputMetamodelUris(loaded_input_metamodes.split(","))) {
 								model_path = mm.getName() + "_" + num + "_" + n + ".xmi";
-								// File new_f = new File(model_path);
-								_model = newEmfModel("M_OUT_" + mm.getName() + "_" + n, mm.getName(), model_path, mm.getMetamodelUri(), false, true);
+								File new_f = new File(model_path);
+								_model = newEmfModel("M_OUT_" + mm.getName() + "_" + n, mm.getName(), new_f.getPath(), mm.getMetamodelUri(), false, true);
 								output_models.put(mm.getName(), new ModelPair());
 								output_models.get(mm.getName()).setActual(model_path);
 								eol.getContext().getModelRepository().addModel(_model);
@@ -270,12 +273,11 @@ public class EolLauncher implements Runnable {
 								logger.write(String.format("Maximum exection time is reached (%d ms): %s\n", max_exe, exe.getModel()));
 							else
 								logger.write(String.format("An exception occurred while executing mutant %s\n", exe.getModel()));
-							future.cancel(true);
-							exe_controller.terminate();
 							killed = true;
 						}
-
-						executorService.shutdown();
+						future.cancel(true);
+						exe_controller.terminate();
+						executorService.shutdownNow();
 
 						if (type == EOLCandidate.CONSOLE_TYPE)
 							eol.getContext().getOutputStream().close();
@@ -288,6 +290,7 @@ public class EolLauncher implements Runnable {
 						}
 
 						eol.getContext().getModelRepository().getModels().clear();
+						eol.getContext().dispose();
 						eol.clearCache();
 						eol = null;
 
@@ -327,16 +330,6 @@ public class EolLauncher implements Runnable {
 						} // end comparing the outputs of actual and expected resources
 						if (killed)
 							total_killed++;
-
-						// clear all output files ( .xmi or .text ) of this input test
-						File dir = new File(".");
-						if (dir.isDirectory()) {
-							for (File f : dir.listFiles()) {
-								if (f.isFile() && (f.getName().endsWith(".xmi") || f.getName().endsWith(".text"))) {
-									f.delete();
-								}
-							}
-						}
 					} // end going through all test inputs
 
 					if (valid_mutant) {
@@ -356,6 +349,15 @@ public class EolLauncher implements Runnable {
 					current_operator.incrementInvalid();
 
 				// clear execution temporary files
+				// clear all output files ( .xmi or .text ) of this input test
+				File dir = new File(".");
+				if (dir.isDirectory()) {
+					for (File f : dir.listFiles()) {
+						if (f.isFile() && (f.getName().endsWith(".xmi") || f.getName().endsWith(".text"))) {
+							f.delete();
+						}
+					}
+				}
 				clearFolderContent(temp_dir);
 
 			} // end of executing one mutation

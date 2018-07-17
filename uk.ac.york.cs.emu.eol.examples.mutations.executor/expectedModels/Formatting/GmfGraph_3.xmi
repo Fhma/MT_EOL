@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="ASCII"?>
-<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="fed">
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="ecore">
   <figures name="Default">
-    <figures xsi:type="gmfgraph:PolylineDecoration" name="FeatureDependsFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Sqare">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template y="1"/>
+      <template x="-1" y="1"/>
+      <template x="-1" y="-1"/>
+      <template y="-1"/>
+      <template y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Sqare">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template y="1"/>
+      <template x="-1" y="1"/>
+      <template x="-1" y="-1"/>
+      <template y="-1"/>
+      <template y="1"/>
+    </figures>
     <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledRhomb">
       <template x="-1" y="1"/>
       <template/>
@@ -9,49 +24,38 @@
       <template x="-2"/>
       <template x="-1" y="1"/>
     </figures>
-    <figures xsi:type="gmfgraph:PolylineDecoration" name="FeatureIncludesFigureTargetDecoration"/>
-    <descriptors name="FeatureFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="FeatureFigure">
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Rhomb">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
+    <descriptors name="conanFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="conanFigure" lineWidth="3">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="133" green="109" blue="151"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="186" green="24" blue="230"/>
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="FeatureLabelFigure" text="Feature">
-          <maximumSize dx="10000" dy="50"/>
-        </children>
-        <children xsi:type="gmfgraph:Rectangle" name="FeaturePluginsCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Label" name="conanLabelFigure" text="conan"/>
       </actualFigure>
-      <accessors accessor="getFigureFeatureLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-      <accessors accessor="getFeaturePluginsCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureconanLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="PluginFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="PluginFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
-        </border>
-        <children xsi:type="gmfgraph:Label" name="PluginLabelFigure" text="Plugin"/>
+    <descriptors name="jaquenettaFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="jaquenettaFigure" lineWidth="5" sourceDecoration="//@figures.0/@figures.0" targetDecoration="//@figures.0/@figures.1">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="157" green="138" blue="230"/>
       </actualFigure>
-      <accessors accessor="getFigurePluginLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="FeatureDependsFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="FeatureDependsFigure" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.0"/>
-    </descriptors>
-    <descriptors name="FeatureDependsExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="FeatureDependsExternalLabel"/>
-    </descriptors>
-    <descriptors name="FeatureIncludesFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="FeatureIncludesFigure" sourceDecoration="//@figures.0/@figures.1" targetDecoration="//@figures.0/@figures.2"/>
-    </descriptors>
-    <descriptors name="FeatureIncludesExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="FeatureIncludesExternalLabel"/>
+    <descriptors name="julietFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="julietFigure" lineWidth="8" lineKind="LINE_DOT" sourceDecoration="//@figures.0/@figures.2" targetDecoration="//@figures.0/@figures.3">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="101" green="78" blue="64"/>
+      </actualFigure>
     </descriptors>
   </figures>
-  <nodes name="Feature" figure="FeatureFigure"/>
-  <nodes name="Plugin" figure="PluginFigure"/>
-  <connections name="FeatureDepends" figure="FeatureDependsFigure"/>
-  <connections name="FeatureIncludes" figure="FeatureIncludesFigure"/>
-  <compartments name="FeaturePluginsCompartment" figure="FeatureFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
-  <labels name="FeatureLabel" figure="FeatureFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels name="PluginLabel" figure="PluginFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
-  <labels name="FeatureDependsExternalLabel" figure="FeatureDependsExternalLabelFigure" elementIcon="false"/>
-  <labels name="FeatureIncludesExternalLabel" figure="FeatureIncludesExternalLabelFigure" elementIcon="false"/>
+  <nodes name="conan" figure="conanFigure"/>
+  <connections name="jaquenetta" figure="jaquenettaFigure"/>
+  <connections name="juliet" figure="julietFigure"/>
+  <labels name="conanLabel" figure="conanFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>

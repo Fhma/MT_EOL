@@ -93,7 +93,7 @@ public class EolLauncher implements Runnable {
 		File report_dir = new File(REPORT_DIR + File.separatorChar);
 		report_dir.mkdirs();
 		File log_file = new File(report_dir.getPath() + File.separatorChar + eol_name + ".log");
-		logger = new FileWriter(log_file);
+		logger = new FileWriter(log_file, false);
 
 		// output folder
 		File output_dir = new File(EXPECTED_MODELS_DIR + eol_name);
@@ -177,11 +177,11 @@ public class EolLauncher implements Runnable {
 			try {
 				eol.execute();
 			} catch (Error e) {
-				logger.write("Unable to execute file [" + mainModule + "] on input file [" + input_files.toString() + "]");
-				logger.write(e.getStackTrace().toString() + "\n");
+				logger.write("Unable to execute file [" + mainModule + "] on input file [" + input_files.toString() + "]\n");
+				logger.write(e.getMessage() + "\n");
 			} catch (Exception e) {
-				logger.write("Unable to execute file [" + mainModule + "] on input file [" + input_files.toString() + "]");
-				logger.write(e.getStackTrace().toString() + "\n");
+				logger.write("Unable to execute file [" + mainModule + "] on input file [" + input_files.toString() + "]\n");
+				logger.write(e.getMessage() + "\n");
 			}
 			if (type == EOLCandidate.CONSOLE_TYPE)
 				eol.getContext().getOutputStream().close();

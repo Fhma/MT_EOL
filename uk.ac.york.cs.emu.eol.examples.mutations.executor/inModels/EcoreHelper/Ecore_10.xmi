@@ -1,60 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="domain" nsURI="www.uca.es/modeling/cep/domain" nsPrefix="domain">
-  <eClassifiers xsi:type="ecore:EClass" name="CEPDomain">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//CEPDomain/domainCreationDate">
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ecore" nsURI="http://www.eclipse.org/emf/2002/Ecore" nsPrefix="Ecore">
+  <eClassifiers xsi:type="ecore:EClass" name="ryley"/>
+  <eClassifiers xsi:type="ecore:EClass" name="nannie">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/OrientDbIndex" references="//nannie/ryley">
       <details key="type" value="NOTUNIQUE_HASH_INDEX"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainName">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ryley">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EByteObject"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainDescription">
-      <eAnnotations source="https://eclipse.org/epsilon/incremental/Graph">
-        <details key="edge" value="true"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gabe" lowerBound="1" upperBound="3">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainCreationDate">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1" eType="//Event" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Event">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//Event/eventProperties"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName">
-      <eAnnotations source="https://eclipse.org/epsilon/incremental/Graph">
-        <details key="edge" value="true"/>
-      </eAnnotations>
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePath">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eventProperties" upperBound="-1" eType="//EventProperty" containment="true" eOpposite="//EventProperty/referencedEvent"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EventProperty">
-    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//EventProperty/eventProperties"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="//PropertyTypeValue"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePath">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedEvent" eType="//Event" eOpposite="//Event/eventProperties"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eventProperties" upperBound="-1" eType="//EventProperty" containment="true" eOpposite="//EventProperty/referencedEventProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kiley" lowerBound="10" upperBound="10" eType="//ryley"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="corry" lowerBound="6" upperBound="6" eType="//ryley">
       <eAnnotations source="https://eclipse.org/epsilon/incremental/Graph">
         <details key="edge" value="true"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedEventProperty" eType="//EventProperty" eOpposite="//EventProperty/eventProperties"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="PropertyTypeValue">
-    <eLiterals name="Unknown"/>
-    <eLiterals name="Boolean" value="1"/>
-    <eLiterals name="Integer" value="2"/>
-    <eLiterals name="Long" value="3"/>
-    <eLiterals name="Double" value="4"/>
-    <eLiterals name="Float" value="5"/>
-    <eLiterals name="String" value="6"/>
+  <eClassifiers xsi:type="ecore:EClass" name="conan" eSuperTypes="//juliet">
+    <eAnnotations source="https://eclipse.org/epsilon/incremental/equals" references="//conan/jefferey"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="jessalyn" upperBound="7">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EByte"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nehemiah" lowerBound="1" upperBound="2">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gabriela" lowerBound="2" upperBound="4" eType="//nannie" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jefferey" lowerBound="1" eType="//jaquenetta"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="jaquenetta">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lucita">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rodolphe" lowerBound="3" upperBound="9" eType="//nannie" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="juliet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ichabod" lowerBound="1" upperBound="10" eType="//juliet" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lucille" upperBound="2" eType="//jaquenetta" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="forester" lowerBound="2" upperBound="3" eType="//nannie"/>
   </eClassifiers>
 </ecore:EPackage>

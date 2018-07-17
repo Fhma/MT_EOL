@@ -1,39 +1,148 @@
 <?xml version="1.0" encoding="ASCII"?>
-<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="domain">
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="ecore">
   <figures name="Default">
-    <descriptors name="EventFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="EventFigure">
-        <foregroundColor xsi:type="gmfgraph:RGBColor" red="110" green="110" blue="110"/>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Sqare">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template y="1"/>
+      <template x="-1" y="1"/>
+      <template x="-1" y="-1"/>
+      <template y="-1"/>
+      <template y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledClosedArrow">
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledRhomb">
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Rhomb">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledClosedArrow">
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledSqare">
+      <template y="1"/>
+      <template x="-1" y="1"/>
+      <template x="-1" y="-1"/>
+      <template y="-1"/>
+      <template y="1"/>
+    </figures>
+    <descriptors name="ryleyFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ryleyFigure" lineWidth="10" lineKind="LINE_DOT">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="143" green="55" blue="68"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="78" green="149" blue="1"/>
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="EventLabelFigure" text="Event">
-          <maximumSize dx="10000" dy="50"/>
-        </children>
-        <children xsi:type="gmfgraph:Rectangle" name="EventEventPropertiesCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Label" name="ryleyLabelFigure" text="ryley"/>
       </actualFigure>
-      <accessors accessor="getFigureEventLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-      <accessors accessor="getEventEventPropertiesCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureryleyLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="EventPropertyFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="EventPropertyFigure">
-        <foregroundColor xsi:type="gmfgraph:RGBColor" red="110" green="110" blue="110"/>
+    <descriptors name="jaquenettaFigure">
+      <actualFigure xsi:type="gmfgraph:ScalablePolygon" name="jaquenettaFigure" lineWidth="7" lineKind="LINE_DASH">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="128" green="35" blue="139"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="181" green="88" blue="136"/>
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="EventPropertyLabelFigure" text="EventProperty">
-          <maximumSize dx="10000" dy="50"/>
-        </children>
-        <children xsi:type="gmfgraph:Rectangle" name="EventPropertyEventPropertiesCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Label" name="jaquenettaLabelFigure" text="jaquenetta"/>
+        <template x="5" y="2"/>
       </actualFigure>
-      <accessors accessor="getFigureEventPropertyLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
-      <accessors accessor="getEventPropertyEventPropertiesCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors accessor="getFigurejaquenettaLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="christophFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="christophFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="105" green="104" blue="18"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="16" green="112" blue="136"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="christophLabelFigure" text="christoph"/>
+      </actualFigure>
+      <accessors accessor="getFigurechristophLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="giseleFigure">
+      <actualFigure xsi:type="gmfgraph:SVGFigure" name="giseleFigure" documentURI="platform:/plugin/my.plugin/trixie">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="171" green="24" blue="143"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="53" green="91" blue="87"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="giseleLabelFigure" text="gisele"/>
+      </actualFigure>
+      <accessors accessor="getFiguregiseleLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="shelliFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="shelliFigure" lineWidth="7" lineKind="LINE_DOT">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="2" blue="214"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="7" green="19" blue="122"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="shelliLabelFigure" text="shelli"/>
+      </actualFigure>
+      <accessors accessor="getFigureshelliLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="nannieFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="nannieFigure" lineWidth="3" lineKind="LINE_DASH" sourceDecoration="//@figures.0/@figures.0" targetDecoration="//@figures.0/@figures.1">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="77" green="228" blue="151"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="julietFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="julietFigure" lineWidth="5" lineKind="LINE_DOT" sourceDecoration="//@figures.0/@figures.2">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="181" green="209" blue="206"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="julietLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="julietLabelLabel" text="juliet"/>
+    </descriptors>
+    <descriptors name="karolyFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="karolyFigure" lineWidth="10" sourceDecoration="//@figures.0/@figures.3" targetDecoration="//@figures.0/@figures.4">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="153" green="105" blue="125"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="marrisFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="marrisFigure" lineWidth="4" lineKind="LINE_DASH" sourceDecoration="//@figures.0/@figures.5" targetDecoration="//@figures.0/@figures.6">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="149" green="37" blue="166"/>
+      </actualFigure>
     </descriptors>
   </figures>
-  <nodes name="Event" figure="EventFigure"/>
-  <nodes name="EventProperty" figure="EventPropertyFigure"/>
-  <compartments name="EventEventPropertiesCompartment" figure="EventFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
-  <compartments name="EventPropertyEventPropertiesCompartment" figure="EventPropertyFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
-  <labels name="EventLabel" figure="EventFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels name="EventPropertyLabel" figure="EventPropertyFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <nodes name="ryley" figure="ryleyFigure"/>
+  <nodes name="jaquenetta" figure="jaquenettaFigure"/>
+  <nodes name="christoph" figure="christophFigure"/>
+  <nodes name="gisele" figure="giseleFigure"/>
+  <nodes name="shelli" figure="shelliFigure"/>
+  <connections name="nannie" figure="nannieFigure"/>
+  <connections name="juliet" figure="julietFigure"/>
+  <connections name="karoly" figure="karolyFigure"/>
+  <connections name="marris" figure="marrisFigure"/>
+  <labels name="ryleyLabel" figure="ryleyFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="jaquenettaLabel" figure="jaquenettaFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="christophLabel" figure="christophFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="giseleLabel" figure="giseleFigure" elementIcon="false" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="shelliLabel" figure="shelliFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels name="julietLabel" figure="julietLabelFigure" elementIcon="false"/>
 </gmfgraph:Canvas>

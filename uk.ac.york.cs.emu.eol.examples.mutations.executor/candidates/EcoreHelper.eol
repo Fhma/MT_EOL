@@ -198,6 +198,17 @@ operation EClass getEAttributeParameters() : Sequence  {
 	}
 	return results;
 }
+
+@cached
+operation EClass getIndexAttributes() : Sequence  {
+	var result : Sequence();
+	var annot = self.findIndexAnnotation();
+	if(annot.isDefined()) {
+		result.addAll(annot.getReferences());
+	}
+	return result;
+}
+
 @cached
 operation EClass getRequiredFeatureParameters(interPrefix, interSufix)  {
 	var results : Sequence() = new Sequence();
@@ -252,15 +263,7 @@ operation EClass getIndex() : Sequence  {
 	}
 	return null;
 }
-@cached
-operation EClass getIndexAttributes() : Sequence  {
-	var result : Sequence();
-	var annot = self.findIndexAnnotation();
-	if(annot.isDefined()) {
-		result.addAll(annot.getReferences());
-	}
-	return result;
-}
+
 operation EClass findIndexAnnotation() : EAnnotation  {
 	var annot = self.getEAnnotation('https://eclipse.org/epsilon/incremental/OrientDbIndex');
 	if(annot.isUndefined()) {

@@ -1,18 +1,66 @@
 <?xml version="1.0" encoding="ASCII"?>
 <tooldef:ToolRegistry xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
-  <palette title="friendsPalette">
+  <palette title="ecorePalette">
     <tools xsi:type="tooldef:ToolGroup" title="Objects" collapsible="true">
-      <tools xsi:type="tooldef:CreationTool" title="Person" description="Create new Person">
+      <tools xsi:type="tooldef:CreationTool" title="christoph" description="Create new christoph">
+        <smallIcon xsi:type="tooldef:DefaultImage"/>
+        <largeIcon xsi:type="tooldef:DefaultImage"/>
+      </tools>
+      <tools xsi:type="tooldef:CreationTool" title="conan" description="Create new conan">
+        <smallIcon xsi:type="tooldef:DefaultImage"/>
+        <largeIcon xsi:type="tooldef:DefaultImage"/>
+      </tools>
+      <tools xsi:type="tooldef:CreationTool" title="gisele" description="Create new gisele">
+        <smallIcon xsi:type="tooldef:DefaultImage"/>
+        <largeIcon xsi:type="tooldef:DefaultImage"/>
+      </tools>
+      <tools xsi:type="tooldef:CreationTool" title="jaquenetta" description="Create new jaquenetta">
+        <smallIcon xsi:type="tooldef:DefaultImage"/>
+        <largeIcon xsi:type="tooldef:DefaultImage"/>
+      </tools>
+      <tools xsi:type="tooldef:CreationTool" title="karoly" description="Create new karoly">
+        <smallIcon xsi:type="tooldef:DefaultImage"/>
+        <largeIcon xsi:type="tooldef:DefaultImage"/>
+      </tools>
+      <tools xsi:type="tooldef:CreationTool" title="ryley" description="Create new ryley">
         <smallIcon xsi:type="tooldef:DefaultImage"/>
         <largeIcon xsi:type="tooldef:DefaultImage"/>
       </tools>
     </tools>
     <tools xsi:type="tooldef:ToolGroup" title="Connections" collapsible="true">
-      <tools xsi:type="tooldef:CreationTool" title="EnemyOf" description="Create new EnemyOf">
+      <tools xsi:type="tooldef:CreationTool" title="alexa" description="Create new alexa">
         <smallIcon xsi:type="tooldef:DefaultImage"/>
         <largeIcon xsi:type="tooldef:DefaultImage"/>
       </tools>
-      <tools xsi:type="tooldef:CreationTool" title="FriendOf" description="Create new FriendOf">
+      <tools xsi:type="tooldef:CreationTool" title="forester" description="Create new forester">
+        <smallIcon xsi:type="tooldef:DefaultImage"/>
+        <largeIcon xsi:type="tooldef:DefaultImage"/>
+      </tools>
+      <tools xsi:type="tooldef:CreationTool" title="hale" description="Create new hale">
+        <smallIcon xsi:type="tooldef:DefaultImage"/>
+        <largeIcon xsi:type="tooldef:DefaultImage"/>
+      </tools>
+      <tools xsi:type="tooldef:CreationTool" title="jolee" description="Create new jolee">
+        <smallIcon xsi:type="tooldef:DefaultImage"/>
+        <largeIcon xsi:type="tooldef:DefaultImage"/>
+      </tools>
+      <tools xsi:type="tooldef:CreationTool" title="madlin" description="Create new madlin">
+        <smallIcon xsi:type="tooldef:DefaultImage"/>
+        <largeIcon xsi:type="tooldef:DefaultImage"/>
+      </tools>
+      <tools xsi:type="tooldef:CreationTool" title="meier" description="Create new meier">
+        <smallIcon xsi:type="tooldef:DefaultImage"/>
+        <largeIcon xsi:type="tooldef:DefaultImage"/>
+      </tools>
+      <tools xsi:type="tooldef:CreationTool" title="nannie" description="Create new nannie">
+        <smallIcon xsi:type="tooldef:DefaultImage"/>
+        <largeIcon xsi:type="tooldef:DefaultImage"/>
+      </tools>
+      <tools xsi:type="tooldef:CreationTool" title="paco" description="Create new paco">
+        <smallIcon xsi:type="tooldef:DefaultImage"/>
+        <largeIcon xsi:type="tooldef:DefaultImage"/>
+      </tools>
+      <tools xsi:type="tooldef:CreationTool" title="ruy" description="Create new ruy">
         <smallIcon xsi:type="tooldef:DefaultImage"/>
         <largeIcon xsi:type="tooldef:DefaultImage"/>
       </tools>
