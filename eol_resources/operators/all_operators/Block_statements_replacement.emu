@@ -1,0 +1,226 @@
+// operator: Block_statements-REP
+// desc: replaces a statement with another one. 
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+// 1.0: replacing if statement and while statement
+// 1.1: replacing if statement that only has ifBlock 
+// with new while statement
+@action replace
+@property statements
+@role instance
+pattern replace_if_with_while
+instance:Block,
+if_stat:IfStatement
+	from: instance.statements
+	guard: if_stat.elseIfBodies.size=0 and if_stat.elseBody = null {
+	do {
+		var new_stat = WhileStatement.createInstance();
+		new_stat.condition = if_stat.condition;
+		new_stat.body=if_stat.ifBody;
+		
+		instance.statements.remove(if_stat);
+		instance.statements.add(new_stat);
+	}
+}
+
+// 1.2: replacing while statement with new if statement
+@action replace
+@property statements
+@role instance
+pattern replace_while_with_if
+instance:Block,
+while_stat:WhileStatement from: instance.statements{
+	do {
+		var new_stat = IfStatement.createInstance();
+		new_stat.condition = while_stat.condition;
+		new_stat.ifBody = while_stat.body;
+		
+		instance.statements.remove(while_stat);
+		instance.statements.add(new_stat);
+	}
+}
+
+// 2.0: replacing expression statement with return statement
+// 2.1: replacing the last expression statement of an operation
+// definition with return statement
+@action replace
+@property statements
+pattern replace_exp_stat_with_return_stat
+instance:Block
+	in: Block.all.select(e|e.container.isTypeOf(OperationDefinition))
+	guard:  instance.statements.last().isTypeOf(ExpressionStatement) {
+	do {
+		var new_stat = ReturnStatement.createInstance();
+		var target = instance.statements.last();
+		new_stat.expression = target.expression;
+		
+		instance.statements.remove(target);
+		instance.statements.add(new_stat);
+	}
+}
+
+// 2.2 replacing return statement with expression statement
+// of a operation definition
+@action replace
+@property statements
+pattern replace_return_stat_with_exp_stat
+instance:Block
+	in: Block.all.select(e|e.container.isTypeOf(OperationDefinition))
+	guard: instance.statements.last().isTypeOf(ReturnStatement) {
+	do {
+		var target = instance.statements.last();
+		var new_stat = ExpressionStatement.createInstance();
+		new_stat.expression = target.expression;
+		
+		instance.statements.remove(target);
+		instance.statements.add(new_stat);
+	}
+}
+
+// 3.0: replacing delete statement with return statement
+@action replace
+@property statements
+@role instance
+pattern replace_delete_stat_with_return_stat
+instance:Block,
+exp:DeleteStatement from: instance.statements {
+	do {
+		var new_stat = ReturnStatement.createInstance();
+		new_stat.expression = exp.expression;
+		
+		instance.statements.remove(exp);
+		instance.statements.add(new_stat);
+	}
+}
+
+// 4.0: replacing normal assignment with special assignment
+// 4.1 replacing specail assignment statement with normal 
+// assignment
+@action replace
+@property statements
+@role instance
+pattern replace_special_stat_with_normal_assgin_stat
+instance:Block,
+exp:SpecialAssignmentStatement from: instance.statements {
+	do {
+		var new_stat = AssignmentStatement.createInstance();
+		new_stat.lhs = exp.lhs;
+		new_stat.rhs = exp.rhs;
+		
+		instance.statements.remove(exp);
+		instance.statements.add(new_stat);
+	}
+}
+
+// 4.2 replacing normal assignment statement with specail 
+// assignment
+@action replace
+@property statements
+@role instance
+pattern replace_normal_stat_with_spcial_assgin_stat
+instance:Block,
+exp:AssignmentStatement from: instance.statements {
+	do {
+		var new_stat = SpecialAssignmentStatement.createInstance();
+		new_stat.lhs = exp.lhs;
+		new_stat.rhs = exp.rhs;
+		
+		instance.statements.remove(exp);
+		instance.statements.add(new_stat);
+	}
+}
+
+// 5.0: replacing continue statement
+// 5.1: replacing continue with break
+@action replace
+@property statements
+@role instance
+pattern replace_continue_with_break
+instance:Block,
+exp:ContinueStatement from: instance.statements {
+	do {
+		var new_stat = BreakStatement.createInstance();
+		
+		instance.statements.remove(exp);
+		instance.statements.add(new_stat);
+	}
+}
+
+// 5.2: replacing continue with breakall
+@action replace
+@property statements
+@role instance
+pattern replace_continue_with_breakall
+instance:Block,
+exp:ContinueStatement from: instance.statements {
+	do {
+		var new_stat = BreakAllStatement.createInstance();
+		
+		instance.statements.remove(exp);
+		instance.statements.add(new_stat);
+	}
+}
+
+// 6.0: replacing break statement
+// 6.1: replacing break with continue
+@action replace
+@property statements
+@role instance
+pattern replace_break_with_continue
+instance:Block,
+exp:BreakStatement from: instance.statements {
+	do {
+		var new_stat = ContinueStatement.createInstance();
+		
+		instance.statements.remove(exp);
+		instance.statements.add(new_stat);
+	}
+}
+
+// 6.2: replacing break with breakall
+@action replace
+@property statements
+@role instance
+pattern replace_break_with_breakall
+instance:Block,
+exp:BreakStatement from: instance.statements {
+	do {
+		var new_stat = BreakAllStatement.createInstance();
+		
+		instance.statements.remove(exp);
+		instance.statements.add(new_stat);
+	}
+}
+
+// 7.0: replacing break statement
+// 7.1: replacing breakall with continue
+@action replace
+@property statements
+@role instance
+pattern replace_breakall_with_continue
+instance:Block,
+exp:BreakAllStatement from: instance.statements {
+	do {
+		var new_stat = ContinueStatement.createInstance();
+		
+		instance.statements.remove(exp);
+		instance.statements.add(new_stat);
+	}
+}
+
+// 7.2: replacing breakall with break
+@action replace
+@property statements
+@role instance
+pattern replace_breakall_with_break
+instance:Block,
+exp:BreakAllStatement from: instance.statements {
+	do {
+		var new_stat = BreakStatement.createInstance();
+		
+		instance.statements.remove(exp);
+		instance.statements.add(new_stat);
+	}
+}

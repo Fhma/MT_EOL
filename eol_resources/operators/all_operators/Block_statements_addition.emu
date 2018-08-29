@@ -1,0 +1,127 @@
+// operator: Block_statements-ADD
+// desc: add a new statement to a statement block. Statements
+// that require no extra configuration and which could be added
+// include Continue, break and breakAll
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+// 1.0: add a continue statement to a looping control structure ie. for and while
+@action add
+@property statements
+pattern add_continue_statement
+instance:Block
+	in:Block.all.select(e|e.container <> null)
+	guard: instance.container.isTypeOf(ExpressionOrStatementBlock)
+		and instance.container.container <> null and (
+			instance.container.container.isTypeOf(ForStatement) or 
+			instance.container.container.isTypeOf(WhileStatement))
+		and instance.statements.size() >= 2{
+	do {
+		// always add to the middle of a list of statements that is
+		// greater than one
+		var stat = ContinueStatement.createInstance();			
+		var list = new Native("java.util.ArrayList");	
+		list.addAll(instance.statements);
+		var index:Integer;
+		if(list.size() = 2)
+			index = 1;
+		else
+			index = (list.size()/2).ceiling();
+		list.add(index, stat);
+		instance.statements.clear();
+		instance.statements.addAll(list);
+	}
+}
+
+// 2.0: add a break statement to a looping control structure ie. for and while
+// 2.1: add at the end of a block
+@action add
+@property statements
+pattern add_break_statement
+instance:Block
+	in:Block.all.select(e|e.container <> null)
+	guard: instance.container.isTypeOf(ExpressionOrStatementBlock)
+		and instance.container.container <> null and (
+			instance.container.container.isTypeOf(ForStatement) or 
+			instance.container.container.isTypeOf(WhileStatement)) {
+	do {
+		// add a to the end of block statement
+		var stat = BreakStatement.createInstance();
+		instance.statements.add(stat);
+	}
+}
+
+// 2.2: add at the middle of block
+@action add
+@property statements
+pattern add_break_statement_middle
+instance:Block
+	in:Block.all.select(e|e.container <> null)
+	guard: instance.container.isTypeOf(ExpressionOrStatementBlock)
+		and instance.container.container <> null and (
+			instance.container.container.isTypeOf(ForStatement) or 
+			instance.container.container.isTypeOf(WhileStatement))
+		and instance.statements.size() >= 2{
+	do {
+		// always add to the middle of a list of statements that is
+		// greater than one
+		var stat = BreakStatement.createInstance();			
+		var list = new Native("java.util.ArrayList");	
+		list.addAll(instance.statements);
+		var index:Integer;
+		if(list.size() = 2)
+			index = 1;
+		else
+			index = (list.size()/2).ceiling();
+		list.add(index, stat);
+		instance.statements.clear();
+		instance.statements.addAll(list);
+	}         
+}
+
+// 3.0: add a breakAll statement to a looping control structure ie. for and while
+// 3.1: add at the end of a block
+@action add
+@property statements
+pattern add_breakAll_statement
+instance:Block
+	in:Block.all.select(e|e.container <> null)
+	guard: instance.container.isTypeOf(ExpressionOrStatementBlock)
+		and instance.container.container <> null and (
+			instance.container.container.isTypeOf(ForStatement) or 
+			instance.container.container.isTypeOf(WhileStatement)) {
+	do {
+		// add a to the end of block statement
+		var stat = BreakAllStatement.createInstance();
+		instance.statements.add(stat);
+	}
+}
+
+// 3.2: add at the middle of a statement block
+@action add
+@property statements
+pattern add_breakAll_statement_middle
+instance:Block
+	in:Block.all.select(e|e.container <> null)
+	guard: instance.container.isTypeOf(ExpressionOrStatementBlock)
+		and instance.container.container <> null and (
+			instance.container.container.isTypeOf(ForStatement) or 
+			instance.container.container.isTypeOf(WhileStatement))
+		and instance.statements.size() >= 2{
+	do {
+		// always add to the middle of a list of statements that is
+		// greater than one
+		var stat = BreakAllStatement.createInstance();			
+		var list = new Native("java.util.ArrayList");	
+		list.addAll(instance.statements);
+		var index:Integer;
+		if(list.size() = 2)
+			index = 1;
+		else
+			index = (list.size()/2).ceiling();
+		list.add(index, stat);
+		instance.statements.clear();
+		instance.statements.addAll(list);
+	}         
+}

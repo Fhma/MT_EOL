@@ -1,0 +1,27 @@
+// operator: VariableDeclarationExpression_create_replacement
+// desc: neglet the value of create.
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+// 1.0: change create from false to true
+@action replace
+@property create
+pattern neglet_create_to_true
+instance:VariableDeclarationExpression
+	guard: instance.create = false{
+	do {
+		instance.create = true;
+	}
+}
+
+// 2.0: change create from true to false
+@action replace
+@property create
+pattern neglet_create_to_false
+instance:VariableDeclarationExpression
+	guard: instance.create = true{
+	do {
+		instance.create = false;
+	}
+}

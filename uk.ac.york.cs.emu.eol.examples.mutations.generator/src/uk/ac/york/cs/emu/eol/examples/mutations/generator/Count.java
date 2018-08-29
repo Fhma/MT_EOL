@@ -8,7 +8,7 @@ public class Count {
 
 	public static void main(String[] args) throws Exception {
 
-		File folder = new File("operatorDefinitions/final");
+		File folder = new File("operators/all_operators");
 
 		short count_impl = 0;
 		short count_operators = 0;
@@ -17,12 +17,8 @@ public class Count {
 			if (f != null && f.getName().endsWith(".emu")) {
 				EmuModule emu = new EmuModule();
 				emu.parse(f.getAbsoluteFile());
-				if (emu.getParseProblems().size() > 0) {
-					System.err.println(emu.getParseProblems().toString());
-					continue;
-				}
-				if (emu.getPatterns().size() > 0)
-					count_operators++;
+				if (emu.getParseProblems().size() > 0) throw new Exception(emu.getParseProblems().toString());
+				if (emu.getPatterns().size() > 0) count_operators++;
 				count_impl = (short) (count_impl + emu.getPatterns().size());
 			}
 		}

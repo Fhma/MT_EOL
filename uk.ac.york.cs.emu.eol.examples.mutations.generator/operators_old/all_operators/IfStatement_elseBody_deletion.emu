@@ -1,0 +1,14 @@
+// operator: IfStatement_elseBody_deletion
+// desc: delete an elseBody block.
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+@action delete
+@property elseBody
+pattern delete_elseBody_block
+instance:IfStatement {
+	do {
+		instance.elseBody = null;
+	}
+}

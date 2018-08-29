@@ -28,7 +28,9 @@ public class ShortestPath {
 
 		properties.put(Configuration.MM_METAMODELS, emf_metamodels);
 
-		properties.put(Configuration.MM_PATHS, EcoreModel.LOCATION + "DirectedGraph.ecore");
+		String metamodels_paths[] = { EcoreModel.LOCATION + "DirectedGraph.ecore" };
+
+		properties.put(Configuration.MM_PATHS, metamodels_paths);
 
 		return properties;
 	}

@@ -1,0 +1,16 @@
+// operator: ExpressionOrStatementBlock_expression-DEL
+// desc: deletes an expression
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+// 1.0: delete an expression from an expression statmement block
+
+@action delete
+@property expression
+pattern delete_exp
+instance:ExpressionOrStatementBlock {
+	do {
+		instance.expression = null;
+	}
+}

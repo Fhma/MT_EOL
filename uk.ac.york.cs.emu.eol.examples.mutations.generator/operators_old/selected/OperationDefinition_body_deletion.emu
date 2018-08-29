@@ -1,0 +1,14 @@
+// operator: OperationDefinition_body-DEL
+// desc: deletes the block of the body of an operation
+//
+// Inherited operators: n/a
+////////////////////////////////////////////////////////////
+
+@action delete
+@property body
+pattern delete_operation_body_block
+instance:OperationDefinition {
+	do {
+		instance.body = null;
+	}
+}

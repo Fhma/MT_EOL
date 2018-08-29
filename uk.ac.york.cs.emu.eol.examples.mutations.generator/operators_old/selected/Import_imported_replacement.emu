@@ -1,0 +1,14 @@
+// operator: Import_imported_replacement
+// desc: replaces the string of imported file with another one
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+@action replace 
+@property imported
+pattern replace_imported_string
+instance:Import {
+	do {
+		instance.imported = instance.imported + "_";
+	}
+}

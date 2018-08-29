@@ -3,7 +3,6 @@ package uk.ac.york.cs.emu.eol.examples.executor.configurations;
 import java.util.HashMap;
 import java.util.Map;
 import org.eclipse.epsilon.emc.emf.EmfMetaModel;
-
 import uk.ac.york.cs.emu.eol.examples.executor.candidates.EOLCandidate;
 
 public class EcoreHelper {
@@ -26,8 +25,9 @@ public class EcoreHelper {
 
 		properties.put(Configuration.MM_METAMODELS, emf_metamodels);
 
-		properties.put(Configuration.MM_PATHS, null);
+		String metamodels_paths[] = null;
 
+		properties.put(Configuration.MM_PATHS, metamodels_paths);
 		return properties;
 	}
 }

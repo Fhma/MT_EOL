@@ -10,7 +10,7 @@ public class OperatorEntry {
 	private int total_killed_mutants = 0;
 	private int total_invalid_mutants = 0;
 	private int total_trivial_mutants;
-	private List<String> not_killed;
+	private List<String> killed_mutants_list;
 
 	public OperatorEntry(String _oid) {
 		oID = _oid;
@@ -26,7 +26,7 @@ public class OperatorEntry {
 		return oID;
 	}
 
-	public void incrementProcessed() {
+	public void incrementProcessedMutants() {
 		total_processed_mutants++;
 	}
 
@@ -34,7 +34,7 @@ public class OperatorEntry {
 		return total_processed_mutants;
 	}
 
-	public void incrementInvalid() {
+	public void incrementInvalidMutants() {
 		total_invalid_mutants++;
 	}
 
@@ -42,7 +42,7 @@ public class OperatorEntry {
 		return total_invalid_mutants;
 	}
 
-	public int getKilledMutants() {
+	public int getTotalKilledMutants() {
 		return total_killed_mutants;
 	}
 
@@ -50,15 +50,19 @@ public class OperatorEntry {
 		total_killed_mutants++;
 	}
 
-	public void addNotKilled(String mutant) {
+	public void addNotKilledToAList(String mutant) {
 		getAllNotKilled().add(mutant);
 	}
 
 	public List<String> getAllNotKilled() {
-		if (this.not_killed == null) {
-			not_killed = new ArrayList<String>();
+		if (this.killed_mutants_list == null) {
+			killed_mutants_list = new ArrayList<String>();
 		}
-		return not_killed;
+		return killed_mutants_list;
+	}
+
+	public void incrementTrivialMutants() {
+		total_trivial_mutants++;
 	}
 
 	public int getTotalTrivialMutants() {

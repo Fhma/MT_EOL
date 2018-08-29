@@ -1,0 +1,26 @@
+// operator: SimpleAnnotationStatement_values_replacement
+// desc: replaces the value from the collection with another value
+//
+// Inherited operators: Statement, AnnotationStatement 
+////////////////////////////////////////////////////////////
+
+@action replace
+@property values
+@role instance
+pattern replace_a_value_string
+instance:SimpleAnnotationStatement,
+element:StringExpression
+	from: instance.values,
+other_value:StringExpression
+	from: StringExpression.all.select(e|e.container <> instance and e.container.isTypeOf(SimpleAnnotationStatement)) {
+	do {
+		if(element.value <> other_value.value)
+		{
+			var string_exp = StringExpression.createInstance();
+			string_exp.value = other_value.value;
+			
+			instance.values.remove(element);
+			instance.values.add(string_exp);
+		}
+	}
+}

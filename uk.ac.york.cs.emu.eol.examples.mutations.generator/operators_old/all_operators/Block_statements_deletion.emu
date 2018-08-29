@@ -1,0 +1,18 @@
+// operator: Block_statements-DEL
+// desc: delete a statement from a list of statements. This 
+// operator mimics the error missing a statement of a program.
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+@action delete
+@property statements
+@role instance
+pattern delete_statement_of_block
+instance:Block,
+stat:Statement
+	from: instance.statements {
+	do {
+		instance.statements.remove(stat);
+	}
+}

@@ -1,0 +1,43 @@
+// operator: SimpleAnnotationStatement_values_addition
+// desc: adds a new value to the collection values
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+// 1.0: add a new value to collection of values
+@action add
+@property values
+pattern add_new_value
+instance:SimpleAnnotationStatement {
+	do {
+		var string_exp = StringExpression.createInstance();
+		string_exp.value = "some_value";
+		instance.values.add(string_exp);
+	}
+}
+
+// 2.0: add a new value to collection of values obtained from
+// other values
+@action add
+@property values
+@role instance
+pattern copyover_value
+instance:SimpleAnnotationStatement,
+other_value:StringExpression
+	from: StringExpression.all.select(e|e.container <> instance and e.container.isTypeOf(SimpleAnnotationStatement)) {
+	do {
+		var exist:Boolean=false;
+		for(string in instance.values)
+		{
+			if(string.value = other_value.value) {
+				exist = true;
+				break;
+			}
+		}
+		if(not exist) {
+			var string_exp = StringExpression.createInstance();
+			string_exp.value = other_value.value;
+			instance.values.add(string_exp);
+		}
+	}
+}

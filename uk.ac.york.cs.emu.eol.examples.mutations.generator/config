@@ -8,8 +8,8 @@
 #	2) mutation operators (EMU programs) stored in "operators" folder
 #	3) EOL metamodel in Ecore and stored in "metamodels" folder
 #
-ShortestPath
+#ShortestPath
 #ECore2GMF
 #ECoreUtil
-#Formatting
+Formatting
 #EcoreHelper

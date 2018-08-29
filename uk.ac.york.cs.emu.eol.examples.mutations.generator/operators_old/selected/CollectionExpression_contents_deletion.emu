@@ -1,0 +1,18 @@
+// operator: CollectionExpression_contents_deletion
+// desc: deletes on content expression
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+// 1.0: delete one content expression from list of contents
+@action delete
+@property contents
+@role instance
+pattern delete_content
+instance:CollectionExpression,
+item:Expression
+	from: instance.contents {
+	do {
+		instance.contents.remove(item);
+	}
+}

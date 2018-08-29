@@ -1,0 +1,20 @@
+// operator: FOLMethodCallExpression_conditions_deletion
+// desc: There is no deletion implementation
+// for this operator as this a requird property (ie. lower
+// bound and upper bound = 1)
+//
+// Inherited operators: Expression, FeatureCallExpression 
+////////////////////////////////////////////////////////////
+
+// 1.0: delete one condition from list of conditions one at a time
+@action delete
+@property conditions
+@role instance
+pattern delete_one_condition
+instance:FOLMethodCallExpression,
+condition:Expression
+	from: instance.conditions {
+	do {
+		instance.conditions.remove(condition);
+	}
+}

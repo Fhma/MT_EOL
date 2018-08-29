@@ -6,38 +6,34 @@ import org.eclipse.epsilon.eol.execute.control.ExecutionController;
 
 public class MutationExecutionController implements ExecutionController {
 
-	private boolean terminated = false;
+    private boolean terminated = false;
 
-	@Override
-	public void control(AST ast, IEolContext context) {
-		// TODO Auto-generated method stub
+    @Override
+    public void control(AST ast, IEolContext context) {
+	// TODO Auto-generated method stub
 
-	}
+    }
 
-	@Override
-	public void done(AST ast, IEolContext context) {
-		// TODO Auto-generated method stub
+    @Override
+    public void done(AST ast, IEolContext context) {
+	// TODO Auto-generated method stub
 
-	}
+    }
 
-	@Override
-	public boolean isTerminated() {
-		return terminated;
-	}
-	
-	public void terminate() {
-		terminated = true;
-	}
+    @Override
+    public boolean isTerminated() {
+	return terminated;
+    }
 
-	@Override
-	public void report(IEolContext context) {
-		// TODO Auto-generated method stub
+    @Override
+    public void report(IEolContext context) {
+	// TODO Auto-generated method stub
 
-	}
+    }
 
-	@Override
-	public void dispose() {
-		terminated = true;
-	}
+    @Override
+    public void dispose() {
+	terminated = true;
+    }
 
 }

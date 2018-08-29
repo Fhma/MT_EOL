@@ -1,0 +1,20 @@
+// operator: EOLLibraryModule_imports-DEL
+// desc: deletes one imported element of an EOL module. The 
+// intented mutation may generates a runtime exception.
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+// 1.0: delete one import instance from EOL library module
+// from a list of imports
+@action delete
+@property imports
+@role instance
+pattern delete_one_import_element
+instance:EOLLibraryModule, 
+element:Import
+    from: instance.imports {
+	do {
+		    instance.imports.remove(element);
+	}
+}

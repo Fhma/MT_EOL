@@ -1,0 +1,490 @@
+// operator: FOLMethodCallExpression_method_replacement
+// desc: replaces the name of the FOL name to another one.
+// All possible other names categorised as follows: 
+// 1) Condition as argument (boolean argument)
+// exists, forAll, one, reject, select, selectOne
+// 2) Expression as argumenet
+// closure, collect, sortBy
+//
+// Inherited operators: Expression, FeatureCallExpression
+////////////////////////////////////////////////////////////
+
+// 1.0: replacement of FOL that accept boolean as argument
+// 1.1: replaces exists with others from same category
+// 1.1.1: with forAll
+@action replace
+@property method
+pattern replace_exists_with_forAll
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "exists" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "forAll";
+		instance.method = name_exp;
+	}
+}
+
+// 1.1.2: with one
+@action replace
+@property method
+pattern replace_exists_with_one
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "exists" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "one";
+		instance.method = name_exp;
+	}
+}
+
+// 1.1.3: with reject
+@action replace
+@property method
+pattern replace_exists_with_reject
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "exists" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "reject";
+		instance.method = name_exp;
+	}
+}
+
+// 1.1.4: with select
+@action replace
+@property method
+pattern replace_exists_with_select
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "exists" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "select";
+		instance.method = name_exp;
+	}
+}
+
+// 1.1.5: with selectOne
+@action replace
+@property method
+pattern replace_exists_with_selectone
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "exists" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "selectOne";
+		instance.method = name_exp;
+	}
+}
+
+// 1.2: replaces forAll with others from same category
+// 1.2.1: with exists
+@action replace
+@property method
+pattern replace_forAll_with_exists
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "forAll" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "exists";
+		instance.method = name_exp;
+	}
+}
+
+// 1.2.2: with one
+@action replace
+@property method
+pattern replace_forAll_with_one
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "forAll" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "one";
+		instance.method = name_exp;
+	}
+}
+
+// 1.2.3: with reject
+@action replace
+@property method
+pattern replace_forAll_with_reject
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "forAll" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "reject";
+		instance.method = name_exp;
+	}
+}
+
+// 1.2.4: with select
+@action replace
+@property method
+pattern replace_forAll_with_select
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "forAll" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "select";
+		instance.method = name_exp;
+	}
+}
+
+// 1.2.5: with selectOne
+@action replace
+@property method
+pattern replace_forAll_with_selectOne
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "forAll" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "selectOne";
+		instance.method = name_exp;
+	}
+}
+
+// 1.3: replaces one with others from same category
+// 1.3.1: with exists
+@action replace
+@property method
+pattern replace_one_with_exists
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "one" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "exists";
+		instance.method = name_exp;
+	}
+}
+
+// 1.3.2: with forAll
+@action replace
+@property method
+pattern replace_one_with_forAll
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "one" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "forAll";
+		instance.method = name_exp;
+	}
+}
+
+// 1.3.3: with reject
+@action replace
+@property method
+pattern replace_one_with_reject
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "one" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "reject";
+		instance.method = name_exp;
+	}
+}
+
+// 1.3.4: with select
+@action replace
+@property method
+pattern replace_one_with_select
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "one" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "select";
+		instance.method = name_exp;
+	}
+}
+
+// 1.3.5: with selectOne
+@action replace
+@property method
+pattern replace_one_with_selectOne
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "one" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "selectOne";
+		instance.method = name_exp;
+	}
+}
+
+// 1.4: replaces reject with others from same category
+// 1.4.1: with exists
+@action replace
+@property method
+pattern replace_reject_with_exists
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "reject" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "exists";
+		instance.method = name_exp;
+	}
+}
+
+// 1.4.2: with forAll
+@action replace
+@property method
+pattern replace_reject_with_forAll
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "reject" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "forAll";
+		instance.method = name_exp;
+	}
+}
+
+// 1.4.3: with one
+@action replace
+@property method
+pattern replace_reject_with_one
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "reject" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "one";
+		instance.method = name_exp;
+	}
+}
+
+// 1.4.4: with select
+@action replace
+@property method
+pattern replace_reject_with_select
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "reject" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "select";
+		instance.method = name_exp;
+	}
+}
+
+// 1.4.5: with selectOne
+@action replace
+@property method
+pattern replace_reject_with_selectOne
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "reject" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "selectOne";
+		instance.method = name_exp;
+	}
+}
+
+// 1.5: replaces select with others from same category
+// 1.5.1: with exists
+@action replace
+@property method
+pattern replace_select_with_exists
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "select" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "exists";
+		instance.method = name_exp;
+	}
+}
+
+// 1.5.2: with forAll
+@action replace
+@property method
+pattern replace_select_with_forAll
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "select" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "forAll";
+		instance.method = name_exp;
+	}
+}
+
+// 1.5.3: with one
+@action replace
+@property method
+pattern replace_select_with_one
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "select" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "one";
+		instance.method = name_exp;
+	}
+}
+
+// 1.5.4: with reject
+@action replace
+@property method
+pattern replace_select_with_reject
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "select" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "reject";
+		instance.method = name_exp;
+	}
+}
+
+// 1.5.5: with selectOne
+@action replace
+@property method
+pattern replace_select_with_selectOne
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "select" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "selectOne";
+		instance.method = name_exp;
+	}
+}
+
+// 1.6: replaces selectOne with others from same category
+// 1.6.1: with exists
+@action replace
+@property method
+pattern replace_selectOne_with_exists
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "selectOne" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "exists";
+		instance.method = name_exp;
+	}
+}
+
+// 1.6.2: with forAll
+@action replace
+@property method
+pattern replace_selectOne_with_forAll
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "selectOne" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "forAll";
+		instance.method = name_exp;
+	}
+}
+
+// 1.6.3: with one
+@action replace
+@property method
+pattern replace_selectOne_with_one
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "selectOne" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "one";
+		instance.method = name_exp;
+	}
+}
+
+// 1.6.4: with reject
+@action replace
+@property method
+pattern replace_selectOne_with_reject
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "selectOne" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "reject";
+		instance.method = name_exp;
+	}
+}
+
+// 1.6.5: with select
+@action replace
+@property method
+pattern replace_selectOne_with_select
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "selectOne" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "select";
+		instance.method = name_exp;
+	}
+}
+
+//------------------------------------------------//
+// 2.0: replacement of FOL that accept boolean as argument
+// 2.1: replaces closure with others from same category
+// 2.1.1: with collect
+@action replace
+@property method
+pattern replace_closure_with_collect
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "closure" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "collect";
+		instance.method = name_exp;
+	}
+}
+
+// 2.1.2: with sortBy
+@action replace
+@property method
+pattern replace_closure_with_sortBy
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "closure" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "sortBy";
+		instance.method = name_exp;
+	}
+}
+
+// 2.2: replaces collect with others from same category
+// 2.2.1: with closure
+@action replace
+@property method
+pattern replace_collect_with_closure
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "collect" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "closure";
+		instance.method = name_exp;
+	}
+}
+
+// 2.2.2: with sortBy
+@action replace
+@property method
+pattern replace_collect_with_sortBy
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "collect" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "sortBy";
+		instance.method = name_exp;
+	}
+}
+
+// 2.3: replaces sortBy with others from same category
+// 2.3.1: with closure
+@action replace
+@property method
+pattern replace_sortBy_with_closure
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "sortBy" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "closure";
+		instance.method = name_exp;
+	}
+}
+
+// 2.3.2: with collect
+@action replace
+@property method
+pattern replace_sortBy_with_collect
+instance:FOLMethodCallExpression
+	guard: instance.method.name = "sortBy" {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = "collect";
+		instance.method = name_exp;
+	}
+}

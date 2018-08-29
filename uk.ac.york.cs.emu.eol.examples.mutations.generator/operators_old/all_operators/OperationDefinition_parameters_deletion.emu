@@ -1,0 +1,17 @@
+// operator: OperationDefinition.parameters-DEL
+// desc: deletes a parameter of an operatioin one at a time.
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+@action delete
+@property parameters
+@role instance
+pattern delete_one_parameter
+instance:OperationDefinition,
+param:FormalParameterExpression
+	from: instance.parameters {
+	do {
+		instance.parameters.remove(param);
+	}
+}

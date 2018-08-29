@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:DirectedGraph="DirectedGraph">
-  <DirectedGraph:Node label="rufus" outgoing="/2" incoming="/3"/>
-  <DirectedGraph:Node label="shurwood" outgoing="/3" incoming="/2"/>
-  <DirectedGraph:Edge weight="46" source="/0" target="/1"/>
-  <DirectedGraph:Edge weight="124" source="/1" target="/0"/>
-</xmi:XMI>

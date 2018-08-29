@@ -1,0 +1,25 @@
+// operator: NewExpression_typeName_replacement
+// desc: replaces a type name with another one
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+// 1.0: replaces a type name with another one obtained from
+// other new exxpression
+
+@action replace
+@property typeName
+@role instance
+pattern replace_typeName
+instance:NewExpression
+	in: NewExpression.all.select(e|e.typeName.isDefined()),
+another:NewExpression
+	from: NewExpression.all.select(e|e.typeName.isDefined()
+		and instance <> e)
+	guard: instance.typeName <> another.typeNa {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = another.typeName.name;
+		instance.typeName = name_exp;
+	}
+}

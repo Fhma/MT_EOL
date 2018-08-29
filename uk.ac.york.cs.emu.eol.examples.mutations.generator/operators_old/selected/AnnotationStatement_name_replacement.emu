@@ -1,0 +1,16 @@
+// operator: AnnotationStatement_name_replacement
+// desc: replaces the name of annotation name
+//
+// Inherited operators: Statement 
+////////////////////////////////////////////////////////////
+
+@action replace
+@property name
+pattern replace_annotation_name
+instance:AnnotationStatement {
+	do {
+		var name_exp = NameExpression.createInstance();
+		name_exp.name = instance.name.name + "1";
+		instance.name = name_exp;
+	}
+}

@@ -30,7 +30,11 @@ public class ECoreUtil {
 
 		properties.put(Configuration.MM_METAMODELS, emf_metamodels);
 
-		properties.put(Configuration.MM_PATHS, EcoreModel.LOCATION + "gmf_all.ecore");
+		// String metamodels_paths[] = { EcoreModel.LOCATION + "GmfGraph.ecore", EcoreModel.LOCATION + "GmfTool.ecore", EcoreModel.LOCATION + "GmfMap.ecore" };
+
+		String metamodels_paths[] = { EcoreModel.LOCATION + "gmf_all.ecore" };
+
+		properties.put(Configuration.MM_PATHS, metamodels_paths);
 
 		return properties;
 	}

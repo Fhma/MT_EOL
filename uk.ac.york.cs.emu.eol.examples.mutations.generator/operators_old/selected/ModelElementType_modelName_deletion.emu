@@ -1,0 +1,15 @@
+// operator:ModelElementType_modelName_deletion
+// desc: deletes the model name from this model element
+// Inherited operators: Type, AnyType 
+////////////////////////////////////////////////////////////
+
+// 1.0: delete the model name of a model element
+@action delete
+@property modelName
+pattern remove_model_name
+instance:ModelElementType
+	in: ModelElementType.all.select(e|e.modelName.isDefined()) {
+	do {
+		instance.modelName = null;
+	}
+}

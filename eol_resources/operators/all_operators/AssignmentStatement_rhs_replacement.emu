@@ -1,0 +1,938 @@
+// operator: AssignmentStatement_rhs-REP
+// desc: replaces the rhs of an assignment statement with
+// another value
+//
+// Inherited operators: Statement 
+////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////
+// Helper functions
+////////////////////////////////////////////////////////////
+operation isStringBuilder(exp:Expression):Boolean {
+	if(exp.lhs.isTypeOf(StringExpression))
+		return true;
+	if(exp.rhs.isTypeOf(StringExpression))
+		return true;
+	if(exp.lhs.isTypeOf(PlusOperatorExpression))
+		return isStringBuilder(exp.lhs);
+	if(exp.rhs.isTypeOf(PlusOperatorExpression))
+		return isStringBuilder(exp.rhs);
+	return false;
+}
+////////////////////////////////////////////////////////////
+
+// 1.0: neglete an expression
+// 1.1: remove unary not operator
+@action replace
+@property rhs
+pattern remove_unary_not_operator
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isTypeOf(NotOperatorExpression)) {
+	do {
+		instance.rhs = instance.rhs.expression;
+	}
+}
+
+// 1.2: add unary not operator to boolean exp
+@action replace
+@property rhs
+pattern add_unary_not_operator
+instance:AssignmentStatement 
+	guard: instance.rhs.isTypeOf(BooleanExpression) {
+	do {
+		var new_exp = NotOperatorExpression.createInstance();
+		new_exp.expression = instance.rhs;
+		new_exp.expression.inBrackets = true;
+		instance.rhs = new_exp;
+	}
+}
+
+// 1.3: remove unary negative operator
+@action replace
+@property rhs
+pattern remove_unary_negative_operator
+instance:AssignmentStatement 
+	guard: instance.rhs.isTypeOf(NegativeOperatorExpression) {
+	do {
+		instance.rhs = instance.rhs.expression;
+	}
+}
+
+// 1.4: add unary negative operator to integer or real expression
+@action replace
+@property rhs
+pattern add_unary_negative_operator
+instance:AssignmentStatement 
+	guard: instance.rhs.isTypeOf(IntegerExpression)
+		or instance.rhs.isTypeOf(RealExpression){
+	do {
+		var new_exp = NegativeOperatorExpression.createInstance();
+		new_exp.expression = instance.rhs;
+		instance.rhs = new_exp;
+	}
+}
+
+// 1.5: neglete locial expression with NOT operator
+@action replace
+@property rhs
+pattern add_unary_not_operator_to_logical_exp
+instance:AssignmentStatement 
+	guard: instance.rhs.isKindOf(LogicalOperatorExpression) {
+	do {
+		var new_exp = NotOperatorExpression.createInstance();
+		new_exp.expression = instance.rhs;
+		new_exp.expression.inBrackets = true;
+		instance.rhs = new_exp;
+	}
+}
+
+// 1.6: neglete comparision expression with NOT operator
+@action replace
+@property rhs
+pattern add_unary_not_operator_to_comparision_exp
+instance:AssignmentStatement 
+	guard: instance.rhs.isKindOf(ComparisonOperatorExpression) {
+	do {
+		var new_exp = NotOperatorExpression.createInstance();
+		new_exp.expression = instance.rhs;
+		new_exp.expression.inBrackets = true;
+		instance.rhs = new_exp;
+	}
+}
+
+// 2.0: Arithmetic operator replacement
+// 2.1: replace + with another operator
+// 2.1.1: replace with -
+@action replace
+@property rhs
+pattern replace_plus_with_minus
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isTypeOf(PlusOperatorExpression))
+	guard: not isStringBuilder(instance.rhs) {
+	do {
+		var new_exp = MinusOperatorExpression.createInstance();
+		new_exp.lhs = instance.rhs.lhs;
+		new_exp.rhs = instance.rhs.rhs;
+		instance.rhs = new_exp;
+	}
+}
+
+// 2.1.2: replace with *
+@action replace
+@property rhs
+pattern replace_plus_with_multi
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isTypeOf(PlusOperatorExpression))
+	guard: not isStringBuilder(instance.rhs) {
+	do {
+		var new_exp = MultiplyOperatorExpression.createInstance();
+		new_exp.lhs = instance.rhs.lhs;
+		new_exp.rhs = instance.rhs.rhs;
+		instance.rhs = new_exp;
+	}
+}
+
+// 2.1.3: replace with /
+@action replace
+@property rhs
+pattern replace_plus_with_divide
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isTypeOf(PlusOperatorExpression))
+	guard: not isStringBuilder(instance.rhs) {
+	do {
+		var new_exp = DivideOperatorExpression.createInstance();
+		new_exp.lhs = instance.rhs.lhs;
+		new_exp.rhs = instance.rhs.rhs;
+		instance.rhs = new_exp;
+	}
+}
+
+// 2.2: replace - with another operator
+// 2.2.1: replace with +
+@action replace
+@property rhs
+pattern replace_minus_with_plus
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(MinusOperatorExpression) {
+	do {
+		var new_exp = PlusOperatorExpression.createInstance();
+		new_exp.lhs = instance.rhs.lhs;
+		new_exp.rhs = instance.rhs.rhs;
+		instance.rhs = new_exp;
+	}
+}
+
+// 2.2.2: replace with *
+@action replace
+@property rhs
+pattern replace_minus_with_multi
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(MinusOperatorExpression) {
+	do {
+		var new_exp = MultiplyOperatorExpression.createInstance();
+		new_exp.lhs = instance.rhs.lhs;
+		new_exp.rhs = instance.rhs.rhs;
+		instance.rhs = new_exp;
+	}
+}
+
+// 2.2.3: replace with /
+@action replace
+@property rhs
+pattern replace_minus_with_divide
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(MinusOperatorExpression) {
+	do {
+		var new_exp = DivideOperatorExpression.createInstance();
+		new_exp.lhs = instance.rhs.lhs;
+		new_exp.rhs = instance.rhs.rhs;
+		instance.rhs = new_exp;
+	}
+}
+
+// 2.3: replace * with another operator
+// 2.3.1: replace with +
+@action replace
+@property rhs
+pattern replace_multi_with_plus
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(MultiplyOperatorExpression) {
+	do {
+		var new_exp = PlusOperatorExpression.createInstance();
+		new_exp.lhs = instance.rhs.lhs;
+		new_exp.rhs = instance.rhs.rhs;
+		instance.rhs = new_exp;
+	}
+}
+
+// 2.3.2: replace with -
+@action replace
+@property rhs
+pattern replace_multi_with_minus
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(MultiplyOperatorExpression) {
+	do {
+		var new_exp = MinusOperatorExpression.createInstance();
+		new_exp.lhs = instance.rhs.lhs;
+		new_exp.rhs = instance.rhs.rhs;
+		instance.rhs = new_exp;
+	}
+}
+
+// 2.3.3: replace with /
+@action replace
+@property rhs
+pattern replace_multi_with_divide
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(MultiplyOperatorExpression) {
+	do {
+		var new_exp = DivideOperatorExpression.createInstance();
+		new_exp.lhs = instance.rhs.lhs;
+		new_exp.rhs = instance.rhs.rhs;
+		instance.rhs = new_exp;
+	}
+}
+
+// 2.4: replace / with another operator
+// 2.4.1: replace with +
+@action replace
+@property rhs
+pattern replace_divide_with_plus
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(DivideOperatorExpression) {
+	do {
+		var new_exp = PlusOperatorExpression.createInstance();
+		new_exp.lhs = instance.rhs.lhs;
+		new_exp.rhs = instance.rhs.rhs;
+		instance.rhs = new_exp;
+	}
+}
+
+// 2.4.2: replace with -
+@action replace
+@property rhs
+pattern replace_divide_with_minus
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(DivideOperatorExpression) {
+	do {
+		var new_exp = MinusOperatorExpression.createInstance();
+		new_exp.lhs = instance.rhs.lhs;
+		new_exp.rhs = instance.rhs.rhs;
+		instance.rhs = new_exp;
+	}
+}
+
+// 2.4.3: replace with *
+@action replace
+@property rhs
+pattern replace_divide_with_multi
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(DivideOperatorExpression) {
+	do {
+		var new_exp = MultiplyOperatorExpression.createInstance();
+		new_exp.lhs = instance.rhs.lhs;
+		new_exp.rhs = instance.rhs.rhs;
+		instance.rhs = new_exp;
+	}
+}
+
+// 3.0: replace logical operator with another
+// 3.1: replacing AndOperatorExpression with others
+// 3.1.1: replacing AndOperatorExpression with or
+@action replace
+@property rhs
+pattern replacing_and_operator_with_or
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(AndOperatorExpression) {
+	do {
+		var new_op = OrOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 3.1.2: replacing AndOperatorExpression with xor
+@action replace
+@property rhs
+pattern replacing_and_operator_with_xor
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(AndOperatorExpression) {
+	do {
+		var new_op = XorOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 3.1.3: replacing AndOperatorExpression with implies
+@action replace
+@property rhs
+pattern replacing_and_operator_with_implies
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(AndOperatorExpression) {
+	do {
+		var new_op = ImpliesOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 3.2: replacing OrOperatorExpression with others
+// 3.2.1: replacing OrOperatorExpression with and
+@action replace
+@property rhs
+pattern replacing_or_operator_with_and
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(OrOperatorExpression) {
+	do {
+		var new_op = AndOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+// 3.2.2: replacing OrOperatorExpression with xor
+@action replace
+@property rhs
+pattern replacing_or_operator_with_xor
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(OrOperatorExpression) {
+	do {
+		var new_op = XorOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 3.2.3: replacing OrOperatorExpression with implies
+@action replace
+@property rhs
+pattern replacing_or_operator_with_implies
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(OrOperatorExpression) {
+	do {
+		var new_op = ImpliesOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 3.3: replacing XorOperatorExpression with others
+// 3.3.1: replacing XorOperatorExpression with and
+@action replace
+@property rhs
+pattern replacing_xor_operator_with_and
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(XorOperatorExpression) {
+	do {
+		var new_op = AndOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 3.3.2: replacing XorOperatorExpression with or
+@action replace
+@property rhs
+pattern replacing_xor_operator_with_or
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(XorOperatorExpression) {
+	do {
+		var new_op = OrOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 3.3.3: replacing XorOperatorExpression with implies
+@action replace
+@property rhs
+pattern replacing_xor_operator_with_implies
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(XorOperatorExpression) {
+	do {
+		var new_op = ImpliesOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 3.4: replacing ImpliesOperatorExpression with others
+// 3.4.1: replacing ImpliesOperatorExpression with and
+@action replace
+@property rhs
+pattern replacing_implies_operator_with_and
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(ImpliesOperatorExpression) {
+	do {
+		var new_op = AndOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 3.4.2: replacing ImpliesOperatorExpression with or
+@action replace
+@property rhs
+pattern replacing_implies_operator_with_or
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(ImpliesOperatorExpression) {
+	do {
+		var new_op = OrOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 3.4.3: replacing ImpliesOperatorExpression with xor
+@action replace
+@property rhs
+pattern replacing_implies_operator_with_xor
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(ImpliesOperatorExpression) {
+	do {
+		var new_op = XorOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.0: replacing of ComparisonOperator (>,>=,<,<=,<>,=)
+// 4.1: replacing > with others
+// 4.1.1: replacing with >=
+@action replace
+@property rhs
+pattern replacing_gt_operator_with_gte
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(GreaterThanOperatorExpression) {
+	do {
+		var new_op = GreaterThanOrEqualToOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.1.2: replacing with <
+@action replace
+@property rhs
+pattern replacing_gt_operator_with_lt
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(GreaterThanOperatorExpression) {
+	do {
+		var new_op = LessThanOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.1.3: replacing with <=
+@action replace
+@property rhs
+pattern replacing_gt_operator_with_lte
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(GreaterThanOperatorExpression) {
+	do {
+		var new_op = LessThanOrEqualToOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.1.4: replacing with <>
+@action replace
+@property rhs
+pattern replacing_gt_operator_with_notequal
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(GreaterThanOperatorExpression) {
+	do {
+		var new_op = NotEqualsOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.1.5: replacing with =
+@action replace
+@property rhs
+pattern replacing_gt_operator_with_equal
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(GreaterThanOperatorExpression) {
+	do {
+		var new_op = EqualsOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.2: replacing >= with others
+// 4.2.1: replacing with >
+@action replace
+@property rhs
+pattern replacing_gte_operator_with_gt
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(GreaterThanOrEqualToOperatorExpression) {
+	do {
+		var new_op = GreaterThanOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.2.2: replacing with <
+@action replace
+@property rhs
+pattern replacing_gte_operator_with_lt
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(GreaterThanOrEqualToOperatorExpression) {
+	do {
+		var new_op = LessThanOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.2.3: replacing with <=
+@action replace
+@property rhs
+pattern replacing_gte_operator_with_lte
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(GreaterThanOrEqualToOperatorExpression) {
+	do {
+		var new_op = LessThanOrEqualToOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.2.4: replacing with <>
+@action replace
+@property rhs
+pattern replacing_gte_operator_with_notequal
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(GreaterThanOrEqualToOperatorExpression) {
+	do {
+		var new_op = NotEqualsOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.2.5: replacing with =
+@action replace
+@property rhs
+pattern replacing_gte_operator_with_equal
+instance:AssignmentStatement
+	guard: instance.rhs.isTypeOf(GreaterThanOrEqualToOperatorExpression) {
+	do {
+		var new_op = EqualsOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.3: replacing < with others
+// 4.3.1: replacing with >
+@action replace
+@property rhs
+pattern replacing_lt_operator_with_gt
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(LessThanOperatorExpression) {
+	do {
+		var new_op = GreaterThanOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.3.2: replacing with >=
+@action replace
+@property rhs
+pattern replacing_lt_operator_with_gte
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(LessThanOperatorExpression) {
+	do {
+		var new_op = GreaterThanOrEqualToOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.3.3: replacing with <=
+@action replace
+@property rhs
+pattern replacing_lt_operator_with_lte
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(LessThanOperatorExpression) {
+	do {
+		var new_op = LessThanOrEqualToOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.3.4: replacing with <>
+@action replace
+@property rhs
+pattern replacing_lt_operator_with_notequal
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(LessThanOperatorExpression) {
+	do {
+		var new_op = NotEqualsOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.3.5: replacing with =
+@action replace
+@property rhs
+pattern replacing_lt_operator_with_equal
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(LessThanOperatorExpression) {
+	do {
+		var new_op = EqualsOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.4: replacing <= with others
+// 4.4.1: replaciing with >
+@action replace
+@property rhs
+pattern replacing_lte_operator_with_gt
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(LessThanOrEqualToOperatorExpression) {
+	do {
+		var new_op = GreaterThanOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.4.2: replacing with >=
+@action replace
+@property rhs
+pattern replacing_lte_operator_with_gte
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(LessThanOrEqualToOperatorExpression) {
+	do {
+		var new_op = GreaterThanOrEqualToOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.4.3: replacing with <
+@action replace
+@property rhs
+pattern replacing_lte_operator_with_lt
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(LessThanOrEqualToOperatorExpression) {
+	do {
+		var new_op = LessThanOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.4.4: replacing with <>
+@action replace
+@property rhs
+pattern replacing_lte_operator_with_notequal
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(LessThanOrEqualToOperatorExpression) {
+	do {
+		var new_op = NotEqualsOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.4.5: replacing with =
+@action replace
+@property rhs
+pattern replacing_lte_operator_with_equal
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(LessThanOrEqualToOperatorExpression) {
+	do {
+		var new_op = EqualsOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.5: replacing <> with others
+// 4.5.1: replacing with >
+@action replace
+@property rhs
+pattern replacing_notequal_operator_with_gt
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(NotEqualsOperatorExpression) {
+	do {
+		var new_op = GreaterThanOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.5.2: replacing with >=
+@action replace
+@property rhs
+pattern replacing_notequal_operator_with_gte
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(NotEqualsOperatorExpression) {
+	do {
+		var new_op = GreaterThanOrEqualToOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.5.3: replacing with <
+@action replace
+@property rhs
+pattern replacing_notequal_operator_with_lt
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(NotEqualsOperatorExpression) {
+	do {
+		var new_op = LessThanOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.5.4: replacing with <=
+@action replace
+@property rhs
+pattern replacing_notequal_operator_with_lte
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(NotEqualsOperatorExpression) {
+	do {
+		var new_op = LessThanOrEqualToOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.5.5: replacing with =
+@action replace
+@property rhs
+pattern replacing_notequal_operator_with_equal
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(NotEqualsOperatorExpression) {
+	do {
+		var new_op = EqualsOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.6: replacing = with others
+// 4.6.1: replacing with >
+@action replace
+@property rhs
+pattern replacing_equal_operator_with_gt
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(EqualsOperatorExpression) {
+	do {
+		var new_op = GreaterThanOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.6.2: replacing with >=
+@action replace
+@property rhs
+pattern replacing_equal_operator_with_gte
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(EqualsOperatorExpression) {
+	do {
+		var new_op = GreaterThanOrEqualToOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.6.3: replacing with <
+@action replace
+@property rhs
+pattern replacing_equal_operator_with_lt
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(EqualsOperatorExpression) {
+	do {
+		var new_op = LessThanOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.6.4: replacing with <=
+@action replace
+@property rhs
+pattern replacing_equal_operator_with_lte
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(EqualsOperatorExpression) {
+	do {
+		var new_op = LessThanOrEqualToOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}
+
+// 4.6.5: replacing with <>
+@action replace
+@property rhs
+pattern replacing_equal_operator_with_notequal
+instance:AssignmentStatement
+	in: AssignmentStatement.all.select(e|e.rhs.isDefined())
+	guard: instance.rhs.isTypeOf(EqualsOperatorExpression) {
+	do {
+		var new_op = NotEqualsOperatorExpression.createInstance();
+		new_op.lhs = instance.rhs.lhs;
+		new_op.rhs = instance.rhs.rhs;
+		
+		instance.rhs = new_op;
+	}
+}

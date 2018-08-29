@@ -1,0 +1,59 @@
+// operator: ExpressionOrStatementBlock_block-ADD
+// desc: adds a new statement to a ExpressionOrStatementBlock block.
+// Statements that require no extra configuration and which could
+// be added include Continue, abort, break and breakAll
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+// 1.0: add a continue statement
+@action add
+@property block
+pattern add_continue_statement_to_block
+instance:ExpressionOrStatementBlock {
+	do {
+		var stat = ContinueStatement.createInstance();
+		var block = Block.createInstance();
+		block.statements.add(stat);
+		instance.block = block; 
+	}
+}
+
+// 2.0: add an abort statement
+@action add
+@property block
+pattern add_abort_statement_to_block
+instance:ExpressionOrStatementBlock {
+	do {
+		var stat = AbortStatement.createInstance();
+		var block = Block.createInstance();
+		block.statements.add(stat);
+		instance.block = block; 
+	}
+}
+
+// 3.0: add a break statement
+@action add
+@property block
+pattern add_break_statement_to_block
+instance:ExpressionOrStatementBlock {
+	do {
+		var stat = BreakStatement.createInstance();
+		var block = Block.createInstance();
+		block.statements.add(stat);
+		instance.block = block; 
+	}
+}
+
+// 3.0: add a breakall statement
+@action add
+@property block
+pattern add_breakall_statement_to_block
+instance:ExpressionOrStatementBlock {
+	do {
+		var stat = BreakAllStatement.createInstance();
+		var block = Block.createInstance();
+		block.statements.add(stat);
+		instance.block = block; 
+	}
+}

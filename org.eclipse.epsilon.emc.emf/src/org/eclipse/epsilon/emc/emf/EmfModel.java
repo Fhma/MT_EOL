@@ -527,7 +527,8 @@ public class EmfModel extends AbstractEmfModel implements IReflectiveModel {
 	
 	@Override
 	public boolean store() {
-		if (modelImpl == null) return false;
+		if (modelImpl == null)
+			return false;
 		try {
 			Map<String, Boolean> options = null;
 			if (!metamodelFileUris.isEmpty()) {
@@ -536,6 +537,9 @@ public class EmfModel extends AbstractEmfModel implements IReflectiveModel {
 			}
 			modelImpl.save(options);
 			return true;
+		} catch (Resource.IOWrappedException e) {
+			// Dangling Exception: do nothing
+			return false;
 		} catch (IOException e) {
 			e.printStackTrace();
 			return false;

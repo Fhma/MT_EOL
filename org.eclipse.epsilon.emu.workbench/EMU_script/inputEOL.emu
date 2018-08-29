@@ -1,24 +1,17 @@
-operation MethodCallExpression isEOLOperation() : Boolean {
-	var eol_operation = Sequence {"abs", "add", "addAll", "all", "allInstances", "allOfKind", "allOfType", "asBag", "asBoolean", "asInteger", "asOrderedSet", "asReal", "asSequence", "asSet", "asString", "at", "ceiling", "characterAt", "clear", "clone", "concat", "containsValue", "count", "endsWith", "err", "errln", "excludes", "excludesAll", "excluding", "excludingAll", "first", "firstToLowerCase", "firstToUpperCase", "flatten", "floor", "format", "fourth", "get", "hasProperty", "ifUndefined", "includes", "includesAll", "including", "includingAll", "indexOF", "invert", "iota", "isDefined", "isEmpty", "isInstantiable", "isInteger", "isKindOf", "isReal", "isSubstringOf", "isTypeOf", "isUndefined", "keySet", "length", "log", "log10", "matches", "max", "min", "mod", "notEmpty", "owningModel", "pad", "pow", "powerset", "print", "println", "product", "put", "putAll", "random", "remove", "removeAll", "removeAt", "replace", "round", "second", "Sequence", "size", "split", "startsWith", "substring", "sum", "third", "to", "toBinary", "toCharSequence", "toHex", "toLowerCase", "toUpperCase", "trim", "type", "values"};
-	if(eol_operation.includes(self.method.name))
-		return true;
-	return false;
-}
-
+// 2.3 replacing return statement with expression statement
+// of a operation definition
 @action replace
-@property method
-@role instance
-pattern replace_with_another_same_arguments
-instance:MethodCallExpression
-	in:MethodCallExpression.all.select(e| not e.isEOLOperation()),
-another_name:NameExpression
-	from: NameExpression.all.select(e|e.container.isTypeOf(MethodCallExpression)
-		and (not e.container.isEOLOperation()) and e.container.arguments.size() = instance.arguments.size()
-		and e.name <> instance.method.name) -> asOrderedSet() {
+@property statements
+pattern replace_return_stat_with_exp_stat
+instance:Block
+	in: Block.all.select(e|e.container.isTypeOf(OperationDefinition))
+	guard: instance.statements.last().isTypeOf(ReturnStatement) {
 	do {
-		var name_exp = NameExpression.createInstance();
-		name_exp.name = another_name.name;
+		var target = instance.statements.last();
+		var new_stat = ExpressionStatement.createInstance();
+		new_stat.expression = target.expression;
 		
-		instance.method = name_exp;
+		instance.statements.remove(target);
+		instance.statements.add(new_stat);
 	}
 }

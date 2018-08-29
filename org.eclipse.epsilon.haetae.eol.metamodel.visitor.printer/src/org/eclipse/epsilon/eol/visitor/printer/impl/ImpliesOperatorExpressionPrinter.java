@@ -13,7 +13,8 @@ public class ImpliesOperatorExpressionPrinter extends ImpliesOperatorExpressionV
 			EolVisitorController<EOLPrinterContext, Object> controller) {
 		String result = "";
 		result += controller.visit(impliesOperatorExpression.getLhs(), context);
-		result += " imlpies ";
+		// FIXED: correct word imlpies to implies
+		result += " implies ";
 		result += controller.visit(impliesOperatorExpression.getRhs(), context);
 		
 		if (impliesOperatorExpression.isInBrackets()) {

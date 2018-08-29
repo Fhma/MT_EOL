@@ -1,0 +1,19 @@
+// operator: IfStatement_elseIfBodies_deletion
+// desc: There is no deletion implementation
+// for this operator as this a requird property (ie. lower
+// bound and upper bound = 1)
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+@action delete
+@property elseIfBodies
+@role instance
+pattern delete_one_body
+instance:IfStatement,
+body:ExpressionOrStatementBlock
+	from: instance.elseIfBodies {
+	do {
+		instance.elseIfBodies.remove(body);
+	}
+}
