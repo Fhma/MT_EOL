@@ -19,6 +19,7 @@ import org.eclipse.epsilon.eol.execute.control.ExecutionController;
 import org.eclipse.epsilon.eol.models.IModel;
 import org.eclipse.epsilon.eol.models.IRelativePathResolver;
 import org.eclipse.epsilon.eunit.dt.cmp.emf.v3.EMFModelComparator;
+
 import uk.ac.york.cs.emu.eol.examples.mutations.executor.candidates.EOLCandidate;
 
 public class EolExecutor implements Callable<String> {
@@ -35,10 +36,10 @@ public class EolExecutor implements Callable<String> {
     private String mutant_model = null;
     private String execution_dir = null;
     private short input_num;
-    private String signature = null;
+    private List<File> inputs = null;
 
-    public EolExecutor(File src, String eol_name, short type, EmfMetaModel mms[], String mutant_model, String dir, EMFModelComparator comp, short num) throws Exception {
-	eolExecutor(eol_name, type, mms, mutant_model, dir, comp, num);
+    public EolExecutor(File src, String eol_name, short type, EmfMetaModel mms[], String mutant_model, String dir, short num, List<File> files) throws Exception {
+	eolExecutor(eol_name, type, mms, mutant_model, dir, num, files);
 
 	eol = new EolModule();
 	eol.parse(src);
@@ -47,23 +48,22 @@ public class EolExecutor implements Callable<String> {
 	eol.getContext().getExecutorFactory().setExecutionController(controller);
     }
 
-    public EolExecutor(EolModule base, String eol_name, short type, EmfMetaModel mms[], String mutant_model, String dir, EMFModelComparator comp, short num) throws Exception {
-	eolExecutor(eol_name, type, mms, mutant_model, dir, comp, num);
+    public EolExecutor(EolModule base, String eol_name, short type, EmfMetaModel mms[], String mutant_model, String dir, short num, List<File> files) throws Exception {
+	eolExecutor(eol_name, type, mms, mutant_model, dir, num, files);
 
 	eol = EolCloneFactory.clone(base);
 	controller = new MutationExecutionController();
 	eol.getContext().getExecutorFactory().setExecutionController(controller);
     }
 
-    private void eolExecutor(String eol_name, short type, EmfMetaModel mms[], String mutant_model, String dir, EMFModelComparator comp, short num) throws Exception {
+    private void eolExecutor(String eol_name, short type, EmfMetaModel mms[], String mutant_model, String dir, short num, List<File> files) throws Exception {
 	this.type = type;
 	this.eol_name = eol_name;
 	this.mms = mms;
 	input_num = num;
 	this.mutant_model = mutant_model;
 	this.execution_dir = dir;
-	signature = String.format("[Mutant = %s, Test Input = %d]", mutant_model, input_num);
-	// comparator = comp;
+	this.inputs = files;
     }
 
     @Override
@@ -77,12 +77,10 @@ public class EolExecutor implements Callable<String> {
 	if (eol == null)
 	    throw new IllegalArgumentException("Source file or base EolModule weren't specified.");
 
-	List<File> input_files = getInputFilesOfNumber(input_num);
-
 	long time = System.nanoTime();
 
 	if (type == EOLCandidate.CONSOLE_TYPE) {
-	    for (File f : input_files) {
+	    for (File f : inputs) {
 		// aliase of a model is located at the beginning of an input file
 		String aliase = f.getName().substring(0, f.getName().indexOf("_"));
 		File new_f = new File(execution_dir + File.separatorChar + aliase + "_" + input_num + ".xmi");
@@ -96,7 +94,7 @@ public class EolExecutor implements Callable<String> {
 	} else if (type == EOLCandidate.MODEL_CREATE_TYPE) {
 	    String loaded_input_metamodes = "";
 	    // read all input models
-	    for (File f : input_files) {
+	    for (File f : inputs) {
 		// aliase of a model is located at the beginning of an input file
 		String aliase = f.getName().substring(0, f.getName().indexOf("_"));
 		loaded_input_metamodes += "," + aliase;
@@ -115,7 +113,7 @@ public class EolExecutor implements Callable<String> {
 
 	} else if (type == EOLCandidate.MODEL_UPDATE_TYPE) {
 	    // copy all input models to output models
-	    for (File f : input_files) {
+	    for (File f : inputs) {
 		File new_f = new File(execution_dir + File.separatorChar + f.getName());
 		Files.copy(f.toPath(), new_f.toPath(), StandardCopyOption.REPLACE_EXISTING);
 		String aliase = f.getName().substring(0, f.getName().indexOf("_"));
@@ -142,7 +140,6 @@ public class EolExecutor implements Callable<String> {
 		    killed = true;
 
 	    } else {
-		EMFModelComparator comparator = new EMFModelComparator();
 		for (IModel m : eol.getContext().getModelRepository().getModels()) {
 		    if (m.getName().startsWith("OUT")) {
 			EmfModel actual = (EmfModel) m;
@@ -154,8 +151,8 @@ public class EolExecutor implements Callable<String> {
 			String exp_path = EXPECTED_MODELS_DIR + eol_name + File.separatorChar + aliase + "_" + input_num + ".xmi";
 			String name = mutant_model + "_" + aliase + "_" + input_num + "_" + time;
 			IModel expected = newEmfModel(name, name, exp_path, getMetamodelUri(aliase), true, false, false);
+			EMFModelComparator comparator = new EMFModelComparator();
 			Object res = comparator.compare(actual, expected);
-
 			if (res != null) {
 			    killed = true;
 			    break;
@@ -164,16 +161,17 @@ public class EolExecutor implements Callable<String> {
 		}
 	    }
 	} catch (Exception | Error e) {
-	    killed = true;
-	    result = String.format("EXCEPTION: %s", signature);
+	    dispose();
+	    // E = EXCEPTION;
+	    return String.format("E:%d", input_num);
 	}
 
 	dispose();
 
 	if (killed)
-	    result = String.format("KILLED: %s", signature);
+	    result = String.format("K:%d", input_num);// K = Killed
 	else
-	    result = String.format("NOT KILLED: %s", signature);
+	    result = String.format("N:%s", input_num);// N = Not killed
 	return result;
     }
 
@@ -187,27 +185,8 @@ public class EolExecutor implements Callable<String> {
 	eol = null;
     }
 
-    public String getSignature() {
-	return signature;
-    }
-
     public ExecutionController getExecutionController() {
 	return controller;
-    }
-
-    private List<File> getInputFilesOfNumber(short num) {
-	List<File> returned = new ArrayList<File>();
-	File dir = new File(IN_MODELS_DIR + eol_name);
-	if (dir.isDirectory()) {
-	    for (File f : dir.listFiles()) {
-		if (f.getName().endsWith("xmi")) {
-		    short n = Short.parseShort(getSegment(f.getName(), "_", 1).replaceAll(".xmi", ""));
-		    if (n == num)
-			returned.add(f);
-		}
-	    }
-	}
-	return returned;
     }
 
     private IModel newEmfModel(String name, String aliases, String m, String mm, boolean read, boolean store, boolean cached) throws EolModelLoadingException, URISyntaxException {
@@ -250,10 +229,5 @@ public class EolExecutor implements Callable<String> {
 		returned.add(mm);
 	}
 	return returned;
-    }
-
-    private String getSegment(String s, String delimiter, int index) {
-	String[] segments = s.split(delimiter);
-	return segments[index];
     }
 }

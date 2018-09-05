@@ -5,6 +5,7 @@ import org.apache.log4j.Level;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
@@ -13,15 +14,14 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -31,8 +31,6 @@ import org.eclipse.epsilon.eol.EolModule;
 import org.eclipse.epsilon.eol.metamodel.EOLElement;
 import org.eclipse.epsilon.eol.metamodel.EolPackage;
 import org.eclipse.epsilon.eol.visitor.printer.impl.EolPrinter;
-import org.eclipse.epsilon.eunit.dt.cmp.emf.v3.EMFModelComparator;
-
 import uk.ac.york.cs.emu.eol.examples.mutations.executor.configurations.Configuration;
 
 public class EolLauncher {
@@ -40,9 +38,11 @@ public class EolLauncher {
     // Important directories
     public static final String IN_MODELS_DIR = "inModels" + File.separatorChar;
     public static final String EXPECTED_MODELS_DIR = "expectedModels" + File.separatorChar;
-    public static final String EXECUTION_DIR = "execution" + File.separatorChar;
     public static final String MUTATIONS_DIR = "mutations" + File.separatorChar;
     public static final String TEMP_SUFFIX = ".tmp";
+    public static final String EXECUTION_DIR = "execution" + TEMP_SUFFIX + File.separatorChar;
+    public static final String OUTPUTS_DIR = "outputs" + File.separatorChar;
+    private static final short SLEEPING_FACTOR = 100;
 
     // parameters used by the launcher
     private String eol_name = null;
@@ -52,10 +52,10 @@ public class EolLauncher {
     private String[] importing = null;
     private String[] mm_paths = null;
     private EmfMetaModel metamodels[] = null;
+    private PrintStream logger = null;
+    private File outputs_dir = null;
 
-    private FileWriter logger = null;
-
-    public EolLauncher(Map<String, Object> config) {
+    public EolLauncher(Map<String, Object> config) throws Exception {
 	eol_name = (String) config.get(Configuration.EOL_NAME);
 	type = (short) config.get(Configuration.PROGRAM_TYPE);
 	max_exe = (int) config.get(Configuration.MAX_EXE);
@@ -71,49 +71,58 @@ public class EolLauncher {
 
 	if (config.get(Configuration.MM_PATHS) != null)
 	    mm_paths = ((String) config.get(Configuration.MM_PATHS)).split(",");
+
+	outputs_dir = new File(OUTPUTS_DIR + eol_name);
+	outputs_dir.mkdirs();
+
+	logger = new PrintStream(new File(outputs_dir.getPath() + File.separatorChar + eol_name + ".log"));
     }
 
     public void run() {
+	long mins = System.currentTimeMillis();
 	try {
-	    mutationExecutionMode();
+	    logger.println("Executing mutations: " + eol_name);
+	    mutationExecution();
 	} catch (Exception e) {
-	    e.printStackTrace();
+	    logger.println("\tException: " + e.getMessage());
+	} finally {
+	    int time = (int) (((System.currentTimeMillis() - mins) / 1000));
+	    // int time = (int) (((System.currentTimeMillis() - mins) / 1000) / 60);
+	    logger.println(String.format("End Execution....(%d sec)", time));
+	    logger.close();
 	}
     }
 
-    private void mutationExecutionMode() throws Exception {
-
-	File mutations_execution = new File("mutationsExecution" + File.separatorChar + eol_name);
-	mutations_execution.mkdirs();
-	File log_file = new File(mutations_execution.getPath() + File.separatorChar + eol_name + ".log");
-	logger = new FileWriter(log_file);
-
-	logger.write("\nExecuting mutation of EOL transformation " + eol_name);
+    private void mutationExecution() throws Exception {
 
 	Logger.getRootLogger().setLevel(Level.OFF);
 
 	List<OperatorEntry> operators_stats = new ArrayList<OperatorEntry>();
 
 	EolPackage.eINSTANCE.eClass();
-	Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
+	Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
 
 	// locate mutations folder
 	File mutants = new File(MUTATIONS_DIR + eol_name);
 
-	EcorePackage.eINSTANCE.eClass();
-	Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
-
 	// register and load metamodels
 	registerAndLoadMetamodels();
 
-	File[] mutant_models = mutants.listFiles();
-	// Arrays.sort(mutant_models);
+	Map<Short, List<File>> input_tests = new HashMap<Short, List<File>>();
+	initalizeInputsMap(input_tests);
+
+	File execution_dir = new File(EXECUTION_DIR);
+	execution_dir.mkdirs();
+	execution_dir.deleteOnExit();
 
 	// go through all mutations
+	File[] mutant_models = mutants.listFiles();
+
+	// Arrays.sort(mutant_models);
 	for (File mutant_model : mutant_models) {
 	    if (mutant_model.getName().endsWith(".xmi")) {
 
-		logger.write("\n\tExecuting mutant: " + mutant_model.getName());
+		logger.println("\tExecuting mutant: " + mutant_model.getName());
 
 		OperatorEntry current_operator = getOperatorEntryByMutant(operators_stats, mutant_model.getName());
 		if (current_operator == null) {
@@ -124,41 +133,34 @@ public class EolLauncher {
 
 		boolean valid_mutant = true;
 
-		List<Short> input_tests = getInputFilesNumbers();
+		File exe_temp_dir = new File(execution_dir.getPath() + File.separatorChar + mutant_model.getName() + TEMP_SUFFIX);
+		exe_temp_dir.mkdir();
+		exe_temp_dir.deleteOnExit();
 
-		int total_killed = 0;
-
-		ExecutorService executorService = Executors.newSingleThreadExecutor();
-		HashMap<Future<String>, EolExecutor> futures = new HashMap<Future<String>, EolExecutor>();
-
-		File temp_dir = new File(EXECUTION_DIR + mutant_model.getName() + TEMP_SUFFIX);
-		temp_dir.mkdirs();
-		temp_dir.deleteOnExit();
 		while (true) {
 
 		    // generate EOL code of this EOL mutant model
-		    File mutant_code = getCodeOfModel(mutant_model, temp_dir.getPath() + File.separatorChar + eol_name + ".eol");
+		    File mutant_code = getCodeOfModel(mutant_model, exe_temp_dir.getPath() + File.separatorChar + eol_name + ".eol");
 		    if (mutant_code == null) {
 			valid_mutant = false;
 			break;
 		    }
 
 		    // copy over dependency modules to temporary execution folder
-		    File src = null, dest = null;
-		    File mainModule = null;
-
 		    if (importing != null) {
 			for (String dep : importing) {
-			    src = new File(dep);
-			    dest = new File(temp_dir.getPath() + File.separatorChar + src.getName());
+			    File src = new File(dep);
+			    File dest = new File(exe_temp_dir.getPath() + File.separatorChar + src.getName());
 			    Files.copy(src.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
 			    src = dest = null;
 			}
 		    }
 
+		    File mainModule = null;
+
 		    if (imported_by != null) {
-			src = new File((String) imported_by);
-			dest = new File(temp_dir.getPath() + File.separatorChar + src.getName());
+			File src = new File((String) imported_by);
+			File dest = new File(exe_temp_dir.getPath() + File.separatorChar + src.getName());
 			Files.copy(src.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
 			mainModule = dest;
 		    } else
@@ -170,105 +172,114 @@ public class EolLauncher {
 			valid_mutant = false;
 			break;
 		    }
-		    EMFModelComparator comp = new EMFModelComparator();
-		    for (short num : input_tests) {
-			EolExecutor exe = new EolExecutor(base, eol_name, type, metamodels, mutant_model.getName(), temp_dir.getPath(), comp, num);
+
+		    ExecutorService executorService = Executors.newSingleThreadExecutor();
+		    HashMap<Future<String>, EolExecutor> futures = new HashMap<Future<String>, EolExecutor>();
+
+		    for (short num : input_tests.keySet()) {
+			EolExecutor exe = new EolExecutor(base, eol_name, type, metamodels, mutant_model.getName(), exe_temp_dir.getPath(), num, input_tests.get(num));
 			Future<String> f = executorService.submit(exe);
+			Thread.sleep(max_exe / SLEEPING_FACTOR);
 			futures.put(f, exe);
 		    }
 
-		    for (Future<String> future : futures.keySet()) {
+		    int total_killed = 0;
+
+		    Set<Future<String>> fs = futures.keySet();
+		    logger.printf("\t");
+		    for (Future<String> future : fs) {
 			try {
 			    String res = future.get(max_exe, TimeUnit.MILLISECONDS);
-			    if (res.startsWith("KILLED") || res.startsWith("EXCEPTION") || res.startsWith("ERROR") || res.startsWith("TERMINATED"))
+			    if (res.startsWith("K") || res.startsWith("E")) // killed
 				total_killed++;
-			    logger.write("\n\t\t\t" + res);
+			    logger.printf("[%s], ", res);
 			} catch (Exception | Error e) {
 			    if (e instanceof TimeoutException)
-				logger.write(String.format("\n\t\t\tExceed time allowance: %s", futures.get(future).getSignature()));
+				logger.printf("[Exceed time allowance]");
 			    else {
-				logger.flush();
-				// logger.write("\n\t\t\tAn exception or error was thrown while executing the mutation: " + e.getMessage());
+				executorService.shutdownNow();
+				cleanup(execution_dir);
 				throw e;
 			    }
 			    total_killed++;
+			    // terminate execution of this future
 			    futures.get(future).getExecutionController().dispose();
-			    int counter = 5;
-			    int attempts = 2;
-			    while (!future.isDone()) {
-				counter--;
-				if (counter == 0) {
-				    attempts--;
-				    if (attempts == 0)
-					break;
-				    counter = 5;
-				    future.cancel(true);
-				    futures.get(future).dispose();
-				}
-				Thread.sleep(50);
-			    }
-			} finally {
-			    logger.flush();
 			}
 		    }
 
 		    executorService.shutdownNow();
 
-		    int counter = 5;
+		    int counter = 10;
 		    while (!executorService.isTerminated()) {
-			if (counter == 0)
-			    throw new RuntimeException("The execution serive of mutant [" + mutant_model.getName() + "] was not terminated.");
+			if (counter == 0) {
+			    cleanup(execution_dir);
+			    throw new RuntimeException("The execution service of mutant [" + mutant_model.getName() + "] was not terminated.");
+			}
 			counter--;
-			Thread.sleep(100);
-			executorService.shutdownNow();
+			Thread.sleep(50);
 		    }
 
-		    if (valid_mutant) {
-			if (total_killed == 0) {
-			    // the mutant wasn't killed by any test input
-			    getOperatorEntryByMutant(operators_stats, mutant_model.getName()).addNotKilledToAList(mutant_model.getName());
-			    logger.write(String.format("\n\t\tMutant [%s] is NOT killed", mutant_model.getName()));
-			} else if (total_killed == input_tests.size()) {
-			    logger.write(String.format("\n\t\tMutant [%s] is trivial", mutant_model.getName()));
-			    getOperatorEntryByMutant(operators_stats, mutant_model.getName()).incrementTrivialMutants();
-			} else {
-			    logger.write(String.format("\n\t\tMutant [%s] is killed", mutant_model.getName()));
-			    getOperatorEntryByMutant(operators_stats, mutant_model.getName()).incrementKilledMutants();
-			}
+		    if (total_killed == input_tests.size()) {
+			// killed by all test cases-> trivial
+			logger.println(String.format("\t\tMutant [%s] is trivial", mutant_model.getName()));
+			getOperatorEntryByMutant(operators_stats, mutant_model.getName()).incrementTrivialMutants();
+		    } else if (total_killed == 0) {
+			// the mutant wasn't killed by any test input
+			getOperatorEntryByMutant(operators_stats, mutant_model.getName()).addNotKilledToAList(mutant_model.getName());
+			logger.println(String.format("\t\tMutant [%s] is NOT killed", mutant_model.getName()));
+		    } else {
+			logger.println(String.format("\t\tMutant [%s] is killed", mutant_model.getName()));
+			getOperatorEntryByMutant(operators_stats, mutant_model.getName()).incrementKilledMutants();
 		    }
-		    futures.clear();
+
 		    futures = null;
+
 		    // exit execution loop
 		    break;
 		}
 
-		// clear execution temporary files and folders of this mutation
-		cleanup(temp_dir);
-
 		if (!valid_mutant) {
-		    logger.write(String.format("\n\t\tMutant [%s] is NOT valid mutation", mutant_model.getName()));
+		    logger.println(String.format("\t\tMutant [%s] is NOT valid", mutant_model.getName()));
 		    current_operator.incrementInvalidMutants();
 		}
 
-		logger.write("\n\t/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\\n");
+		logger.print("\n");
 		logger.flush();
 	    } // end of executing one mutation
 
 	} // end of executing all mutations
 
+	// clear execution temporary files and folders
+	cleanup(execution_dir);
+
 	// finally print the execution report
-	try {
-	    print_summary(operators_stats, mutations_execution.getPath());
-	    logger.close();
-	} catch (IOException e) {
-	    e.printStackTrace();
+	print_summary(operators_stats);
+	logger.flush();
+    }
+
+    private void initalizeInputsMap(Map<Short, List<File>> input_tests) {
+	File dir = new File(IN_MODELS_DIR + eol_name);
+	if (dir.isDirectory()) {
+	    for (File f : dir.listFiles()) {
+		if (f.getName().endsWith(".xmi")) {
+		    short n = Short.parseShort(getSegment(f.getName(), "_", 1).replaceAll(".xmi", ""));
+		    if (input_tests.get(n) == null) {
+			input_tests.put(n, new ArrayList<File>());
+		    }
+		    input_tests.get(n).add(f);
+		}
+	    }
 	}
     }
 
     private void cleanup(File dir) {
 	if (dir != null && dir.isDirectory() && dir.getName().endsWith(TEMP_SUFFIX)) {
-	    for (File f : dir.listFiles())
+	    for (File f : dir.listFiles()) {
+		if (f.isDirectory()) {
+		    cleanup(f);
+		}
 		f.delete();
+	    }
 	}
     }
 
@@ -285,8 +296,6 @@ public class EolLauncher {
     }
 
     private void registerAndLoadMetamodels() throws Exception {
-	EcorePackage.eINSTANCE.eClass();
-	Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
 	ResourceSet rs = new ResourceSetImpl();
 	Resource r = null;
 	org.eclipse.emf.common.util.URI uri = null;
@@ -323,28 +332,6 @@ public class EolLauncher {
 	}
     }
 
-    private List<Short> getInputFilesNumbers() {
-	List<Short> numbers = new ArrayList<Short>();
-	File dir = new File(IN_MODELS_DIR + eol_name);
-	String s;
-	short num;
-	if (dir.isDirectory()) {
-	    for (File f : dir.listFiles()) {
-		if (f.getName().endsWith("xmi")) {
-		    // numbers of files reside at the end of file name before extension
-		    // example: MMName_input_NUM.xmi
-		    // index number 2
-		    s = f.getName();
-		    // get the number with out the extension
-		    num = Short.parseShort(getSegment(s, "_", 1).replaceAll(".xmi", ""));
-		    if (!numbers.contains(num))
-			numbers.add(num);
-		}
-	    }
-	}
-	return numbers;
-    }
-
     private String getSegment(String s, String delimiter, int index) {
 	String[] segments = s.split(delimiter);
 	return segments[index];
@@ -369,26 +356,24 @@ public class EolLauncher {
 	    fw.write(code);
 	    fw.close();
 	} catch (Exception e) {
-	    logger.write(String.format("\t\tUnable to generate EOL code of model [%s]", model.getName()));
 	    return null;
 	}
 	return mutant_code;
     }
 
-    private void print_summary(List<OperatorEntry> list, String path) throws IOException {
+    private void print_summary(List<OperatorEntry> list) throws IOException {
 	if (list == null)
 	    return;
-
 	Iterator<OperatorEntry> it = list.iterator();
-	StringBuilder entry = new StringBuilder();
 
-	entry.append("Mutation Operator,");
-	entry.append("Gen.,");
-	entry.append("Trivial,");
-	entry.append("Killed,");
-	entry.append("Not Killed,");
-	entry.append("Invalid");
-	entry.append("\n");
+	FileWriter file = new FileWriter(outputs_dir.getPath() + File.separatorChar + eol_name + ".csv");
+
+	file.write("Mutation Operator,");
+	file.write("Gen.,");
+	file.write("Trivial,");
+	file.write("Killed,");
+	file.write("Not Killed,");
+	file.write("Invalid\n");
 
 	int sum_processed = 0, sum_trivial = 0, sum_killed = 0, sum_not_killed = 0, sum_invalid = 0;
 
@@ -397,57 +382,44 @@ public class EolLauncher {
 	while (it.hasNext()) {
 
 	    OperatorEntry operator = it.next();
-	    entry.append(operator.getOID());
-	    entry.append(',');
-
-	    entry.append(operator.getTotalProcessedMutants());
-	    entry.append(',');
+	    file.write(operator.getOID() + ",");
+	    file.write(operator.getTotalProcessedMutants() + ",");
 	    sum_processed += operator.getTotalProcessedMutants();
 
-	    entry.append(operator.getTotalTrivialMutants());
+	    file.write(operator.getTotalTrivialMutants() + ",");
 	    sum_trivial += operator.getTotalTrivialMutants();
-	    entry.append(',');
 
-	    entry.append(operator.getTotalKilledMutants());
+	    file.write(operator.getTotalKilledMutants() + ",");
 	    sum_killed += operator.getTotalKilledMutants();
-	    entry.append(',');
 
-	    entry.append(operator.getAllNotKilled().size());
+	    file.write(operator.getAllNotKilled().size() + ",");
 	    sum_not_killed += operator.getAllNotKilled().size();
 	    for (String nk : operator.getAllNotKilled())
 		not_killed_list += "\n\t\t\\-->" + nk;
-	    entry.append(',');
 
-	    entry.append(operator.getTotalInvalidMutants());
+	    file.write(operator.getTotalInvalidMutants() + "\n");
 	    sum_invalid += operator.getTotalInvalidMutants();
-	    entry.append('\n');
 	}
-	entry.append("Total Killed,,");
-	entry.append(sum_trivial + ",");
-	entry.append(sum_killed + ",");
-	entry.append('\n');
 
-	entry.append("Total,");
-	entry.append(sum_processed + ",");
-	entry.append(sum_trivial + sum_killed + ",,");
-	entry.append(sum_not_killed + ",");
-	entry.append(sum_invalid);
+	file.write("Total Killed,,");
+	file.write(sum_trivial + ",");
+	file.write(sum_killed + "\n");
 
-	try (FileWriter log = new FileWriter(path + File.separatorChar + eol_name + ".txt")) {
+	file.write("Total,");
+	file.write(sum_processed + ",");
+	file.write(sum_trivial + sum_killed + ",,");
+	file.write(sum_not_killed + ",");
+	file.write(sum_invalid + "\n");
+	file.close();
+
+	try (FileWriter log = new FileWriter(outputs_dir.getPath() + File.separatorChar + eol_name + ".txt")) {
 
 	    log.write("\t\\--> Processed mutants-> " + sum_processed + "\n");
 	    log.write("\t\\--> Invalid mutants-> " + sum_invalid + "\n");
 	    log.write("\t\\--> Killed mutants-> " + (sum_trivial + sum_killed) + "\n");
 	    log.write("\t\\--> Not killed mutants-> " + sum_not_killed);
 	    log.write(not_killed_list + "\n");
-	    log.flush();
 	    log.close();
-	}
-
-	try (FileWriter file = new FileWriter(path + File.separatorChar + eol_name + ".csv")) {
-	    file.write(entry.toString());
-	    file.flush();
-	    file.close();
 	}
     }
 }

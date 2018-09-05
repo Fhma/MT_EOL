@@ -28,8 +28,6 @@ public class Stage2 {
 	    return;
 	}
 
-	long mins = System.currentTimeMillis();
-
 	Class<?> clazz;
 	Method method;
 	String _package = Stage2.class.getPackage().getName() + ".configurations";
@@ -39,10 +37,8 @@ public class Stage2 {
 	    clazz = Class.forName(_package + "." + eol_module);
 	    method = clazz.getMethod("properties");
 	    config = (Map<String, Object>) method.invoke(clazz);
-	    System.out.println("Original Transformation Execution: " + eol_module);
 	    EolLauncher runner = new EolLauncher(config);
 	    runner.run();
 	}
-	System.out.println(String.format("Done...(%d minutes)\n", ((System.currentTimeMillis() - mins) / 1000) / 60));
     }
 }

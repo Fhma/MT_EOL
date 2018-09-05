@@ -1,13 +1,13 @@
 # This configuration file is read by Stage3 runnable java code. The Stage3 Java application executes the mutations located in "mutations" folder, which were obtained
 # from executing Stage1 java application located in Java package "uk.ac.york.cs.emu.eol.examples.mutations.generator", against the input test models located in folder
-# "inModels". The Java application then compares the output of each execution with the oracles obtained from executing Stage2 java application located in
-# "uk.ac.york.cs.emu.eol.examples.mutations.generator" Java package. The output of this execution also includes a report stored in "execution_summary" folder.
+# "inModels". The Java program then compares the output of each execution with oracles obtained from executing Stage2 java application located in
+# "uk.ac.york.cs.emu.eol.examples.mutations.generator" Java package.
 #
 # Required resources are:
 #	1) candidates EOL programs stored in "candidates" folder
 #	2) input models of EOL programs stored in "inModels" folder using the following structure
 #	<EOLMODULENAME>/<INPUTMODELNAME>
-#	3) output text or models of executing original EOL programs using Stage2 java application. The outputs stored in "expectedModels" folder using the following structure
+#	3) original outputs of executing original EOL programs using Stage2 java application. The outputs are stored in "expectedModels" folder using the following structure
 #	<EOLMODULENAME>/<OUTPUTNAME>
 #	4) input and output models metamodels stored in "metamodels" folder
 #	5) mutations of original EOL programs that were obtained from executing Stage1 Java application located in "uk.ac.york.cs.emu.eol.examples.mutations.generator"
@@ -15,7 +15,7 @@
 #	<EOLMODULENAME>/<MUTANTNAME>
 #
 ShortestPath
-#ECore2GMF
-#ECoreUtil
-#Formatting
-#EcoreHelper
+ECore2GMF
+ECoreUtil
+Formatting
+EcoreHelper

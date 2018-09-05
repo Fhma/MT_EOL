@@ -1,6 +1,5 @@
 package uk.ac.york.cs.emu.eol.examples.mutations.executor;
 
-import java.awt.Toolkit;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -34,17 +33,12 @@ public class Stage3 {
 	String _package = Stage3.class.getPackage().getName() + ".configurations";
 	Map<String, Object> config = null;
 
-	long mins = System.currentTimeMillis();
-
 	for (String config_file : configurations) {
 	    clazz = Class.forName(_package + "." + config_file);
 	    method = clazz.getMethod("properties");
 	    config = (Map<String, Object>) method.invoke(clazz);
-	    System.out.println("Mutations Execution: " + config_file);
 	    EolLauncher runner = new EolLauncher(config);
 	    runner.run();
 	}
-	Toolkit.getDefaultToolkit().beep();
-	System.out.println(String.format("Done...(%d minutes)", ((System.currentTimeMillis() - mins) / 1000) / 60));
     }
 }

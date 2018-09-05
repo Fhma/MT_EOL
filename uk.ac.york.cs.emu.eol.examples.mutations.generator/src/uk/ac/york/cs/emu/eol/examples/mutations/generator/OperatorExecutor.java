@@ -3,6 +3,7 @@ package uk.ac.york.cs.emu.eol.examples.mutations.generator;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.net.URI;
 import java.util.Iterator;
 import java.util.List;
@@ -32,60 +33,63 @@ public class OperatorExecutor implements Runnable {
 
     public static final String MUTATIONS_DIR = "mutations" + File.separatorChar;
     public static final String METAMODEL_DIR = "metamodels" + File.separatorChar;
-    public static final String MUTATIONS_SUMMARY_DIR = "mutations_summary" + File.separatorChar;
+    public static final String REPORT_DIR = "report" + File.separatorChar;
     public static final String OPERATORS_DIR = "operators" + File.separatorChar;
 
-    private String eol_name;
-    private String eol_code;
+    private String eol_name = null;
+    private String eol_code = null;
+    private PrintStream logger = null;
+    private File report_dir = null;
+    private String operators_source = null;
 
-    public OperatorExecutor(Map<String, String> config) {
+    public OperatorExecutor(Map<String, String> config, String source_dir) throws Exception {
 	eol_name = config.get(Configuration.EOL_NAME);
 	eol_code = config.get(Configuration.EOL_CODE);
+	operators_source = source_dir;
+	report_dir = new File(REPORT_DIR + eol_name);
+	report_dir.mkdirs();
+	logger = new PrintStream(new File(report_dir.getPath() + File.separatorChar + eol_name + ".log"));
     }
 
     @Override
     public void run() {
-
-	File mutations_dir = new File(MUTATIONS_DIR + eol_name);
-	mutations_dir.mkdirs();
-	File log_file = new File(MUTATIONS_DIR + eol_name + ".log");
-	FileWriter logger = null;
+	long mins = System.currentTimeMillis();
 	try {
-	    logger = new FileWriter(log_file);
-	    mutateEolModule(mutations_dir, logger);
-	    logger.close();
+	    logger.println("Operators Execution: " + eol_name);
+	    mutateEolModule();
 	} catch (Exception e) {
-	    e.printStackTrace();
-	    try {
-		logger.close();
-	    } catch (IOException e1) {
-		e1.printStackTrace();
-	    }
+	    logger.println("Exception: " + e.getMessage());
+	} finally {
+	    int time = (int) ((System.currentTimeMillis() - mins) / 1000) / 60;
+	    logger.println(String.format("Done Execution...(%d mins)", time));
+	    logger.close();
 	}
     }
 
-    private void mutateEolModule(File dir, FileWriter logger) throws Exception {
+    private void mutateEolModule() throws Exception {
+
+	File mutations_dir = new File(MUTATIONS_DIR + eol_name);
+	mutations_dir.mkdirs();
 
 	String model_path = null;
 	model_path = parseEolCodeToModel();
 
-	// File emu_programs_dir = new File(OPERATORS_DIR + "selected" + File.separatorChar);
-	File emu_programs_dir = new File(OPERATORS_DIR + "all_operators" + File.separatorChar);
+	File emu_programs_dir = new File(OPERATORS_DIR + operators_source + File.separatorChar);
 	final File emu_programs[] = emu_programs_dir.listFiles();
 
-	OMatrix operators_matrix = new OMatrix(dir.getPath());
+	OMatrix operators_matrix = new OMatrix(mutations_dir.getPath());
 
 	EmuModule module = null;
 	IModel emfModel = null;
 	for (File entry : emu_programs) {
 	    if (!entry.isDirectory() && entry.getName().endsWith(".emu")) {
 
+		logger.println("\tExecuting mutation operator: " + entry.getName());
 		module = new EmuModule();
-		module.setMutants_dir(dir);
+		module.setMutants_dir(mutations_dir);
 		module.setOperatorsMatrix(operators_matrix);
 		module.parse(entry.getAbsoluteFile());
 		if (module.getParseProblems().size() >= 1) {
-		    logger.close();
 		    throw new Exception("Unable to parse file: " + entry.getName() + "\n" + module.getParseProblems().toString() + "\n");
 		}
 		emfModel = createEmfModel("Eol_" + eol_name, model_path, METAMODEL_DIR + File.separatorChar + "EOL.ecore", true, false);
@@ -95,7 +99,7 @@ public class OperatorExecutor implements Runnable {
 		module.getContext().getModelRepository().dispose();
 	    }
 	} // end of executing mutation operators
-	print_summary(operators_matrix, MUTATIONS_SUMMARY_DIR + eol_name + File.separatorChar);
+	print_summary(operators_matrix);
     }
 
     private String parseEolCodeToModel() throws Exception {
@@ -135,24 +139,20 @@ public class OperatorExecutor implements Runnable {
 	properties.put(EmfModel.PROPERTY_READONLOAD, r + "");
 	properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, s + "");
 	emfModel.load(properties, (IRelativePathResolver) null);
-
 	return emfModel;
     }
 
-    private void print_summary(OMatrix mat, String loc) throws IOException {
+    private void print_summary(OMatrix mat) throws IOException {
 	if (mat == null)
 	    return;
 	int valid_mutants;
 	int invalid_mutants;
 	Iterator<Map.Entry<String, List<String>>> it = mat.getContent().entrySet().iterator();
-	StringBuilder entry = new StringBuilder();
+	FileWriter file = new FileWriter(report_dir.getPath() + File.separatorChar + eol_name + ".csv");
 
-	entry.append("Mutation Operator");
-	entry.append(',');
-	entry.append("Valid");
-	entry.append(',');
-	entry.append("Invalid");
-	entry.append('\n');
+	file.write("Mutation Operator,");
+	file.write("Valid,");
+	file.write("Invalid\n");
 	int totol_valid = 0;
 	int totol_invalid = 0;
 	while (it.hasNext()) {
@@ -169,25 +169,14 @@ public class OperatorExecutor implements Runnable {
 	    totol_valid += valid_mutants;
 	    totol_invalid += invalid_mutants;
 
-	    entry.append(pair.getKey().toString());
-	    entry.append(',');
-	    entry.append(String.format("%d", valid_mutants));
-	    entry.append(',');
-	    entry.append(String.format("%d", invalid_mutants));
-	    entry.append('\n');
+	    file.write(pair.getKey().toString() + ",");
+	    file.write(String.format("%d", valid_mutants) + ",");
+	    file.write(String.format("%d", invalid_mutants) + "\n");
 	}
 
-	entry.append("Total Mutants");
-	entry.append(',');
-	entry.append(totol_valid);
-	entry.append(',');
-	entry.append(totol_invalid);
-
-	File folder = new File(loc);
-	folder.mkdirs();
-	FileWriter file = new FileWriter(loc + eol_name + "_summary.csv");
-	file.write(entry.toString());
-	file.flush();
+	file.write("Total Mutants,");
+	file.write(totol_valid + ",");
+	file.write(totol_invalid + "\n");
 	file.close();
     }
 
