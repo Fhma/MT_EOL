@@ -86,9 +86,8 @@ public class EolLauncher {
 	} catch (Exception e) {
 	    logger.println("\tException: " + e.getMessage());
 	} finally {
-	    int time = (int) (((System.currentTimeMillis() - mins) / 1000));
-	    // int time = (int) (((System.currentTimeMillis() - mins) / 1000) / 60);
-	    logger.println(String.format("End Execution....(%d sec)", time));
+	    int time = (int) (((System.currentTimeMillis() - mins) / 1000) / 60);
+	    logger.println(String.format("End Execution....(%d mins)", time));
 	    logger.close();
 	}
     }
