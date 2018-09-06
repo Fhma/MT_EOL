@@ -47,7 +47,7 @@ instance:AssignmentStatement
 	}
 }
 
-// 1.3: remove unary negative operator
+// 1.3: remove unary negative operator of numbers expression
 @action replace
 @property rhs
 pattern remove_unary_negative_operator
@@ -58,7 +58,7 @@ instance:AssignmentStatement
 	}
 }
 
-// 1.4: add unary negative operator to integer or real expression
+// 1.4: add unary negative operator to number expressions
 @action replace
 @property rhs
 pattern add_unary_negative_operator
