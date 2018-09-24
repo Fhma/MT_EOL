@@ -1,7 +1,0 @@
-// operator: FeatureCallExpression_target_addition
-// desc: There is no addition implementation
-// for this operator as this requires multiple new additional
-// elements for a single mutation.
-//
-// Inherited operators: Expression 
-////////////////////////////////////////////////////////////

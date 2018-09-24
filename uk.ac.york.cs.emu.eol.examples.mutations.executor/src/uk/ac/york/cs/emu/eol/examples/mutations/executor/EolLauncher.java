@@ -43,6 +43,7 @@ public class EolLauncher {
     public static final String EXECUTION_DIR = "execution" + TEMP_SUFFIX + File.separatorChar;
     public static final String OUTPUTS_DIR = "outputs" + File.separatorChar;
     private static final short SLEEPING_FACTOR = 100;
+    private static final short EXECUTOR_SERVICE_SLEEPING_REPEAT = 50;
 
     // parameters used by the launcher
     private String eol_name = null;
@@ -208,14 +209,14 @@ public class EolLauncher {
 
 		    executorService.shutdownNow();
 
-		    int counter = 10;
+		    int counter = EXECUTOR_SERVICE_SLEEPING_REPEAT;
 		    while (!executorService.isTerminated()) {
 			if (counter == 0) {
 			    cleanup(execution_dir);
 			    throw new RuntimeException("The execution service of mutant [" + mutant_model.getName() + "] was not terminated.");
 			}
 			counter--;
-			Thread.sleep(50);
+			Thread.sleep(SLEEPING_FACTOR / 2);
 		    }
 
 		    if (total_killed == input_tests.size()) {

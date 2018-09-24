@@ -13,7 +13,5 @@ instance:PropertyCallExpression
 	do {
 		if(instance.extended = true)
 			instance.extended = false;
-		else
-			instance.extended = true;
 	}
 }

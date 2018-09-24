@@ -1,17 +1,14 @@
-// 2.3 replacing return statement with expression statement
-// of a operation definition
-@action replace
-@property statements
-pattern replace_return_stat_with_exp_stat
-instance:Block
-	in: Block.all.select(e|e.container.isTypeOf(OperationDefinition))
-	guard: instance.statements.last().isTypeOf(ReturnStatement) {
+// operator: Import_imported_replacement
+// desc: replaces the string of imported file with another one
+//
+// Inherited operators: n/a 
+////////////////////////////////////////////////////////////
+
+@action replace 
+@property imported
+pattern replace_imported_string
+instance:Import {
 	do {
-		var target = instance.statements.last();
-		var new_stat = ExpressionStatement.createInstance();
-		new_stat.expression = target.expression;
-		
-		instance.statements.remove(target);
-		instance.statements.add(new_stat);
+		instance.imported = instance.imported + "_";
 	}
 }

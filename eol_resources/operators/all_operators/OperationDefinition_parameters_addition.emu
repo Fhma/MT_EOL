@@ -16,7 +16,7 @@ instance:OperationDefinition {
 		
 		var type = AnyType.createInstance();
 		
-		param.name - name_exp;
+		param.name = name_exp;
 		param.resolvedType = type;
 		
 		instance.parameters.add(param);

@@ -10,44 +10,38 @@ class Block {
  val Statement[*] statements;
 }
 
-class IfStatement extends Statement {
+abstract class Statement {}
+abstract class Expression {}
+
+class IfStat extends Statement {
   val Expression[1] condition;
-  val Block[1] ifBody;
+  val Statement[+] statements;
 }
 
-abstract class Statement {}
-
-class AssignmentStatement extends Statement{
+class AssignmentStat extends Statement {
  val Expression[1] lhs;
  val Expression[1] rhs;
 }
 
-class ExpressionStatement extends Statement{
- val Expression[1] expr;
-}
-
-class ReturnStatement extends Statement{
+class ReturnStat extends Statement {
  val Expression expr;
 }
 
-abstract class Expression {}
-
-abstract class ComparisonExpression extends Expression {
- val Expression[1] lhs;
- val Expression[1] rhs;
-}
-
-class NotEqualsExpression extends ComparisonExpression {}
-
-class EqualsExpression extends ComparisonExpression {}
-
-class FOLCallExpression extends Expression {
+class FOLogicExp extends Expression {
  attr EString[1] iterator;
  attr EString[1] method;
  val Expression[1] condition;
  val Expression[1] target;
 }
 
-class NameExpression extends Expression {
- attr EString[1] name;
+abstract class EqualityExp extends Expression {
+ val Expression[1] lhs;
+ val Expression[1] rhs;
+}
+
+class NotEqualsExp extends EqualityExp {}
+class EqualsExp extends EqualityExp {}
+
+class LiteralExp extends Expression {
+ attr EString[1] value;
 }

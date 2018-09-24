@@ -8,3 +8,8 @@ class TestClass {
 	attr Float float_o;
 	attr boolean boolean_p;
 }
+
+class TestClass2{
+	attr String[3..4] multi1;
+	val TestClass[5..10] multi2;
+}

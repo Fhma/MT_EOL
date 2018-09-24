@@ -1,0 +1,5 @@
+var temp = new TestClass2;
+
+if(temp.multi2.isMany()){
+	"yes".println();
+}
