@@ -95,43 +95,6 @@ exp:DeleteStatement from: instance.statements {
 	}
 }
 
-// 4.0: replacing normal assignment with special assignment
-// 4.1 replacing specail assignment statement with normal 
-// assignment
-@action replace
-@property statements
-@role instance
-pattern replace_special_stat_with_normal_assgin_stat
-instance:Block,
-exp:SpecialAssignmentStatement from: instance.statements {
-	do {
-		var new_stat = AssignmentStatement.createInstance();
-		new_stat.lhs = exp.lhs;
-		new_stat.rhs = exp.rhs;
-		
-		instance.statements.remove(exp);
-		instance.statements.add(new_stat);
-	}
-}
-
-// 4.2 replacing normal assignment statement with specail 
-// assignment
-@action replace
-@property statements
-@role instance
-pattern replace_normal_stat_with_spcial_assgin_stat
-instance:Block,
-exp:AssignmentStatement from: instance.statements {
-	do {
-		var new_stat = SpecialAssignmentStatement.createInstance();
-		new_stat.lhs = exp.lhs;
-		new_stat.rhs = exp.rhs;
-		
-		instance.statements.remove(exp);
-		instance.statements.add(new_stat);
-	}
-}
-
 // 5.0: replacing continue statement
 // 5.1: replacing continue with break
 @action replace

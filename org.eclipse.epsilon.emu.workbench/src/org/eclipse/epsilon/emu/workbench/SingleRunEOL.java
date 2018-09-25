@@ -37,7 +37,8 @@ public class SingleRunEOL {
 
 		//String modelString = SingleRunEOL.class.getResource("resources/ShortestPath.xmi").getPath();
 		//String modelString = SingleRunEOL.class.getResource("resources/Formatting.xmi").getPath();
-		String modelString = SingleRunEOL.class.getResource("resources/ECore2GMF.xmi").getPath();
+		//String modelString = SingleRunEOL.class.getResource("resources/ECore2GMF.xmi").getPath();
+		String modelString = SingleRunEOL.class.getResource("resources/EcoreHelper.xmi").getPath();
 		String metamodel = SingleRunEOL.class.getResource("resources/Eol.ecore").getPath();
 
 		File output = new File("EMU_script/input_mutants");

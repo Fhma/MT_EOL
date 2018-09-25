@@ -1,14 +1,37 @@
-// operator: Import_imported_replacement
-// desc: replaces the string of imported file with another one
-//
-// Inherited operators: n/a 
-////////////////////////////////////////////////////////////
 
-@action replace 
-@property imported
-pattern replace_imported_string
-instance:Import {
+// 4.0: replacing normal assignment with special assignment
+// 4.1 replacing specail assignment statement with normal 
+// assignment
+@action replace
+@property statements
+@role instance
+pattern replace_special_stat_with_normal_assgin_stat
+instance:Block,
+exp:SpecialAssignmentStatement from: instance.statements {
 	do {
-		instance.imported = instance.imported + "_";
+		var new_stat = AssignmentStatement.createInstance();
+		new_stat.lhs = exp.lhs;
+		new_stat.rhs = exp.rhs;
+		
+		instance.statements.remove(exp);
+		instance.statements.add(new_stat);
+	}
+}
+
+// 4.2 replacing normal assignment statement with specail 
+// assignment
+@action replace
+@property statements
+@role instance
+pattern replace_normal_stat_with_spcial_assgin_stat
+instance:Block,
+exp:AssignmentStatement from: instance.statements {
+	do {
+		var new_stat = SpecialAssignmentStatement.createInstance();
+		new_stat.lhs = exp.lhs;
+		new_stat.rhs = exp.rhs;
+		
+		instance.statements.remove(exp);
+		instance.statements.add(new_stat);
 	}
 }
