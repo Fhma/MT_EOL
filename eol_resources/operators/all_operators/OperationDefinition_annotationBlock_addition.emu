@@ -1,25 +1,7 @@
 // operator: OperationDefinition_annotationBlock-ADD
-// desc: adds a notation statement to an operation. 
+// desc: There is no addition implementation
+// for this operator as this requires multiple new additional
+// elements for a single mutation.
 //
 // Inherited operators: n/a 
 ////////////////////////////////////////////////////////////
-
-// 1.0: add a @cached annotation to an operation
-@action add
-@property annotationBlock
-pattern add_cached_annotation
-instance:OperationDefinition
-	guard: instance.annotationBlock.isUndefined() {
-	do {
-		var name_exp = NameExpression.createInstance();
-		name_exp.name = "cached";
-		
-		var a_stat =  SimpleAnnotationStatement.createInstance();
-		a_stat.name = name_exp;
-		
-		var a_block = AnnotationBlock.createInstance();
-		a_block.statements.add(a_stat);
-		
-		instance.annotationBlock = a_block;
-	}
-}

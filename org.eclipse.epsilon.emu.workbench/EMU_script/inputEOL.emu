@@ -1,11 +1,12 @@
-@action delete
-@property _result
-pattern delete_content_result
-instance:OperationDefinition
-	in: OperationDefinition.all.select(e|e._result.isDefined())
-	guard: instance.annotationBlock.isDefined() 
-		and instance.annotationBlock.statements.exists(e|e.name = "post") {
+// 1.1.2: RealType <- IntegerType
+@action replace
+@property resolvedType
+pattern replace_RealType_IntegerType_2
+instance:Expression
+	in: Expression.all.select(e|e.resolvedType.isDefined())
+	guard: instance.isKindOf(VariableDeclarationExpression) 
+		and instance.resolvedType.isTypeOf(IntegerType) { 
 	do {
-		instance._result = null;
+		instance.resolvedType = RealType.createInstance();
 	}
 }

@@ -4,10 +4,15 @@
 // Inherited operators: n/a 
 ////////////////////////////////////////////////////////////
 
+//1.0: change the name of variable and add _extra to it.
+// Exceptions are done over self and _result built-in 
+// variables of OperationDefinition
 @action replace
 @property name
 pattern change_name
-instance:VariableDeclarationExpression {
+instance:VariableDeclarationExpression
+	guard: not instance.container.isTypeOf(OperationDefinition)
+			and (instance.name.name = "self" or instance.name.name = "_result") {
 	do {
 		var new_name = NameExpression.createInstance();
 		new_name.name = instance.name.name + "_extra";

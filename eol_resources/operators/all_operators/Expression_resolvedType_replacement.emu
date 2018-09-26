@@ -17,6 +17,7 @@
 // Inherited operators: n/a 
 ////////////////////////////////////////////////////////////
 
+
 // 1.0: Primitive types: RealType <-> IntegerType
 // 1.1: RealType <-> IntegerType
 // 1.1.1: RealType -> IntegerType
@@ -25,7 +26,8 @@
 pattern replace_RealType_IntegerType_1
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
-	guard: instance.resolvedType.isTypeOf(RealType) {
+	guard: instance.resolvedType.isTypeOf(RealType)
+		and instance.isKindOf(VariableDeclarationExpression){
 	do {
 		instance.resolvedType = IntegerType.createInstance();
 	}
@@ -37,7 +39,8 @@ instance:Expression
 pattern replace_RealType_IntegerType_2
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
-	guard: instance.resolvedType.isTypeOf(IntegerType) {
+	guard: instance.isKindOf(VariableDeclarationExpression) 
+		and instance.resolvedType.isTypeOf(IntegerType) { 
 	do {
 		instance.resolvedType = RealType.createInstance();
 	}
@@ -51,7 +54,8 @@ instance:Expression
 pattern replace_SequenceType_OrderedSetType_1
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
-	guard: instance.resolvedType.isTypeOf(SequenceType) {
+	guard: instance.resolvedType.isTypeOf(SequenceType)
+		and instance.isKindOf(VariableDeclarationExpression) {
 	do {
 		instance.resolvedType = OrderedSetType.createInstance();
 	}
@@ -63,7 +67,8 @@ instance:Expression
 pattern replace_SequenceType_OrderedSetType_2
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
-	guard: instance.resolvedType.isTypeOf(OrderedSetType) {
+	guard: instance.resolvedType.isTypeOf(OrderedSetType)
+		and instance.isKindOf(VariableDeclarationExpression) {
 	do {
 		instance.resolvedType = SequenceType.createInstance();
 	}
@@ -76,7 +81,8 @@ instance:Expression
 pattern replace_SequenceType_BagType_1
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
-	guard: instance.resolvedType.isTypeOf(SequenceType) {
+	guard: instance.resolvedType.isTypeOf(SequenceType)
+		and instance.isKindOf(VariableDeclarationExpression) {
 	do {
 		instance.resolvedType = BagType.createInstance();
 	}
@@ -88,9 +94,9 @@ instance:Expression
 pattern replace_SequenceType_BagType_2
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
-	guard: instance.resolvedType.isTypeOf(SequenceType) {
+	guard: instance.resolvedType.isTypeOf(BagType) {
 	do {
-		instance.resolvedType = BagType.createInstance();
+		instance.resolvedType = SequenceType.createInstance();
 	}
 }
 
@@ -126,7 +132,8 @@ instance:Expression
 pattern replace_SetType_BagType_1
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
-	guard: instance.resolvedType.isTypeOf(SetType) {
+	guard: instance.resolvedType.isTypeOf(SetType)
+		and instance.isKindOf(VariableDeclarationExpression) {
 	do {
 		instance.resolvedType = BagType.createInstance();
 	}
@@ -138,7 +145,8 @@ instance:Expression
 pattern replace_SetType_BagType_2
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
-	guard: instance.resolvedType.isTypeOf(BagType) {
+	guard: instance.resolvedType.isTypeOf(BagType)
+		and instance.isKindOf(VariableDeclarationExpression) {
 	do {
 		instance.resolvedType = SetType.createInstance();
 	}
@@ -151,7 +159,8 @@ instance:Expression
 pattern replace_OrderedSetType_agType_1
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
-	guard: instance.resolvedType.isTypeOf(OrderedSetType) {
+	guard: instance.resolvedType.isTypeOf(OrderedSetType)
+		and instance.isKindOf(VariableDeclarationExpression) {
 	do {
 		instance.resolvedType = BagType.createInstance();
 	}
@@ -163,7 +172,8 @@ instance:Expression
 pattern replace_OrderedSetType_agType_2
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
-	guard: instance.resolvedType.isTypeOf(BagType) {
+	guard: instance.resolvedType.isTypeOf(BagType)
+		and instance.isKindOf(VariableDeclarationExpression) {
 	do {
 		instance.resolvedType = OrderedSetType.createInstance();
 	}

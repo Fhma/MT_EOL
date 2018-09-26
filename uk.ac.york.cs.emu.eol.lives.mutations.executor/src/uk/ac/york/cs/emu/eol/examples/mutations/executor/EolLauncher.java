@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -108,7 +109,7 @@ public class EolLauncher {
 	// go through all mutations
 	File[] mutant_models = mutants.listFiles();
 
-	// Arrays.sort(mutant_models);
+	Arrays.sort(mutant_models);
 	for (File mutant_model : mutant_models) {
 	    if (mutant_model.getName().endsWith(".eol")) {
 
