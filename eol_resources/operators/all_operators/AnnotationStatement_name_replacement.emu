@@ -1,5 +1,7 @@
 // operator: AnnotationStatement_name_replacement
-// desc: replaces the name of annotation name
+// desc: replaces the name of annotation name to a different name.
+// The target annotation must be of type ExecutableAnnotationStatement
+// 
 //
 // Inherited operators: Statement 
 ////////////////////////////////////////////////////////////
@@ -7,7 +9,8 @@
 @action replace
 @property name
 pattern replace_annotation_name
-instance:AnnotationStatement {
+instance:AnnotationStatement
+	in: AnnotationStatement.all.select(e|e.isTypeOf(ExecutableAnnotationStatement)) {
 	do {
 		var name_exp = NameExpression.createInstance();
 		name_exp.name = instance.name.name + "1";

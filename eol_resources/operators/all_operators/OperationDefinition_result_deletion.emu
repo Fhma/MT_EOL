@@ -1,6 +1,9 @@
 // operator: OperationDefinition_result-DEL
 // desc: deletes the value of _result built-in variable
-// of an operation.
+// of an operation. Since _result is used to cache operation 
+// result, setting it up to null will affect only performace of 
+// the operation. However, for post annotation, this operator
+// can be set to null.
 // 
 // Inherited operators: n/a 
 ////////////////////////////////////////////////////////////
@@ -9,9 +12,10 @@
 @property _result
 pattern delete_content_result
 instance:OperationDefinition
-	in: OperationDefinition.all.select(e|e._result.isDefined()) {
+	in: OperationDefinition.all.select(e|e._result.isDefined())
+	guard: instance.annotationBlock.isDefined() 
+		and instance.annotationBlock.statements.exists(e|e.name = "post") {
 	do {
 		instance._result = null;
 	}
 }
-	

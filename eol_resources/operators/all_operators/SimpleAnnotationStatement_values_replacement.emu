@@ -4,6 +4,20 @@
 // Inherited operators: Statement, AnnotationStatement 
 ////////////////////////////////////////////////////////////
 
+operation getOperationOrModuleParent(e:Any):EOLElement {
+	var parent = null;
+	var loc = e.container;
+	while(parent.isUndefined()) {
+		if(loc.isTypeOf(OperationDefinition) or loc.isTypeOf(EOLModule)) {
+			parent = loc;
+		}
+		else loc = e.container;		
+	}
+	return parent;
+}
+
+// 1.0: replaces a value with another name expression obtained from 
+// same block
 @action replace
 @property values
 @role instance
@@ -12,15 +26,13 @@ instance:SimpleAnnotationStatement,
 element:StringExpression
 	from: instance.values,
 other_value:StringExpression
-	from: StringExpression.all.select(e|e.container <> instance and e.container.isTypeOf(SimpleAnnotationStatement)) {
+	from: StringExpression.all.select(e| getOperationOrModuleParent(e) = getOperationOrModuleParent(instance)) {
 	do {
-		if(element.value <> other_value.value)
-		{
-			var string_exp = StringExpression.createInstance();
-			string_exp.value = other_value.value;
+		var new_exp = StringExpression.createInstance();
+		new_exp.value = other_value.value;
 			
-			instance.values.remove(element);
-			instance.values.add(string_exp);
-		}
+		instance.values.remove(element);
+		instance.values.add(new_exp);
 	}
 }
+

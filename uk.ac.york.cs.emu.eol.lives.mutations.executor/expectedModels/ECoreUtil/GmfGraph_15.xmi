@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="ecore">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Sqare">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template y="1"/>
+      <template x="-1" y="1"/>
+      <template x="-1" y="-1"/>
+      <template y="-1"/>
+      <template y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Sqare">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template y="1"/>
+      <template x="-1" y="1"/>
+      <template x="-1" y="-1"/>
+      <template y="-1"/>
+      <template y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledRhomb">
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Rhomb">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
+    <descriptors name="conanFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="conanFigure" lineWidth="3">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="133" green="109" blue="151"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="186" green="24" blue="230"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="conanLabelFigure" text="conan"/>
+      </actualFigure>
+      <accessors accessor="getFigureconanLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="jaquenettaFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="jaquenettaFigure" lineWidth="5" sourceDecoration="//@figures.0/@figures.0" targetDecoration="//@figures.0/@figures.1">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="157" green="138" blue="230"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="julietFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="julietFigure" lineWidth="8" lineKind="LINE_DOT" sourceDecoration="//@figures.0/@figures.2" targetDecoration="//@figures.0/@figures.3">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="101" green="78" blue="64"/>
+      </actualFigure>
+    </descriptors>
+  </figures>
+  <nodes name="conan" figure="conanFigure"/>
+  <connections name="jaquenetta" figure="jaquenettaFigure"/>
+  <connections name="juliet" figure="julietFigure"/>
+  <labels name="conanLabel" figure="conanFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+</gmfgraph:Canvas>

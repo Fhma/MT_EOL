@@ -4,7 +4,7 @@
 // Inherited operators: n/a 
 ////////////////////////////////////////////////////////////
 
-// 1.0: add a @cached anntation to an operation
+// 1.0: add a @cached annotation to an operation
 @action add
 @property annotationBlock
 pattern add_cached_annotation

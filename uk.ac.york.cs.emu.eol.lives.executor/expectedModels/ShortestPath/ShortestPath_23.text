@@ -1,0 +1,4 @@
+Distance of a from a : 0 via a
+Distance of b from a : 1 via a->b
+Distance of c from a : 3 via a->b->c
+Distance of d from a : 3 via a->d

@@ -1,7 +1,7 @@
 // operator: ExecutableAnnotationStatement_expression_replacement
 // desc: There is no replacement implementation
 // for this operator as there is no suitable sibling to 
-// be replaced with.
+// be replaced with and also is a literal value.
 //
 // Inherited operators: n/a 
 ////////////////////////////////////////////////////////////

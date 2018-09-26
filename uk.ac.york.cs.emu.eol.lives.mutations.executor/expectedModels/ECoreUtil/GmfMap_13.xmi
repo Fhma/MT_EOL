@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <links>
+    <domainMetaElement href="ECore_13.xmi#//juliet"/>
+    <containmentFeature href="ECore_13.xmi#//juliet/ichabod"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_13.xmi#//@palette/@tools.1/@tools.1"/>
+    <diagramLink href="GmfGraph_13.xmi#juliet"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_13.xmi#//jaquenetta"/>
+    <containmentFeature href="ECore_13.xmi#//nannie/gabe"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_13.xmi#//@palette/@tools.1/@tools.0"/>
+    <diagramLink href="GmfGraph_13.xmi#jaquenetta"/>
+  </links>
+  <links>
+    <domainMetaElement href="ECore_13.xmi#//jaquenetta"/>
+    <containmentFeature href="ECore_13.xmi#//jaquenetta/lucita"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_13.xmi#//@palette/@tools.1/@tools.0"/>
+    <diagramLink href="GmfGraph_13.xmi#jaquenetta"/>
+  </links>
+  <diagram>
+    <diagramCanvas href="GmfGraph_13.xmi#ecore"/>
+    <domainModel href="ECore_13.xmi#/"/>
+    <domainMetaElement href="ECore_13.xmi#//juliet"/>
+    <palette href="GmfTool_13.xmi#//@palette"/>
+  </diagram>
+</gmfmap:Mapping>

@@ -1,11 +1,8 @@
 package uk.ac.york.cs.emu.eol.examples.executor.configurations;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.eclipse.epsilon.emc.emf.EmfMetaModel;
-
 import uk.ac.york.cs.emu.eol.examples.executor.candidates.EOLCandidate;
 import uk.ac.york.cs.emu.eol.examples.executor.metamodels.EcoreModel;
 
@@ -17,7 +14,7 @@ public class ShortestPath {
 	properties = new HashMap<String, Object>();
 
 	properties.put(Configuration.EOL_NAME, "ShortestPath");
-	properties.put(Configuration.EOL_CODE, EOLCandidate.LOCATION + "ShortestPath" + File.separatorChar);
+	properties.put(Configuration.EOL_CODE, EOLCandidate.LOCATION + "ShortestPath.eol");
 	properties.put(Configuration.IMPORTED_BY, null);
 	properties.put(Configuration.IMPORTING, null);
 	properties.put(Configuration.PROGRAM_TYPE, EOLCandidate.CONSOLE_TYPE);

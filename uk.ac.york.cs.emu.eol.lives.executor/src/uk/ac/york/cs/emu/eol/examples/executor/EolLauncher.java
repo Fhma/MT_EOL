@@ -33,7 +33,7 @@ public class EolLauncher implements Runnable {
     // important directories
     public static final String IN_MODELS_DIR = "inModels" + File.separatorChar;
     public static final String EXPECTED_MODELS_DIR = "expectedModels" + File.separatorChar;
-    public static final String REPORT_DIR = "report" + File.separatorChar;
+    // public static final String REPORT_DIR = "report" + File.separatorChar;
 
     // parameters used by launcher
     private String eol_name = null;
@@ -43,8 +43,6 @@ public class EolLauncher implements Runnable {
 
     private String[] mm_paths = null;
     private EmfMetaModel metamodels[] = null;
-
-    private PrintStream logger = null;
 
     public EolLauncher(Map<String, Object> config) throws Exception {
 	this.eol_name = (String) config.get(Configuration.EOL_NAME);
@@ -62,23 +60,14 @@ public class EolLauncher implements Runnable {
 	if (config.get(Configuration.MM_PATHS) != null) {
 	    mm_paths = (String[]) config.get(Configuration.MM_PATHS);
 	}
-	File report = new File(REPORT_DIR);
-	report.mkdirs();
-	logger = new PrintStream(new File(report.getPath() + File.separatorChar + this.eol_name + ".log"));
     }
 
     @Override
     public void run() {
-	long mins = System.currentTimeMillis();
 	try {
-	    logger.println("Original Transformation Execution: " + eol_name);
 	    originalExecution();
 	} catch (Exception e) {
-	    logger.println("\tException: " + e.getMessage());
-	} finally {
-	    int time = (int) ((System.currentTimeMillis() - mins) / 1000) / 60;
-	    logger.println(String.format("End Execution....(%d mins)", time));
-	    logger.close();
+	    e.printStackTrace();
 	}
     }
 
@@ -87,13 +76,8 @@ public class EolLauncher implements Runnable {
 	String mainModule = null;
 	if (imported_by != null && imported_by.length == 1)
 	    mainModule = imported_by[0];
-	else {
-	    File sources = new File(eol_path);
-	    if (sources.listFiles().length > 1)
-		throw new Exception("Found more than one live mutation.");
-	    File list[] = sources.listFiles();
-	    mainModule = list[0].getPath();
-	}
+	else
+	    mainModule = eol_path;
 
 	if (mainModule == null)
 	    throw new Exception("Unable to find the main EOL file for execution.");
@@ -116,7 +100,6 @@ public class EolLauncher implements Runnable {
 	List<File> input_files = null;
 	for (short num : getInputFilesNumbers()) {
 
-	    logger.println("\tExecution against inputs [" + num + "]");
 	    input_files = getInputFilesOfNumber(num);
 
 	    // clone base EolModule for multiple use
