@@ -103,7 +103,7 @@ public class EolLauncher implements Runnable {
 	if (base.getParseProblems().size() > 0)
 	    throw new Exception("Unable to parse file: " + mainModule + "\n" + base.getParseProblems().toString());
 
-	registerAndLoadMetamodels("");
+	registerAndLoadMetamodels();
 
 	Random rand = new Random(System.nanoTime());
 
@@ -216,7 +216,7 @@ public class EolLauncher implements Runnable {
 	return emfModel;
     }
 
-    private void registerAndLoadMetamodels(String n) throws Exception {
+    private void registerAndLoadMetamodels() throws Exception {
 	EcorePackage.eINSTANCE.eClass();
 	Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
 	ResourceSet rs = new ResourceSetImpl();

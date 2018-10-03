@@ -18,6 +18,14 @@
 ////////////////////////////////////////////////////////////
 
 
+operation isSelfOrResult(instance:Any):Boolean {
+	if(instance.eContainer.isTypeOf(OperationDefinition)
+		and (instance.name.name = "self" or instance.name.name = "_result")) {
+		return true;
+	}
+	return false;
+}
+
 // 1.0: Primitive types: RealType <-> IntegerType
 // 1.1: RealType <-> IntegerType
 // 1.1.1: RealType -> IntegerType
@@ -27,7 +35,8 @@ pattern replace_RealType_IntegerType_1
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
 	guard: instance.resolvedType.isTypeOf(RealType)
-		and instance.isKindOf(VariableDeclarationExpression){
+		and instance.isKindOf(VariableDeclarationExpression)
+		and not isSelfOrResult(instance) {
 	do {
 		instance.resolvedType = IntegerType.createInstance();
 	}
@@ -40,7 +49,8 @@ pattern replace_RealType_IntegerType_2
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
 	guard: instance.isKindOf(VariableDeclarationExpression) 
-		and instance.resolvedType.isTypeOf(IntegerType) { 
+		and instance.resolvedType.isTypeOf(IntegerType)
+		and not isSelfOrResult(instance) { 
 	do {
 		instance.resolvedType = RealType.createInstance();
 	}
@@ -55,7 +65,8 @@ pattern replace_SequenceType_OrderedSetType_1
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
 	guard: instance.resolvedType.isTypeOf(SequenceType)
-		and instance.isKindOf(VariableDeclarationExpression) {
+		and instance.isKindOf(VariableDeclarationExpression) 
+		and not isSelfOrResult(instance) {
 	do {
 		instance.resolvedType = OrderedSetType.createInstance();
 	}
@@ -68,7 +79,8 @@ pattern replace_SequenceType_OrderedSetType_2
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
 	guard: instance.resolvedType.isTypeOf(OrderedSetType)
-		and instance.isKindOf(VariableDeclarationExpression) {
+		and instance.isKindOf(VariableDeclarationExpression) 
+		and not isSelfOrResult(instance) {
 	do {
 		instance.resolvedType = SequenceType.createInstance();
 	}
@@ -82,7 +94,8 @@ pattern replace_SequenceType_BagType_1
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
 	guard: instance.resolvedType.isTypeOf(SequenceType)
-		and instance.isKindOf(VariableDeclarationExpression) {
+		and instance.isKindOf(VariableDeclarationExpression) 
+		and not isSelfOrResult(instance) {
 	do {
 		instance.resolvedType = BagType.createInstance();
 	}
@@ -94,7 +107,9 @@ instance:Expression
 pattern replace_SequenceType_BagType_2
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
-	guard: instance.resolvedType.isTypeOf(BagType) {
+	guard: instance.resolvedType.isTypeOf(BagType) 
+		and instance.isKindOf(VariableDeclarationExpression) 
+		and not isSelfOrResult(instance) {
 	do {
 		instance.resolvedType = SequenceType.createInstance();
 	}
@@ -107,7 +122,9 @@ instance:Expression
 pattern replace_SetType_OrderedSetType_1
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
-	guard: instance.resolvedType.isTypeOf(SetType) {
+	guard: instance.resolvedType.isTypeOf(SetType) 
+		and instance.isKindOf(VariableDeclarationExpression) 
+		and not isSelfOrResult(instance) {
 	do {
 		instance.resolvedType = OrderedSetType.createInstance();
 	}
@@ -119,7 +136,9 @@ instance:Expression
 pattern replace_SetType_OrderedSetType_2
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
-	guard: instance.resolvedType.isTypeOf(OrderedSetType) {
+	guard: instance.resolvedType.isTypeOf(OrderedSetType) 
+		and instance.isKindOf(VariableDeclarationExpression) 
+		and not isSelfOrResult(instance) {
 	do {
 		instance.resolvedType = SetType.createInstance();
 	}
@@ -133,7 +152,8 @@ pattern replace_SetType_BagType_1
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
 	guard: instance.resolvedType.isTypeOf(SetType)
-		and instance.isKindOf(VariableDeclarationExpression) {
+		and instance.isKindOf(VariableDeclarationExpression) 
+		and not isSelfOrResult(instance) {
 	do {
 		instance.resolvedType = BagType.createInstance();
 	}
@@ -146,7 +166,8 @@ pattern replace_SetType_BagType_2
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
 	guard: instance.resolvedType.isTypeOf(BagType)
-		and instance.isKindOf(VariableDeclarationExpression) {
+		and instance.isKindOf(VariableDeclarationExpression) 
+		and not isSelfOrResult(instance) {
 	do {
 		instance.resolvedType = SetType.createInstance();
 	}
@@ -156,11 +177,12 @@ instance:Expression
 // 2.5.1: OrderedSetType -> BagType
 @action replace
 @property resolvedType
-pattern replace_OrderedSetType_agType_1
+pattern replace_OrderedSetType_BagType_1
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
 	guard: instance.resolvedType.isTypeOf(OrderedSetType)
-		and instance.isKindOf(VariableDeclarationExpression) {
+		and instance.isKindOf(VariableDeclarationExpression) 
+		and not isSelfOrResult(instance) {
 	do {
 		instance.resolvedType = BagType.createInstance();
 	}
@@ -169,11 +191,12 @@ instance:Expression
 // 2.5.2: OrderedSetType <- BagType
 @action replace
 @property resolvedType
-pattern replace_OrderedSetType_agType_2
+pattern replace_OrderedSetType_BagType_2
 instance:Expression
 	in: Expression.all.select(e|e.resolvedType.isDefined())
 	guard: instance.resolvedType.isTypeOf(BagType)
-		and instance.isKindOf(VariableDeclarationExpression) {
+		and instance.isKindOf(VariableDeclarationExpression) 
+		and not isSelfOrResult(instance) {
 	do {
 		instance.resolvedType = OrderedSetType.createInstance();
 	}

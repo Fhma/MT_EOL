@@ -124,7 +124,7 @@ public class EolLauncher {
 	File[] mutant_models = mutants.listFiles();
 
 	Arrays.sort(mutant_models);
-	
+
 	for (File mutant_model : mutant_models) {
 	    if (mutant_model.getName().endsWith(".xmi")) {
 
@@ -403,7 +403,7 @@ public class EolLauncher {
 	    file.write(operator.getAllNotKilled().size() + ",");
 	    sum_not_killed += operator.getAllNotKilled().size();
 	    for (String nk : operator.getAllNotKilled())
-		not_killed_list += "\n\t\t\\-->" + nk;
+		not_killed_list += nk + "\n";
 
 	    file.write(operator.getTotalInvalidMutants() + "\n");
 	    sum_invalid += operator.getTotalInvalidMutants();
@@ -420,13 +420,8 @@ public class EolLauncher {
 	file.write(sum_invalid + "\n");
 	file.close();
 
-	try (FileWriter log = new FileWriter(outputs_dir.getPath() + File.separatorChar + eol_name + ".txt")) {
-
-	    log.write("\t\\--> Processed mutants-> " + sum_processed + "\n");
-	    log.write("\t\\--> Invalid mutants-> " + sum_invalid + "\n");
-	    log.write("\t\\--> Killed mutants-> " + (sum_trivial + sum_killed) + "\n");
-	    log.write("\t\\--> Not killed mutants-> " + sum_not_killed);
-	    log.write(not_killed_list + "\n");
+	try (FileWriter log = new FileWriter(outputs_dir.getPath() + File.separatorChar + eol_name + "_lives.txt")) {
+	    log.write(not_killed_list);
 	    log.close();
 	}
     }

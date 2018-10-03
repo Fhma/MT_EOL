@@ -5,15 +5,14 @@
 ////////////////////////////////////////////////////////////
 
 operation getOperationOrModuleParent(e:Any):EOLElement {
-	var parent = null;
-	var loc = e.container;
-	while(parent.isUndefined()) {
+	var loc = e;
+	while(loc.isDefined()) {
 		if(loc.isTypeOf(OperationDefinition) or loc.isTypeOf(EOLModule)) {
-			parent = loc;
+			return loc;
 		}
-		else loc = e.container;		
+		loc = loc.eContainer;
 	}
-	return parent;
+	return null;
 }
 
 // 1.0: replaces a value with another name expression obtained from 

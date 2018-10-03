@@ -1,0 +1,9 @@
+Mutation Operator,Gen.,Trivial,Killed,Not Killed,Invalid
+AssignmentStatement_rhs_replace,1,0,0,1,0
+Block_statements_replace,1,0,0,1,0
+FOLMethodCallExpression_method_replace,1,0,0,1,0
+IfStatement_condition_replace,1,0,1,0,0
+VariableDeclarationExpression_name_replace,4,0,0,4,0
+VariableDeclarationExpression_resolvedType_replace,3,0,0,3,0
+Total Killed,,0,1
+Total,11,1,,10,0
