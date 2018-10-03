@@ -276,7 +276,7 @@ operation EClass getEAllSubclasses()  {
 operation EDataType getJavaClassName()  {
 	return self.getInstanceTypeName().split('\\.').last();
 }
-@cahced
+@cached
 operation EReference isEdge() : Boolean  {
 	var annot = self.getEAnnotation('https://eclipse.org/epsilon/incremental/Graph');
 	if(annot.isUndefined()) {

@@ -1,6 +1,6 @@
 // operator: Block_statements-DEL
 // desc: delete a statement from a list of statements. This 
-// operator mimics the error missing a statement of a program.
+// operator mimics the error of missing a statement.
 //
 // Inherited operators: n/a 
 ////////////////////////////////////////////////////////////
@@ -11,7 +11,9 @@
 pattern delete_statement_of_block
 instance:Block,
 stat:Statement
-	from: instance.statements {
+	from: instance.statements
+	guard: not (stat.isKindOf(AnnotationStatement)
+		and stat.name.name = "cached") {
 	do {
 		instance.statements.remove(stat);
 	}
