@@ -13,7 +13,7 @@ for(c in classes) {
 		item.println();
 	}
 	
-	"getRequriedImports(mainpackage,I,,,,true)".println();
+	"getRequriedImports(mainpackage,I,,,,false)".println();
 	returned = c.getRequriedImports("mainpackage","I","","","",false);
 	for(item in returned){
 		item.println();
@@ -25,19 +25,19 @@ for(c in classes) {
 		item.println();
 	}
 	
-	"getRequriedImports(mainpackage,I,,,,true,true)".println();
+	"getRequriedImports(mainpackage,I,,,,true,false)".println();
 	returned = c.getRequriedImports("mainpackage","I","","","",true,false);
 	for(item in returned){
 		item.println();
 	}
 	
-	"getRequriedImports(mainpackage,I,,,,true,true)".println();
+	"getRequriedImports(mainpackage,I,,,,false,true)".println();
 	returned = c.getRequriedImports("mainpackage","I","","","",false,true);
 	for(item in returned){
 		item.println();
 	}
 	
-	"getRequriedImports(mainpackage,I,,,,true,true)".println();
+	"getRequriedImports(mainpackage,I,,,,false,false)".println();
 	returned = c.getRequriedImports("mainpackage","I","","","",false,false);
 	for(item in returned){
 		item.println();
