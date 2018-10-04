@@ -1,20 +1,54 @@
-// operator: Block_statements-DEL
-// desc: delete a statement from a list of statements. This 
-// operator mimics the error missing a statement of a program.
+// operator: VariableDeclarationExpression_name_replacement
+// desc: replaces a variable name with a new string
 //
 // Inherited operators: n/a 
 ////////////////////////////////////////////////////////////
 
-@action delete
-@property statements
-@role instance
-pattern delete_statement_of_block
-instance:Block,
-stat:Statement
-	from: instance.statements
-	guard: not (stat.isKindOf(AnnotationStatement)
-		and stat.name.name = "cached") {
+operation getOperationOrModuleParent(e:Any):EOLElement {
+	var loc = e;
+	while(loc.isDefined()) {
+		if(loc.isTypeOf(OperationDefinition) or loc.isTypeOf(EOLModule)) {
+			return loc;
+		}
+		loc = loc.eContainer;
+	}
+	return null;
+}
+
+operation isSelfOrResult(instance:Any):Boolean {
+	if(instance.eContainer.isTypeOf(OperationDefinition)
+		and (instance.name.name = "self" or instance.name.name = "_result")) {
+		return true;
+	}
+	return false;
+}
+
+// 1.0: change the name of variable and add _extra to it.
+// Exceptions are done over self and _result built-in 
+// variables of OperationDefinition
+@action replace
+@property name
+pattern change_name
+instance:VariableDeclarationExpression
+	guard: (not isSelfOrResult(instance)) {
 	do {
-		instance.statements.remove(stat);
+		var new_name = NameExpression.createInstance();
+		// obtain a name from other vairable declarations
+		var names = VariableDeclarationExpression.all.select(
+			n| n.isTypeOf(VariableDeclarationExpression)
+			and (not isSelfOrResult(n))
+			and getOperationOrModuleParent(n.container)=getOperationOrModuleParent(instance.container)
+			and instance.region.isDefined()
+			and n.region.isDefined()
+			and instance.region.start.line > n.region.start.line);
+			
+		if(names.size()>=1)
+			new_name.name = names.random().name.name;
+		else new_name.name = instance.name.name + "_extra";
+		
+		if(new_name.name.isDefined() and new_name.name = instance.name.name)
+			new_name.name = instance.name.name + "_extra";
+		new_name.resolvedType = instance.name.resolvedType;
+		instance.name = new_name;
 	}
 }

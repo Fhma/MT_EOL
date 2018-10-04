@@ -34,10 +34,18 @@ instance:VariableDeclarationExpression
 	do {
 		var new_name = NameExpression.createInstance();
 		// obtain a name from other vairable declarations
-		var names = VariableDeclarationExpression.all.select(n| n.isTypeOf(VariableDeclarationExpression) and
-			(not isSelfOrResult(n)) and
-			getOperationOrModuleParent(n.container)=getOperationOrModuleParent(instance.container));
-		new_name.name = names.random().name.name;
+		var names = VariableDeclarationExpression.all.select(
+			n| n.isTypeOf(VariableDeclarationExpression)
+			and (not isSelfOrResult(n))
+			and getOperationOrModuleParent(n.container)=getOperationOrModuleParent(instance.container)
+			and instance.region.isDefined()
+			and n.region.isDefined()
+			and instance.region.start.line > n.region.start.line);
+			
+		if(names.size()>=1)
+			new_name.name = names.random().name.name;
+		else new_name.name = instance.name.name + "_extra";
+		
 		if(new_name.name.isDefined() and new_name.name = instance.name.name)
 			new_name.name = instance.name.name + "_extra";
 		new_name.resolvedType = instance.name.resolvedType;
