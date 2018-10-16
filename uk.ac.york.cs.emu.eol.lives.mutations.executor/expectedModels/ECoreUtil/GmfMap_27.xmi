@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <nodes>
+    <containmentFeature href="expectedModels/ECoreUtil/ECore_27.xmi#//Model/people"/>
+    <ownedChild>
+      <domainMetaElement href="expectedModels/ECoreUtil/ECore_27.xmi#//Person"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="expectedModels/ECoreUtil/GmfGraph_27.xmi#PersonLabel"/>
+        <features href="expectedModels/ECoreUtil/ECore_27.xmi#//Person/name"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="expectedModels/ECoreUtil/GmfTool_27.xmi#//@palette/@tools.0/@tools.0"/>
+      <diagramNode href="expectedModels/ECoreUtil/GmfGraph_27.xmi#Person"/>
+    </ownedChild>
+  </nodes>
+  <diagram>
+    <diagramCanvas href="expectedModels/ECoreUtil/GmfGraph_27.xmi#people"/>
+    <domainModel href="expectedModels/ECoreUtil/ECore_27.xmi#/"/>
+    <domainMetaElement href="expectedModels/ECoreUtil/ECore_27.xmi#//Model"/>
+    <palette href="expectedModels/ECoreUtil/GmfTool_27.xmi#//@palette"/>
+  </diagram>
+</gmfmap:Mapping>

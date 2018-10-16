@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <nodes>
+    <containmentFeature href="expectedModels/ECoreUtil/ECore_31.xmi#//Package/contents"/>
+    <ownedChild relatedDiagrams="//@diagram">
+      <domainMetaElement href="expectedModels/ECoreUtil/ECore_31.xmi#//Package"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="expectedModels/ECoreUtil/GmfGraph_31.xmi#PackageLabel"/>
+        <features href="expectedModels/ECoreUtil/ECore_31.xmi#//Package/name"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="expectedModels/ECoreUtil/GmfTool_31.xmi#//@palette/@tools.0/@tools.1"/>
+      <diagramNode href="expectedModels/ECoreUtil/GmfGraph_31.xmi#Package"/>
+      <children compartment="//@nodes.0/@ownedChild/@compartments.0" referencedChild="//@nodes.0/@ownedChild">
+        <containmentFeature href="expectedModels/ECoreUtil/ECore_31.xmi#//Package/contents"/>
+      </children>
+      <children compartment="//@nodes.0/@ownedChild/@compartments.0" referencedChild="//@nodes.1/@ownedChild">
+        <containmentFeature href="expectedModels/ECoreUtil/ECore_31.xmi#//Package/contents"/>
+      </children>
+      <compartments children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1">
+        <compartment href="expectedModels/ECoreUtil/GmfGraph_31.xmi#PackageContentsCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="expectedModels/ECoreUtil/ECore_31.xmi#//Package/contents"/>
+    <ownedChild>
+      <domainMetaElement href="expectedModels/ECoreUtil/ECore_31.xmi#//Clazz"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="expectedModels/ECoreUtil/GmfGraph_31.xmi#ClazzLabel"/>
+        <features href="expectedModels/ECoreUtil/ECore_31.xmi#//Clazz/name"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="expectedModels/ECoreUtil/GmfTool_31.xmi#//@palette/@tools.0/@tools.0"/>
+      <diagramNode href="expectedModels/ECoreUtil/GmfGraph_31.xmi#Clazz"/>
+    </ownedChild>
+  </nodes>
+  <diagram>
+    <diagramCanvas href="expectedModels/ECoreUtil/GmfGraph_31.xmi#subdiagrams"/>
+    <domainModel href="expectedModels/ECoreUtil/ECore_31.xmi#/"/>
+    <domainMetaElement href="expectedModels/ECoreUtil/ECore_31.xmi#//Package"/>
+    <palette href="expectedModels/ECoreUtil/GmfTool_31.xmi#//@palette"/>
+  </diagram>
+</gmfmap:Mapping>

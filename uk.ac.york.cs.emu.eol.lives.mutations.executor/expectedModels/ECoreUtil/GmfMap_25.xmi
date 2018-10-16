@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <nodes>
+    <containmentFeature href="expectedModels/ECoreUtil/ECore_25.xmi#//Flowchart/nodes"/>
+    <ownedChild>
+      <domainMetaElement href="expectedModels/ECoreUtil/ECore_25.xmi#//Subflow"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="expectedModels/ECoreUtil/GmfGraph_25.xmi#SubflowLabel"/>
+        <features href="expectedModels/ECoreUtil/ECore_25.xmi#//Node/name"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="expectedModels/ECoreUtil/GmfTool_25.xmi#//@palette/@tools.0/@tools.2"/>
+      <diagramNode href="expectedModels/ECoreUtil/GmfGraph_25.xmi#Subflow"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="expectedModels/ECoreUtil/ECore_25.xmi#//Flowchart/nodes"/>
+    <ownedChild>
+      <domainMetaElement href="expectedModels/ECoreUtil/ECore_25.xmi#//Action"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="expectedModels/ECoreUtil/GmfGraph_25.xmi#ActionLabel"/>
+        <features href="expectedModels/ECoreUtil/ECore_25.xmi#//Node/name"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="expectedModels/ECoreUtil/GmfTool_25.xmi#//@palette/@tools.0/@tools.0"/>
+      <diagramNode href="expectedModels/ECoreUtil/GmfGraph_25.xmi#Action"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="expectedModels/ECoreUtil/ECore_25.xmi#//Flowchart/nodes"/>
+    <ownedChild>
+      <domainMetaElement href="expectedModels/ECoreUtil/ECore_25.xmi#//Decision"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="expectedModels/ECoreUtil/GmfGraph_25.xmi#DecisionLabel"/>
+        <features href="expectedModels/ECoreUtil/ECore_25.xmi#//Node/name"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="expectedModels/ECoreUtil/GmfTool_25.xmi#//@palette/@tools.0/@tools.1"/>
+      <diagramNode href="expectedModels/ECoreUtil/GmfGraph_25.xmi#Decision"/>
+    </ownedChild>
+  </nodes>
+  <links>
+    <domainMetaElement href="expectedModels/ECoreUtil/ECore_25.xmi#//Transition"/>
+    <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel href="expectedModels/ECoreUtil/GmfGraph_25.xmi#TransitionLabel"/>
+      <features href="expectedModels/ECoreUtil/ECore_25.xmi#//Transition/name"/>
+    </labelMappings>
+    <containmentFeature href="expectedModels/ECoreUtil/ECore_25.xmi#//Flowchart/transitions"/>
+    <tool xsi:type="tooldef:CreationTool" href="expectedModels/ECoreUtil/GmfTool_25.xmi#//@palette/@tools.1/@tools.0"/>
+    <diagramLink href="expectedModels/ECoreUtil/GmfGraph_25.xmi#Transition"/>
+    <sourceMetaFeature xsi:type="ecore:EReference" href="expectedModels/ECoreUtil/ECore_25.xmi#//Transition/source"/>
+    <linkMetaFeature xsi:type="ecore:EReference" href="expectedModels/ECoreUtil/ECore_25.xmi#//Transition/target"/>
+  </links>
+  <diagram>
+    <diagramCanvas href="expectedModels/ECoreUtil/GmfGraph_25.xmi#flowchart"/>
+    <domainModel href="expectedModels/ECoreUtil/ECore_25.xmi#/"/>
+    <domainMetaElement href="expectedModels/ECoreUtil/ECore_25.xmi#//Flowchart"/>
+    <palette href="expectedModels/ECoreUtil/GmfTool_25.xmi#//@palette"/>
+  </diagram>
+</gmfmap:Mapping>

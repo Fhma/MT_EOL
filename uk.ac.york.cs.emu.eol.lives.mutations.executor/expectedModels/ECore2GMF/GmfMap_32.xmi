@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <nodes>
+    <containmentFeature href="expectedModels/ECore2GMF/ECore_32.xmi#//System/widgets"/>
+    <ownedChild>
+      <domainMetaElement href="expectedModels/ECore2GMF/ECore_32.xmi#//Widget"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="expectedModels/ECore2GMF/GmfGraph_32.xmi#WidgetLabel"/>
+        <features href="expectedModels/ECore2GMF/ECore_32.xmi#//Widget/name"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="expectedModels/ECore2GMF/GmfTool_32.xmi#//@palette/@tools.0/@tools.0"/>
+      <diagramNode href="expectedModels/ECore2GMF/GmfGraph_32.xmi#Widget"/>
+    </ownedChild>
+  </nodes>
+  <diagram>
+    <diagramCanvas href="expectedModels/ECore2GMF/GmfGraph_32.xmi#widgets"/>
+    <domainModel href="expectedModels/ECore2GMF/ECore_32.xmi#/"/>
+    <domainMetaElement href="expectedModels/ECore2GMF/ECore_32.xmi#//System"/>
+    <palette href="expectedModels/ECore2GMF/GmfTool_32.xmi#//@palette"/>
+  </diagram>
+</gmfmap:Mapping>

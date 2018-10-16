@@ -36,14 +36,14 @@ mainpackage.IExecutionTraceHasAccesses
 mainpackage.IGuardTrace
 mainpackage.IGuardedElementTrace
 mainpackage.IGuardedElementTraceHasGuard
-mainpackage.impl.ExecutionTraceHasAccesses
-mainpackage.impl.GuardTrace
-mainpackage.impl.GuardedElementTraceHasGuard
+mainpackage.impl.ExecutionTraceHasAccessesImpl
+mainpackage.impl.GuardTraceImpl
+mainpackage.impl.GuardedElementTraceHasGuardImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IGuardTrace
 mainpackage.IGuardedElementTrace
-mainpackage.impl.GuardTrace
-mainpackage.impl.GuardedElementTraceHasGuard
+mainpackage.impl.GuardTraceImpl
+mainpackage.impl.GuardedElementTraceHasGuardImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.IExecutionTraceHasAccesses
@@ -92,21 +92,21 @@ mainpackage.IGuardTrace
 mainpackage.IGuardedElementTrace
 mainpackage.IGuardedElementTraceHasGuard
 mainpackage.IInvariantTrace
-mainpackage.impl.ContextTraceHasConstraints
-mainpackage.impl.ContextTraceHasModule
-mainpackage.impl.ExecutionTraceHasAccesses
-mainpackage.impl.GuardTrace
-mainpackage.impl.GuardedElementTraceHasGuard
-mainpackage.impl.InvariantTrace
+mainpackage.impl.ContextTraceHasConstraintsImpl
+mainpackage.impl.ContextTraceHasModuleImpl
+mainpackage.impl.ExecutionTraceHasAccessesImpl
+mainpackage.impl.GuardTraceImpl
+mainpackage.impl.GuardedElementTraceHasGuardImpl
+mainpackage.impl.InvariantTraceImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IContextTrace
 mainpackage.IEvlModuleTrace
 mainpackage.IGuardTrace
 mainpackage.IInvariantTrace
-mainpackage.impl.ContextTraceHasConstraints
-mainpackage.impl.ContextTraceHasModule
-mainpackage.impl.GuardTrace
-mainpackage.impl.InvariantTrace
+mainpackage.impl.ContextTraceHasConstraintsImpl
+mainpackage.impl.ContextTraceHasModuleImpl
+mainpackage.impl.GuardTraceImpl
+mainpackage.impl.InvariantTraceImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.IContextTrace
@@ -124,7 +124,7 @@ mainpackage.IEvlModuleTrace
 mainpackage.IGuardTrace
 mainpackage.IInvariantTrace
 getRequiredFeatureParameters(,)
-EvlModuleTrace module
+IEvlModuleTrace module
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -177,16 +177,16 @@ mainpackage.IInvariantTraceHasMessage
 mainpackage.IInvariantTraceHasSatisfies
 mainpackage.IMessageTrace
 mainpackage.ISatisfiesTrace
-mainpackage.impl.CheckTrace
-mainpackage.impl.ExecutionTraceHasAccesses
-mainpackage.impl.GuardTrace
-mainpackage.impl.GuardedElementTraceHasGuard
-mainpackage.impl.InvariantTraceHasCheck
-mainpackage.impl.InvariantTraceHasInvariantContext
-mainpackage.impl.InvariantTraceHasMessage
-mainpackage.impl.InvariantTraceHasSatisfies
-mainpackage.impl.MessageTrace
-mainpackage.impl.SatisfiesTrace
+mainpackage.impl.CheckTraceImpl
+mainpackage.impl.ExecutionTraceHasAccessesImpl
+mainpackage.impl.GuardTraceImpl
+mainpackage.impl.GuardedElementTraceHasGuardImpl
+mainpackage.impl.InvariantTraceHasCheckImpl
+mainpackage.impl.InvariantTraceHasInvariantContextImpl
+mainpackage.impl.InvariantTraceHasMessageImpl
+mainpackage.impl.InvariantTraceHasSatisfiesImpl
+mainpackage.impl.MessageTraceImpl
+mainpackage.impl.SatisfiesTraceImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.ICheckTrace
 mainpackage.IContextTrace
@@ -194,14 +194,14 @@ mainpackage.IGuardTrace
 mainpackage.IInvariantTrace
 mainpackage.IMessageTrace
 mainpackage.ISatisfiesTrace
-mainpackage.impl.CheckTrace
-mainpackage.impl.GuardTrace
-mainpackage.impl.InvariantTraceHasCheck
-mainpackage.impl.InvariantTraceHasInvariantContext
-mainpackage.impl.InvariantTraceHasMessage
-mainpackage.impl.InvariantTraceHasSatisfies
-mainpackage.impl.MessageTrace
-mainpackage.impl.SatisfiesTrace
+mainpackage.impl.CheckTraceImpl
+mainpackage.impl.GuardTraceImpl
+mainpackage.impl.InvariantTraceHasCheckImpl
+mainpackage.impl.InvariantTraceHasInvariantContextImpl
+mainpackage.impl.InvariantTraceHasMessageImpl
+mainpackage.impl.InvariantTraceHasSatisfiesImpl
+mainpackage.impl.MessageTraceImpl
+mainpackage.impl.SatisfiesTraceImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.ICheckTrace
@@ -254,11 +254,11 @@ mainpackage.IAccess
 mainpackage.IExecutionTraceHasAccesses
 mainpackage.IGuardTraceHasLimits
 mainpackage.IGuardedElementTrace
-mainpackage.impl.ExecutionTraceHasAccesses
-mainpackage.impl.GuardTraceHasLimits
+mainpackage.impl.ExecutionTraceHasAccessesImpl
+mainpackage.impl.GuardTraceHasLimitsImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IGuardedElementTrace
-mainpackage.impl.GuardTraceHasLimits
+mainpackage.impl.GuardTraceHasLimitsImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.IExecutionTraceHasAccesses
@@ -291,11 +291,11 @@ mainpackage.IAccess
 mainpackage.ICheckTraceHasInvariant
 mainpackage.IExecutionTraceHasAccesses
 mainpackage.IInvariantTrace
-mainpackage.impl.CheckTraceHasInvariant
-mainpackage.impl.ExecutionTraceHasAccesses
+mainpackage.impl.CheckTraceHasInvariantImpl
+mainpackage.impl.ExecutionTraceHasAccessesImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IInvariantTrace
-mainpackage.impl.CheckTraceHasInvariant
+mainpackage.impl.CheckTraceHasInvariantImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.ICheckTraceHasInvariant
@@ -328,11 +328,11 @@ mainpackage.IAccess
 mainpackage.IExecutionTraceHasAccesses
 mainpackage.IInvariantTrace
 mainpackage.IMessageTraceHasInvariant
-mainpackage.impl.ExecutionTraceHasAccesses
-mainpackage.impl.MessageTraceHasInvariant
+mainpackage.impl.ExecutionTraceHasAccessesImpl
+mainpackage.impl.MessageTraceHasInvariantImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IInvariantTrace
-mainpackage.impl.MessageTraceHasInvariant
+mainpackage.impl.MessageTraceHasInvariantImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.IExecutionTraceHasAccesses
@@ -366,13 +366,13 @@ mainpackage.IExecutionTraceHasAccesses
 mainpackage.IInvariantTrace
 mainpackage.ISatisfiesTraceHasInvariant
 mainpackage.ISatisfiesTraceHasSatisfiedInvariants
-mainpackage.impl.ExecutionTraceHasAccesses
-mainpackage.impl.SatisfiesTraceHasInvariant
-mainpackage.impl.SatisfiesTraceHasSatisfiedInvariants
+mainpackage.impl.ExecutionTraceHasAccessesImpl
+mainpackage.impl.SatisfiesTraceHasInvariantImpl
+mainpackage.impl.SatisfiesTraceHasSatisfiedInvariantsImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IInvariantTrace
-mainpackage.impl.SatisfiesTraceHasInvariant
-mainpackage.impl.SatisfiesTraceHasSatisfiedInvariants
+mainpackage.impl.SatisfiesTraceHasInvariantImpl
+mainpackage.impl.SatisfiesTraceHasSatisfiedInvariantsImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.IExecutionTraceHasAccesses
@@ -464,10 +464,10 @@ mainpackage.IAccess
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.IExecutionTraceHasAccesses
-mainpackage.impl.ExecutionTraceHasAccesses
+mainpackage.impl.ExecutionTraceHasAccessesImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
-mainpackage.impl.ExecutionTraceHasAccesses
+mainpackage.impl.ExecutionTraceHasAccessesImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.IExecutionTraceHasAccesses
@@ -521,17 +521,17 @@ mainpackage.IModelElementTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IElementAccessHasElement
 mainpackage.IModelElementTrace
-mainpackage.impl.ElementAccessHasElement
+mainpackage.impl.ElementAccessHasElementImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTrace
-mainpackage.impl.ElementAccessHasElement
+mainpackage.impl.ElementAccessHasElementImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IElementAccessHasElement
 mainpackage.IModelElementTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTrace
 getRequiredFeatureParameters(,)
-ModelElementTrace element
+IModelElementTrace element
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -552,17 +552,17 @@ mainpackage.IModelTypeTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAllInstancesAccessHasType
 mainpackage.IModelTypeTrace
-mainpackage.impl.AllInstancesAccessHasType
+mainpackage.impl.AllInstancesAccessHasTypeImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTypeTrace
-mainpackage.impl.AllInstancesAccessHasType
+mainpackage.impl.AllInstancesAccessHasTypeImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAllInstancesAccessHasType
 mainpackage.IModelTypeTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTypeTrace
 getRequiredFeatureParameters(,)
-ModelTypeTrace type
+IModelTypeTrace type
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -583,17 +583,17 @@ mainpackage.IPropertyTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IPropertyAccessHasProperty
 mainpackage.IPropertyTrace
-mainpackage.impl.PropertyAccessHasProperty
+mainpackage.impl.PropertyAccessHasPropertyImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IPropertyTrace
-mainpackage.impl.PropertyAccessHasProperty
+mainpackage.impl.PropertyAccessHasPropertyImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IPropertyAccessHasProperty
 mainpackage.IPropertyTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IPropertyTrace
 getRequiredFeatureParameters(,)
-PropertyTrace property
+IPropertyTrace property
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -637,17 +637,17 @@ mainpackage.IModelTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTrace
 mainpackage.IModelTypeTraceHasModel
-mainpackage.impl.ModelTypeTraceHasModel
+mainpackage.impl.ModelTypeTraceHasModelImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTrace
-mainpackage.impl.ModelTypeTraceHasModel
+mainpackage.impl.ModelTypeTraceHasModelImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTrace
 mainpackage.IModelTypeTraceHasModel
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTrace
 getRequiredFeatureParameters(,)
-ModelTrace model
+IModelTrace model
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -673,17 +673,17 @@ mainpackage.IModelTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTraceHasModel
 mainpackage.IModelTrace
-mainpackage.impl.ModelElementTraceHasModel
+mainpackage.impl.ModelElementTraceHasModelImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTrace
-mainpackage.impl.ModelElementTraceHasModel
+mainpackage.impl.ModelElementTraceHasModelImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTraceHasModel
 mainpackage.IModelTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTrace
 getRequiredFeatureParameters(,)
-ModelTrace model
+IModelTrace model
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -709,17 +709,17 @@ mainpackage.IModelElementTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTrace
 mainpackage.IPropertyTraceHasElement
-mainpackage.impl.PropertyTraceHasElement
+mainpackage.impl.PropertyTraceHasElementImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTrace
-mainpackage.impl.PropertyTraceHasElement
+mainpackage.impl.PropertyTraceHasElementImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTrace
 mainpackage.IPropertyTraceHasElement
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTrace
 getRequiredFeatureParameters(,)
-ModelElementTrace element
+IModelElementTrace element
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()

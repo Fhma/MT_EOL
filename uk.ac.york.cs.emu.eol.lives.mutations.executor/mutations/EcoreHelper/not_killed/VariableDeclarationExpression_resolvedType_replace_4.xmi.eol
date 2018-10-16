@@ -209,7 +209,7 @@ operation EClass getIndexAttributes() : Sequence  {
 }
 @cached
 operation EClass getRequiredFeatureParameters(interPrefix, interSufix)  {
-	var results : Sequence() = new Sequence();
+	var results : Bag = new Sequence();
 	for(er in self.getRequiredFeatures()) {
 		results.add(er.getEReferenceType().getJavaInterfaceName(interPrefix, interSufix) + ' ' + er.name);
 	}
@@ -276,7 +276,7 @@ operation EClass getEAllSubclasses()  {
 operation EDataType getJavaClassName()  {
 	return self.getInstanceTypeName().split('\\.').last();
 }
-@cahced
+@cached
 operation EReference isEdge() : Boolean  {
 	var annot = self.getEAnnotation('https://eclipse.org/epsilon/incremental/Graph');
 	if(annot.isUndefined()) {

@@ -1,11 +1,5 @@
-E<>AssignmentStatement_rhs_replace_1.xmi
-E<>Block_statements_replace_4.xmi
+E<>AssignmentStatement_rhs_replace_3.xmi
+E<>Block_statements_replace_3.xmi
 E<>FOLMethodCallExpression_method_replace_9.xmi
 L<>IfStatement_condition_replace_4.xmi
-E<>VariableDeclarationExpression_name_replace_1.xmi
-E<>VariableDeclarationExpression_name_replace_2.xmi
-E<>VariableDeclarationExpression_name_replace_3.xmi
-E<>VariableDeclarationExpression_name_replace_4.xmi
 E<>VariableDeclarationExpression_resolvedType_replace_2.xmi
-E<>VariableDeclarationExpression_resolvedType_replace_3.xmi
-E<>VariableDeclarationExpression_resolvedType_replace_4.xmi

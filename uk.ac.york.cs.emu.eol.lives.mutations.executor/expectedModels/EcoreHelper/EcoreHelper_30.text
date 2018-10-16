@@ -74,14 +74,14 @@ mainpackage.IGuardedElementTraceHasGuard
 mainpackage.IGuardedElementTraceHasTestERef_1
 mainpackage.IGuardedElementTraceHasTestERef_2
 mainpackage.IMessageTrace
-mainpackage.impl.Class1
-mainpackage.impl.Class2
-mainpackage.impl.EvlModuleTrace
-mainpackage.impl.ExecutionTraceHasAccesses
-mainpackage.impl.GuardTrace
-mainpackage.impl.GuardedElementTraceHasGuard
-mainpackage.impl.GuardedElementTraceHasTestERef_1
-mainpackage.impl.GuardedElementTraceHasTestERef_2
+mainpackage.impl.Class1Impl
+mainpackage.impl.Class2Impl
+mainpackage.impl.EvlModuleTraceImpl
+mainpackage.impl.ExecutionTraceHasAccessesImpl
+mainpackage.impl.GuardTraceImpl
+mainpackage.impl.GuardedElementTraceHasGuardImpl
+mainpackage.impl.GuardedElementTraceHasTestERef_1Impl
+mainpackage.impl.GuardedElementTraceHasTestERef_2Impl
 getRequriedImports(mainpackage,I,,,,true,true)
 javax.xml.datatype.XMLGregorianCalendar
 mainpackage.IAccess
@@ -92,13 +92,13 @@ mainpackage.IEvlModuleTrace
 mainpackage.IGuardTrace
 mainpackage.IGuardedElementTrace
 mainpackage.IMessageTrace
-mainpackage.impl.Class1
-mainpackage.impl.Class2
-mainpackage.impl.EvlModuleTrace
-mainpackage.impl.GuardTrace
-mainpackage.impl.GuardedElementTraceHasGuard
-mainpackage.impl.GuardedElementTraceHasTestERef_1
-mainpackage.impl.GuardedElementTraceHasTestERef_2
+mainpackage.impl.Class1Impl
+mainpackage.impl.Class2Impl
+mainpackage.impl.EvlModuleTraceImpl
+mainpackage.impl.GuardTraceImpl
+mainpackage.impl.GuardedElementTraceHasGuardImpl
+mainpackage.impl.GuardedElementTraceHasTestERef_1Impl
+mainpackage.impl.GuardedElementTraceHasTestERef_2Impl
 getRequriedImports(mainpackage,I,,,,true,true)
 javax.xml.datatype.XMLGregorianCalendar
 mainpackage.IAccess
@@ -124,7 +124,7 @@ mainpackage.IGuardedElementTrace
 mainpackage.IMessageTrace
 org.eclipse.epsilon.base.incremental.trace.IExecutionTrace
 getRequiredFeatureParameters(,)
-GuardTrace guard
+IGuardTrace guard
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -203,22 +203,22 @@ mainpackage.IInvariantTrace
 mainpackage.IMessageTrace
 mainpackage.ISatisfiesTrace
 mainpackage.ISuperType1
-mainpackage.impl.CheckTrace
-mainpackage.impl.Class1
-mainpackage.impl.Class2
-mainpackage.impl.ContextTrace
-mainpackage.impl.ContextTraceHasConstraints
-mainpackage.impl.ContextTraceHasModel2
-mainpackage.impl.ContextTraceHasModule
-mainpackage.impl.EvlModuleTrace
-mainpackage.impl.ExecutionTraceHasAccesses
-mainpackage.impl.GuardTrace
-mainpackage.impl.GuardedElementTraceHasGuard
-mainpackage.impl.GuardedElementTraceHasTestERef_1
-mainpackage.impl.GuardedElementTraceHasTestERef_2
-mainpackage.impl.InvariantTrace
-mainpackage.impl.MessageTrace
-mainpackage.impl.SatisfiesTrace
+mainpackage.impl.CheckTraceImpl
+mainpackage.impl.Class1Impl
+mainpackage.impl.Class2Impl
+mainpackage.impl.ContextTraceHasConstraintsImpl
+mainpackage.impl.ContextTraceHasModel2Impl
+mainpackage.impl.ContextTraceHasModuleImpl
+mainpackage.impl.ContextTraceImpl
+mainpackage.impl.EvlModuleTraceImpl
+mainpackage.impl.ExecutionTraceHasAccessesImpl
+mainpackage.impl.GuardTraceImpl
+mainpackage.impl.GuardedElementTraceHasGuardImpl
+mainpackage.impl.GuardedElementTraceHasTestERef_1Impl
+mainpackage.impl.GuardedElementTraceHasTestERef_2Impl
+mainpackage.impl.InvariantTraceImpl
+mainpackage.impl.MessageTraceImpl
+mainpackage.impl.SatisfiesTraceImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 javax.xml.datatype.XMLGregorianCalendar
 mainpackage.IAccess
@@ -233,18 +233,18 @@ mainpackage.IInvariantTrace
 mainpackage.IMessageTrace
 mainpackage.ISatisfiesTrace
 mainpackage.ISuperType1
-mainpackage.impl.CheckTrace
-mainpackage.impl.Class1
-mainpackage.impl.Class2
-mainpackage.impl.ContextTrace
-mainpackage.impl.ContextTraceHasConstraints
-mainpackage.impl.ContextTraceHasModel2
-mainpackage.impl.ContextTraceHasModule
-mainpackage.impl.EvlModuleTrace
-mainpackage.impl.GuardTrace
-mainpackage.impl.InvariantTrace
-mainpackage.impl.MessageTrace
-mainpackage.impl.SatisfiesTrace
+mainpackage.impl.CheckTraceImpl
+mainpackage.impl.Class1Impl
+mainpackage.impl.Class2Impl
+mainpackage.impl.ContextTraceHasConstraintsImpl
+mainpackage.impl.ContextTraceHasModel2Impl
+mainpackage.impl.ContextTraceHasModuleImpl
+mainpackage.impl.ContextTraceImpl
+mainpackage.impl.EvlModuleTraceImpl
+mainpackage.impl.GuardTraceImpl
+mainpackage.impl.InvariantTraceImpl
+mainpackage.impl.MessageTraceImpl
+mainpackage.impl.SatisfiesTraceImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 javax.xml.datatype.XMLGregorianCalendar
 mainpackage.IAccess
@@ -281,9 +281,9 @@ mainpackage.IMessageTrace
 mainpackage.ISatisfiesTrace
 mainpackage.ISuperType1
 getRequiredFeatureParameters(,)
-GuardTrace guard
-EvlModuleTrace module
-SuperType1 model2
+IGuardTrace guard
+IEvlModuleTrace module
+ISuperType1 model2
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -365,21 +365,21 @@ mainpackage.IInvariantTraceHasMessage
 mainpackage.IInvariantTraceHasSatisfies
 mainpackage.IMessageTrace
 mainpackage.ISatisfiesTrace
-mainpackage.impl.CheckTrace
-mainpackage.impl.Class1
-mainpackage.impl.Class2
-mainpackage.impl.EvlModuleTrace
-mainpackage.impl.ExecutionTraceHasAccesses
-mainpackage.impl.GuardTrace
-mainpackage.impl.GuardedElementTraceHasGuard
-mainpackage.impl.GuardedElementTraceHasTestERef_1
-mainpackage.impl.GuardedElementTraceHasTestERef_2
-mainpackage.impl.InvariantTraceHasCheck
-mainpackage.impl.InvariantTraceHasInvariantContext
-mainpackage.impl.InvariantTraceHasMessage
-mainpackage.impl.InvariantTraceHasSatisfies
-mainpackage.impl.MessageTrace
-mainpackage.impl.SatisfiesTrace
+mainpackage.impl.CheckTraceImpl
+mainpackage.impl.Class1Impl
+mainpackage.impl.Class2Impl
+mainpackage.impl.EvlModuleTraceImpl
+mainpackage.impl.ExecutionTraceHasAccessesImpl
+mainpackage.impl.GuardTraceImpl
+mainpackage.impl.GuardedElementTraceHasGuardImpl
+mainpackage.impl.GuardedElementTraceHasTestERef_1Impl
+mainpackage.impl.GuardedElementTraceHasTestERef_2Impl
+mainpackage.impl.InvariantTraceHasCheckImpl
+mainpackage.impl.InvariantTraceHasInvariantContextImpl
+mainpackage.impl.InvariantTraceHasMessageImpl
+mainpackage.impl.InvariantTraceHasSatisfiesImpl
+mainpackage.impl.MessageTraceImpl
+mainpackage.impl.SatisfiesTraceImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 javax.xml.datatype.XMLGregorianCalendar
 mainpackage.IAccess
@@ -393,17 +393,17 @@ mainpackage.IGuardTrace
 mainpackage.IInvariantTrace
 mainpackage.IMessageTrace
 mainpackage.ISatisfiesTrace
-mainpackage.impl.CheckTrace
-mainpackage.impl.Class1
-mainpackage.impl.Class2
-mainpackage.impl.EvlModuleTrace
-mainpackage.impl.GuardTrace
-mainpackage.impl.InvariantTraceHasCheck
-mainpackage.impl.InvariantTraceHasInvariantContext
-mainpackage.impl.InvariantTraceHasMessage
-mainpackage.impl.InvariantTraceHasSatisfies
-mainpackage.impl.MessageTrace
-mainpackage.impl.SatisfiesTrace
+mainpackage.impl.CheckTraceImpl
+mainpackage.impl.Class1Impl
+mainpackage.impl.Class2Impl
+mainpackage.impl.EvlModuleTraceImpl
+mainpackage.impl.GuardTraceImpl
+mainpackage.impl.InvariantTraceHasCheckImpl
+mainpackage.impl.InvariantTraceHasInvariantContextImpl
+mainpackage.impl.InvariantTraceHasMessageImpl
+mainpackage.impl.InvariantTraceHasSatisfiesImpl
+mainpackage.impl.MessageTraceImpl
+mainpackage.impl.SatisfiesTraceImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 javax.xml.datatype.XMLGregorianCalendar
 mainpackage.IAccess
@@ -440,7 +440,7 @@ mainpackage.IInvariantTrace
 mainpackage.IMessageTrace
 mainpackage.ISatisfiesTrace
 getRequiredFeatureParameters(,)
-GuardTrace guard
+IGuardTrace guard
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -471,11 +471,11 @@ mainpackage.IAccess
 mainpackage.IExecutionTraceHasAccesses
 mainpackage.IGuardTraceHasLimits
 mainpackage.IGuardedElementTrace
-mainpackage.impl.ExecutionTraceHasAccesses
-mainpackage.impl.GuardTraceHasLimits
+mainpackage.impl.ExecutionTraceHasAccessesImpl
+mainpackage.impl.GuardTraceHasLimitsImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IGuardedElementTrace
-mainpackage.impl.GuardTraceHasLimits
+mainpackage.impl.GuardTraceHasLimitsImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.IExecutionTraceHasAccesses
@@ -513,11 +513,11 @@ mainpackage.IAccess
 mainpackage.ICheckTraceHasInvariant
 mainpackage.IExecutionTraceHasAccesses
 mainpackage.IInvariantTrace
-mainpackage.impl.CheckTraceHasInvariant
-mainpackage.impl.ExecutionTraceHasAccesses
+mainpackage.impl.CheckTraceHasInvariantImpl
+mainpackage.impl.ExecutionTraceHasAccessesImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IInvariantTrace
-mainpackage.impl.CheckTraceHasInvariant
+mainpackage.impl.CheckTraceHasInvariantImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.ICheckTraceHasInvariant
@@ -607,17 +607,17 @@ mainpackage.IMessageTraceHasContainment_ref
 mainpackage.IMessageTraceHasInvariant
 mainpackage.ISatisfiesTrace
 mainpackage.ISuperType1
-mainpackage.impl.CheckTrace
-mainpackage.impl.Class1
-mainpackage.impl.Class2
-mainpackage.impl.ContextTrace
-mainpackage.impl.ExecutionTraceHasAccesses
-mainpackage.impl.GuardTrace
-mainpackage.impl.InvariantTrace
-mainpackage.impl.MessageTrace
-mainpackage.impl.MessageTraceHasContainment_ref
-mainpackage.impl.MessageTraceHasInvariant
-mainpackage.impl.SatisfiesTrace
+mainpackage.impl.CheckTraceImpl
+mainpackage.impl.Class1Impl
+mainpackage.impl.Class2Impl
+mainpackage.impl.ContextTraceImpl
+mainpackage.impl.ExecutionTraceHasAccessesImpl
+mainpackage.impl.GuardTraceImpl
+mainpackage.impl.InvariantTraceImpl
+mainpackage.impl.MessageTraceHasContainment_refImpl
+mainpackage.impl.MessageTraceHasInvariantImpl
+mainpackage.impl.MessageTraceImpl
+mainpackage.impl.SatisfiesTraceImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 javax.xml.datatype.XMLGregorianCalendar
 mainpackage.IAccess
@@ -633,16 +633,16 @@ mainpackage.IInvariantTrace
 mainpackage.IMessageTrace
 mainpackage.ISatisfiesTrace
 mainpackage.ISuperType1
-mainpackage.impl.CheckTrace
-mainpackage.impl.Class1
-mainpackage.impl.Class2
-mainpackage.impl.ContextTrace
-mainpackage.impl.GuardTrace
-mainpackage.impl.InvariantTrace
-mainpackage.impl.MessageTrace
-mainpackage.impl.MessageTraceHasContainment_ref
-mainpackage.impl.MessageTraceHasInvariant
-mainpackage.impl.SatisfiesTrace
+mainpackage.impl.CheckTraceImpl
+mainpackage.impl.Class1Impl
+mainpackage.impl.Class2Impl
+mainpackage.impl.ContextTraceImpl
+mainpackage.impl.GuardTraceImpl
+mainpackage.impl.InvariantTraceImpl
+mainpackage.impl.MessageTraceHasContainment_refImpl
+mainpackage.impl.MessageTraceHasInvariantImpl
+mainpackage.impl.MessageTraceImpl
+mainpackage.impl.SatisfiesTraceImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 javax.xml.datatype.XMLGregorianCalendar
 mainpackage.IAccess
@@ -713,15 +713,15 @@ mainpackage.IExecutionTraceHasAccesses
 mainpackage.IInvariantTrace
 mainpackage.ISatisfiesTraceHasInvariant
 mainpackage.ISatisfiesTraceHasSatisfiedInvariants
-mainpackage.impl.ExecutionTraceHasAccesses
-mainpackage.impl.SatisfiesTraceHasInvariant
-mainpackage.impl.SatisfiesTraceHasSatisfiedInvariants
+mainpackage.impl.ExecutionTraceHasAccessesImpl
+mainpackage.impl.SatisfiesTraceHasInvariantImpl
+mainpackage.impl.SatisfiesTraceHasSatisfiedInvariantsImpl
 org.eclipse.epsilon.base.incremental.trace.ISuperType1
 org.eclipse.epsilon.base.incremental.trace.ISuperType2
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IInvariantTrace
-mainpackage.impl.SatisfiesTraceHasInvariant
-mainpackage.impl.SatisfiesTraceHasSatisfiedInvariants
+mainpackage.impl.SatisfiesTraceHasInvariantImpl
+mainpackage.impl.SatisfiesTraceHasSatisfiedInvariantsImpl
 org.eclipse.epsilon.base.incremental.trace.ISuperType1
 org.eclipse.epsilon.base.incremental.trace.ISuperType2
 getRequriedImports(mainpackage,I,,,,true,true)
@@ -803,13 +803,13 @@ mainpackage.IModelElementTrace
 mainpackage.IModelTypeTrace
 mainpackage.IPropertyAccess
 mainpackage.IPropertyTrace
-mainpackage.impl.AllInstancesAccess
-mainpackage.impl.Class1HasRef1
-mainpackage.impl.Class1HasRef2
-mainpackage.impl.ElementAccess
-mainpackage.impl.ExecutionTraceHasAccesses
-mainpackage.impl.MessageTrace
-mainpackage.impl.PropertyAccess
+mainpackage.impl.AllInstancesAccessImpl
+mainpackage.impl.Class1HasRef1Impl
+mainpackage.impl.Class1HasRef2Impl
+mainpackage.impl.ElementAccessImpl
+mainpackage.impl.ExecutionTraceHasAccessesImpl
+mainpackage.impl.MessageTraceImpl
+mainpackage.impl.PropertyAccessImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 javax.xml.datatype.XMLGregorianCalendar
 mainpackage.IAllInstancesAccess
@@ -821,12 +821,12 @@ mainpackage.IModelElementTrace
 mainpackage.IModelTypeTrace
 mainpackage.IPropertyAccess
 mainpackage.IPropertyTrace
-mainpackage.impl.AllInstancesAccess
-mainpackage.impl.Class1HasRef1
-mainpackage.impl.Class1HasRef2
-mainpackage.impl.ElementAccess
-mainpackage.impl.MessageTrace
-mainpackage.impl.PropertyAccess
+mainpackage.impl.AllInstancesAccessImpl
+mainpackage.impl.Class1HasRef1Impl
+mainpackage.impl.Class1HasRef2Impl
+mainpackage.impl.ElementAccessImpl
+mainpackage.impl.MessageTraceImpl
+mainpackage.impl.PropertyAccessImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 javax.xml.datatype.XMLGregorianCalendar
 mainpackage.IAccess
@@ -856,8 +856,8 @@ mainpackage.IPropertyTrace
 org.eclipse.epsilon.base.incremental.trace.IExecutionTrace
 org.eclipse.epsilon.base.incremental.trace.IModuleTrace
 getRequiredFeatureParameters(,)
-MessageTrace ref1
-Access ref2
+IMessageTrace ref1
+IAccess ref2
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -897,14 +897,14 @@ mainpackage.IClass2HasRef2_1
 mainpackage.IExecutionTraceHasAccesses
 mainpackage.IGuardTrace
 mainpackage.IGuardedElementTrace
-mainpackage.impl.Class2HasRef1_1
-mainpackage.impl.Class2HasRef2_1
-mainpackage.impl.ExecutionTraceHasAccesses
+mainpackage.impl.Class2HasRef1_1Impl
+mainpackage.impl.Class2HasRef2_1Impl
+mainpackage.impl.ExecutionTraceHasAccessesImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IGuardTrace
 mainpackage.IGuardedElementTrace
-mainpackage.impl.Class2HasRef1_1
-mainpackage.impl.Class2HasRef2_1
+mainpackage.impl.Class2HasRef1_1Impl
+mainpackage.impl.Class2HasRef2_1Impl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.IClass2HasRef1_1
@@ -918,8 +918,8 @@ mainpackage.IGuardTrace
 org.eclipse.epsilon.base.incremental.trace.IExecutionTrace
 org.eclipse.epsilon.base.incremental.trace.IModuleTrace
 getRequiredFeatureParameters(,)
-GuardTrace ref1_1
-GuardTrace ref2_1
+IGuardTrace ref1_1
+IGuardTrace ref2_1
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -1018,11 +1018,11 @@ getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.IContextTrace
 mainpackage.IExecutionTraceHasAccesses
-mainpackage.impl.ExecutionTraceHasAccesses
+mainpackage.impl.ExecutionTraceHasAccessesImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.IContextTrace
-mainpackage.impl.ExecutionTraceHasAccesses
+mainpackage.impl.ExecutionTraceHasAccessesImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAccess
 mainpackage.IExecutionTraceHasAccesses
@@ -1085,18 +1085,18 @@ getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IClass1
 mainpackage.IElementAccessHasElement
 mainpackage.IModelElementTrace
-mainpackage.impl.ElementAccessHasElement
+mainpackage.impl.ElementAccessHasElementImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IClass1
 mainpackage.IModelElementTrace
-mainpackage.impl.ElementAccessHasElement
+mainpackage.impl.ElementAccessHasElementImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IElementAccessHasElement
 mainpackage.IModelElementTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTrace
 getRequiredFeatureParameters(,)
-ModelElementTrace element
+IModelElementTrace element
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -1120,18 +1120,18 @@ getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAllInstancesAccessHasType
 mainpackage.IClass1
 mainpackage.IModelTypeTrace
-mainpackage.impl.AllInstancesAccessHasType
+mainpackage.impl.AllInstancesAccessHasTypeImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IClass1
 mainpackage.IModelTypeTrace
-mainpackage.impl.AllInstancesAccessHasType
+mainpackage.impl.AllInstancesAccessHasTypeImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IAllInstancesAccessHasType
 mainpackage.IModelTypeTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTypeTrace
 getRequiredFeatureParameters(,)
-ModelTypeTrace type
+IModelTypeTrace type
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -1155,18 +1155,18 @@ getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IClass1
 mainpackage.IPropertyAccessHasProperty
 mainpackage.IPropertyTrace
-mainpackage.impl.PropertyAccessHasProperty
+mainpackage.impl.PropertyAccessHasPropertyImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IClass1
 mainpackage.IPropertyTrace
-mainpackage.impl.PropertyAccessHasProperty
+mainpackage.impl.PropertyAccessHasPropertyImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IPropertyAccessHasProperty
 mainpackage.IPropertyTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IPropertyTrace
 getRequiredFeatureParameters(,)
-PropertyTrace property
+IPropertyTrace property
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -1212,17 +1212,17 @@ mainpackage.IModelTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTrace
 mainpackage.IModelTypeTraceHasModel
-mainpackage.impl.ModelTypeTraceHasModel
+mainpackage.impl.ModelTypeTraceHasModelImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTrace
-mainpackage.impl.ModelTypeTraceHasModel
+mainpackage.impl.ModelTypeTraceHasModelImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTrace
 mainpackage.IModelTypeTraceHasModel
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTrace
 getRequiredFeatureParameters(,)
-ModelTrace model
+IModelTrace model
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -1248,17 +1248,17 @@ mainpackage.IModelTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTraceHasModel
 mainpackage.IModelTrace
-mainpackage.impl.ModelElementTraceHasModel
+mainpackage.impl.ModelElementTraceHasModelImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTrace
-mainpackage.impl.ModelElementTraceHasModel
+mainpackage.impl.ModelElementTraceHasModelImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTraceHasModel
 mainpackage.IModelTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelTrace
 getRequiredFeatureParameters(,)
-ModelTrace model
+IModelTrace model
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()
@@ -1284,17 +1284,17 @@ mainpackage.IModelElementTrace
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTrace
 mainpackage.IPropertyTraceHasElement
-mainpackage.impl.PropertyTraceHasElement
+mainpackage.impl.PropertyTraceHasElementImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTrace
-mainpackage.impl.PropertyTraceHasElement
+mainpackage.impl.PropertyTraceHasElementImpl
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTrace
 mainpackage.IPropertyTraceHasElement
 getRequriedImports(mainpackage,I,,,,true,true)
 mainpackage.IModelElementTrace
 getRequiredFeatureParameters(,)
-ModelElementTrace element
+IModelElementTrace element
 getCorrectPackage(mainpackage, self)
 basePackage
 getContainerReference()

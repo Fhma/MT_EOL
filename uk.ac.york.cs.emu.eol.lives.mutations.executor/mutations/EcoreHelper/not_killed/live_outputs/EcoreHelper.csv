@@ -1,30 +1,28 @@
 Mutation Operator,Gen.,Trivial,Killed,Not Killed,Invalid
 AndOperatorExpression_inBrackets_replace,1,0,1,0,0
-AnnotationBlock_statements_delete,16,0,0,16,0
 Block_statements_add,33,0,20,13,0
 Block_statements_delete,55,0,30,25,0
-Block_statements_replace,13,0,9,4,0
+Block_statements_replace,13,0,10,3,0
 EOLModule_block_delete,1,0,0,1,0
-EOLModule_operations_delete,3,0,0,3,0
+EOLModule_operations_delete,3,0,1,2,0
 EqualsOperatorExpression_inBrackets_replace,1,0,0,1,0
 ExpressionOrStatementBlock_block_delete,22,0,16,6,0
 FOLMethodCallExpression_conditions_replace,1,0,1,0,0
 FOLMethodCallExpression_method_replace,3,0,1,2,0
+FormalParameterExpression_name_replace,8,0,6,2,0
 IfStatement_condition_replace,28,0,10,18,0
 IfStatement_elseBody_delete,2,0,2,0,0
-MethodCallExpression_arguments_add,66,0,55,11,0
+MethodCallExpression_arguments_add,66,0,58,8,0
 MethodCallExpression_arguments_delete,33,0,33,0,0
-MethodCallExpression_arguments_replace,38,0,24,14,0
+MethodCallExpression_arguments_replace,30,0,30,0,0
 MethodCallExpression_method_replace,1,0,0,1,0
-MethodCallExpression_target_delete,63,0,55,8,0
-NameExpression_resolvedType_replace,3,0,0,3,0
-NewExpression_resolvedType_replace,1,0,1,0,0
+MethodCallExpression_target_delete,63,0,58,5,0
 OperationDefinition_annotationBlock_delete,16,0,0,16,0
 OperationDefinition_contextType_replace,3,0,0,3,0
-OperationDefinition_parameters_add,3,0,0,3,0
+OperationDefinition_parameters_add,3,0,1,2,0
 OperationDefinition_returnType_replace,3,0,0,3,0
 ReturnStatement_expression_replace,3,0,1,2,0
-VariableDeclarationExpression_name_replace,48,0,0,48,0
-VariableDeclarationExpression_resolvedType_replace,27,0,0,27,0
-Total Killed,,0,259
-Total,487,259,,228,0
+VariableDeclarationExpression_name_replace,7,0,3,4,0
+VariableDeclarationExpression_resolvedType_replace,5,0,0,5,0
+Total Killed,,0,282
+Total,404,282,,122,0

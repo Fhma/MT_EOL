@@ -45,9 +45,6 @@ operation EClass getRequriedImports(basePackage : String, interPrefix : String, 
 				for(sc in subClasses) {
 					erqp = sc.getCorrectPackage(basePackage, self);
 					imports.add(erqp + '.' + sc.getJavaInterfaceName(interPrefix, interSufix));
-					if(isImpl and not sc.isAbstract()) {
-						imports.add(erqp + '.impl.' + sc.getJavaClassName(classPrefix, classSufix));
-					}
 					for(ea in sc.getIndexAttributes()) {
 						imports.addAll(ea.getImports(isImpl));
 					}
@@ -124,6 +121,9 @@ operation EClass getRequriedImports(basePackage : String, interPrefix : String, 
 		var containerType = self.getContainerReference().at(1);
 		if(containerType.isDefined()) {
 			var fullpath = basePackage;
+			if(containerType.getEPackage() <> self.getEPackage()) {
+				fullpath = basePackage.replace('.' + self.getEPackage().name + '.', '.' + containerType.getEPackage().name + '.');
+			}
 			imports.add(fullpath + '.' + containerType.getJavaInterfaceName(interPrefix, interSufix));
 		}
 	}
@@ -273,7 +273,7 @@ operation EClass getEAllSubclasses()  {
 operation EDataType getJavaClassName()  {
 	return self.getInstanceTypeName().split('\\.').last();
 }
-@cahced
+@cached
 operation EReference isEdge() : Boolean  {
 	var annot = self.getEAnnotation('https://eclipse.org/epsilon/incremental/Graph');
 	if(annot.isUndefined()) {

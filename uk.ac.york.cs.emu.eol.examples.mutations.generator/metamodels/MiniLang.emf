@@ -3,11 +3,13 @@
 package mini_lang; 
 
 class MiniLang {
- val Block block;
+ val Operation[*] operations;
 }
 
-class Block {
- val Statement[*] statements;
+class Operation {
+  val Statement[*] statements;
+  attr String[1] name;
+  attr String[*] parms;
 }
 
 abstract class Statement {}
@@ -32,6 +34,11 @@ class FOLogicExp extends Expression {
  attr EString[1] method;
  val Expression[1] condition;
  val Expression[1] target;
+}
+
+class MethodExp extends Expression {
+  val Expression[*] args;
+  attr String[1] method;
 }
 
 abstract class EqualityExp extends Expression {

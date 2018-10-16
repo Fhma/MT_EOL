@@ -8,7 +8,8 @@ public class Count {
 
 	public static void main(String[] args) throws Exception {
 
-		File folder = new File("operators/all_operators");
+		//File folder = new File("operators/all_operators");
+		File folder = new File("operatorDefinitions");
 
 		short count_impl = 0;
 		short count_operators = 0;

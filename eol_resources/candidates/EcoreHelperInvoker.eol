@@ -7,44 +7,45 @@ for(c in classes) {
 	for(item in returned){
 		item.println();
 	}
+	
 	"getRequriedImports(mainpackage,I,,,,true)".println();
-	returned = c.getRequriedImports("mainpackage","I","","","",true);
+	returned = c.getRequriedImports("mainpackage","I","","","Impl",true);
 	for(item in returned){
 		item.println();
 	}
 	
-	"getRequriedImports(mainpackage,I,,,,false)".println();
-	returned = c.getRequriedImports("mainpackage","I","","","",false);
+	"getRequriedImports(mainpackage,I,,,,true)".println();
+	returned = c.getRequriedImports("mainpackage","I","","","Impl",false);
 	for(item in returned){
 		item.println();
 	}
 	
 	"getRequriedImports(mainpackage,I,,,,true,true)".println();
-	returned = c.getRequriedImports("mainpackage","I","","","",true,true);
+	returned = c.getRequriedImports("mainpackage","I","","","Impl",true,true);
 	for(item in returned){
 		item.println();
 	}
 	
-	"getRequriedImports(mainpackage,I,,,,true,false)".println();
-	returned = c.getRequriedImports("mainpackage","I","","","",true,false);
+	"getRequriedImports(mainpackage,I,,,,true,true)".println();
+	returned = c.getRequriedImports("mainpackage","I","","","Impl",true,false);
 	for(item in returned){
 		item.println();
 	}
 	
-	"getRequriedImports(mainpackage,I,,,,false,true)".println();
-	returned = c.getRequriedImports("mainpackage","I","","","",false,true);
+	"getRequriedImports(mainpackage,I,,,,true,true)".println();
+	returned = c.getRequriedImports("mainpackage","I","","","Impl",false,true);
 	for(item in returned){
 		item.println();
 	}
 	
-	"getRequriedImports(mainpackage,I,,,,false,false)".println();
-	returned = c.getRequriedImports("mainpackage","I","","","",false,false);
+	"getRequriedImports(mainpackage,I,,,,true,true)".println();
+	returned = c.getRequriedImports("mainpackage","I","","","Impl",false,false);
 	for(item in returned){
 		item.println();
 	}
 	
 	"getRequiredFeatureParameters(,)".println();
-	returned = c.getRequiredFeatureParameters("","");
+	returned = c.getRequiredFeatureParameters("I","");
 	for(item in returned){
 		item.println();
 	}

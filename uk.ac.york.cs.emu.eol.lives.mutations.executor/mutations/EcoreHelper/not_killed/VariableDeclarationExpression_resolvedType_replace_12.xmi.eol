@@ -22,7 +22,7 @@ operation EClass getRequriedImports(basePackage : String, interPrefix : String, 
 	return self.getRequriedImports(basePackage, interPrefix, interSufix, classPrefix, classSufix, false, false);
 }
 operation EClass getRequriedImports(basePackage : String, interPrefix : String, interSufix : String, classPrefix : String, classSufix : String, isImpl : Boolean, flatten : Boolean) : Sequence  {
-	var imports : Set();
+	var imports : OrderedSet;
 	var eas;
 	var ers;
 	if(not flatten) {
@@ -276,7 +276,7 @@ operation EClass getEAllSubclasses()  {
 operation EDataType getJavaClassName()  {
 	return self.getInstanceTypeName().split('\\.').last();
 }
-@cahced
+@cached
 operation EReference isEdge() : Boolean  {
 	var annot = self.getEAnnotation('https://eclipse.org/epsilon/incremental/Graph');
 	if(annot.isUndefined()) {
