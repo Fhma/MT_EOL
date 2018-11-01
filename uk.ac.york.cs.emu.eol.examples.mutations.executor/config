@@ -1,6 +1,6 @@
-# This configuration file is read by Stage3 runnable java code. The Stage3 Java application executes the mutations located in "mutations" folder, which were obtained
+# This configuration file is read by Stage2b runnable java application. The Stage2b Java application executes the mutations located in "mutations" folder, which were obtained
 # from executing Stage1 java application located in Java package "uk.ac.york.cs.emu.eol.examples.mutations.generator", against the input test models located in folder
-# "inModels". The Java program then compares the output of each execution with oracles obtained from executing Stage2 java application located in
+# "inModels". The Java program then compares the output of each execution with oracles obtained from executing Stage2a java application located in
 # "uk.ac.york.cs.emu.eol.examples.mutations.generator" Java package.
 #
 # Required resources are:

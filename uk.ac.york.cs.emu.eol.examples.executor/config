@@ -1,7 +1,7 @@
-# This configuration file is read by Stage2 runnable java code. The Stage2 executes the original EOL programs located 
+# This configuration file is read by Stage2a runnable java code. The Stage2a executes the original EOL programs located 
 # in "candidates" folder. It executes each EOL program candidate against a set of input models located in "inModels" folder.
-# The outcomes is a set of outputs (whether in either texts or xmi format) that are stored in "expectedModels" folder
-# Those outputs are considered oracles for the experiment of mutations analysis in mutation execution stage (Stage3).
+# The outcomes is a set of outputs (whether in either texts or xmi format) that are stored in "expectedModels" folder.
+# Those outputs are considered oracles for the experiment of the mutations analysis in mutation execution stage (Stage2b).
 #
 # Required resources are: 
 #	1) candidates EOL programs stored in "candidates" folder

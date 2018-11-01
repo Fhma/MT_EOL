@@ -1,4 +1,4 @@
-# This Java application executes the mutation operators located in folder "operators" against
+# This configuration file is read by Stage1 runnable java application. Stage1 Java application executes the mutation operators located in folder "operators" against
 # the EOL programs located in "candidates" folder.
 # The outputs of this stage is a collection of mutations stored in "mutations" folder.
 

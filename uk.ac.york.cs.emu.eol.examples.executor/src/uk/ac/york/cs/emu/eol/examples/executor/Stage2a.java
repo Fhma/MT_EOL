@@ -1,4 +1,4 @@
-package uk.ac.york.cs.emu.eol.examples.mutations.executor;
+package uk.ac.york.cs.emu.eol.examples.executor;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class Stage3 {
+public class Stage2a {
 
     @SuppressWarnings("unchecked")
     public static void main(String[] args) throws Exception {
@@ -30,11 +30,11 @@ public class Stage3 {
 
 	Class<?> clazz;
 	Method method;
-	String _package = Stage3.class.getPackage().getName() + ".configurations";
+	String _package = Stage2a.class.getPackage().getName() + ".configurations";
 	Map<String, Object> config = null;
 
-	for (String config_file : configurations) {
-	    clazz = Class.forName(_package + "." + config_file);
+	for (String eol_module : configurations) {
+	    clazz = Class.forName(_package + "." + eol_module);
 	    method = clazz.getMethod("properties");
 	    config = (Map<String, Object>) method.invoke(clazz);
 	    EolLauncher runner = new EolLauncher(config);
