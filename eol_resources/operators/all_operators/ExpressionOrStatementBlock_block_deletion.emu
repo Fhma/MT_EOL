@@ -5,11 +5,12 @@
 ////////////////////////////////////////////////////////////
 
 // 1.0: remove an associated block to this expression and statement 
-// block
+// block where statements is greater than zero
 @action delete
 @property block
 pattern remove_block
-instance:ExpressionOrStatementBlock {
+instance:ExpressionOrStatementBlock 
+	guard: instance.block.statements.size() > 0 {
 	do {
 		instance.block = null;
 	}

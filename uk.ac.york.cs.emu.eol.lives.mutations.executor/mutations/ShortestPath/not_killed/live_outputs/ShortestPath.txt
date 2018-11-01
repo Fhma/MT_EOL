@@ -1,8 +1,0 @@
-	\--> Processed mutants-> 5
-	\--> Invalid mutants-> 0
-	\--> Killed mutants-> 1
-	\--> Not killed mutants-> 4
-		\-->AssignmentStatement_rhs_replace_3
-		\-->Block_statements_replace_3
-		\-->FOLMethodCallExpression_method_replace_9
-		\-->VariableDeclarationExpression_resolvedType_replace_2

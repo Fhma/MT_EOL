@@ -5,10 +5,12 @@
 // Inherited operators: EOLLibraryModule
 ////////////////////////////////////////////////////////////
 
+// 1.0: delete a block if it has more tnan zero statements
 @action delete
 @property block
 pattern delete_eol_module_block
-instance:EOLModule {
+instance:EOLModule 
+	guard: instance.block.statements.size() > 0 {
 	do {
 		instance.block = null;
 	}

@@ -17,8 +17,8 @@ public class ECoreUtil {
 
 	properties.put(Configuration.EOL_NAME, "ECoreUtil");
 	properties.put(Configuration.EOL_CODE, EOLCandidate.LOCATION + "ECoreUtil.eol");
-	properties.put(Configuration.IMPORTED_BY, EOLCandidate.LOCATION + "ECore2GMF.eol");
-	properties.put(Configuration.IMPORTING, EOLCandidate.LOCATION + "Formatting.eol");
+	properties.put(Configuration.IMPORTED_BY, "ECore2GMF.eol");
+	properties.put(Configuration.IMPORTING, "Formatting.eol");
 	properties.put(Configuration.PROGRAM_TYPE, EOLCandidate.MODEL_CREATE_TYPE);
 	properties.put(Configuration.MAX_EXE, 20000);
 

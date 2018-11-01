@@ -1,5 +1,3 @@
-import 'ECoreUtil.eol';
-import 'Formatting.eol';
 var ePackage = ECore!EPackage.all.first();
 var toolRegistry = new GmfTool!ToolRegistry;
 var palette = new GmfTool!Palette;

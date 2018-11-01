@@ -58,7 +58,7 @@ public class OperatorExecutor implements Runnable {
 	    logger.println("Operators Execution: " + eol_name);
 	    mutateEolModule();
 	} catch (Exception e) {
-	    logger.println("Exception: " + e.getMessage());
+	    e.printStackTrace(logger);
 	} finally {
 	    int time = (int) ((System.currentTimeMillis() - mins) / 1000) / 60;
 	    logger.println(String.format("Done Execution...(%d mins)", time));

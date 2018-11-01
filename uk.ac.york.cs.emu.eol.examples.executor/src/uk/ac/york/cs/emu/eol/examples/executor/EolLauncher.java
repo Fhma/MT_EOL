@@ -1,7 +1,10 @@
 package uk.ac.york.cs.emu.eol.examples.executor;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.PrintStream;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -34,12 +37,14 @@ public class EolLauncher implements Runnable {
     public static final String IN_MODELS_DIR = "inModels" + File.separatorChar;
     public static final String EXPECTED_MODELS_DIR = "expectedModels" + File.separatorChar;
     public static final String REPORT_DIR = "report" + File.separatorChar;
+    public static final String TEMP_SUFFIX = ".tmp";
 
     // parameters used by launcher
     private String eol_name = null;
-    private String eol_path = null;
+    private String eol_code = null;
     private short type;
     private String[] imported_by = null;
+    private String[] importing = null;
 
     private String[] mm_paths = null;
     private EmfMetaModel metamodels[] = null;
@@ -48,11 +53,15 @@ public class EolLauncher implements Runnable {
 
     public EolLauncher(Map<String, Object> config) throws Exception {
 	this.eol_name = (String) config.get(Configuration.EOL_NAME);
-	this.eol_path = (String) config.get(Configuration.EOL_CODE);
+	this.eol_code = (String) config.get(Configuration.EOL_CODE);
 	this.type = (short) config.get(Configuration.PROGRAM_TYPE);
 
 	if (config.get(Configuration.IMPORTED_BY) != null) {
 	    imported_by = ((String) config.get(Configuration.IMPORTED_BY)).split(",");
+	}
+
+	if (config.get(Configuration.IMPORTING) != null) {
+	    importing = ((String) config.get(Configuration.IMPORTING)).split(",");
 	}
 
 	if (config.get(Configuration.MM_METAMODELS) != null) {
@@ -74,7 +83,7 @@ public class EolLauncher implements Runnable {
 	    logger.println("Original Transformation Execution: " + eol_name);
 	    originalExecution();
 	} catch (Exception e) {
-	    logger.println("\tException: " + e.getMessage());
+	    e.printStackTrace(logger);
 	} finally {
 	    int time = (int) ((System.currentTimeMillis() - mins) / 1000) / 60;
 	    logger.println(String.format("End Execution....(%d mins)", time));
@@ -84,14 +93,50 @@ public class EolLauncher implements Runnable {
 
     private void originalExecution() throws Exception {
 
-	String mainModule = null;
-	if (imported_by != null && imported_by.length == 1)
-	    mainModule = imported_by[0];
-	else
-	    mainModule = eol_path;
+	File temp = new File("execution" + TEMP_SUFFIX);
+	temp.mkdirs();
+	temp.deleteOnExit();
 
-	if (mainModule == null)
-	    throw new Exception("Unable to find the main EOL file for execution.");
+	String module_path = null;
+
+	// copy all files to execution.tmp
+	if (imported_by != null) {
+	    Files.copy(new File(EOLCandidate.LOCATION + imported_by[0]), new File(temp.getPath() + File.separatorChar + imported_by[0]));
+	    module_path = imported_by[0];
+	} else
+	    module_path = eol_code;
+
+	if (importing != null) {
+	    for (String s : importing) {
+		Files.copy(new File(EOLCandidate.LOCATION + s), new File(temp.getPath() + File.separatorChar + s));
+	    }
+	}
+	Files.copy(new File(EOLCandidate.LOCATION + eol_code), new File(temp.getPath() + File.separatorChar + eol_code));
+
+	File module_file = new File(temp.getPath() + File.separatorChar + module_path);
+
+	if (importing != null) {
+	    // read entire file and add at the importings at beginning
+	    BufferedReader br = new BufferedReader(new FileReader(module_file));
+	    ArrayList<String> lines = new ArrayList<String>();
+	    String line;
+	    while ((line = br.readLine()) != null) {
+		if (line.length() > 0) {
+		    lines.add(line);
+		}
+	    }
+	    br.close();
+	    // add imports
+	    for (String s : importing) {
+		lines.add(0, "import '" + s + "';");
+	    }
+	    // write to same file
+	    FileWriter fw = new FileWriter(module_file);
+	    for (String s : lines) {
+		fw.write(s + System.lineSeparator());
+	    }
+	    fw.close();
+	}
 
 	// output folder
 	File output_dir = new File(EXPECTED_MODELS_DIR + eol_name);
@@ -99,9 +144,9 @@ public class EolLauncher implements Runnable {
 
 	EolModule base = new EolModule();
 
-	base.parse(new File(mainModule).getAbsoluteFile());
+	base.parse(module_file.getAbsoluteFile());
 	if (base.getParseProblems().size() > 0)
-	    throw new Exception("Unable to parse file: " + mainModule + "\n" + base.getParseProblems().toString());
+	    throw new Exception("Unable to parse file: " + module_path + "\n" + base.getParseProblems().toString());
 
 	registerAndLoadMetamodels();
 
@@ -173,6 +218,20 @@ public class EolLauncher implements Runnable {
 	    // eol.getContext().dispose();
 	    eol.clearCache();
 	    eol = null;
+	}
+	// cleanup
+	cleanup(temp);
+
+    }
+
+    private void cleanup(File dir) {
+	if (dir != null && dir.isDirectory() && dir.getName().endsWith(TEMP_SUFFIX)) {
+	    for (File f : dir.listFiles()) {
+		if (f.isDirectory()) {
+		    cleanup(f);
+		}
+		f.delete();
+	    }
 	}
     }
 

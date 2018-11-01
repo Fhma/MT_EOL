@@ -1,5 +1,0 @@
-	\--> Processed mutants-> 157
-	\--> Invalid mutants-> 0
-	\--> Killed mutants-> 111
-	\--> Not killed mutants-> 1
-		\-->IfStatement_condition_replace_6.xmi.eol

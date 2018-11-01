@@ -1,54 +1,23 @@
-// operator: VariableDeclarationExpression_name_replacement
-// desc: replaces a variable name with a new string
-//
-// Inherited operators: n/a 
-////////////////////////////////////////////////////////////
-
-operation getOperationOrModuleParent(e:Any):EOLElement {
-	var loc = e;
-	while(loc.isDefined()) {
-		if(loc.isTypeOf(OperationDefinition) or loc.isTypeOf(EOLModule)) {
-			return loc;
-		}
-		loc = loc.eContainer;
-	}
-	return null;
-}
-
-operation isSelfOrResult(instance:Any):Boolean {
-	if(instance.eContainer.isTypeOf(OperationDefinition)
-		and (instance.name.name = "self" or instance.name.name = "_result")) {
+operation isCached(e:Any):Boolean {
+	if(e.statements.size() > 1)
+		return false;
+	var stat = e.statements.first();
+	if(not (stat.isTypeOf(SimpleAnnotationStatement)))
+		return false;
+	if(stat.name.isTypeOf(NameExpression) and stat.name.name = "cached")
 		return true;
-	}
 	return false;
 }
 
-// 1.0: change the name of variable and add _extra to it.
-// Exceptions are done over self and _result built-in 
-// variables of OperationDefinition
-@action replace
-@property name
-pattern change_name
-instance:VariableDeclarationExpression
-	guard: (not isSelfOrResult(instance)) {
+// 1.0: delete annotation block except those block
+// containing execution annotaions -> @cached
+@action delete
+@property annotationBlock
+pattern delete_annotation_block
+instance:OperationDefinition
+	guard: instance.annotationBlock.isDefined()
+	and not isCached(instance.annotationBlock) {
 	do {
-		var new_name = NameExpression.createInstance();
-		// obtain a name from other vairable declarations
-		var names = VariableDeclarationExpression.all.select(
-			n| n.isTypeOf(VariableDeclarationExpression)
-			and (not isSelfOrResult(n))
-			and getOperationOrModuleParent(n.container)=getOperationOrModuleParent(instance.container)
-			and instance.region.isDefined()
-			and n.region.isDefined()
-			and instance.region.start.line > n.region.start.line);
-			
-		if(names.size()>=1)
-			new_name.name = names.random().name.name;
-		else new_name.name = instance.name.name + "_extra";
-		
-		if(new_name.name.isDefined() and new_name.name = instance.name.name)
-			new_name.name = instance.name.name + "_extra";
-		new_name.resolvedType = instance.name.resolvedType;
-		instance.name = new_name;
+		instance.annotationBlock = null;
 	}
 }

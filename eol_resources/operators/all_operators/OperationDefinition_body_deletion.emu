@@ -4,10 +4,13 @@
 // Inherited operators: n/a
 ////////////////////////////////////////////////////////////
 
+// 1.0: delete the operation block if it has more
+// than zero statements
 @action delete
 @property body
 pattern delete_operation_body_block
-instance:OperationDefinition {
+instance:OperationDefinition
+	guard: instance.body.statements.size() > 0 {
 	do {
 		instance.body = null;
 	}

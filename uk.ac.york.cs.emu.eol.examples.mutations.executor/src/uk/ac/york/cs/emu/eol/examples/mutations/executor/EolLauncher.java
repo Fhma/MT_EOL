@@ -2,7 +2,10 @@ package uk.ac.york.cs.emu.eol.examples.mutations.executor;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
+
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -32,6 +35,8 @@ import org.eclipse.epsilon.eol.EolModule;
 import org.eclipse.epsilon.eol.metamodel.EOLElement;
 import org.eclipse.epsilon.eol.metamodel.EolPackage;
 import org.eclipse.epsilon.eol.visitor.printer.impl.EolPrinter;
+
+import uk.ac.york.cs.emu.eol.examples.mutations.executor.candidates.EOLCandidate;
 import uk.ac.york.cs.emu.eol.examples.mutations.executor.configurations.Configuration;
 
 public class EolLauncher {
@@ -90,7 +95,7 @@ public class EolLauncher {
 	    logger.println("Executing mutations: " + eol_name);
 	    mutationExecution();
 	} catch (Exception e) {
-	    logger.println("\tException: " + e.getMessage());
+	    e.printStackTrace(logger);
 	} finally {
 	    int time = (int) (((System.currentTimeMillis() - mins) / 1000) / 60);
 	    logger.println(String.format("End Execution....(%d mins)", time));
@@ -152,25 +157,46 @@ public class EolLauncher {
 			break;
 		    }
 
+		    File mainModule = null;
+
+		    if (imported_by != null) {
+			File src = new File((String) EOLCandidate.LOCATION + File.separatorChar + imported_by);
+			File dest = new File(exe_temp_dir.getPath() + File.separatorChar + src.getName());
+			Files.copy(src.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
+			mainModule = dest;
+		    } else {
+			mainModule = mutant_code;
+		    }
+
 		    // copy over dependency modules to temporary execution folder
 		    if (importing != null) {
 			for (String dep : importing) {
-			    File src = new File(dep);
+			    File src = new File(EOLCandidate.LOCATION + File.separatorChar + dep);
 			    File dest = new File(exe_temp_dir.getPath() + File.separatorChar + src.getName());
 			    Files.copy(src.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
 			    src = dest = null;
 			}
+			// insert importing statements into main module
+			BufferedReader br = new BufferedReader(new FileReader(mainModule));
+			ArrayList<String> lines = new ArrayList<String>();
+			String line;
+			while ((line = br.readLine()) != null) {
+			    if (line.length() > 0) {
+				lines.add(line);
+			    }
+			}
+			br.close();
+			// add imports
+			for (String s : importing) {
+			    lines.add(0, "import '" + s + "';");
+			}
+			// write code to same file
+			FileWriter fw = new FileWriter(mainModule);
+			for (String s : lines) {
+			    fw.write(s + System.lineSeparator());
+			}
+			fw.close();
 		    }
-
-		    File mainModule = null;
-
-		    if (imported_by != null) {
-			File src = new File((String) imported_by);
-			File dest = new File(exe_temp_dir.getPath() + File.separatorChar + src.getName());
-			Files.copy(src.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
-			mainModule = dest;
-		    } else
-			mainModule = mutant_code;
 
 		    final EolModule base = new EolModule();
 		    base.parse(mainModule.getAbsoluteFile());

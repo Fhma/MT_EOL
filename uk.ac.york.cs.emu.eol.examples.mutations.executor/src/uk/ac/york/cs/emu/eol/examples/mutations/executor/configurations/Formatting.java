@@ -16,8 +16,8 @@ public class Formatting {
 
 	properties.put(Configuration.EOL_NAME, "Formatting");
 	properties.put(Configuration.EOL_CODE, EOLCandidate.LOCATION + "Formatting.eol");
-	properties.put(Configuration.IMPORTED_BY, EOLCandidate.LOCATION + "ECore2GMF.eol");
-	properties.put(Configuration.IMPORTING, EOLCandidate.LOCATION + "ECoreUtil.eol");
+	properties.put(Configuration.IMPORTED_BY, "ECore2GMF.eol");
+	properties.put(Configuration.IMPORTING, "ECoreUtil.eol");
 	properties.put(Configuration.PROGRAM_TYPE, EOLCandidate.MODEL_CREATE_TYPE);
 	properties.put(Configuration.MAX_EXE, 20000);
 

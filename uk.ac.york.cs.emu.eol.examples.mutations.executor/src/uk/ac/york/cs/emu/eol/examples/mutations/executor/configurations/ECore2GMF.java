@@ -17,7 +17,7 @@ public class ECore2GMF {
 	properties.put(Configuration.EOL_NAME, "ECore2GMF");
 	properties.put(Configuration.EOL_CODE, EOLCandidate.LOCATION + "ECore2GMF.eol");
 	properties.put(Configuration.IMPORTED_BY, null);
-	properties.put(Configuration.IMPORTING, EOLCandidate.LOCATION + "ECoreUtil.eol" + "," + EOLCandidate.LOCATION + "Formatting.eol");
+	properties.put(Configuration.IMPORTING, "ECoreUtil.eol" + "," + "Formatting.eol");
 	properties.put(Configuration.PROGRAM_TYPE, EOLCandidate.MODEL_CREATE_TYPE);
 	properties.put(Configuration.MAX_EXE, 20000);
 

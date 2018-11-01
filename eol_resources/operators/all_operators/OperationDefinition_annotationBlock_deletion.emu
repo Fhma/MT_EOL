@@ -4,11 +4,26 @@
 // Inherited operators: n/a 
 ////////////////////////////////////////////////////////////
 
+
+operation isCached(e:Any):Boolean {
+	if(e.statements.size() > 1)
+		return false;
+	var stat = e.statements.first();
+	if(not (stat.isTypeOf(SimpleAnnotationStatement)))
+		return false;
+	if(stat.name.isTypeOf(NameExpression) and stat.name.name = "cached")
+		return true;
+	return false;
+}
+
+// 1.0: delete annotation block except those block
+// containing execution annotaions -> @cached
 @action delete
 @property annotationBlock
 pattern delete_annotation_block
 instance:OperationDefinition
-	guard: instance.annotationBlock.isDefined() {
+	guard: instance.annotationBlock.isDefined()
+	and not isCached(instance.annotationBlock) {
 	do {
 		instance.annotationBlock = null;
 	}

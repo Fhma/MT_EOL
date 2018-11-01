@@ -16,10 +16,9 @@ public class ECoreUtil {
 	properties = new HashMap<String, Object>();
 
 	properties.put(Configuration.EOL_NAME, "ECoreUtil");
-	properties.put(Configuration.EOL_CODE, EOLCandidate.LOCATION + "ECoreUtil.eol");
-	// must be one imported module
-	properties.put(Configuration.IMPORTED_BY, EOLCandidate.LOCATION + "ECore2GMF.eol");
-	properties.put(Configuration.IMPORTING, EOLCandidate.LOCATION + "ECoreUtil.eol" + "," + EOLCandidate.LOCATION + "Formatting.eol");
+	properties.put(Configuration.EOL_CODE, "ECoreUtil.eol");
+	properties.put(Configuration.IMPORTED_BY, "ECore2GMF.eol");
+	properties.put(Configuration.IMPORTING, "ECoreUtil.eol" + "," + "Formatting.eol");
 	properties.put(Configuration.PROGRAM_TYPE, EOLCandidate.MODEL_CREATE_MULTI_TYPE);
 	properties.put(Configuration.MAX_EXE, 5000);
 	properties.put(Configuration.FLAG_DELEGATES, false);

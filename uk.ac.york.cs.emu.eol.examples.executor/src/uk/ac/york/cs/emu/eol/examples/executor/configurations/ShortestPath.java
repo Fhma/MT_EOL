@@ -16,7 +16,7 @@ public class ShortestPath {
 		properties = new HashMap<String, Object>();
 
 		properties.put(Configuration.EOL_NAME, "ShortestPath");
-		properties.put(Configuration.EOL_CODE, EOLCandidate.LOCATION + "ShortestPath.eol");
+		properties.put(Configuration.EOL_CODE, "ShortestPath.eol");
 		properties.put(Configuration.IMPORTED_BY, null);
 		properties.put(Configuration.IMPORTING, null);
 		properties.put(Configuration.PROGRAM_TYPE, EOLCandidate.CONSOLE_TYPE);

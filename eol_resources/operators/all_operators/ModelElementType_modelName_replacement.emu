@@ -5,15 +5,30 @@
 // Inherited operators: Type, AnyType 
 ////////////////////////////////////////////////////////////
 
+operation isSelfOrResultVar(e:Any):Boolean {
+	if(e.container.isDefined() and e.container.isTypeOf(OperationDefinition)) {
+		if(e.eContainer.isDefined() and e.eContainer.isTypeOf(VariableDeclarationExpression)) {
+			if(e.eContainer.name.name = "self" or e.eContainer.name.name = "_result") {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+// 1.0: replace the model name with another one obtained from same model
+// except for self and _result variables
 @action replace
 @property modelName
 pattern replace_model_name
-instance:ModelElementType {
+instance:ModelElementType
+	guard: not isSelfOrResultVar(instance)
+		and ModelElementType.all.select(e|e.modelName.isDefined())
+			->collect(c|c.modelName).size() > 1 {
 	do {
 		var new_modeNames = ModelElementType.all.select(e|e.modelName.isDefined())
 			->collect(c|c.modelName)->asOrderedSet();
-		var chosen = new_modeNames.random();
-						
+		var chosen = new_modeNames.random();				
 		while(chosen.isDefined() and instance.modelName.isDefined()
 			and chosen = instance.modelName) {
 			chosen = new_modeNames.random();

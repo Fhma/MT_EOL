@@ -9,8 +9,8 @@
 #	<EOLMODULENAME>/<INPUTMODELNAME>
 #	3) metamodels of input models stored in "metamodels" folder
 #
-#ShortestPath
-#ECore2GMF
-#ECoreUtil
-#Formatting
+ShortestPath
+ECore2GMF
+ECoreUtil
+Formatting
 EcoreHelper
