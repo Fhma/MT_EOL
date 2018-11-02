@@ -221,7 +221,6 @@ public class EolLauncher implements Runnable {
 	}
 	// cleanup
 	cleanup(temp);
-
     }
 
     private void cleanup(File dir) {

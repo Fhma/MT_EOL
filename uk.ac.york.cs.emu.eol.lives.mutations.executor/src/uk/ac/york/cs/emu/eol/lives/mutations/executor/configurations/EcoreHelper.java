@@ -13,8 +13,8 @@ public class EcoreHelper {
 	properties = new HashMap<String, Object>();
 
 	properties.put(Configuration.EOL_NAME, "EcoreHelper");
-	properties.put(Configuration.EOL_CODE, EOLCandidate.LOCATION + "EcoreHelper.eol");
-	properties.put(Configuration.IMPORTED_BY, EOLCandidate.LOCATION + "EcoreHelperInvoker.eol");
+	properties.put(Configuration.EOL_CODE, "EcoreHelper.eol");
+	properties.put(Configuration.IMPORTED_BY, "EcoreHelperInvoker.eol");
 	properties.put(Configuration.IMPORTING, null);
 	properties.put(Configuration.PROGRAM_TYPE, EOLCandidate.CONSOLE_TYPE);
 	properties.put(Configuration.MAX_EXE, 5000);

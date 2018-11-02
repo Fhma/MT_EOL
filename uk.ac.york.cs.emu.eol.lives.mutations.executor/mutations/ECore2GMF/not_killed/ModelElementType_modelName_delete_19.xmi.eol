@@ -1,0 +1,392 @@
+import 'Formatting.eol';
+import 'ECoreUtil.eol';
+var ePackage = ECore!EPackage.all.first();
+var toolRegistry = new GmfTool!ToolRegistry;
+var palette = new GmfTool!Palette;
+palette.title = ePackage.name + 'Palette';
+toolRegistry.palette = palette;
+var nodesToolGroup = new GmfTool!ToolGroup;
+nodesToolGroup.title = 'Objects';
+nodesToolGroup.collapsible = true;
+palette.tools.add(nodesToolGroup);
+var linksToolGroup;
+linksToolGroup = new GmfTool!ToolGroup;
+linksToolGroup.title = 'Connections';
+linksToolGroup.collapsible = true;
+palette.tools.add(linksToolGroup);
+var canvas : new GmfGraph!Canvas;
+canvas.name = ePackage.name;
+var figureGallery : new GmfGraph!FigureGallery;
+figureGallery.name = 'Default';
+canvas.figures.add(figureGallery);
+var mapping : new GmfMap!Mapping;
+var canvasMapping : new GmfMap!CanvasMapping;
+mapping.diagram = canvasMapping;
+canvasMapping.diagramCanvas = canvas;
+canvasMapping.domainModel = ePackage;
+canvasMapping.domainMetaElement = getDiagramClass();
+canvasMapping.palette = palette;
+for(class in getNodes()) {
+	var creationTool = createCreationTool(class);
+	nodesToolGroup.tools.add(creationTool);
+	class.~creationTool = creationTool;
+	var figureDescriptor = createFigureDescriptor(class.name + 'Figure');
+	class.~figureDescriptor = figureDescriptor;
+	var figure = class.createFigure();
+	figureDescriptor.actualFigure = figure;
+	figure.name = figureDescriptor.name;
+	var label = class.createLabel();
+	label.name = class.getLabelName() + 'Figure';
+	if(not class.getCompartmentReferences().isEmpty()) {
+		var maxDimension = new GmfGraph!Dimension;
+		maxDimension.dx = 10000;
+		maxDimension.dy = 50;
+		label.maximumSize = maxDimension;
+	}
+	var node = new GmfGraph!Node;
+	node.name = class.name;
+	node.figure = figureDescriptor;
+	canvas.nodes.add(node);
+	class.~diagramNode = node;
+	if(class.getNodeSize().isDefined()) {
+		var defaultSizeFacet = new GmfGraph!DefaultSizeFacet;
+		node.facets.add(defaultSizeFacet);
+		defaultSizeFacet.defaultSize = class.getNodeSize();
+	}
+	var nodeMapping : new GmfMap!NodeMapping;
+	nodeMapping.diagramNode = node;
+	nodeMapping.domainMetaElement = class;
+	nodeMapping.tool = creationTool;
+	class.~nodeMapping = nodeMapping;
+	var labelPlacement = class.getLabelPlacement();
+	if(labelPlacement <> 'none') {
+		var diagramLabel = new GmfGraph!DiagramLabel;
+		diagramLabel.name = class.getLabelName();
+		diagramLabel.elementIcon = class.labelHasIcon(true);
+		canvas.labels.add(diagramLabel);
+		if(labelPlacement='internal') {
+			figure.children.add(label);
+			var childAccess : new GmfGraph!ChildAccess;
+			childAccess.figure = label;
+			childAccess.accessor = 'getFigure' + class.getLabelName() + 'Figure';
+			figureDescriptor.accessors.add(childAccess);
+			diagramLabel.accessor = childAccess;
+			diagramLabel.figure = figureDescriptor;
+		}
+		else {
+			var labelFigureDescriptor = createFigureDescriptor(class.name + 'LabelFigure');
+			labelFigureDescriptor.actualFigure = label;
+			diagramLabel.figure = labelFigureDescriptor;
+		}
+		class.~diagramLabel = diagramLabel;
+		var featureLabelMapping : new GmfMap!FeatureLabelMapping;
+		nodeMapping.labelMappings.add(featureLabelMapping);
+		featureLabelMapping.diagramLabel = diagramLabel;
+		featureLabelMapping.editPattern = class.getLabelEditPattern();
+		featureLabelMapping.editorPattern = class.getLabelEditPattern();
+		featureLabelMapping.viewPattern = class.getLabelViewPattern();
+		featureLabelMapping.features.addAll(class.getLabelAttributes());
+		featureLabelMapping.readOnly = class.getLabelReadOnly();
+	}
+	for(attribute in getLabelledAttributesFor(class)) {
+		var label = new GmfGraph!Label;
+		label.name = attribute.getLabelName() + 'Figure';
+		label.text = attribute.getAnnotationValue('gmf.label', 'label.text');
+		var diagramLabel = new GmfGraph!DiagramLabel;
+		diagramLabel.name = attribute.getLabelName();
+		diagramLabel.elementIcon = false;
+		canvas.labels.add(diagramLabel);
+		figure.children.add(label);
+		var childAccess : new ChildAccess;
+		childAccess.figure = label;
+		childAccess.accessor = 'getFigure' + label.name;
+		figureDescriptor.accessors.add(childAccess);
+		diagramLabel.accessor = childAccess;
+		diagramLabel.figure = figureDescriptor;
+		var featureLabelMapping : new GmfMap!FeatureLabelMapping;
+		nodeMapping.labelMappings.add(featureLabelMapping);
+		featureLabelMapping.diagramLabel = diagramLabel;
+		featureLabelMapping.features.add(attribute);
+		featureLabelMapping.editPattern = attribute.getLabelEditPattern();
+		featureLabelMapping.editorPattern = attribute.getLabelEditPattern();
+		featureLabelMapping.viewPattern = attribute.getLabelViewPattern();
+		featureLabelMapping.features.addAll(attribute.getLabelAttributes());
+		featureLabelMapping.readOnly = attribute.getReadOnly();
+	}
+}
+for(containment in getDiagramClass().getContainmentReferences()) {
+	for(class in containment.eType.getConcreteSubtypes().select(c|c.isNode())) {
+		if(class.~topNodeReference.isUndefined()) {
+			var topNodeReference = new GmfMap!TopNodeReference;
+			mapping.nodes.add(topNodeReference);
+			topNodeReference.containmentFeature = containment;
+			class.~nodeMapping.~nested = true;
+			topNodeReference.ownedChild = class.~nodeMapping;
+			class.~topNodeReference = topNodeReference;
+		}
+	}
+}
+for(phantom in getPhantomNodes()) {
+	if(phantom.~topNodeReference.isUndefined()) {
+		var topNodeReference = new GmfMap!TopNodeReference;
+		mapping.nodes.add(topNodeReference);
+		topNodeReference.ownedChild = phantom.~nodeMapping;
+		phantom.~topNodeReference = topNodeReference;
+	}
+}
+for(class in getNodes()) {
+	for(affixed in class.getAffixedReferences()) {
+		for(child in getNodes().select(s|not s.abstract and (s=affixed.eType or s.eAllSuperTypes.includes(affixed.eType)))) {
+			var childReference = new GmfMap!ChildReference;
+			class.~nodeMapping.children.add(childReference);
+			childReference.containmentFeature = affixed;
+			if(child.~nodeMapping.~nested.isDefined()) {
+				childReference.referencedChild = child.~nodeMapping;
+			}
+			else {
+				child.~nodeMapping.~nested = true;
+				childReference.ownedChild = child.~nodeMapping;
+			}
+			child.~diagramNode.affixedParentSide = GmfGraph!Direction#NORTH;
+		}
+	}
+}
+for(class in getNodes()) {
+	for(containment in class.getCompartmentReferences()) {
+		var referenceName = class.name + containment.name.firstToUpperCase();
+		var figureDescriptor = class.~figureDescriptor;
+		var figure = figureDescriptor.actualFigure;
+		var compartmentRectangle = new GmfGraph!Rectangle;
+		compartmentRectangle.outline = false;
+		figure.children.add(compartmentRectangle);
+		compartmentRectangle.name = referenceName + 'CompartmentFigure';
+		var compartmentChildAccess = new GmfGraph!ChildAccess;
+		figureDescriptor.accessors.add(compartmentChildAccess);
+		compartmentChildAccess.figure = compartmentRectangle;
+		compartmentChildAccess.accessor = 'get' + compartmentRectangle.name;
+		var compartment = new GmfGraph!Compartment;
+		compartment.name = referenceName + 'Compartment';
+		compartment.collapsible = containment.isCollapsible();
+		compartment.figure = class.~figureDescriptor;
+		canvas.compartments.add(compartment);
+		compartment.accessor = compartmentChildAccess;
+		var compartmentMapping = new GmfMap!CompartmentMapping;
+		compartmentMapping.compartment = compartment;
+		class.~nodeMapping.compartments.add(compartmentMapping);
+		class.~nodeMapping.relatedDiagrams.add(canvasMapping);
+		for(child in getNodes().select(s|not s.abstract and (s=containment.eType or s.eAllSuperTypes.includes(containment.eType)))) {
+			var childReference = new GmfMap!ChildReference;
+			class.~nodeMapping.children.add(childReference);
+			childReference.compartment = compartmentMapping;
+			childReference.containmentFeature = containment;
+			if(child.~nodeMapping.~nested.isDefined()) {
+				childReference.referencedChild = child.~nodeMapping;
+			}
+			else {
+				child.~nodeMapping.~nested = true;
+				childReference.ownedChild = child.~nodeMapping;
+			}
+		}
+	}
+}
+for(nodeMapping in GmfMap!NodeMapping.all.clone()) {
+	if(nodeMapping.~nested.isUndefined() and (not nodeMapping.domainMetaElement.isPhantom())) {
+		delete nodeMapping;
+	}
+}
+for(class in getLinks()) {
+	if(getAllSuitableContainmentReferences(class).size()=0) {
+		continue;
+	}
+	var creationTool = createCreationTool(class);
+	linksToolGroup.tools.add(creationTool);
+	var figureDescriptor = new GmfGraph!FigureDescriptor;
+	figureDescriptor.name = class.name + 'Figure';
+	figureGallery.descriptors.add(figureDescriptor);
+	var polylineConnection = new GmfGraph!PolylineConnection;
+	figureDescriptor.actualFigure = polylineConnection;
+	polylineConnection.name = figureDescriptor.name;
+	polylineConnection.formatConnection(class);
+	var connection = new GmfGraph!Connection;
+	connection.name = class.name;
+	connection.figure = figureDescriptor;
+	canvas.connections.add(connection);
+	var linkMappings : Sequence();
+	for(containmentFeature in getAllSuitableContainmentReferences(class)) {
+		var linkMapping : new GmfMap!LinkMapping;
+		mapping.links.add(linkMapping);
+		linkMapping.containmentFeature = containmentFeature;
+		linkMapping.diagramLink = connection;
+		linkMapping.domainMetaElement = class;
+		linkMapping.tool = creationTool;
+		linkMapping.sourceMetaFeature = class.getLinkSourceFeature();
+		linkMapping.linkMetaFeature = class.getLinkTargetFeature();
+		linkMappings.add(linkMapping);
+		var sourceEndConstraint = class.getSourceConstraint();
+		var targetEndConstraint = class.getTargetConstraint();
+		if(sourceEndConstraint.isDefined() or targetEndConstraint.isDefined()) {
+			linkMapping.creationConstraints = new GmfMap!LinkConstraints;
+			if(sourceEndConstraint.isDefined()) {
+				linkMapping.creationConstraints.sourceEnd = new GmfMap!Constraint;
+				linkMapping.creationConstraints.sourceEnd.body = sourceEndConstraint;
+			}
+			if(targetEndConstraint.isDefined()) {
+				linkMapping.creationConstraints.targetEnd = new GmfMap!Constraint;
+				linkMapping.creationConstraints.targetEnd.body = targetEndConstraint;
+			}
+		}
+	}
+	var hasLabel = not class.getLabelAttributes().isEmpty();
+	if(hasLabel) {
+		var labelFigureDescriptor = createFigureDescriptor(class.getLabelName() + 'Figure');
+		var label = class.createLabel();
+		label.name = class.getLabelName() + 'Label';
+		labelFigureDescriptor.actualFigure = label;
+		var diagramLabel = new GmfGraph!DiagramLabel;
+		diagramLabel.figure = labelFigureDescriptor;
+		diagramLabel.name = class.getLabelName();
+		diagramLabel.elementIcon = class.labelHasIcon(false);
+		canvas.labels.add(diagramLabel);
+		var featureLabelMapping = new GmfMap!FeatureLabelMapping;
+		featureLabelMapping.diagramLabel = diagramLabel;
+		featureLabelMapping.editPattern = class.getLabelEditPattern();
+		featureLabelMapping.editorPattern = class.getLabelEditPattern();
+		featureLabelMapping.viewPattern = class.getLabelViewPattern();
+		featureLabelMapping.features.addAll(class.getLabelAttributes());
+		featureLabelMapping.readOnly = class.getLabelReadOnly();
+		for(linkMapping in linkMappings) {
+			linkMapping.labelMappings.add(featureLabelMapping);
+		}
+	}
+}
+for(reference in getReferenceLinks()) {
+	var referenceName = reference.getLongName();
+	var creationTool = createCreationTool(reference);
+	linksToolGroup.tools.add(creationTool);
+	var figureDescriptor = createFigureDescriptor(referenceName + 'Figure');
+	var externalLabelFigureDescriptor = createFigureDescriptor(referenceName + 'ExternalLabelFigure');
+	var externalLabel = new GmfGraph!Label;
+	externalLabel.name = referenceName + 'ExternalLabel';
+	externalLabel.text = reference.getLinkLabel();
+	externalLabelFigureDescriptor.actualFigure = externalLabel;
+	var externalDiagramLabel = new GmfGraph!DiagramLabel;
+	externalDiagramLabel.figure = externalLabelFigureDescriptor;
+	externalDiagramLabel.name = externalLabel.name;
+	externalDiagramLabel.elementIcon = false;
+	canvas.labels.add(externalDiagramLabel);
+	var polylineConnection = new GmfGraph!PolylineConnection;
+	figureDescriptor.actualFigure = polylineConnection;
+	polylineConnection.name = figureDescriptor.name;
+	var connection = new GmfGraph!Connection;
+	connection.name = referenceName;
+	connection.figure = figureDescriptor;
+	canvas.connections.add(connection);
+	polylineConnection.formatConnection(reference);
+	var linkMapping : new GmfMap!LinkMapping;
+	mapping.links.add(linkMapping);
+	linkMapping.diagramLink = connection;
+	linkMapping.linkMetaFeature = reference;
+	linkMapping.tool = creationTool;
+	var externalLabelMapping = new GmfMap!DesignLabelMapping;
+	externalLabelMapping.readOnly = true;
+	externalLabelMapping.diagramLabel = externalDiagramLabel;
+	linkMapping.labelMappings.add(externalLabelMapping);
+}
+mapping.nodes = mapping.nodes.asSequence().sortBy(n|-n.ownedChild.domainMetaElement.eAllSuperTypes.size());
+mapping.links = mapping.links.asSequence().select(l|l.domainMetaElement.isDefined()).sortBy(l|-l.domainMetaElement.eAllSuperTypes.size()) + mapping.links.asSequence().select(l|l.domainMetaElement.isUndefined());
+for(nodeMapping in GmfMap!NodeMapping.all) {
+	nodeMapping.children = nodeMapping.children.asSequence().sortBy(cr|-cr.getDomainMetaElement().eAllSuperTypes.size());
+}
+for(compartmentMapping in GmfMap!CompartmentMapping.all) {
+	compartmentMapping.children = compartmentMapping.children.asSequence().sortBy(cr|-cr.getDomainMetaElement().eAllSuperTypes.size());
+}
+nodesToolGroup.tools = nodesToolGroup.tools.sortBy(t|t.title);
+if(linksToolGroup.isDefined()) {
+	linksToolGroup.tools = linksToolGroup.tools.sortBy(t|t.title);
+}
+if(nodesToolGroup.tools.size()=0) {
+	delete nodesToolGroup;
+}
+if(linksToolGroup.tools.size()=0) {
+	delete linksToolGroup;
+}
+operation ECore!EClass createLabel()  {
+	var labelClass = self.getLabelClass();
+	var figure;
+	if(labelClass.isDefined()) {
+		figure = new GmfGraph!CustomFigure;
+		figure.qualifiedClassName = labelClass;
+	}
+	else {
+		figure = new GmfGraph!Label;
+		figure.text = self.getLabelText();
+	}
+	return figure;
+}
+operation GmfMap!NodeReference getDomainMetaElement()  {
+	if(self.referencedChild.isDefined()) {
+		return self.referencedChild.domainMetaElement;
+	}
+	else {
+		return self.ownedChild.domainMetaElement;
+	}
+}
+operation createFigureDescriptor(name : String)  {
+	var figureDescriptor = new GmfGraph!FigureDescriptor;
+	figureDescriptor.name = name;
+	figureGallery.descriptors.add(figureDescriptor);
+	return figureDescriptor;
+}
+operation createCreationTool(element : Any)  {
+	var annotation : String;
+	if(element.isKindOf(ECore!EClass) and element.isNode()) {
+		annotation = 'gmf.node';
+	}
+	else {
+		annotation = 'gmf.link';
+	}
+	var toolName = element.getAnnotationValue(annotation, 'tool.name');
+	if(toolName.isUndefined()) {
+		if(element.isKindOf(ECore!EClass)) {
+			toolName = element.name;
+		}
+		else {
+			toolName = element.name.firstToUpperCase();
+		}
+	}
+	var toolDescription = element.getAnnotationValue(annotation, 'tool.description');
+	if(toolDescription.isUndefined()) {
+		toolDescription = 'Create new ' + toolName;
+	}
+	var creationTool = new GmfTool!CreationTool;
+	creationTool.title = toolName;
+	creationTool.description = toolDescription;
+	creationTool.smallIcon = createToolImage(element.getAnnotationValue(annotation, 'tool.small.path'), element.getAnnotationValue(annotation, 'tool.small.bundle'));
+	creationTool.largeIcon = createToolImage(element.getAnnotationValue(annotation, 'tool.large.path'), element.getAnnotationValue(annotation, 'tool.large.bundle'));
+	return creationTool;
+}
+operation createToolImage(path : String, bundle : String)  {
+	if(path.isUndefined()) {
+		return new GmfTool!DefaultImage;
+	}
+	else {
+		var bundleImage = new GmfTool!BundleImage;
+		bundleImage.path = path;
+		bundleImage.bundle = bundle;
+		return bundleImage;
+	}
+}
+operation createReferenceCreationTool(name : String)  {
+	var creationTool = new GmfTool!CreationTool;
+	creationTool.title = name;
+	creationTool.description = 'Create new ' + name;
+	creationTool.smallIcon = createRefLinkIcon();
+	creationTool.largeIcon = createRefLinkIcon();
+	return creationTool;
+}
+operation createRefLinkIcon()  {
+	var icon = new GmfTool!BundleImage;
+	icon.bundle = 'org.eclipse.epsilon.eugenia.runtime';
+	icon.path = 'icons/Link.gif';
+	return icon;
+}

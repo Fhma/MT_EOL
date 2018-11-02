@@ -171,11 +171,14 @@ public class EolLauncher {
 		    // copy over dependency modules to temporary execution folder
 		    if (importing != null) {
 			for (String dep : importing) {
+			    if (dep.equals(mutant_code.getName()))
+				continue;
 			    File src = new File(EOLCandidate.LOCATION + File.separatorChar + dep);
 			    File dest = new File(exe_temp_dir.getPath() + File.separatorChar + src.getName());
 			    Files.copy(src.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
 			    src = dest = null;
 			}
+
 			// insert importing statements into main module
 			BufferedReader br = new BufferedReader(new FileReader(mainModule));
 			ArrayList<String> lines = new ArrayList<String>();

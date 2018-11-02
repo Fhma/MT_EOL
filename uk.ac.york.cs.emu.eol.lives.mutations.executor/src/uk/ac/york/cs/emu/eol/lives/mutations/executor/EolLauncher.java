@@ -28,6 +28,8 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+import javax.swing.JOptionPane;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -66,17 +68,17 @@ public class EolLauncher {
     private String eol_name = null;
     private short type;
     private int max_exe;
-    private String imported_by = null;
+    private String[] imported_by = null;
     private String[] importing = null;
     private String[] mm_paths = null;
     private EmfMetaModel metamodels[] = null;
     private File not_killed_dir = null;
     private File outputs_dir = null;
     private List<String> mutant_names = null;
-    private short execution_mode;
     private String eol_original_code = null;
+    private int execution_mode;
 
-    public EolLauncher(Map<String, Object> config, short mode) throws Exception {
+    public EolLauncher(Map<String, Object> config, int mode) throws Exception {
 	execution_mode = mode;
 	eol_original_code = (String) config.get(Configuration.EOL_CODE);
 	eol_name = (String) config.get(Configuration.EOL_NAME);
@@ -84,7 +86,7 @@ public class EolLauncher {
 	max_exe = (int) config.get(Configuration.MAX_EXE);
 
 	if (config.get(Configuration.IMPORTED_BY) != null)
-	    imported_by = (String) config.get(Configuration.IMPORTED_BY);
+	    imported_by = ((String) config.get(Configuration.IMPORTED_BY)).split(",");
 
 	if (config.get(Configuration.IMPORTING) != null)
 	    importing = ((String) config.get(Configuration.IMPORTING)).split(",");
@@ -103,6 +105,7 @@ public class EolLauncher {
 	while ((line = read.readLine()) != null) {
 	    mutant_names.add(line);
 	}
+
 	read.close();
 
 	not_killed_dir = new File(MUTATIONS_DIR + eol_name + File.separatorChar + NOTKILLED_DIR);
@@ -120,7 +123,11 @@ public class EolLauncher {
 		originalExecution();
 		break;
 	    case MUTATION_EXECUTION:
-		originalExecution();
+		String options[] = { "Yes", "Run Original First" };
+		int n = JOptionPane.showOptionDialog(null, "Run Live mutation without original run first?", "Execution Operation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
+			options, null);
+		if (n == 1)// run original first
+		    originalExecution();
 		mutationExecution();
 		break;
 	    }
@@ -159,6 +166,7 @@ public class EolLauncher {
 	    return;
 	int index = 0;
 	String entry = mutant_names.get(index);
+
 	while (entry != null) {
 	    String status = null, name = null;
 
@@ -167,6 +175,7 @@ public class EolLauncher {
 		name = entry.substring(entry.indexOf("<>") + 2, entry.length() - 4);
 	    } else
 		name = entry.substring(0, entry.length() - 4);
+
 	    OperatorEntry current_operator = getOperatorEntryByMutant(operators_stats, name);
 	    if (current_operator == null) {
 		current_operator = new OperatorEntry(name);
@@ -181,7 +190,7 @@ public class EolLauncher {
 		    getOperatorEntryByMutant(operators_stats, name).incrementKilledMutants();
 		else
 		    getOperatorEntryByMutant(operators_stats, name).addNotKilledToAList(name);
-		index++;
+		++index;
 		if (index >= mutant_names.size())
 		    break;
 		entry = mutant_names.get(index);
@@ -223,25 +232,49 @@ public class EolLauncher {
 		    File mutant_code = new File(exe_temp_dir.getPath() + File.separatorChar + eol_name + ".eol");
 		    Files.copy(mutant.toPath(), mutant_code.toPath(), StandardCopyOption.REPLACE_EXISTING);
 
-		    // copy over dependency modules to temporary execution folder
-		    if (importing != null) {
-			for (String dep : importing) {
-			    File src = new File(dep);
-			    File dest = new File(exe_temp_dir.getPath() + File.separatorChar + src.getName());
-			    Files.copy(src.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
-			    src = dest = null;
-			}
-		    }
-
 		    File mainModule = null;
 
 		    if (imported_by != null) {
-			File src = new File((String) imported_by);
+			File src = new File((String) EOLCandidate.LOCATION + File.separatorChar + imported_by[0]);
 			File dest = new File(exe_temp_dir.getPath() + File.separatorChar + src.getName());
 			Files.copy(src.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
 			mainModule = dest;
 		    } else
 			mainModule = mutant_code;
+
+		    // copy over dependency modules to temporary execution folder
+		    if (importing != null) {
+			for (String dep : importing) {
+			    if (dep.equals(mutant_code.getName()))
+				continue;
+			    File src = new File(EOLCandidate.LOCATION + File.separatorChar + dep);
+			    File dest = new File(exe_temp_dir.getPath() + File.separatorChar + src.getName());
+			    Files.copy(src.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
+			    src = dest = null;
+			}
+
+			// insert importing statements into main module
+			BufferedReader br = new BufferedReader(new FileReader(mainModule));
+			ArrayList<String> lines = new ArrayList<String>();
+			String line;
+			while ((line = br.readLine()) != null) {
+			    if (line.length() > 0) {
+				lines.add(line);
+			    }
+			}
+			br.close();
+			// add imports
+			for (String s : importing) {
+			    lines.add(0, "import '" + s + "';");
+			}
+
+			// write code to same file
+			FileWriter fw = new FileWriter(mainModule);
+			for (String s : lines) {
+			    fw.write(s + System.lineSeparator());
+			}
+			fw.close();
+		    }
 
 		    final EolModule base = new EolModule();
 		    base.parse(mainModule.getAbsoluteFile());
@@ -309,9 +342,7 @@ public class EolLauncher {
 			// delete the file
 			mutant.delete();
 		    }
-
 		    futures = null;
-
 		    // exit execution loop
 		    break;
 		}
@@ -320,7 +351,7 @@ public class EolLauncher {
 		    current_operator.incrementInvalidMutants();
 		}
 	    } // end of executing one mutation
-	    index++;
+	    ++index;
 	    if (index >= mutant_names.size())
 		break;
 	    entry = mutant_names.get(index);
@@ -331,6 +362,137 @@ public class EolLauncher {
 
 	// finally print the execution report
 	print_summary(operators_stats);
+    }
+
+    private void originalExecution() throws Exception {
+
+	File temp = new File("execution" + TEMP_SUFFIX);
+	temp.mkdirs();
+	temp.deleteOnExit();
+
+	String module_path = null;
+
+	// copy all files to execution.tmp
+	Files.copy(new File(EOLCandidate.LOCATION + eol_original_code).toPath(), new File(temp.getPath() + File.separatorChar + eol_original_code).toPath(), StandardCopyOption.REPLACE_EXISTING);
+	if (imported_by != null) {
+	    Files.copy(new File(EOLCandidate.LOCATION + imported_by[0]).toPath(), new File(temp.getPath() + File.separatorChar + imported_by[0]).toPath(), StandardCopyOption.REPLACE_EXISTING);
+	    module_path = imported_by[0];
+	} else
+	    module_path = eol_original_code;
+
+	File module_file = new File(temp.getPath() + File.separatorChar + module_path);
+
+	if (importing != null) {
+	    for (String s : importing) {
+		Files.copy(new File(EOLCandidate.LOCATION + s).toPath(), new File(temp.getPath() + File.separatorChar + s).toPath(), StandardCopyOption.REPLACE_EXISTING);
+	    }
+
+	    // read entire file and add to the imports at beginning
+	    BufferedReader br = new BufferedReader(new FileReader(module_file));
+	    ArrayList<String> lines = new ArrayList<String>();
+	    String line;
+	    while ((line = br.readLine()) != null) {
+		if (line.length() > 0) {
+		    lines.add(line);
+		}
+	    }
+	    br.close();
+
+	    // add imports
+	    for (String s : importing) {
+		lines.add(0, "import '" + s + "';");
+	    }
+
+	    // write to same file
+	    FileWriter fw = new FileWriter(module_file);
+	    for (String s : lines) {
+		fw.write(s + System.lineSeparator());
+	    }
+	    fw.close();
+	}
+
+	// output folder
+	File output_dir = new File(EXPECTED_MODELS_DIR + eol_name);
+	output_dir.mkdirs();
+
+	EolModule base = new EolModule();
+
+	base.parse(module_file.getAbsoluteFile());
+	if (base.getParseProblems().size() > 0)
+	    throw new Exception("Unable to parse file: " + module_path + "\n" + base.getParseProblems().toString());
+
+	registerAndLoadMetamodels();
+
+	Random rand = new Random(System.nanoTime());
+
+	// load test inputs that conform to loaded metamodels
+	List<File> input_files = null;
+	for (short num : getInputFilesNumbers()) {
+
+	    input_files = getInputFilesOfNumber(num);
+
+	    // clone base EolModule for multiple use
+	    EolModule eol = EolCloneFactory.clone(base);
+	    eol.getContext().getExecutorFactory().setExecutionController(new DefaultExecutionController());
+
+	    // Three types of outputs
+	    // 1) Models create
+	    // 2) Models update
+	    // 3) Console output
+
+	    int n = rand.nextInt(Integer.MAX_VALUE);
+
+	    if (type == EOLCandidate.CONSOLE_TYPE) {
+		// read all input models
+		for (File f : input_files) {
+		    String aliase = f.getName().substring(0, f.getName().indexOf("_"));
+		    IModel m = newEmfModel("M_" + aliase + "_" + n, aliase, f.getPath(), getMetamodelUri(aliase), true, false);
+		    eol.getContext().getModelRepository().addModel(m);
+		}
+		// console output -> there is only one output
+		String m_path = output_dir.getPath() + File.separatorChar + eol_name + "_" + num + ".text";
+		eol.getContext().setOutputStream(new PrintStream(new FileOutputStream(m_path)));
+	    } else if (type == EOLCandidate.MODEL_CREATE_TYPE) {
+		String loaded_input_metamodes = "";
+		// read all input models
+		for (File f : input_files) {
+		    String aliase = f.getName().substring(0, f.getName().indexOf("_"));
+		    loaded_input_metamodes += "," + aliase;
+		    File new_f = new File(output_dir.getPath() + File.separatorChar + aliase + "_" + num + ".xmi");
+		    Files.copy(f.toPath(), new_f.toPath());
+		    IModel m = newEmfModel("M_" + aliase + "_" + n, aliase, new_f.getPath(), getMetamodelUri(aliase), true, false);
+		    eol.getContext().getModelRepository().addModel(m);
+		}
+		// add all output models that their aliases were not loaded as input models
+		for (EmfMetaModel mm : getOutputMetamodelUris(loaded_input_metamodes.split(","))) {
+		    File new_f = new File(output_dir.getPath() + File.separatorChar + mm.getName() + "_" + num + ".xmi");
+		    IModel m = newEmfModel("M_" + mm.getName() + "_" + n, mm.getName(), new_f.getPath(), mm.getMetamodelUri(), false, true);
+		    eol.getContext().getModelRepository().addModel(m);
+		}
+	    } else if (type == EOLCandidate.MODEL_UPDATE_TYPE) {
+		// copy all input models to output models
+		for (File f : input_files) {
+		    File new_f = new File(output_dir.getPath() + File.separatorChar + f.getName());
+		    if (type == EOLCandidate.MODEL_UPDATE_TYPE)
+			Files.copy(f.toPath(), new_f.toPath());
+		    String aliase = f.getName().substring(0, f.getName().indexOf("_"));
+		    IModel m = newEmfModel("M_" + aliase + "_" + n, aliase, new_f.getPath(), getMetamodelUri(aliase), false, true);
+		    eol.getContext().getModelRepository().addModel(m);
+		}
+	    }
+
+	    eol.execute();
+
+	    if (type == EOLCandidate.CONSOLE_TYPE)
+		eol.getContext().getOutputStream().close();
+
+	    eol.getContext().getModelRepository().dispose();
+	    // eol.getContext().dispose();
+	    eol.clearCache();
+	    eol = null;
+	}
+	// cleanup
+	cleanup(temp);
     }
 
     private File getCorrespondingMutantFileByName(File[] mutants_code, String name) {
@@ -424,8 +586,6 @@ public class EolLauncher {
 	    return;
 	Iterator<OperatorEntry> it = list.iterator();
 
-	// FileWriter file = new FileWriter(outputs_dir.getPath() + File.separatorChar + eol_name + ".csv");
-
 	int sum_processed = 0, sum_trivial = 0, sum_killed = 0, sum_not_killed = 0, sum_invalid = 0;
 
 	String not_killed_list = "";
@@ -459,97 +619,6 @@ public class EolLauncher {
 	    for (String s : mutant_names)
 		report.write(s + "\n");
 	    report.close();
-	}
-    }
-
-    private void originalExecution() throws Exception {
-
-	String mainModule = null;
-	if (imported_by != null)
-	    mainModule = imported_by;
-	else
-	    mainModule = eol_original_code;
-
-	if (mainModule == null)
-	    throw new Exception("Unable to find the main EOL file for execution.");
-
-	// output folder
-	File output_dir = new File(EXPECTED_MODELS_DIR + eol_name);
-	output_dir.mkdirs();
-
-	EolModule base = new EolModule();
-
-	base.parse(new File(mainModule).getAbsoluteFile());
-	if (base.getParseProblems().size() > 0)
-	    throw new Exception("Unable to parse file: " + mainModule + "\n" + base.getParseProblems().toString());
-
-	registerAndLoadMetamodels();
-
-	Random rand = new Random(System.nanoTime());
-
-	// load test inputs that conform to loaded metamodels
-	List<File> inputs = null;
-	for (short num : getInputFilesNumbers()) {
-
-	    inputs = getInputFilesOfNumber(num);
-
-	    // clone base EolModule for multiple use
-	    EolModule eol = EolCloneFactory.clone(base);
-	    eol.getContext().getExecutorFactory().setExecutionController(new DefaultExecutionController());
-
-	    // Three types of outputs
-	    // 1) Models create
-	    // 2) Models update
-	    // 3) Console output
-
-	    int n = rand.nextInt(Integer.MAX_VALUE);
-
-	    if (type == EOLCandidate.CONSOLE_TYPE) {
-		// read all input models
-		for (File f : inputs) {
-		    String aliase = f.getName().substring(0, f.getName().indexOf("_"));
-		    IModel m = newEmfModel("M_" + aliase + "_" + n, aliase, f.getPath(), getMetamodelUri(aliase), true, false);
-		    eol.getContext().getModelRepository().addModel(m);
-		}
-		// console output -> there is only one output
-		String m_path = output_dir.getPath() + File.separatorChar + eol_name + "_" + num + ".text";
-		eol.getContext().setOutputStream(new PrintStream(new FileOutputStream(m_path)));
-	    } else if (type == EOLCandidate.MODEL_CREATE_TYPE) {
-		String loaded_input_metamodes = "";
-		// read all input models
-		for (File f : inputs) {
-		    String aliase = f.getName().substring(0, f.getName().indexOf("_"));
-		    loaded_input_metamodes += "," + aliase;
-		    File new_f = new File(output_dir.getPath() + File.separatorChar + aliase + "_" + num + ".xmi");
-		    Files.copy(f.toPath(), new_f.toPath(), StandardCopyOption.REPLACE_EXISTING);
-		    IModel m = newEmfModel("M_" + aliase + "_" + n, aliase, new_f.getPath(), getMetamodelUri(aliase), true, false);
-		    eol.getContext().getModelRepository().addModel(m);
-		}
-		// add all output models that their aliases were not loaded as input models
-		for (EmfMetaModel mm : getOutputMetamodelUris(loaded_input_metamodes.split(","))) {
-		    File new_f = new File(output_dir.getPath() + File.separatorChar + mm.getName() + "_" + num + ".xmi");
-		    IModel m = newEmfModel("M_" + mm.getName() + "_" + n, mm.getName(), new_f.getPath(), mm.getMetamodelUri(), false, true);
-		    eol.getContext().getModelRepository().addModel(m);
-		}
-	    } else if (type == EOLCandidate.MODEL_UPDATE_TYPE) {
-		// copy all input models to output models
-		for (File f : inputs) {
-		    File new_f = new File(output_dir.getPath() + File.separatorChar + f.getName());
-		    Files.copy(f.toPath(), new_f.toPath(), StandardCopyOption.REPLACE_EXISTING);
-		    String aliase = f.getName().substring(0, f.getName().indexOf("_"));
-		    IModel m = newEmfModel("M_" + aliase + "_" + n, aliase, new_f.getPath(), getMetamodelUri(aliase), false, true);
-		    eol.getContext().getModelRepository().addModel(m);
-		}
-	    }
-
-	    eol.execute();
-
-	    if (type == EOLCandidate.CONSOLE_TYPE)
-		eol.getContext().getOutputStream().close();
-
-	    eol.getContext().getModelRepository().dispose();
-	    eol.clearCache();
-	    eol = null;
 	}
     }
 
