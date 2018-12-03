@@ -847,7 +847,7 @@ getIndex()
 SOURCE1
 NOTUNIQUE_HASH_INDEX
 getIndexAttributes()
-source1
+Source1
 source2
 findIndexAnnotation()
 https://eclipse.org/epsilon/incremental/OrientDbIndex

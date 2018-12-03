@@ -16,10 +16,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="resolvedModelDeclaration"
-        lowerBound="1" eType="#//ModelDeclarationStatement"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelDeclarationStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="PseudoType" abstract="true" eSuperTypes="#//AnyType"/>
   <eClassifiers xsi:type="ecore:EClass" name="SelfType" eSuperTypes="#//PseudoType"/>
   <eClassifiers xsi:type="ecore:EClass" name="SelfContentType" eSuperTypes="#//PseudoType"/>

@@ -7,13 +7,12 @@ import java.util.List;
 public class OperatorEntry {
     private String oID;
     private int total_processed_mutants = 0;
-    private int total_killed_mutants = 0;
-    private int total_invalid_mutants = 0;
-    private int total_trivial_mutants;
+    private int total_live_mutants = 0;
+    private int total_equiv_mutants = 0;
+    private int totol_invalid_mutants = 0;
     private List<String> killed_mutants_list;
 
     public OperatorEntry(String _oid) {
-
 	oID = _oid.substring(0, _oid.lastIndexOf("_"));
     }
 
@@ -35,20 +34,28 @@ public class OperatorEntry {
 	return total_processed_mutants;
     }
 
+    public void incrementLiveMutants() {
+	total_live_mutants++;
+    }
+
+    public int getTotalLiveMutants() {
+	return total_live_mutants;
+    }
+
+    public void incrementEquivalentMutants() {
+	total_equiv_mutants++;
+    }
+
+    public int getTotalEquivMutants() {
+	return total_equiv_mutants;
+    }
+
     public void incrementInvalidMutants() {
-	total_invalid_mutants++;
+	totol_invalid_mutants++;
     }
 
     public int getTotalInvalidMutants() {
-	return total_invalid_mutants;
-    }
-
-    public int getTotalKilledMutants() {
-	return total_killed_mutants;
-    }
-
-    public void incrementKilledMutants() {
-	total_killed_mutants++;
+	return totol_invalid_mutants;
     }
 
     public void addNotKilledToAList(String mutant) {
@@ -60,13 +67,5 @@ public class OperatorEntry {
 	    killed_mutants_list = new ArrayList<String>();
 	}
 	return killed_mutants_list;
-    }
-
-    public void incrementTrivialMutants() {
-	total_trivial_mutants++;
-    }
-
-    public int getTotalTrivialMutants() {
-	return total_trivial_mutants;
     }
 }

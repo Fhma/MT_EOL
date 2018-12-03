@@ -2,21 +2,14 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="eol_statements" nsURI="http://www.eclipse.org/epsilon/eol_statements"
     nsPrefix="eol_statements">
-  <eAnnotations source="emf.gen">
-    <details key="classPackageSuffix" value="metamodel.impl"/>
-    <details key="utilityPackageSuffix" value="metamodel.util"/>
-    <details key="metaDataPackageSuffix" value="metamodel"/>
-    <details key="interfacePackageSuffix" value="metamodel"/>
-    <details key="basePackage" value="org.eclipse.epsilon"/>
-  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Statement" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExpressionStatement" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
-        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" lowerBound="1" eType="#//Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SwitchStatement" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
-        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" lowerBound="1" eType="#//Expression"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cases" upperBound="-1"
         eType="#//SwitchCaseExpressionStatement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="default" eType="#//SwitchCaseDefaultStatement"
@@ -29,8 +22,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SwitchCaseDefaultStatement" eSuperTypes="#//SwitchCaseStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SwitchCaseExpressionStatement" eSuperTypes="#//SwitchCaseStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
-        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" lowerBound="1" eType="#//Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfStatement" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
@@ -57,16 +50,16 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReturnStatement" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
-        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" lowerBound="1" eType="#//Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ThrowStatement" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
-        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" lowerBound="1" eType="#//Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeleteStatement" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
-        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" lowerBound="1" eType="#//Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssignmentStatement" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" lowerBound="1" eType="#//Expression"
@@ -89,8 +82,8 @@
         eType="#//StringExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExecutableAnnotationStatement" eSuperTypes="#//AnnotationStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
-        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" lowerBound="1" eType="#//Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModelDeclarationStatement" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" lowerBound="1" eType="#//VariableDeclarationExpression"
@@ -108,6 +101,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="NameExpression" eSuperTypes="#//Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="ModelDeclarationParameter"/>
   <eClassifiers xsi:type="ecore:EClass" name="FormalParameterExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="StringExpression"/>
 </ecore:EPackage>

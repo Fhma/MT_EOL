@@ -308,7 +308,6 @@ if(nodesToolGroup.tools.size()=0) {
 if(linksToolGroup.tools.size()=0) {
 	delete linksToolGroup;
 }
-
 operation ECore!EClass createLabel()  {
 	var labelClass = self.getLabelClass();
 	var figure;

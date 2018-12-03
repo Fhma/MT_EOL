@@ -1,16 +1,15 @@
-@emf.gen(classPackageSuffix="metamodel.impl", utilityPackageSuffix="metamodel.util", metaDataPackageSuffix="metamodel", interfacePackageSuffix="metamodel", basePackage="org.eclipse.epsilon")
 @namespace(uri="http://www.eclipse.org/epsilon/eol_statements", prefix="eol_statements")
 package eol_statements;
 
-abstract class Statement{
+abstract class Statement {
 }
 
 class ExpressionStatement extends Statement {
-  val Expression[1] expression;
+  val Expression[1] expr;
 }
 
 class SwitchStatement extends Statement {
-  val Expression[1] expression;
+  val Expression[1] expr;
   val SwitchCaseExpressionStatement[*] cases;
   val SwitchCaseDefaultStatement default;
 }
@@ -23,7 +22,7 @@ class SwitchCaseDefaultStatement extends SwitchCaseStatement {
 }
 
 class SwitchCaseExpressionStatement extends SwitchCaseStatement {
-  val Expression[1] expression;
+  val Expression[1] expr;
 }
 
 class IfStatement extends Statement {
@@ -45,15 +44,15 @@ class WhileStatement extends Statement {
 }
 
 class ReturnStatement extends Statement {
-  val Expression[1] expression;
+  val Expression[1] expr;
 }
 
 class ThrowStatement extends Statement {
-  val Expression[1] expression;
+  val Expression[1] expr;
 }
 
 class DeleteStatement extends Statement {
-  val Expression[1] expression;
+  val Expression[1] expr;
 }
 
 class AssignmentStatement extends Statement {
@@ -85,7 +84,7 @@ class SimpleAnnotationStatement extends AnnotationStatement {
 }
 
 class ExecutableAnnotationStatement extends AnnotationStatement {
-  val Expression[1] expression;
+  val Expression[1] expr;
 }
 
 class ModelDeclarationStatement extends Statement {
@@ -97,6 +96,7 @@ class ModelDeclarationStatement extends Statement {
 
 abstract class Expression{
 }
+
 class ExpressionOrStatementBlock{
 }
 
@@ -105,6 +105,7 @@ class VariableDeclarationExpression extends Expression {
 
 class NameExpression extends Expression {
 }
+
 class ModelDeclarationParameter {
 }
 

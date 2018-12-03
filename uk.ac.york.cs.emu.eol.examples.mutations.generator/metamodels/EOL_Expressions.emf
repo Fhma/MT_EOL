@@ -1,65 +1,7 @@
-@emf.gen(classPackageSuffix="metamodel.impl", utilityPackageSuffix="metamodel.util", metaDataPackageSuffix="metamodel", interfacePackageSuffix="metamodel", basePackage="org.eclipse.epsilon")
-@namespace(uri="http://www.eclipse.org/epsilon/eol", prefix="eol")
-package eol;
+@namespace(uri="http://www.eclipse.org/epsilon/eol_expression", prefix="eol_expression")
+package eol_expression;
 
-class EOLElement {
-  ref EOLElement container;
-  attr String uri;
-  val TextRegion region;
-}
-
-class TextRegion {
-  val TextPosition[1] start;
-  val TextPosition end;
-}
-
-class TextPosition {
-  attr int[1] line;
-  attr int[1] column;
-}
-
-class EOLLibraryModule extends EOLElement {
-  attr String[1] name;
-  val Import[*] imports;
-  val ModelDeclarationStatement[*] modelDeclarations;
-  val OperationDefinition[*] operations;
-}
-
-class EOLModule extends EOLLibraryModule {
-  val Block block;
-}
-
-class Import extends EOLElement {
-  val EOLLibraryModule[1] importedModule;
-  attr String[1] imported;
-}
-
-class Block extends EOLElement {
-  val Statement[*] statements;
-}
-
-class AnnotationBlock extends Block {
-}
-
-class ExpressionOrStatementBlock extends EOLElement {
-  val Block block;
-  val Expression expression;
-  val Expression condition;
-}
-
-class OperationDefinition extends EOLElement {
-  val Type[1] contextType;
-  val Type[1] returnType;
-  val AnnotationBlock annotationBlock;
-  val Block body;
-  val NameExpression[1] name;
-  val FormalParameterExpression[*] parameters;
-  val VariableDeclarationExpression[1] self;
-  val VariableDeclarationExpression _result;
-  ref OperationDefinition[*] dependingOperationDefinitions;
-}
-
-abstract class Expression extends EOLElement {
+abstract class Expression {
   val Type[1] resolvedType;
   attr boolean[1] inBrackets = false;
 }
@@ -136,7 +78,6 @@ class EqualsOperatorExpression extends ComparisonOperatorExpression {
 class VariableDeclarationExpression extends Expression {
   attr boolean[1] create;
   val NameExpression[1] name;
-  ref NameExpression[*] references;
 }
 
 class FormalParameterExpression extends VariableDeclarationExpression {
@@ -144,7 +85,6 @@ class FormalParameterExpression extends VariableDeclarationExpression {
 
 class NameExpression extends Expression {
   attr String[1] name;
-  transient attr EJavaObject resolvedContent;
   attr boolean[1] isType;
 }
 
@@ -156,7 +96,6 @@ abstract class FeatureCallExpression extends Expression {
 class MethodCallExpression extends FeatureCallExpression {
   val Expression[*] arguments;
   val NameExpression[1] method;
-  ref OperationDefinition resolvedOperationDefinition;
 }
 
 class PropertyCallExpression extends FeatureCallExpression {
@@ -168,15 +107,11 @@ class FOLMethodCallExpression extends FeatureCallExpression {
   val FormalParameterExpression[1] iterator;
   val Expression[+] conditions;
   val NameExpression[1] method;
-  ref OperationDefinition resolvedFOLDefinition;
 }
 
 class KeyValueExpression extends Expression {
   val Expression[1] key;
   val Expression[1] value;
-}
-
-class ModelDeclarationParameter extends KeyValueExpression {
 }
 
 class NewExpression extends Expression {
@@ -254,191 +189,10 @@ class ExpressionList extends CollectionInitialisationExpression {
   val Expression[+] expressions;
 }
 
-abstract class Statement extends EOLElement {
+abstract class Statement {
 }
 
-class TransactionStatement extends Statement {
-  val NameExpression[*] names;
-  val ExpressionOrStatementBlock[1] body;
+class Type {
 }
 
-class ExpressionStatement extends Statement {
-  val Expression[1] expression;
-}
-
-class SwitchStatement extends Statement {
-  val Expression[1] expression;
-  val SwitchCaseExpressionStatement[*] cases;
-  val SwitchCaseDefaultStatement default;
-}
-
-abstract class SwitchCaseStatement extends Statement {
-  val ExpressionOrStatementBlock[1] body;
-}
-
-class SwitchCaseDefaultStatement extends SwitchCaseStatement {
-}
-
-class SwitchCaseExpressionStatement extends SwitchCaseStatement {
-  val Expression[1] expression;
-}
-
-class IfStatement extends Statement {
-  val Expression[1] condition;
-  val ExpressionOrStatementBlock[1] ifBody;
-  val ExpressionOrStatementBlock[*] elseIfBodies;
-  val ExpressionOrStatementBlock elseBody;
-}
-
-class ForStatement extends Statement {
-  val FormalParameterExpression[1] iterator;
-  val Expression[1] condition;
-  val ExpressionOrStatementBlock[1] body;
-}
-
-class WhileStatement extends Statement {
-  val Expression[1] condition;
-  val ExpressionOrStatementBlock[1] body;
-}
-
-class ReturnStatement extends Statement {
-  val Expression[1] expression;
-}
-
-class ThrowStatement extends Statement {
-  val Expression[1] expression;
-}
-
-class DeleteStatement extends Statement {
-  val Expression[1] expression;
-}
-
-class AssignmentStatement extends Statement {
-  val Expression[1] lhs;
-  val Expression[1] rhs;
-}
-
-class SpecialAssignmentStatement extends AssignmentStatement {
-}
-
-class ContinueStatement extends Statement {
-}
-
-class AbortStatement extends Statement {
-}
-
-class BreakStatement extends Statement {
-}
-
-class BreakAllStatement extends Statement {
-}
-
-abstract class AnnotationStatement extends Statement {
-  val NameExpression[1] name;
-}
-
-class SimpleAnnotationStatement extends AnnotationStatement {
-  val StringExpression[*] values;
-}
-
-class ExecutableAnnotationStatement extends AnnotationStatement {
-  val Expression[1] expression;
-}
-
-class ModelDeclarationStatement extends Statement {
-  val VariableDeclarationExpression[1] name;
-  val NameExpression[1] driver;
-  val VariableDeclarationExpression[*] aliases;
-  val ModelDeclarationParameter[*] parameters;
-  transient derived attr EJavaObject resolvedIMetamodel;
-}
-
-class Type extends EOLElement {
-}
-
-class AnyType extends Type {
-  val Type[*] dynamicTypes;
-  attr boolean[1] declared;
-}
-
-class ModelType extends AnyType {
-  transient attr EJavaObject resolvedIMetamodel;
-  attr String modelName;
-}
-
-class ModelElementType extends AnyType {
-  attr String modelName;
-  attr String[1] elementName;
-  ref ModelDeclarationStatement[1] resolvedModelDeclaration;
-  transient attr EJavaObject resolvedIMetamodel;
-  transient attr EJavaObject resolvedIPackage;
-  transient attr EJavaObject modelElementType;
-}
-
-abstract class PseudoType extends AnyType {
-}
-
-class SelfType extends PseudoType {
-}
-
-class SelfContentType extends PseudoType {
-}
-
-class MapType extends AnyType {
-  val AnyType keyType;
-  val AnyType valueType;
-}
-
-class NativeType extends AnyType {
-  val StringExpression[1] expression;
-}
-
-class VoidType extends AnyType {
-}
-
-class InvalidType extends AnyType {
-}
-
-class CollectionType extends AnyType {
-  val Type[1] contentType;
-}
-
-class BagType extends CollectionType {
-}
-
-abstract class OrderedCollectionType extends CollectionType {
-}
-
-abstract class UniqueCollectionType extends CollectionType {
-}
-
-class SetType extends UniqueCollectionType {
-}
-
-class OrderedSetType extends UniqueCollectionType, OrderedCollectionType {
-}
-
-class SequenceType extends OrderedCollectionType {
-}
-
-abstract class PrimitiveType extends AnyType {
-}
-
-abstract class ComparablePrimitiveType extends PrimitiveType {
-}
-
-abstract class SummablePrimitiveType extends PrimitiveType {
-}
-
-class BooleanType extends PrimitiveType {
-}
-
-class RealType extends ComparablePrimitiveType, SummablePrimitiveType {
-}
-
-class IntegerType extends RealType {
-}
-
-class StringType extends ComparablePrimitiveType, SummablePrimitiveType {
-}
 

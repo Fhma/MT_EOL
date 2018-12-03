@@ -1,0 +1,707 @@
+E<>CMO-M-ADD_Block_statements_10 = deadcode
+E<>CMO-M-ADD_Block_statements_12 = deadcode
+E<>CMO-M-ADD_Block_statements_13 = deadcode
+E<>CMO-M-ADD_Block_statements_14 = deadcode
+L<>CMO-M-ADD_Block_statements_15
+L<>CMO-M-ADD_Block_statements_2
+L<>CMO-M-ADD_Block_statements_4
+L<>CMO-M-ADD_Block_statements_5
+L<>CMO-M-ADD_Block_statements_7
+L<>CMO-M-ADD_Block_statements_8
+L<>CMO-M-ADD_Block_statements_9
+E<>CMO-M-ADD_MethodCallExpression_arguments_101 = the engine seems to do noting about duplicate operations. The mutation that made in the duplicate operation is never executed and therefore it is considered a dead code  
+L<>CMO-M-ADD_MethodCallExpression_arguments_102
+L<>CMO-M-ADD_MethodCallExpression_arguments_104
+E<>CMO-M-ADD_MethodCallExpression_arguments_105  = the engine seems to do noting about duplicate operations. The mutation that made in the duplicate operation is never executed and therefore it is considered a dead code
+L<>CMO-M-ADD_MethodCallExpression_arguments_108
+L<>CMO-M-ADD_MethodCallExpression_arguments_11
+L<>CMO-M-ADD_MethodCallExpression_arguments_12
+E<>CMO-M-ADD_MethodCallExpression_arguments_15 = deadcode
+L<>CMO-M-ADD_MethodCallExpression_arguments_16
+E<>CMO-M-ADD_MethodCallExpression_arguments_17 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_20 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_21 = deadcode
+L<>CMO-M-ADD_MethodCallExpression_arguments_24
+E<>CMO-M-ADD_MethodCallExpression_arguments_28 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_29 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_34 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_36 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_38 = deadcode
+L<>CMO-M-ADD_MethodCallExpression_arguments_40
+L<>CMO-M-ADD_MethodCallExpression_arguments_44
+L<>CMO-M-ADD_MethodCallExpression_arguments_47
+L<>CMO-M-ADD_MethodCallExpression_arguments_55
+L<>CMO-M-ADD_MethodCallExpression_arguments_58
+E<>CMO-M-ADD_MethodCallExpression_arguments_6 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_62 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_69 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_71 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_73 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_75 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_86 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_90 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_91 = deadcode
+E<>CMO-M-ADD_MethodCallExpression_arguments_92 = deadcode
+L<>CMO-M-ADD_MethodCallExpression_arguments_93
+L<>CMO-M-ADD_MethodCallExpression_arguments_95
+L<>CMO-M-ADD_MethodCallExpression_arguments_97
+L<>CMO-M-ADD_MethodCallExpression_arguments_99
+L<>CMO-M-ADD_OperationDefinition_parameters_10
+E<>CMO-M-ADD_OperationDefinition_parameters_16 = deadcode
+L<>CMO-M-ADD_OperationDefinition_parameters_19
+E<>CMO-M-ADD_OperationDefinition_parameters_2 = deadcode
+E<>CMO-M-ADD_OperationDefinition_parameters_21 = deadcode
+E<>CMO-M-ADD_OperationDefinition_parameters_23 = deadcode
+E<>CMO-M-ADD_OperationDefinition_parameters_24 = deadcode
+L<>CMO-M-ADD_OperationDefinition_parameters_26
+E<>CMO-M-ADD_OperationDefinition_parameters_27 = deadcode
+L<>CMO-M-ADD_OperationDefinition_parameters_3
+L<>CMO-M-ADD_OperationDefinition_parameters_31
+E<>CMO-M-ADD_OperationDefinition_parameters_32 = deadcode
+E<>CMO-M-ADD_OperationDefinition_parameters_38 = deadcode
+E<>CMO-M-ADD_OperationDefinition_parameters_43 = deadcode
+E<>CMO-M-ADD_OperationDefinition_parameters_46 = deadcode
+E<>CMO-M-ADD_OperationDefinition_parameters_52 = deadcode 
+E<>CMO-M-ADD_OperationDefinition_parameters_53 = deadcode
+L<>CMO-M-ADD_OperationDefinition_parameters_55
+E<>CMO-M-ADD_OperationDefinition_parameters_6 = deadcode 
+L<>CMO-M-ADD_OperationDefinition_parameters_7
+L<>CMO-M-DEL_Block_statements_10
+E<>CMO-M-DEL_Block_statements_100 = deadcode
+E<>CMO-M-DEL_Block_statements_101 = deadcode
+L<>CMO-M-DEL_Block_statements_103
+L<>CMO-M-DEL_Block_statements_104
+L<>CMO-M-DEL_Block_statements_105
+E<>CMO-M-DEL_Block_statements_106 = an operation with a return statement that was removed seems to have no effect on operation execution
+E<>CMO-M-DEL_Block_statements_108 = deadcode
+E<>CMO-M-DEL_Block_statements_109
+L<>CMO-M-DEL_Block_statements_11
+L<>CMO-M-DEL_Block_statements_112
+E<>CMO-M-DEL_Block_statements_119 = deadcode
+L<>CMO-M-DEL_Block_statements_122
+L<>CMO-M-DEL_Block_statements_123
+L<>CMO-M-DEL_Block_statements_124
+E<>CMO-M-DEL_Block_statements_125 = deadcode
+E<>CMO-M-DEL_Block_statements_126 = deadcode
+E<>CMO-M-DEL_Block_statements_127 = deadcode
+L<>CMO-M-DEL_Block_statements_129
+E<>CMO-M-DEL_Block_statements_13 = deadcode
+L<>CMO-M-DEL_Block_statements_134
+E<>CMO-M-DEL_Block_statements_135
+E<>CMO-M-DEL_Block_statements_141 = deadcode
+L<>CMO-M-DEL_Block_statements_144
+E<>CMO-M-DEL_Block_statements_145
+L<>CMO-M-DEL_Block_statements_146
+E<>CMO-M-DEL_Block_statements_151 = deadcode
+E<>CMO-M-DEL_Block_statements_152 = deadcode
+E<>CMO-M-DEL_Block_statements_153 = deadcode
+E<>CMO-M-DEL_Block_statements_154 = deadcode
+E<>CMO-M-DEL_Block_statements_155 = deadcode
+CMO-M-DEL_Block_statements_157
+L<>CMO-M-DEL_Block_statements_159
+L<>CMO-M-DEL_Block_statements_162
+E<>CMO-M-DEL_Block_statements_166
+E<>CMO-M-DEL_Block_statements_167
+E<>CMO-M-DEL_Block_statements_168 = deadcode
+L<>CMO-M-DEL_Block_statements_17
+E<>CMO-M-DEL_Block_statements_170 = deadcode
+L<>CMO-M-DEL_Block_statements_171
+L<>CMO-M-DEL_Block_statements_172
+E<>CMO-M-DEL_Block_statements_173
+E<>CMO-M-DEL_Block_statements_174 = deadcode
+E<>CMO-M-DEL_Block_statements_176 = deadcode
+E<>CMO-M-DEL_Block_statements_177 = deadcode
+E<>CMO-M-DEL_Block_statements_178 = deadcode
+L<>CMO-M-DEL_Block_statements_18
+L<>CMO-M-DEL_Block_statements_19
+E<>CMO-M-DEL_Block_statements_2 = deadcode
+L<>CMO-M-DEL_Block_statements_21
+L<>CMO-M-DEL_Block_statements_22
+L<>CMO-M-DEL_Block_statements_23
+E<>CMO-M-DEL_Block_statements_24 = deadcode
+E<>CMO-M-DEL_Block_statements_25 = deadcode
+L<>CMO-M-DEL_Block_statements_28
+CMO-M-DEL_Block_statements_3
+E<>CMO-M-DEL_Block_statements_31 = deadcode
+CMO-M-DEL_Block_statements_32
+L<>CMO-M-DEL_Block_statements_33
+E<>CMO-M-DEL_Block_statements_34 = deadcode
+CMO-M-DEL_Block_statements_37
+CMO-M-DEL_Block_statements_38
+L<>CMO-M-DEL_Block_statements_4
+E<>CMO-M-DEL_Block_statements_40 = deadcode
+L<>CMO-M-DEL_Block_statements_43
+L<>CMO-M-DEL_Block_statements_44
+L<>CMO-M-DEL_Block_statements_45
+E<>CMO-M-DEL_Block_statements_46
+E<>CMO-M-DEL_Block_statements_47
+L<>CMO-M-DEL_Block_statements_48
+CMO-M-DEL_Block_statements_49
+L<>CMO-M-DEL_Block_statements_51
+L<>CMO-M-DEL_Block_statements_54
+E<>CMO-M-DEL_Block_statements_55 = deadcode
+L<>CMO-M-DEL_Block_statements_59
+E<>CMO-M-DEL_Block_statements_6 = deadcode
+CMO-M-DEL_Block_statements_63
+L<>CMO-M-DEL_Block_statements_66
+CMO-M-DEL_Block_statements_68
+L<>CMO-M-DEL_Block_statements_69
+L<>CMO-M-DEL_Block_statements_7
+CMO-M-DEL_Block_statements_70
+L<>CMO-M-DEL_Block_statements_71
+L<>CMO-M-DEL_Block_statements_74
+E<>CMO-M-DEL_Block_statements_75 = deadcode
+E<>CMO-M-DEL_Block_statements_76 = deadcode
+CMO-M-DEL_Block_statements_77
+CMO-M-DEL_Block_statements_78
+CMO-M-DEL_Block_statements_79
+L<>CMO-M-DEL_Block_statements_8
+E<>CMO-M-DEL_Block_statements_81 = deadcode
+CMO-M-DEL_Block_statements_82
+E<>CMO-M-DEL_Block_statements_83 = deadcode
+L<>CMO-M-DEL_Block_statements_84
+CMO-M-DEL_Block_statements_85
+E<>CMO-M-DEL_Block_statements_88 = deadcode
+L<>CMO-M-DEL_Block_statements_89
+L<>CMO-M-DEL_Block_statements_9
+E<>CMO-M-DEL_Block_statements_90 = deadcode
+L<>CMO-M-DEL_Block_statements_93
+E<>CMO-M-DEL_Block_statements_95 = deadcode
+L<>CMO-M-DEL_Block_statements_98
+L<>CMO-M-DEL_Block_statements_99
+L<>CMO-M-DEL_EOLModule_operations_1
+E<>CMO-M-DEL_EOLModule_operations_10 = deadcode
+L<>CMO-M-DEL_EOLModule_operations_14 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code 
+E<>CMO-M-DEL_EOLModule_operations_15 = deadcode
+E<>CMO-M-DEL_EOLModule_operations_17 = deadcode
+L<>CMO-M-DEL_EOLModule_operations_2
+E<>CMO-M-DEL_EOLModule_operations_20 = deadcode
+L<>CMO-M-DEL_EOLModule_operations_24
+E<>CMO-M-DEL_EOLModule_operations_30 = deadcode
+E<>CMO-M-DEL_EOLModule_operations_34 = deadcode
+E<>CMO-M-DEL_EOLModule_operations_39 = deadcode
+E<>CMO-M-DEL_EOLModule_operations_4 = deadcodee
+E<>CMO-M-DEL_EOLModule_operations_40 = deadcode
+E<>CMO-M-DEL_EOLModule_operations_42 = deadcode
+L<>CMO-M-DEL_EOLModule_operations_43
+L<>CMO-M-DEL_EOLModule_operations_44
+L<>CMO-M-DEL_EOLModule_operations_5
+E<>CMO-M-DEL_EOLModule_operations_52 = deadcode
+L<>CMO-M-DEL_EOLModule_operations_55
+E<>CMO-M-DEL_EOLModule_operations_58 = deadcode
+E<>CMO-M-DEL_MethodCallExpression_arguments_17 = deadcode
+E<>CMO-M-DEL_MethodCallExpression_arguments_6= deadcode
+E<>CMO-M-DEL_MethodCallExpression_arguments_9 = deadcode
+E<>CMO-M-DEL_OperationDefinition_parameters_10 = deadcode
+E<>CMO-M-DEL_OperationDefinition_parameters_16 = deadcode
+E<>CMO-M-DEL_OperationDefinition_parameters_5 = deadcode
+E<>CMO-M-DEL_OperationDefinition_parameters_7 = deadcode
+L<>CMO-M-REP_Block_statements_10
+L<>CMO-M-REP_Block_statements_11
+L<>CMO-M-REP_Block_statements_12 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_14
+L<>CMO-M-REP_Block_statements_15
+L<>CMO-M-REP_Block_statements_16 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+E<>CMO-M-REP_Block_statements_18 = deadcode
+L<>CMO-M-REP_Block_statements_19
+E<>CMO-M-REP_Block_statements_2
+L<>CMO-M-REP_Block_statements_22 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+E<>CMO-M-REP_Block_statements_24
+E<>CMO-M-REP_Block_statements_25 = deadcode
+L<>CMO-M-REP_Block_statements_28 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_29
+L<>CMO-M-REP_Block_statements_32
+L<>CMO-M-REP_Block_statements_33
+L<>CMO-M-REP_Block_statements_34
+L<>CMO-M-REP_Block_statements_35 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_38 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_4 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_41
+L<>CMO-M-REP_Block_statements_42
+L<>CMO-M-REP_Block_statements_43
+L<>CMO-M-REP_Block_statements_45
+L<>CMO-M-REP_Block_statements_46 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_48
+E<>CMO-M-REP_Block_statements_50
+L<>CMO-M-REP_Block_statements_51
+L<>CMO-M-REP_Block_statements_52 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_55
+L<>CMO-M-REP_Block_statements_6
+L<>CMO-M-REP_Block_statements_7 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_8 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_9 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+E<>CMO-M-REP_FOLMethodCallExpression_conditions_11 = deadcode
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_12 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say. 
+E<>CMO-M-REP_FOLMethodCallExpression_conditions_14 = deadcode
+E<>CMO-M-REP_FOLMethodCallExpression_conditions_15 = deadcode
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_17
+E<>CMO-M-REP_FOLMethodCallExpression_conditions_21 = deadcode
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_27 = binary comparison operators (>,>=,<,<=) is used on boolean literals; something that should not be allowed by the EOL engine as specification say.
+E<>CMO-M-REP_FOLMethodCallExpression_conditions_29 = deadcode
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_30 = binary comparison operators (>,>=,<,<=) is used on boolean literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_33 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_36 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_37 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_40 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_41 = binary comparison operators (>,>=,<,<=) is used on boolean literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_42 = binary comparison operators (>,>=,<,<=) is used on boolean literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_43 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_48 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_51 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_52 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_54
+E<>CMO-M-REP_FOLMethodCallExpression_conditions_57
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_58 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_59 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_6 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_60 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+E<>CMO-M-REP_FOLMethodCallExpression_conditions_62 = deadcode
+E<>CMO-M-REP_FOLMethodCallExpression_conditions_63 = deadcode
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_64
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_8 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+E<>CMO-M-REP_MethodCallExpression_arguments_1 = deadcode
+L<>CMO-M-REP_MethodCallExpression_arguments_2
+E<>CMO-M-REP_MethodCallExpression_arguments_3 = deadcode
+L<>CMO-M-REP_MethodCallExpression_arguments_5
+CMO-S-DEL_ExpressionOrStatementBlock_block_1
+E<>CMO-S-DEL_ExpressionOrStatementBlock_block_10 = deadcode
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_11
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_13
+E<>CMO-S-DEL_ExpressionOrStatementBlock_block_15 = deadcode
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_16
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_17
+CMO-S-DEL_ExpressionOrStatementBlock_block_19
+CMO-S-DEL_ExpressionOrStatementBlock_block_2
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_21
+CMO-S-DEL_ExpressionOrStatementBlock_block_22
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_26
+CMO-S-DEL_ExpressionOrStatementBlock_block_3
+CMO-S-DEL_ExpressionOrStatementBlock_block_30
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_31
+E<>CMO-S-DEL_ExpressionOrStatementBlock_block_32 = deadcode
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_34
+E<>CMO-S-DEL_ExpressionOrStatementBlock_block_35 = deadcode
+CMO-S-DEL_ExpressionOrStatementBlock_block_36
+CMO-S-DEL_ExpressionOrStatementBlock_block_37
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_38
+CMO-S-DEL_ExpressionOrStatementBlock_block_39
+E<>CMO-S-DEL_ExpressionOrStatementBlock_block_4 = deadcode
+E<>CMO-S-DEL_ExpressionOrStatementBlock_block_40 = deadcode
+CMO-S-DEL_ExpressionOrStatementBlock_block_41
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_43
+E<>CMO-S-DEL_ExpressionOrStatementBlock_block_44 = deadcode
+E<>CMO-S-DEL_ExpressionOrStatementBlock_block_48 = deadcode
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_49
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_50
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_53
+CMO-S-DEL_ExpressionOrStatementBlock_block_54
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_55
+E<>CMO-S-DEL_ExpressionOrStatementBlock_block_56 = deadcode
+E<>CMO-S-DEL_ExpressionOrStatementBlock_block_57 = deadcode
+E<>CMO-S-DEL_ExpressionOrStatementBlock_block_59 = deadcode
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_60
+CMO-S-DEL_ExpressionOrStatementBlock_block_62
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_63
+CMO-S-DEL_ExpressionOrStatementBlock_block_64
+E<>CMO-S-DEL_ExpressionOrStatementBlock_block_7 = deadcode
+L<>CMO-S-DEL_ExpressionOrStatementBlock_block_8
+E<>CMO-S-DEL_ExpressionOrStatementBlock_block_9 = deadcode
+E<>CMO-S-DEL_FOLMethodCallExpression_target_19 = deadcode
+E<>CMO-S-DEL_FOLMethodCallExpression_target_20 = deadcode
+E<>CMO-S-DEL_FOLMethodCallExpression_target_4 = deadcode
+E<>CMO-S-DEL_FOLMethodCallExpression_target_9 = deadcode
+CMO-S-DEL_IfStatement_elseBody_1
+L<>CMO-S-DEL_IfStatement_elseBody_12
+CMO-S-DEL_IfStatement_elseBody_14
+CMO-S-DEL_IfStatement_elseBody_17
+E<>CMO-S-DEL_IfStatement_elseBody_23 = deadcode
+E<>CMO-S-DEL_IfStatement_elseBody_25 = deadcode
+CMO-S-DEL_IfStatement_elseBody_26
+E<>CMO-S-DEL_IfStatement_elseBody_27 = deadcode
+CMO-S-DEL_IfStatement_elseBody_28
+L<>CMO-S-DEL_IfStatement_elseBody_29
+CMO-S-DEL_IfStatement_elseBody_30
+CMO-S-DEL_IfStatement_elseBody_34
+CMO-S-DEL_IfStatement_elseBody_4
+L<>CMO-S-DEL_IfStatement_elseBody_5
+E<>CMO-S-DEL_IfStatement_elseBody_7 = deadcode
+E<>CMO-S-DEL_IfStatement_elseBody_8 = deadcode
+L<>CMO-S-DEL_MethodCallExpression_target_10
+L<>CMO-S-DEL_MethodCallExpression_target_107
+L<>CMO-S-DEL_MethodCallExpression_target_15
+L<>CMO-S-DEL_MethodCallExpression_target_16
+E<>CMO-S-DEL_MethodCallExpression_target_17 = deadcode
+E<>CMO-S-DEL_MethodCallExpression_target_2 = deadcode
+L<>CMO-S-DEL_MethodCallExpression_target_22
+E<>CMO-S-DEL_MethodCallExpression_target_23 = deadcode
+L<>CMO-S-DEL_MethodCallExpression_target_25
+L<>CMO-S-DEL_MethodCallExpression_target_26
+E<>CMO-S-DEL_MethodCallExpression_target_3 = deadcode
+E<>CMO-S-DEL_MethodCallExpression_target_30 = deadcode
+E<>CMO-S-DEL_MethodCallExpression_target_32 = deadcode
+E<>CMO-S-DEL_MethodCallExpression_target_33 = deadcode
+L<>CMO-S-DEL_MethodCallExpression_target_34
+L<>CMO-S-DEL_MethodCallExpression_target_37
+E<>CMO-S-DEL_MethodCallExpression_target_38 = deadcode
+E<>CMO-S-DEL_MethodCallExpression_target_39 = deadcode
+E<>CMO-S-DEL_MethodCallExpression_target_40 = deadcode
+E<>CMO-S-DEL_MethodCallExpression_target_47 = deadcode
+E<>CMO-S-DEL_MethodCallExpression_target_5 = deadcode
+L<>CMO-S-DEL_MethodCallExpression_target_52
+L<>CMO-S-DEL_MethodCallExpression_target_56
+E<>CMO-S-DEL_MethodCallExpression_target_58 = deadcode
+L<>CMO-S-DEL_MethodCallExpression_target_59
+E<>CMO-S-DEL_MethodCallExpression_target_61 = deadcode
+E<>CMO-S-DEL_MethodCallExpression_target_64 = deadcode
+L<>CMO-S-DEL_MethodCallExpression_target_67
+L<>CMO-S-DEL_MethodCallExpression_target_69
+E<>CMO-S-DEL_MethodCallExpression_target_76 = deadcode
+E<>CMO-S-DEL_MethodCallExpression_target_81 = deadcode
+E<>CMO-S-DEL_MethodCallExpression_target_83 = deadcode
+E<>CMO-S-DEL_MethodCallExpression_target_86 = deadcode
+L<>CMO-S-DEL_MethodCallExpression_target_91
+L<>CMO-S-DEL_MethodCallExpression_target_92
+E<>CMO-S-DEL_MethodCallExpression_target_94 = deadcode
+E<>CMO-S-DEL_ModelElementType_modelName_1
+E<>CMO-S-DEL_ModelElementType_modelName_10
+E<>CMO-S-DEL_ModelElementType_modelName_100
+I<>CMO-S-DEL_ModelElementType_modelName_101
+I<>CMO-S-DEL_ModelElementType_modelName_102
+I<>CMO-S-DEL_ModelElementType_modelName_103
+E<>CMO-S-DEL_ModelElementType_modelName_104
+E<>CMO-S-DEL_ModelElementType_modelName_105
+E<>CMO-S-DEL_ModelElementType_modelName_106
+I<>CMO-S-DEL_ModelElementType_modelName_107
+E<>CMO-S-DEL_ModelElementType_modelName_108 = deadcdoe
+I<>CMO-S-DEL_ModelElementType_modelName_11
+I<>CMO-S-DEL_ModelElementType_modelName_12
+I<>CMO-S-DEL_ModelElementType_modelName_13
+E<>CMO-S-DEL_ModelElementType_modelName_14 = deadcdoe
+I<>CMO-S-DEL_ModelElementType_modelName_15
+I<>CMO-S-DEL_ModelElementType_modelName_16
+E<>CMO-S-DEL_ModelElementType_modelName_17 = deadcode
+E<>CMO-S-DEL_ModelElementType_modelName_18
+E<>CMO-S-DEL_ModelElementType_modelName_19
+E<>CMO-S-DEL_ModelElementType_modelName_2
+I<>CMO-S-DEL_ModelElementType_modelName_20
+I<>CMO-S-DEL_ModelElementType_modelName_21
+I<>CMO-S-DEL_ModelElementType_modelName_22
+E<>CMO-S-DEL_ModelElementType_modelName_23
+E<>CMO-S-DEL_ModelElementType_modelName_24
+E<>CMO-S-DEL_ModelElementType_modelName_25
+I<>CMO-S-DEL_ModelElementType_modelName_26
+I<>CMO-S-DEL_ModelElementType_modelName_27
+I<>CMO-S-DEL_ModelElementType_modelName_28
+I<>CMO-S-DEL_ModelElementType_modelName_29
+E<>CMO-S-DEL_ModelElementType_modelName_3
+I<>CMO-S-DEL_ModelElementType_modelName_30
+E<>CMO-S-DEL_ModelElementType_modelName_31
+E<>CMO-S-DEL_ModelElementType_modelName_32
+I<>CMO-S-DEL_ModelElementType_modelName_33
+I<>CMO-S-DEL_ModelElementType_modelName_34
+E<>CMO-S-DEL_ModelElementType_modelName_35
+I<>CMO-S-DEL_ModelElementType_modelName_36
+I<>CMO-S-DEL_ModelElementType_modelName_37
+I<>CMO-S-DEL_ModelElementType_modelName_38
+I<>CMO-S-DEL_ModelElementType_modelName_39
+E<>CMO-S-DEL_ModelElementType_modelName_4
+I<>CMO-S-DEL_ModelElementType_modelName_40
+E<>CMO-S-DEL_ModelElementType_modelName_41
+E<>CMO-S-DEL_ModelElementType_modelName_42
+E<>CMO-S-DEL_ModelElementType_modelName_43
+E<>CMO-S-DEL_ModelElementType_modelName_44
+I<>CMO-S-DEL_ModelElementType_modelName_45
+I<>CMO-S-DEL_ModelElementType_modelName_46
+I<>CMO-S-DEL_ModelElementType_modelName_47
+I<>CMO-S-DEL_ModelElementType_modelName_48
+E<>CMO-S-DEL_ModelElementType_modelName_49
+I<>CMO-S-DEL_ModelElementType_modelName_5
+E<>CMO-S-DEL_ModelElementType_modelName_50
+E<>CMO-S-DEL_ModelElementType_modelName_51
+I<>CMO-S-DEL_ModelElementType_modelName_52
+I<>CMO-S-DEL_ModelElementType_modelName_53
+I<>CMO-S-DEL_ModelElementType_modelName_54
+E<>CMO-S-DEL_ModelElementType_modelName_55
+E<>CMO-S-DEL_ModelElementType_modelName_56
+E<>CMO-S-DEL_ModelElementType_modelName_57
+E<>CMO-S-DEL_ModelElementType_modelName_58
+I<>CMO-S-DEL_ModelElementType_modelName_59
+I<>CMO-S-DEL_ModelElementType_modelName_6
+I<>CMO-S-DEL_ModelElementType_modelName_60
+I<>CMO-S-DEL_ModelElementType_modelName_61
+I<>CMO-S-DEL_ModelElementType_modelName_62
+E<>CMO-S-DEL_ModelElementType_modelName_63
+I<>CMO-S-DEL_ModelElementType_modelName_64
+E<>CMO-S-DEL_ModelElementType_modelName_65
+I<>CMO-S-DEL_ModelElementType_modelName_66
+E<>CMO-S-DEL_ModelElementType_modelName_67
+E<>CMO-S-DEL_ModelElementType_modelName_68
+E<>CMO-S-DEL_ModelElementType_modelName_69
+I<>CMO-S-DEL_ModelElementType_modelName_7
+I<>CMO-S-DEL_ModelElementType_modelName_70
+L<>CMO-S-DEL_ModelElementType_modelName_71
+E<>CMO-S-DEL_ModelElementType_modelName_72
+I<>CMO-S-DEL_ModelElementType_modelName_73
+E<>CMO-S-DEL_ModelElementType_modelName_74
+I<>CMO-S-DEL_ModelElementType_modelName_75
+E<>CMO-S-DEL_ModelElementType_modelName_76
+E<>CMO-S-DEL_ModelElementType_modelName_77
+E<>CMO-S-DEL_ModelElementType_modelName_78
+I<>CMO-S-DEL_ModelElementType_modelName_79
+E<>CMO-S-DEL_ModelElementType_modelName_8
+I<>CMO-S-DEL_ModelElementType_modelName_80
+E<>CMO-S-DEL_ModelElementType_modelName_81
+I<>CMO-S-DEL_ModelElementType_modelName_82
+E<>CMO-S-DEL_ModelElementType_modelName_83
+E<>CMO-S-DEL_ModelElementType_modelName_84
+E<>CMO-S-DEL_ModelElementType_modelName_85
+I<>CMO-S-DEL_ModelElementType_modelName_86
+E<>CMO-S-DEL_ModelElementType_modelName_87
+E<>CMO-S-DEL_ModelElementType_modelName_88
+E<>CMO-S-DEL_ModelElementType_modelName_89
+E<>CMO-S-DEL_ModelElementType_modelName_9
+E<>CMO-S-DEL_ModelElementType_modelName_90
+E<>CMO-S-DEL_ModelElementType_modelName_91
+E<>CMO-S-DEL_ModelElementType_modelName_92
+E<>CMO-S-DEL_ModelElementType_modelName_93
+I<>CMO-S-DEL_ModelElementType_modelName_94
+E<>CMO-S-DEL_ModelElementType_modelName_95
+I<>CMO-S-DEL_ModelElementType_modelName_96
+I<>CMO-S-DEL_ModelElementType_modelName_97
+E<>CMO-S-DEL_ModelElementType_modelName_98
+I<>CMO-S-DEL_ModelElementType_modelName_99
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_4 = binary comparison operators (>,>=,<,<=) is used on boolean literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_7 = binary comparison operators (>,>=,<,<=) is used on boolean literals; something that should not be allowed by the EOL engine as specification say.
+E<>CMO-S-REP_FOLMethodCallExpression_method_103 = deadcode
+E<>CMO-S-REP_FOLMethodCallExpression_method_109 = deadcode
+E<>CMO-S-REP_FOLMethodCallExpression_method_115 = deadcode
+E<>CMO-S-REP_FOLMethodCallExpression_method_12 = deadcode
+E<>CMO-S-REP_FOLMethodCallExpression_method_17 = deadcode
+L<>CMO-S-REP_FOLMethodCallExpression_method_19
+E<>CMO-S-REP_FOLMethodCallExpression_method_22 = deadcode 
+L<>CMO-S-REP_FOLMethodCallExpression_method_31
+L<>CMO-S-REP_FOLMethodCallExpression_method_32
+E<>CMO-S-REP_FOLMethodCallExpression_method_38 = deadcode
+E<>CMO-S-REP_FOLMethodCallExpression_method_47 = deadcode
+E<>CMO-S-REP_FOLMethodCallExpression_method_50 = deadcode
+E<>CMO-S-REP_FOLMethodCallExpression_method_56 = deadcode
+E<>CMO-S-REP_FOLMethodCallExpression_method_58
+E<>CMO-S-REP_FOLMethodCallExpression_method_59 = deadcode
+E<>CMO-S-REP_FOLMethodCallExpression_method_6 = deadcode
+L<>CMO-S-REP_FOLMethodCallExpression_method_63
+CMO-S-REP_FOLMethodCallExpression_method_64
+CMO-S-REP_FOLMethodCallExpression_method_67
+CMO-S-REP_FOLMethodCallExpression_method_74
+L<>CMO-S-REP_FOLMethodCallExpression_method_78
+E<>CMO-S-REP_FOLMethodCallExpression_method_81 = deadcode
+CMO-S-REP_FOLMethodCallExpression_method_86
+L<>CMO-S-REP_FOLMethodCallExpression_method_89
+E<>CMO-S-REP_FOLMethodCallExpression_method_9 = deadcode
+E<>CMO-S-REP_FOLMethodCallExpression_method_90 = deadcode
+E<>CMO-S-REP_FOLMethodCallExpression_method_97 = deadcode
+E<>CMO-S-REP_FormalParameterExpression_name_1 = deadcode
+L<>CMO-S-REP_FormalParameterExpression_name_10
+E<>CMO-S-REP_FormalParameterExpression_name_16 = deadcode
+E<>CMO-S-REP_FormalParameterExpression_name_17 = deadcode
+E<>CMO-S-REP_FormalParameterExpression_name_20 = deadcode
+L<>CMO-S-REP_FormalParameterExpression_name_23
+E<>CMO-S-REP_FormalParameterExpression_name_26 = deadcode
+E<>CMO-S-REP_FormalParameterExpression_name_30 = deadcode
+E<>CMO-S-REP_FormalParameterExpression_name_34 = deadcode
+E<>CMO-S-REP_FormalParameterExpression_name_42 = deadcode
+E<>CMO-S-REP_FormalParameterExpression_name_46 = deadcode
+E<>CMO-S-REP_IfStatement_condition_13 = deadcode
+E<>CMO-S-REP_IfStatement_condition_14 = deadcode
+L<>CMO-S-REP_IfStatement_condition_15
+L<>CMO-S-REP_IfStatement_condition_16 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_IfStatement_condition_17
+E<>CMO-S-REP_IfStatement_condition_18 = deadcode
+E<>CMO-S-REP_IfStatement_condition_19 = deadcode
+E<>CMO-S-REP_IfStatement_condition_20 = deadcode
+E<>CMO-S-REP_IfStatement_condition_23 = deadcode
+E<>CMO-S-REP_IfStatement_condition_25 = deadcode
+E<>CMO-S-REP_IfStatement_condition_26 = deadcode
+L<>CMO-S-REP_IfStatement_condition_28
+L<>CMO-S-REP_IfStatement_condition_29
+CMO-S-REP_IfStatement_condition_30
+L<>CMO-S-REP_IfStatement_condition_36 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claims.
+L<>CMO-S-REP_IfStatement_condition_38 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claims.
+E<>CMO-S-REP_IfStatement_condition_39 = deadcode
+L<>CMO-S-REP_IfStatement_condition_4 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_IfStatement_condition_42
+CMO-S-REP_IfStatement_condition_43
+L<>CMO-S-REP_IfStatement_condition_45
+L<>CMO-S-REP_IfStatement_condition_47 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+E<>CMO-S-REP_IfStatement_condition_48 = deadcode
+E<>CMO-S-REP_IfStatement_condition_49 = deadcode
+E<>CMO-S-REP_IfStatement_condition_5 = deadcode
+E<>CMO-S-REP_IfStatement_condition_50 = deadcode
+L<>CMO-S-REP_IfStatement_condition_51 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+E<>CMO-S-REP_IfStatement_condition_55 = deadcode
+L<>CMO-S-REP_IfStatement_condition_56
+E<>CMO-S-REP_IfStatement_condition_59 = deadcode
+L<>CMO-S-REP_IfStatement_condition_60
+L<>CMO-S-REP_IfStatement_condition_7 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+E<>CMO-S-REP_IfStatement_condition_8 = deadcode
+L<>CMO-S-REP_MethodCallExpression_method_1
+L<>CMO-S-REP_MethodCallExpression_method_11
+L<>CMO-S-REP_MethodCallExpression_method_12
+L<>CMO-S-REP_MethodCallExpression_method_13
+L<>CMO-S-REP_MethodCallExpression_method_16
+L<>CMO-S-REP_MethodCallExpression_method_17
+L<>CMO-S-REP_MethodCallExpression_method_19
+E<>CMO-S-REP_MethodCallExpression_method_21 = deadcode
+E<>CMO-S-REP_MethodCallExpression_method_24 = deadcode
+E<>CMO-S-REP_MethodCallExpression_method_26 = deadcode 
+L<>CMO-S-REP_MethodCallExpression_method_3 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
+L<>CMO-S-REP_MethodCallExpression_method_4
+E<>CMO-S-REP_MethodCallExpression_method_5 = deadcode
+L<>CMO-S-REP_MethodCallExpression_method_6 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
+E<>CMO-S-REP_MethodCallExpression_method_8 = deadcode
+I<>CMO-S-REP_ModelElementType_modelName_1
+L<>CMO-S-REP_ModelElementType_modelName_10
+L<>CMO-S-REP_ModelElementType_modelName_100
+I<>CMO-S-REP_ModelElementType_modelName_101
+I<>CMO-S-REP_ModelElementType_modelName_104
+I<>CMO-S-REP_ModelElementType_modelName_105
+I<>CMO-S-REP_ModelElementType_modelName_106
+I<>CMO-S-REP_ModelElementType_modelName_11
+E<>CMO-S-REP_ModelElementType_modelName_12 = deadcode
+I<>CMO-S-REP_ModelElementType_modelName_13
+I<>CMO-S-REP_ModelElementType_modelName_14
+L<>CMO-S-REP_ModelElementType_modelName_20
+E<>CMO-S-REP_ModelElementType_modelName_21 = deadcode
+L<>CMO-S-REP_ModelElementType_modelName_23
+I<>CMO-S-REP_ModelElementType_modelName_24
+E<>CMO-S-REP_ModelElementType_modelName_25 = deadcode
+I<>CMO-S-REP_ModelElementType_modelName_26
+I<>CMO-S-REP_ModelElementType_modelName_27
+I<>CMO-S-REP_ModelElementType_modelName_29
+I<>CMO-S-REP_ModelElementType_modelName_3
+I<>CMO-S-REP_ModelElementType_modelName_30
+I<>CMO-S-REP_ModelElementType_modelName_31
+E<>CMO-S-REP_ModelElementType_modelName_32 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
+I<>CMO-S-REP_ModelElementType_modelName_35
+I<>CMO-S-REP_ModelElementType_modelName_36
+I<>CMO-S-REP_ModelElementType_modelName_37
+I<>CMO-S-REP_ModelElementType_modelName_39
+E<>CMO-S-REP_ModelElementType_modelName_4 = deadcode
+I<>CMO-S-REP_ModelElementType_modelName_43
+I<>CMO-S-REP_ModelElementType_modelName_44
+I<>CMO-S-REP_ModelElementType_modelName_46
+I<>CMO-S-REP_ModelElementType_modelName_47
+E<>CMO-S-REP_ModelElementType_modelName_48 = deadcode
+E<>CMO-S-REP_ModelElementType_modelName_49 = deadcode
+L<>CMO-S-REP_ModelElementType_modelName_5
+E<>CMO-S-REP_ModelElementType_modelName_51 = deadcode
+I<>CMO-S-REP_ModelElementType_modelName_52
+I<>CMO-S-REP_ModelElementType_modelName_55
+E<>CMO-S-REP_ModelElementType_modelName_57 = deadcode
+I<>CMO-S-REP_ModelElementType_modelName_59
+E<>CMO-S-REP_ModelElementType_modelName_6 = deadcode
+I<>CMO-S-REP_ModelElementType_modelName_61
+I<>CMO-S-REP_ModelElementType_modelName_62
+I<>CMO-S-REP_ModelElementType_modelName_64
+L<>CMO-S-REP_ModelElementType_modelName_65
+E<>CMO-S-REP_ModelElementType_modelName_66 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
+L<>CMO-S-REP_ModelElementType_modelName_67
+I<>CMO-S-REP_ModelElementType_modelName_68
+I<>CMO-S-REP_ModelElementType_modelName_7
+I<>CMO-S-REP_ModelElementType_modelName_70
+I<>CMO-S-REP_ModelElementType_modelName_71
+I<>CMO-S-REP_ModelElementType_modelName_74
+I<>CMO-S-REP_ModelElementType_modelName_75
+I<>CMO-S-REP_ModelElementType_modelName_76
+I<>CMO-S-REP_ModelElementType_modelName_77
+E<>CMO-S-REP_ModelElementType_modelName_78 = deadcode
+I<>CMO-S-REP_ModelElementType_modelName_8
+I<>CMO-S-REP_ModelElementType_modelName_80
+I<>CMO-S-REP_ModelElementType_modelName_81
+I<>CMO-S-REP_ModelElementType_modelName_83
+L<>CMO-S-REP_ModelElementType_modelName_84
+I<>CMO-S-REP_ModelElementType_modelName_85
+I<>CMO-S-REP_ModelElementType_modelName_86
+I<>CMO-S-REP_ModelElementType_modelName_87
+E<>CMO-S-REP_ModelElementType_modelName_88 = deadcode
+I<>CMO-S-REP_ModelElementType_modelName_89
+I<>CMO-S-REP_ModelElementType_modelName_91
+I<>CMO-S-REP_ModelElementType_modelName_92
+I<>CMO-S-REP_ModelElementType_modelName_93
+I<>CMO-S-REP_ModelElementType_modelName_94
+I<>CMO-S-REP_ModelElementType_modelName_95
+E<>CMO-S-REP_ModelElementType_modelName_97 = deadcode
+I<>CMO-S-REP_ModelElementType_modelName_99
+CMO-S-REP_NotOperatorExpression_inBrackets_3
+E<>CMO-S-REP_OperationDefinition_returnType_1 = deadcode
+E<>CMO-S-REP_OperationDefinition_returnType_11 = deadcode
+E<>CMO-S-REP_OperationDefinition_returnType_12 = deadcode
+E<>CMO-S-REP_OperationDefinition_returnType_13 = deadcode
+L<>CMO-S-REP_OperationDefinition_returnType_14
+E<>CMO-S-REP_OperationDefinition_returnType_16 = deadcode
+L<>CMO-S-REP_OperationDefinition_returnType_18
+E<>CMO-S-REP_OperationDefinition_returnType_2 = deadcode
+E<>CMO-S-REP_OperationDefinition_returnType_20 = deadcode
+E<>CMO-S-REP_OperationDefinition_returnType_23 = deadcode
+E<>CMO-S-REP_OperationDefinition_returnType_25 = deadcode
+L<>CMO-S-REP_OperationDefinition_returnType_28
+L<>CMO-S-REP_OperationDefinition_returnType_3
+L<>CMO-S-REP_OperationDefinition_returnType_30
+E<>CMO-S-REP_OperationDefinition_returnType_32 = deadcode
+L<>CMO-S-REP_OperationDefinition_returnType_33
+E<>CMO-S-REP_OperationDefinition_returnType_36 = deadcode
+E<>CMO-S-REP_OperationDefinition_returnType_37 = deadcode
+L<>CMO-S-REP_OperationDefinition_returnType_38
+L<>CMO-S-REP_OperationDefinition_returnType_4
+L<>CMO-S-REP_OperationDefinition_returnType_40
+E<>CMO-S-REP_OperationDefinition_returnType_42 = deadcode
+L<>CMO-S-REP_OperationDefinition_returnType_44
+L<>CMO-S-REP_OperationDefinition_returnType_45
+E<>CMO-S-REP_OperationDefinition_returnType_49 = deadcode
+E<>CMO-S-REP_OperationDefinition_returnType_8 = deadcode
+L<>CMO-S-REP_OperationDefinition_returnType_9
+CMO-S-REP_OrOperatorExpression_inBrackets_3
+L<>CMO-S-REP_ReturnStatement_expression_10 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_11 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_12 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_13 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_14
+L<>CMO-S-REP_ReturnStatement_expression_15 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_17 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_19
+L<>CMO-S-REP_ReturnStatement_expression_2
+CMO-S-REP_ReturnStatement_expression_20
+L<>CMO-S-REP_ReturnStatement_expression_21
+L<>CMO-S-REP_ReturnStatement_expression_25 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_26 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+E<>CMO-S-REP_ReturnStatement_expression_27 = deadcode
+L<>CMO-S-REP_ReturnStatement_expression_28 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_3 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+E<>CMO-S-REP_ReturnStatement_expression_30 = deadcode
+L<>CMO-S-REP_ReturnStatement_expression_31 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_32 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+E<>CMO-S-REP_ReturnStatement_expression_33 = deadcode
+L<>CMO-S-REP_ReturnStatement_expression_34 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+E<>CMO-S-REP_ReturnStatement_expression_39 = deadcode
+E<>CMO-S-REP_ReturnStatement_expression_4 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+E<>CMO-S-REP_ReturnStatement_expression_40 = deadcode
+E<>CMO-S-REP_ReturnStatement_expression_41 = deadcode
+L<>CMO-S-REP_ReturnStatement_expression_42 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_43 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_44
+L<>CMO-S-REP_ReturnStatement_expression_46
+L<>CMO-S-REP_ReturnStatement_expression_47 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_5 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_7 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+E<>CMO-S-REP_ReturnStatement_expression_8 = deadcode
+L<>CMO-S-REP_ReturnStatement_expression_9 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_VariableDeclarationExpression_create_1
+E<>CMO-S-REP_VariableDeclarationExpression_create_2 = deadcode
+E<>CMO-S-REP_VariableDeclarationExpression_name_13 = deadcode
+L<>CMO-S-REP_VariableDeclarationExpression_name_2 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
+L<>CMO-S-REP_VariableDeclarationExpression_name_21
+E<>CMO-S-REP_VariableDeclarationExpression_name_25 = deadcode
+L<>CMO-S-REP_VariableDeclarationExpression_name_26
+L<>CMO-S-REP_VariableDeclarationExpression_name_33 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
+L<>CMO-S-REP_VariableDeclarationExpression_name_6 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
+E<>CMO-S-REP_VariableDeclarationExpression_resolvedType_1
+E<>CMO-S-REP_VariableDeclarationExpression_resolvedType_2

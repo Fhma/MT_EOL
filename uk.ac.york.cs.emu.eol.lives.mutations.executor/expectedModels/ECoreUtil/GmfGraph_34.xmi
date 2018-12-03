@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="components">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ConnectorFigureTargetDecoration"/>
+    <descriptors name="ComponentFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ComponentFigure">
+        <preferredSize dx="10" dy="9"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:CustomFigure" name="ComponentLabelFigure" qualifiedClassName="component.impl"/>
+        <children xsi:type="gmfgraph:Label" name="NamedElementNameLabelFigure" text="name"/>
+        <children xsi:type="gmfgraph:Label" name="ComponentFooLabelFigure" text="foo"/>
+        <children xsi:type="gmfgraph:Label" name="ComponentBarLabelFigure" text="bar"/>
+      </actualFigure>
+      <accessors accessor="getFigureComponentLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureNamedElementNameLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureComponentFooLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
+      <accessors accessor="getFigureComponentBarLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.3"/>
+    </descriptors>
+    <descriptors name="Component3Figure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="Component3Figure">
+        <preferredSize dx="10" dy="9"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:CustomFigure" name="Component3LabelFigure" qualifiedClassName="component.impl"/>
+        <children xsi:type="gmfgraph:Label" name="NamedElementNameLabelFigure" text="name"/>
+        <children xsi:type="gmfgraph:Label" name="ComponentFooLabelFigure" text="foo"/>
+        <children xsi:type="gmfgraph:Label" name="ComponentBarLabelFigure" text="bar"/>
+      </actualFigure>
+      <accessors accessor="getFigureComponent3LabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureNamedElementNameLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureComponentFooLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
+      <accessors accessor="getFigureComponentBarLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.3"/>
+    </descriptors>
+    <descriptors name="Component4Figure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="Component4Figure">
+        <preferredSize dx="10" dy="9"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:CustomFigure" name="Component4LabelFigure" qualifiedClassName="component.impl"/>
+        <children xsi:type="gmfgraph:Label" name="NamedElementNameLabelFigure" text="name"/>
+        <children xsi:type="gmfgraph:Label" name="ComponentFooLabelFigure" text="foo"/>
+        <children xsi:type="gmfgraph:Label" name="ComponentBarLabelFigure" text="bar"/>
+      </actualFigure>
+      <accessors accessor="getFigureComponent4LabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureNamedElementNameLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureComponentFooLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
+      <accessors accessor="getFigureComponentBarLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.3"/>
+    </descriptors>
+    <descriptors name="Port2Figure">
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="Port2Figure" qualifiedClassName="square">
+        <preferredSize dx="20" dy="20"/>
+        <children xsi:type="gmfgraph:Label" name="NamedElementNameLabelFigure" text="name"/>
+      </actualFigure>
+      <accessors accessor="getFigureNamedElementNameLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="Port2LabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="Port2LabelFigure" text="Port2"/>
+    </descriptors>
+    <descriptors name="PortFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="PortFigure">
+        <preferredSize dx="20" dy="20"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="NamedElementNameLabelFigure" text="name"/>
+      </actualFigure>
+      <accessors accessor="getFigureNamedElementNameLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="PortLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="PortLabelFigure" text="Port"/>
+    </descriptors>
+    <descriptors name="ConnectorFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ConnectorFigure" targetDecoration="//@figures.0/@figures.0"/>
+    </descriptors>
+    <descriptors name="ConnectorLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ConnectorLabelLabel" text="Connector"/>
+    </descriptors>
+    <descriptors name="ComponentDiagramConnectorsFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ComponentDiagramConnectorsFigure"/>
+    </descriptors>
+    <descriptors name="ComponentDiagramConnectorsExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ComponentDiagramConnectorsExternalLabel"/>
+    </descriptors>
+    <descriptors name="ConnectorSourceFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ConnectorSourceFigure"/>
+    </descriptors>
+    <descriptors name="ConnectorSourceExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ConnectorSourceExternalLabel"/>
+    </descriptors>
+    <descriptors name="ConnectorTargetFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ConnectorTargetFigure"/>
+    </descriptors>
+    <descriptors name="ConnectorTargetExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ConnectorTargetExternalLabel"/>
+    </descriptors>
+    <descriptors name="Connector2SourceFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="Connector2SourceFigure"/>
+    </descriptors>
+    <descriptors name="Connector2SourceExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="Connector2SourceExternalLabel"/>
+    </descriptors>
+    <descriptors name="Connector2TargetFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="Connector2TargetFigure"/>
+    </descriptors>
+    <descriptors name="Connector2TargetExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="Connector2TargetExternalLabel" text="text"/>
+    </descriptors>
+    <descriptors name="Connector3SourceFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="Connector3SourceFigure"/>
+    </descriptors>
+    <descriptors name="Connector3SourceExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="Connector3SourceExternalLabel"/>
+    </descriptors>
+    <descriptors name="Connector3TargetFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="Connector3TargetFigure"/>
+    </descriptors>
+    <descriptors name="Connector3TargetExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="Connector3TargetExternalLabel" text="a"/>
+    </descriptors>
+  </figures>
+  <nodes name="Component" figure="ComponentFigure" affixedParentSide="NORTH">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="10" dy="9"/>
+    </facets>
+  </nodes>
+  <nodes name="Component3" figure="Component3Figure" affixedParentSide="NORTH">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="10" dy="9"/>
+    </facets>
+  </nodes>
+  <nodes name="Component4" figure="Component4Figure" affixedParentSide="NORTH">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="10" dy="9"/>
+    </facets>
+  </nodes>
+  <nodes name="Port2" figure="Port2Figure" affixedParentSide="NORTH">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="20" dy="20"/>
+    </facets>
+  </nodes>
+  <nodes name="Port" figure="PortFigure" affixedParentSide="NORTH">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="20" dy="20"/>
+    </facets>
+  </nodes>
+  <connections name="Connector" figure="ConnectorFigure"/>
+  <connections name="ComponentDiagramConnectors" figure="ComponentDiagramConnectorsFigure"/>
+  <connections name="ConnectorSource" figure="ConnectorSourceFigure"/>
+  <connections name="ConnectorTarget" figure="ConnectorTargetFigure"/>
+  <connections name="Connector2Source" figure="Connector2SourceFigure"/>
+  <connections name="Connector2Target" figure="Connector2TargetFigure"/>
+  <connections name="Connector3Source" figure="Connector3SourceFigure"/>
+  <connections name="Connector3Target" figure="Connector3TargetFigure"/>
+  <labels name="ComponentLabel" figure="ComponentFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="NamedElementNameLabel" figure="ComponentFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels name="ComponentFooLabel" figure="ComponentFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+  <labels name="ComponentBarLabel" figure="ComponentFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.3"/>
+  <labels name="Component3Label" figure="Component3Figure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="NamedElementNameLabel" figure="Component3Figure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <labels name="ComponentFooLabel" figure="Component3Figure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.2"/>
+  <labels name="ComponentBarLabel" figure="Component3Figure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.3"/>
+  <labels name="Component4Label" figure="Component4Figure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="NamedElementNameLabel" figure="Component4Figure" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+  <labels name="ComponentFooLabel" figure="Component4Figure" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.2"/>
+  <labels name="ComponentBarLabel" figure="Component4Figure" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.3"/>
+  <labels name="Port2Label" figure="Port2LabelFigure" elementIcon="false"/>
+  <labels name="NamedElementNameLabel" figure="Port2Figure" elementIcon="false" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="PortLabel" figure="PortLabelFigure"/>
+  <labels name="NamedElementNameLabel" figure="PortFigure" elementIcon="false" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+  <labels name="ConnectorLabel" figure="ConnectorLabelFigure"/>
+  <labels name="ComponentDiagramConnectorsExternalLabel" figure="ComponentDiagramConnectorsExternalLabelFigure" elementIcon="false"/>
+  <labels name="ConnectorSourceExternalLabel" figure="ConnectorSourceExternalLabelFigure" elementIcon="false"/>
+  <labels name="ConnectorTargetExternalLabel" figure="ConnectorTargetExternalLabelFigure" elementIcon="false"/>
+  <labels name="Connector2SourceExternalLabel" figure="Connector2SourceExternalLabelFigure" elementIcon="false"/>
+  <labels name="Connector2TargetExternalLabel" figure="Connector2TargetExternalLabelFigure" elementIcon="false"/>
+  <labels name="Connector3SourceExternalLabel" figure="Connector3SourceExternalLabelFigure" elementIcon="false"/>
+  <labels name="Connector3TargetExternalLabel" figure="Connector3TargetExternalLabelFigure" elementIcon="false"/>
+</gmfgraph:Canvas>

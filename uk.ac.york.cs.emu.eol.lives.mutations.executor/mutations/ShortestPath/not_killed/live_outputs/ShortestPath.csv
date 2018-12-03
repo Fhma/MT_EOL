@@ -1,0 +1,7 @@
+Mutation Operator,Processed,Live,Equiv.,Not Killed
+CMO-M-REP_Block_statements,1,0,1,0
+CMO-S-REP_AssignmentStatement_rhs,1,0,1,0
+CMO-S-REP_FOLMethodCallExpression_method,1,0,1,0
+CMO-S-REP_IfStatement_condition,1,1,0,0
+CMO-S-REP_VariableDeclarationExpression_resolvedType,1,0,1,0
+Total,5,1,4,0,

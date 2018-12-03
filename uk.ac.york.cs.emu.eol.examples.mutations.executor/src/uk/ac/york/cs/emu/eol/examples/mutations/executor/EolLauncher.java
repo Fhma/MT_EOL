@@ -261,8 +261,9 @@ public class EolLauncher {
 		    } else if (total_killed == 0) {
 			// the mutant wasn't killed by any test input
 			// copy mutant to live mutants folder
-			Files.copy(mutant_code.toPath(), new File(not_killed_dir.getPath() + File.separatorChar + mutant_model.getName() + ".eol").toPath(), StandardCopyOption.REPLACE_EXISTING);
-			getOperatorEntryByMutant(operators_stats, mutant_model.getName()).addNotKilledToAList(mutant_model.getName());
+			Files.copy(mutant_code.toPath(), new File(not_killed_dir.getPath() + File.separatorChar + mutant_model.getName().replace(".xmi", "") + ".eol").toPath(),
+				StandardCopyOption.REPLACE_EXISTING);
+			getOperatorEntryByMutant(operators_stats, mutant_model.getName()).addNotKilledToAList(mutant_model.getName().replace(".xmi", ""));
 			logger.println(String.format("\t\tMutant [%s] is NOT killed", mutant_model.getName()));
 		    } else {
 			logger.println(String.format("\t\tMutant [%s] is killed", mutant_model.getName()));

@@ -1,0 +1,61 @@
+@namespace(uri="http://www.eclipse.org/epsilon/eol_module", prefix="eol_module")
+package eol_module;
+
+class EOLLibraryModule{
+  attr String[1] name;
+  val Import[*] imports;
+  val ModelDeclarationStatement[*] modelDeclarations;
+  val OperationDefinition[*] operations;
+}
+
+class EOLModule extends EOLLibraryModule {
+  val Block block;
+}
+
+class Import {
+  val EOLLibraryModule[1] importedModule;
+  attr String[1] imported;
+}
+
+class Block {
+  val Statement[*] statements;
+}
+
+class AnnotationBlock extends Block {
+}
+
+class ExpressionOrStatementBlock{
+  val Block block;
+  val Expression expression;
+  val Expression condition;
+}
+
+class OperationDefinition {
+  val Type[1] contextType;
+  val Type[1] returnType;
+  val AnnotationBlock annotationBlock;
+  val Block body;
+  val NameExpression[1] name;
+  val FormalParameterExpression[*] parameters;
+}
+
+abstract class Expression {
+}
+class FormalParameterExpression {
+}
+
+class NameExpression extends Expression {
+  attr String[1] name;
+  attr boolean[1] isType;
+}
+
+abstract class Statement {
+}
+
+class ModelDeclarationStatement {
+}
+
+class Type {
+}
+
+

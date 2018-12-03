@@ -27,9 +27,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-
 import javax.swing.JOptionPane;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -45,7 +43,6 @@ import org.eclipse.epsilon.eol.execute.control.DefaultExecutionController;
 import org.eclipse.epsilon.eol.metamodel.EolPackage;
 import org.eclipse.epsilon.eol.models.IModel;
 import org.eclipse.epsilon.eol.models.IRelativePathResolver;
-
 import uk.ac.york.cs.emu.eol.lives.mutations.executor.candidates.EOLCandidate;
 import uk.ac.york.cs.emu.eol.lives.mutations.executor.configurations.Configuration;
 
@@ -128,6 +125,7 @@ public class EolLauncher {
 			options, null);
 		if (n == 1)// run original first
 		    originalExecution();
+
 		mutationExecution();
 		break;
 	    }
@@ -172,9 +170,9 @@ public class EolLauncher {
 
 	    if (entry.contains("<>")) {
 		status = entry.substring(0, entry.indexOf("<>"));
-		name = entry.substring(entry.indexOf("<>") + 2, entry.length() - 4);
+		name = entry.substring(entry.indexOf("<>") + 2, entry.length());
 	    } else
-		name = entry.substring(0, entry.length() - 4);
+		name = entry.substring(0, entry.length());
 
 	    OperatorEntry current_operator = getOperatorEntryByMutant(operators_stats, name);
 	    if (current_operator == null) {
@@ -187,28 +185,39 @@ public class EolLauncher {
 
 	    if (status != null) {
 		if (status.startsWith("L"))
-		    getOperatorEntryByMutant(operators_stats, name).incrementKilledMutants();
+		    getOperatorEntryByMutant(operators_stats, name).incrementLiveMutants();
+		else if (status.startsWith("E"))
+		    getOperatorEntryByMutant(operators_stats, name).incrementEquivalentMutants();
 		else
-		    getOperatorEntryByMutant(operators_stats, name).addNotKilledToAList(name);
-		++index;
-		if (index >= mutant_names.size())
-		    break;
-		entry = mutant_names.get(index);
+		    getOperatorEntryByMutant(operators_stats, name).incrementInvalidMutants();
 
 		// delete corresponding mutation file because its either killed or equivalent
 		if (mutant != null && mutant.exists())
 		    mutant.delete();
+
+		// get next mutant
+		++index;
+		if (index >= mutant_names.size())
+		    break;
+		entry = mutant_names.get(index);
 		continue;
 	    }
 
 	    // check if mutant has same content of original code
-	    boolean equal = FileUtils.contentEquals(new File(eol_original_code), mutant);
+	    if (mutant == null) {
+		System.err.println("Unable to find mutation correspoding to: " + name);
+		System.err.println("saving work and exit...");
+		break;
+	    }
+
+	    boolean equal = FileUtils.contentEquals(new File(EOLCandidate.LOCATION + File.separatorChar + eol_original_code), mutant);
 
 	    if (equal) // equivalent
 	    {
 		mutant.delete();
+		getOperatorEntryByMutant(operators_stats, mutant.getName()).incrementInvalidMutants();
 		mutant_names.remove(index);
-		entry = "E<>" + entry;
+		entry = "I<>" + entry;
 		mutant_names.add(index, entry);
 		++index;
 		if (index >= mutant_names.size())
@@ -216,9 +225,6 @@ public class EolLauncher {
 		entry = mutant_names.get(index);
 		continue;
 	    }
-
-	    if (mutant == null)
-		throw new NullPointerException("Unable to find mutation correspoding to: " + name);
 
 	    if (mutant.getName().endsWith(".eol")) {
 
@@ -309,8 +315,8 @@ public class EolLauncher {
 				break;
 			    } else {
 				executorService.shutdownNow();
-				cleanup(execution_dir);
-				throw e;
+				System.err.println(e.getMessage());
+				break;
 			    }
 			}
 		    }
@@ -325,20 +331,20 @@ public class EolLauncher {
 		    int counter = EXECUTOR_SERVICE_SLEEPING_REPEAT;
 		    while (!executorService.isTerminated()) {
 			if (counter == 0) {
-			    cleanup(execution_dir);
-			    throw new RuntimeException("The execution service of mutant [" + mutant.getName() + "] was not terminated.");
+			    termination(operators_stats, execution_dir);
+			    System.err.println("The execution service of mutant [" + mutant.getName() + "] was not terminated.");
 			}
 			counter--;
 			Thread.sleep(SLEEPING_FACTOR / 2);
 		    }
 
 		    if (!killed) {
-			getOperatorEntryByMutant(operators_stats, mutant.getName()).addNotKilledToAList(mutant.getName());
+			getOperatorEntryByMutant(operators_stats, mutant.getName()).addNotKilledToAList(mutant.getName().replace(".eol", ""));
 		    } else {
 			mutant_names.remove(index);
 			entry = "L<>" + entry;
 			mutant_names.add(index, entry);
-			getOperatorEntryByMutant(operators_stats, mutant.getName()).incrementKilledMutants();
+			getOperatorEntryByMutant(operators_stats, mutant.getName()).incrementLiveMutants();
 			// delete the file
 			mutant.delete();
 		    }
@@ -348,7 +354,11 @@ public class EolLauncher {
 		}
 
 		if (!valid_mutant) {
-		    current_operator.incrementInvalidMutants();
+		    mutant_names.remove(index);
+		    entry = "I<>" + entry;
+		    mutant_names.add(index, entry);
+		    getOperatorEntryByMutant(operators_stats, mutant.getName()).incrementInvalidMutants();
+		    mutant.delete();
 		}
 	    } // end of executing one mutation
 	    ++index;
@@ -356,12 +366,15 @@ public class EolLauncher {
 		break;
 	    entry = mutant_names.get(index);
 	} // end of executing all mutations
+	termination(operators_stats, execution_dir);
+    }
 
+    private void termination(List<OperatorEntry> operators, File exe_dir) throws IOException {
 	// clear execution temporary files and folders
-	cleanup(execution_dir);
+	cleanup(exe_dir);
 
 	// finally print the execution report
-	print_summary(operators_stats);
+	print_summary(operators);
     }
 
     private void originalExecution() throws Exception {
@@ -459,7 +472,7 @@ public class EolLauncher {
 		    String aliase = f.getName().substring(0, f.getName().indexOf("_"));
 		    loaded_input_metamodes += "," + aliase;
 		    File new_f = new File(output_dir.getPath() + File.separatorChar + aliase + "_" + num + ".xmi");
-		    Files.copy(f.toPath(), new_f.toPath());
+		    Files.copy(f.toPath(), new_f.toPath(), StandardCopyOption.REPLACE_EXISTING);
 		    IModel m = newEmfModel("M_" + aliase + "_" + n, aliase, new_f.getPath(), getMetamodelUri(aliase), true, false);
 		    eol.getContext().getModelRepository().addModel(m);
 		}
@@ -474,7 +487,7 @@ public class EolLauncher {
 		for (File f : input_files) {
 		    File new_f = new File(output_dir.getPath() + File.separatorChar + f.getName());
 		    if (type == EOLCandidate.MODEL_UPDATE_TYPE)
-			Files.copy(f.toPath(), new_f.toPath());
+			Files.copy(f.toPath(), new_f.toPath(), StandardCopyOption.REPLACE_EXISTING);
 		    String aliase = f.getName().substring(0, f.getName().indexOf("_"));
 		    IModel m = newEmfModel("M_" + aliase + "_" + n, aliase, new_f.getPath(), getMetamodelUri(aliase), false, true);
 		    eol.getContext().getModelRepository().addModel(m);
@@ -496,9 +509,11 @@ public class EolLauncher {
     }
 
     private File getCorrespondingMutantFileByName(File[] mutants_code, String name) {
+	if (name.contains("="))
+	    return getCorrespondingMutantFileByName(mutants_code, name.substring(0, name.indexOf("=")).trim());
 	for (int i = 0; i < mutants_code.length; i++) {
-	    String m = mutants_code[i].getName().substring(0, mutants_code[i].getName().length() - 8);
-	    if (name.equals(m)) {
+	    String m = mutants_code[i].getName().substring(0, mutants_code[i].getName().length()).replace(".eol", "").trim();
+	    if (name.trim().equals(m)) {
 		return mutants_code[i];
 	    }
 	}
@@ -586,31 +601,55 @@ public class EolLauncher {
 	    return;
 	Iterator<OperatorEntry> it = list.iterator();
 
-	int sum_processed = 0, sum_trivial = 0, sum_killed = 0, sum_not_killed = 0, sum_invalid = 0;
+	FileWriter file = new FileWriter(outputs_dir.getPath() + File.separatorChar + eol_name + ".csv");
+	file.write("Mutation Operator,");
+	file.write("Processed,");
+	file.write("Live,");
+	file.write("Equiv.,");
+	file.write("Not Killed,");
+	file.write("Invalid\n");
 
 	String not_killed_list = "";
+
+	int sum_processed = 0, sum_live = 0, sum_equiv = 0, sum_not_killed = 0, sum_invalid = 0;
 
 	while (it.hasNext()) {
 
 	    OperatorEntry operator = it.next();
+	    file.write(operator.getOID() + ",");
+
 	    sum_processed += operator.getTotalProcessedMutants();
+	    file.write(operator.getTotalProcessedMutants() + ",");
 
-	    sum_trivial += operator.getTotalTrivialMutants();
+	    sum_live += operator.getTotalLiveMutants();
+	    file.write(operator.getTotalLiveMutants() + ",");
 
-	    sum_killed += operator.getTotalKilledMutants();
+	    sum_equiv += operator.getTotalEquivMutants();
+	    file.write(operator.getTotalEquivMutants() + ",");
 
 	    sum_not_killed += operator.getAllNotKilled().size();
-	    for (String nk : operator.getAllNotKilled())
-		not_killed_list += "\n\t\t\\-->" + nk;
+	    file.write(operator.getAllNotKilled().size() + ",");
 
 	    sum_invalid += operator.getTotalInvalidMutants();
+	    file.write(operator.getTotalInvalidMutants() + "\n");
+
+	    for (String nk : operator.getAllNotKilled())
+		not_killed_list += "\n\t\t\\-->" + nk;
 	}
+	file.write("Total,");
+	file.write(sum_processed + ",");
+	file.write(sum_live + ",");
+	file.write(sum_equiv + ",");
+	file.write(sum_not_killed + ",");
+	file.write(sum_invalid + "\n");
+	file.close();
 
 	try (FileWriter log = new FileWriter(outputs_dir.getPath() + File.separatorChar + eol_name + ".txt")) {
 
 	    log.write("\t\\--> Processed mutants-> " + sum_processed + "\n");
+	    log.write("\t\\--> live mutants-> " + sum_live + "\n");
+	    log.write("\t\\--> Equiv. mutants-> " + sum_equiv + "\n");
 	    log.write("\t\\--> Invalid mutants-> " + sum_invalid + "\n");
-	    log.write("\t\\--> Killed mutants-> " + (sum_trivial + sum_killed) + "\n");
 	    log.write("\t\\--> Not killed mutants-> " + sum_not_killed);
 	    log.write(not_killed_list + "\n");
 	    log.close();

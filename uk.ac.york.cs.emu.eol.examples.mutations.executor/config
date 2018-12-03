@@ -15,7 +15,7 @@
 #	<EOLMODULENAME>/<MUTANTNAME>
 #
 ShortestPath
-#ECore2GMF
-#ECoreUtil
+ECore2GMF
+ECoreUtil
 Formatting
-#EcoreHelper
+EcoreHelper

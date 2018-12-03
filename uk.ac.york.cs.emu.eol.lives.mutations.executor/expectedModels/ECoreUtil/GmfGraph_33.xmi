@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="flowchart">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Rhomb">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="TransitionFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
+    <figures xsi:type="gmfgraph:CustomDecoration" name="DecisionFigureTargetDecoration" qualifiedClassName="nothing"/>
+    <descriptors name="SubflowFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="SubflowFigure">
+        <children xsi:type="gmfgraph:Label" name="SubflowLabelFigure" text="Subflow"/>
+      </actualFigure>
+      <accessors accessor="getFigureSubflowLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ActionFigure">
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="ActionFigure" qualifiedClassName="org.eclipse.epsilon.eugenia.examples.flowchart.diagram.figures.SquareFigure">
+        <children xsi:type="gmfgraph:Label" name="ActionLabelFigure" text="Action"/>
+      </actualFigure>
+      <accessors accessor="getFigureActionLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="TransitionFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="TransitionFigure" sourceDecoration="//@figures.0/@figures.0" targetDecoration="//@figures.0/@figures.1"/>
+    </descriptors>
+    <descriptors name="TransitionLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="TransitionLabelLabel" text="Transition"/>
+    </descriptors>
+    <descriptors name="DecisionFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DecisionFigure" sourceDecoration="//@figures.0/@figures.2" targetDecoration="//@figures.0/@figures.3"/>
+    </descriptors>
+    <descriptors name="DecisionLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="DecisionLabelLabel" text="Decision"/>
+    </descriptors>
+  </figures>
+  <nodes name="Subflow" figure="SubflowFigure"/>
+  <nodes name="Action" figure="ActionFigure"/>
+  <connections name="Transition" figure="TransitionFigure"/>
+  <connections name="Decision" figure="DecisionFigure"/>
+  <labels name="SubflowLabel" figure="SubflowFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="ActionLabel" figure="ActionFigure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="TransitionLabel" figure="TransitionLabelFigure" elementIcon="false"/>
+  <labels name="DecisionLabel" figure="DecisionLabelFigure" elementIcon="false"/>
+</gmfgraph:Canvas>

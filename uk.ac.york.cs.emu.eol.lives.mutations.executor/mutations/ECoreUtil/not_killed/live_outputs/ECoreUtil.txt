@@ -1,0 +1,49 @@
+	\--> Processed mutants-> 707
+	\--> live mutants-> 258
+	\--> Equiv. mutants-> 303
+	\--> Invalid mutants-> 102
+	\--> Not killed mutants-> 44
+		\-->CMO-M-DEL_Block_statements_157
+		\-->CMO-M-DEL_Block_statements_3
+		\-->CMO-M-DEL_Block_statements_32
+		\-->CMO-M-DEL_Block_statements_37
+		\-->CMO-M-DEL_Block_statements_38
+		\-->CMO-M-DEL_Block_statements_49
+		\-->CMO-M-DEL_Block_statements_63
+		\-->CMO-M-DEL_Block_statements_68
+		\-->CMO-M-DEL_Block_statements_70
+		\-->CMO-M-DEL_Block_statements_77
+		\-->CMO-M-DEL_Block_statements_78
+		\-->CMO-M-DEL_Block_statements_79
+		\-->CMO-M-DEL_Block_statements_82
+		\-->CMO-M-DEL_Block_statements_85
+		\-->CMO-S-DEL_ExpressionOrStatementBlock_block_1
+		\-->CMO-S-DEL_ExpressionOrStatementBlock_block_19
+		\-->CMO-S-DEL_ExpressionOrStatementBlock_block_2
+		\-->CMO-S-DEL_ExpressionOrStatementBlock_block_22
+		\-->CMO-S-DEL_ExpressionOrStatementBlock_block_3
+		\-->CMO-S-DEL_ExpressionOrStatementBlock_block_30
+		\-->CMO-S-DEL_ExpressionOrStatementBlock_block_36
+		\-->CMO-S-DEL_ExpressionOrStatementBlock_block_37
+		\-->CMO-S-DEL_ExpressionOrStatementBlock_block_39
+		\-->CMO-S-DEL_ExpressionOrStatementBlock_block_41
+		\-->CMO-S-DEL_ExpressionOrStatementBlock_block_54
+		\-->CMO-S-DEL_ExpressionOrStatementBlock_block_62
+		\-->CMO-S-DEL_ExpressionOrStatementBlock_block_64
+		\-->CMO-S-DEL_IfStatement_elseBody_1
+		\-->CMO-S-DEL_IfStatement_elseBody_14
+		\-->CMO-S-DEL_IfStatement_elseBody_17
+		\-->CMO-S-DEL_IfStatement_elseBody_26
+		\-->CMO-S-DEL_IfStatement_elseBody_28
+		\-->CMO-S-DEL_IfStatement_elseBody_30
+		\-->CMO-S-DEL_IfStatement_elseBody_34
+		\-->CMO-S-DEL_IfStatement_elseBody_4
+		\-->CMO-S-REP_FOLMethodCallExpression_method_64
+		\-->CMO-S-REP_FOLMethodCallExpression_method_67
+		\-->CMO-S-REP_FOLMethodCallExpression_method_74
+		\-->CMO-S-REP_FOLMethodCallExpression_method_86
+		\-->CMO-S-REP_IfStatement_condition_30
+		\-->CMO-S-REP_IfStatement_condition_43
+		\-->CMO-S-REP_NotOperatorExpression_inBrackets_3
+		\-->CMO-S-REP_OrOperatorExpression_inBrackets_3
+		\-->CMO-S-REP_ReturnStatement_expression_20

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfmap:Mapping xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings" xmlns:tooldef="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <nodes>
+    <containmentFeature href="ECore_34.xmi#//ComponentDiagram/components"/>
+    <ownedChild>
+      <domainMetaElement href="ECore_34.xmi#//Component3"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true">
+        <diagramLabel href="GmfGraph_34.xmi#Component3Label"/>
+        <features href="ECore_34.xmi#//NamedElement/name"/>
+      </labelMappings>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true">
+        <diagramLabel href="GmfGraph_34.xmi#NamedElementNameLabel"/>
+        <features href="ECore_34.xmi#//NamedElement/name"/>
+      </labelMappings>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="GmfGraph_34.xmi#ComponentFooLabel"/>
+        <features href="ECore_34.xmi#//Component/foo"/>
+      </labelMappings>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="GmfGraph_34.xmi#ComponentBarLabel"/>
+        <features href="ECore_34.xmi#//Component/bar"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="GmfTool_34.xmi#//@palette/@tools.0/@tools.1"/>
+      <diagramNode href="GmfGraph_34.xmi#Component3"/>
+      <children referencedChild="//@nodes.0/@ownedChild">
+        <containmentFeature href="ECore_34.xmi#//Component/comp"/>
+      </children>
+      <children referencedChild="//@nodes.1/@ownedChild">
+        <containmentFeature href="ECore_34.xmi#//Component/comp"/>
+      </children>
+      <children referencedChild="//@nodes.2/@ownedChild/@children.2/@ownedChild">
+        <containmentFeature href="ECore_34.xmi#//Component/ports"/>
+      </children>
+      <children referencedChild="//@nodes.2/@ownedChild">
+        <containmentFeature href="ECore_34.xmi#//Component/comp"/>
+      </children>
+      <children>
+        <containmentFeature href="ECore_34.xmi#//Component3/ports2"/>
+        <ownedChild>
+          <domainMetaElement href="ECore_34.xmi#//Port2"/>
+          <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel href="GmfGraph_34.xmi#Port2Label"/>
+            <features href="ECore_34.xmi#//NamedElement/name"/>
+          </labelMappings>
+          <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true">
+            <diagramLabel href="GmfGraph_34.xmi#NamedElementNameLabel"/>
+            <features href="ECore_34.xmi#//NamedElement/name"/>
+          </labelMappings>
+          <tool xsi:type="tooldef:CreationTool" href="GmfTool_34.xmi#//@palette/@tools.0/@tools.4"/>
+          <diagramNode href="GmfGraph_34.xmi#Port2"/>
+        </ownedChild>
+      </children>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="ECore_34.xmi#//ComponentDiagram/components"/>
+    <ownedChild>
+      <domainMetaElement href="ECore_34.xmi#//Component4"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true">
+        <diagramLabel href="GmfGraph_34.xmi#Component4Label"/>
+        <features href="ECore_34.xmi#//Component/foo"/>
+        <features href="ECore_34.xmi#//Component/bar"/>
+      </labelMappings>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true">
+        <diagramLabel href="GmfGraph_34.xmi#NamedElementNameLabel"/>
+        <features href="ECore_34.xmi#//NamedElement/name"/>
+      </labelMappings>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="GmfGraph_34.xmi#ComponentFooLabel"/>
+        <features href="ECore_34.xmi#//Component/foo"/>
+      </labelMappings>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="GmfGraph_34.xmi#ComponentBarLabel"/>
+        <features href="ECore_34.xmi#//Component/bar"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="GmfTool_34.xmi#//@palette/@tools.0/@tools.2"/>
+      <diagramNode href="GmfGraph_34.xmi#Component4"/>
+      <children referencedChild="//@nodes.0/@ownedChild">
+        <containmentFeature href="ECore_34.xmi#//Component/comp"/>
+      </children>
+      <children referencedChild="//@nodes.1/@ownedChild">
+        <containmentFeature href="ECore_34.xmi#//Component/comp"/>
+      </children>
+      <children referencedChild="//@nodes.2/@ownedChild/@children.2/@ownedChild">
+        <containmentFeature href="ECore_34.xmi#//Component/ports"/>
+      </children>
+      <children referencedChild="//@nodes.2/@ownedChild">
+        <containmentFeature href="ECore_34.xmi#//Component/comp"/>
+      </children>
+      <children referencedChild="//@nodes.0/@ownedChild/@children.4/@ownedChild">
+        <containmentFeature href="ECore_34.xmi#//Component4/ports2"/>
+      </children>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature href="ECore_34.xmi#//ComponentDiagram/components"/>
+    <ownedChild>
+      <domainMetaElement href="ECore_34.xmi#//Component"/>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true">
+        <diagramLabel href="GmfGraph_34.xmi#ComponentLabel"/>
+        <features href="ECore_34.xmi#//Component/foo"/>
+        <features href="ECore_34.xmi#//Component/bar"/>
+      </labelMappings>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true">
+        <diagramLabel href="GmfGraph_34.xmi#NamedElementNameLabel"/>
+        <features href="ECore_34.xmi#//NamedElement/name"/>
+      </labelMappings>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="GmfGraph_34.xmi#ComponentFooLabel"/>
+        <features href="ECore_34.xmi#//Component/foo"/>
+      </labelMappings>
+      <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel href="GmfGraph_34.xmi#ComponentBarLabel"/>
+        <features href="ECore_34.xmi#//Component/bar"/>
+      </labelMappings>
+      <tool xsi:type="tooldef:CreationTool" href="GmfTool_34.xmi#//@palette/@tools.0/@tools.0"/>
+      <diagramNode href="GmfGraph_34.xmi#Component"/>
+      <children referencedChild="//@nodes.0/@ownedChild">
+        <containmentFeature href="ECore_34.xmi#//Component/comp"/>
+      </children>
+      <children referencedChild="//@nodes.1/@ownedChild">
+        <containmentFeature href="ECore_34.xmi#//Component/comp"/>
+      </children>
+      <children>
+        <containmentFeature href="ECore_34.xmi#//Component/ports"/>
+        <ownedChild>
+          <domainMetaElement href="ECore_34.xmi#//Port"/>
+          <labelMappings xsi:type="gmfmap:FeatureLabelMapping" viewPattern="pattern" editorPattern="pattern" editPattern="pattern">
+            <diagramLabel href="GmfGraph_34.xmi#PortLabel"/>
+            <features href="ECore_34.xmi#//NamedElement/name"/>
+          </labelMappings>
+          <labelMappings xsi:type="gmfmap:FeatureLabelMapping" readOnly="true">
+            <diagramLabel href="GmfGraph_34.xmi#NamedElementNameLabel"/>
+            <features href="ECore_34.xmi#//NamedElement/name"/>
+          </labelMappings>
+          <tool xsi:type="tooldef:CreationTool" href="GmfTool_34.xmi#//@palette/@tools.0/@tools.3"/>
+          <diagramNode href="GmfGraph_34.xmi#Port"/>
+        </ownedChild>
+      </children>
+      <children referencedChild="//@nodes.2/@ownedChild">
+        <containmentFeature href="ECore_34.xmi#//Component/comp"/>
+      </children>
+    </ownedChild>
+  </nodes>
+  <links>
+    <domainMetaElement href="ECore_34.xmi#//Connector"/>
+    <labelMappings xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel href="GmfGraph_34.xmi#ConnectorLabel"/>
+      <features href="ECore_34.xmi#//NamedElement/name"/>
+    </labelMappings>
+    <containmentFeature href="ECore_34.xmi#//ComponentDiagram2/connectors"/>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_34.xmi#//@palette/@tools.1/@tools.0"/>
+    <diagramLink href="GmfGraph_34.xmi#Connector"/>
+    <sourceMetaFeature xsi:type="ecore:EReference" href="ECore_34.xmi#//Connector/source"/>
+    <linkMetaFeature xsi:type="ecore:EReference" href="ECore_34.xmi#//Connector/target"/>
+    <creationConstraints>
+      <sourceEnd body="OCL code1"/>
+      <targetEnd body="OCL code2"/>
+    </creationConstraints>
+  </links>
+  <links>
+    <labelMappings xsi:type="gmfmap:DesignLabelMapping" readOnly="true">
+      <diagramLabel href="GmfGraph_34.xmi#ComponentDiagramConnectorsExternalLabel"/>
+    </labelMappings>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_34.xmi#//@palette/@tools.1/@tools.1"/>
+    <diagramLink href="GmfGraph_34.xmi#ComponentDiagramConnectors"/>
+    <linkMetaFeature xsi:type="ecore:EReference" href="ECore_34.xmi#//ComponentDiagram/connectors"/>
+  </links>
+  <links>
+    <labelMappings xsi:type="gmfmap:DesignLabelMapping" readOnly="true">
+      <diagramLabel href="GmfGraph_34.xmi#ConnectorSourceExternalLabel"/>
+    </labelMappings>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_34.xmi#//@palette/@tools.1/@tools.2"/>
+    <diagramLink href="GmfGraph_34.xmi#ConnectorSource"/>
+    <linkMetaFeature xsi:type="ecore:EReference" href="ECore_34.xmi#//Connector/source"/>
+  </links>
+  <links>
+    <labelMappings xsi:type="gmfmap:DesignLabelMapping" readOnly="true">
+      <diagramLabel href="GmfGraph_34.xmi#ConnectorTargetExternalLabel"/>
+    </labelMappings>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_34.xmi#//@palette/@tools.1/@tools.5"/>
+    <diagramLink href="GmfGraph_34.xmi#ConnectorTarget"/>
+    <linkMetaFeature xsi:type="ecore:EReference" href="ECore_34.xmi#//Connector/target"/>
+  </links>
+  <links>
+    <labelMappings xsi:type="gmfmap:DesignLabelMapping" readOnly="true">
+      <diagramLabel href="GmfGraph_34.xmi#Connector2SourceExternalLabel"/>
+    </labelMappings>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_34.xmi#//@palette/@tools.1/@tools.3"/>
+    <diagramLink href="GmfGraph_34.xmi#Connector2Source"/>
+    <linkMetaFeature xsi:type="ecore:EReference" href="ECore_34.xmi#//Connector2/source"/>
+  </links>
+  <links>
+    <labelMappings xsi:type="gmfmap:DesignLabelMapping" readOnly="true">
+      <diagramLabel href="GmfGraph_34.xmi#Connector2TargetExternalLabel"/>
+    </labelMappings>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_34.xmi#//@palette/@tools.1/@tools.6"/>
+    <diagramLink href="GmfGraph_34.xmi#Connector2Target"/>
+    <linkMetaFeature xsi:type="ecore:EReference" href="ECore_34.xmi#//Connector2/target"/>
+  </links>
+  <links>
+    <labelMappings xsi:type="gmfmap:DesignLabelMapping" readOnly="true">
+      <diagramLabel href="GmfGraph_34.xmi#Connector3SourceExternalLabel"/>
+    </labelMappings>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_34.xmi#//@palette/@tools.1/@tools.4"/>
+    <diagramLink href="GmfGraph_34.xmi#Connector3Source"/>
+    <linkMetaFeature xsi:type="ecore:EReference" href="ECore_34.xmi#//Connector3/source"/>
+  </links>
+  <links>
+    <labelMappings xsi:type="gmfmap:DesignLabelMapping" readOnly="true">
+      <diagramLabel href="GmfGraph_34.xmi#Connector3TargetExternalLabel"/>
+    </labelMappings>
+    <tool xsi:type="tooldef:CreationTool" href="GmfTool_34.xmi#//@palette/@tools.1/@tools.7"/>
+    <diagramLink href="GmfGraph_34.xmi#Connector3Target"/>
+    <linkMetaFeature xsi:type="ecore:EReference" href="ECore_34.xmi#//Connector3/target"/>
+  </links>
+  <diagram>
+    <diagramCanvas href="GmfGraph_34.xmi#components"/>
+    <domainModel href="ECore_34.xmi#/"/>
+    <domainMetaElement href="ECore_34.xmi#//ComponentDiagram"/>
+    <palette href="GmfTool_34.xmi#//@palette"/>
+  </diagram>
+</gmfmap:Mapping>

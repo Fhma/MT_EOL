@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="components" nsURI="components" nsPrefix="components">
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentDiagram">
+    <eAnnotations source="gmf.diagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
+        eType="#//Connector" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="gmf.label">
+        <details key="label.text" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//NamedElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="phantom" value="true"/>
+      <details key="label.impl" value="component.impl"/>
+      <details key="size" value="10,9"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+        eType="#//Port" containment="true">
+      <eAnnotations source="gmf.affixed"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="foo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="gmf.label">
+        <details key="label.text" value="foo"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="gmf.label">
+        <details key="label.text" value="bar"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comp" upperBound="-1" eType="#//Component"
+        containment="true">
+      <eAnnotations source="gmf.affixed"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component2" eSuperTypes="#//Component">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="phantom" value="true"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports2" upperBound="-1"
+        eType="#//Port2" containment="true">
+      <eAnnotations source="gmf.affixed"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port2" eSuperTypes="#//NamedElement">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="square"/>
+      <details key="size" value="20,20"/>
+      <details key="label" value="name"/>
+      <details key="label.placement" value="external"/>
+      <details key="label.icon" value="false"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//NamedElement">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="size" value="20,20"/>
+      <details key="label" value="name"/>
+      <details key="label.placement" value="external"/>
+      <details key="label.icon" value="false"/>
+      <details key="label.pattern" value="pattern"/>
+      <details key="label.view.pattern" value="pattern"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connector" eSuperTypes="#//NamedElement">
+    <eAnnotations source="gmf.link">
+      <details key="source" value="source"/>
+      <details key="target" value="target"/>
+      <details key="label" value="name"/>
+      <details key="target.decoration" value="arrow"/>
+      <details key="source.constraint" value="OCL code1"/>
+      <details key="target.constraint" value="OCL code2"/>
+      <details key="tool.small.path" value="to_path"/>
+      <details key="tool.small.bundle" value="to_bundle"/>
+      <details key="incoming" value="true"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connector2" eSuperTypes="#//NamedElement">
+    <eAnnotations source="gmf.link">
+      <details key="source" value="source"/>
+      <details key="target" value="target"/>
+      <details key="label" value="name"/>
+      <details key="target.decoration" value="arrow"/>
+      <details key="source.constraint" value="OCL code1"/>
+      <details key="tool.small.path" value="to_path"/>
+      <details key="tool.small.bundle" value="to_bundle"/>
+      <details key="label.pattern" value="pattern"/>
+      <details key="label.view.pattern" value="pattern"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Port"/>
+  </eClassifiers>
+</ecore:EPackage>

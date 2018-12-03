@@ -16,10 +16,6 @@ class ModelType extends AnyType {
 class ModelElementType extends AnyType {
   attr String modelName;
   attr String[1] elementName;
-  ref ModelDeclarationStatement[1] resolvedModelDeclaration;
-}
-
-class ModelDeclarationStatement {
 }
 
 abstract class PseudoType extends AnyType {

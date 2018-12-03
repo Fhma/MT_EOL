@@ -1,0 +1,23 @@
+Mutation Operator,Processed,Live,Equiv.,Not Killed,Invalid
+CMO-M-ADD_Block_statements,2,2,0,0,0
+CMO-M-ADD_MethodCallExpression_arguments,5,5,0,0,0
+CMO-M-ADD_OperationDefinition_parameters,1,1,0,0,0
+CMO-M-DEL_Block_statements,20,18,2,0,0
+CMO-M-DEL_EOLModule_operations,1,1,0,0,0
+CMO-M-DEL_IfStatement_elseIfBodies,1,1,0,0,0
+CMO-M-DEL_MethodCallExpression_arguments,1,1,0,0,0
+CMO-M-DEL_OperationDefinition_parameters,1,1,0,0,0
+CMO-M-REP_Block_statements,4,4,0,0,0
+CMO-S-DEL_ExpressionOrStatementBlock_block,4,4,0,0,0
+CMO-S-DEL_IfStatement_elseBody,3,3,0,0,0
+CMO-S-DEL_MethodCallExpression_target,5,5,0,0,0
+CMO-S-DEL_ModelElementType_modelName,18,7,0,0,11
+CMO-S-REP_AssignmentStatement_rhs,1,0,1,0,0
+CMO-S-REP_ExpressionOrStatementBlock_condition,30,29,1,0,0
+CMO-S-REP_FormalParameterExpression_name,1,1,0,0,0
+CMO-S-REP_FormalParameterExpression_resolvedType,2,0,2,0,0
+CMO-S-REP_IfStatement_condition,9,7,2,0,0
+CMO-S-REP_MethodCallExpression_method,4,4,0,0,0
+CMO-S-REP_ModelElementType_modelName,15,4,0,0,11
+CMO-S-REP_VariableDeclarationExpression_name,2,2,0,0,0
+Total,130,100,8,0,22

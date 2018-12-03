@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="ASCII"?>
 <gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="SimpleBPMN">
   <figures name="Default">
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="Rhomb">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
     <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
       <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
       <template/>
@@ -14,9 +22,16 @@
       <template x="-2" y="-2"/>
       <template/>
     </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledRhomb">
+      <template x="-1" y="1"/>
+      <template/>
+      <template x="-1" y="-1"/>
+      <template x="-2"/>
+      <template x="-1" y="1"/>
+    </figures>
     <figures xsi:type="gmfgraph:PolylineDecoration" name="AssociationFigureTargetDecoration"/>
     <descriptors name="LaneFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="LaneFigure">
+      <actualFigure xsi:type="gmfgraph:SVGFigure" name="LaneFigure" documentURI="platform:/plugin/my.plugin/my.svg">
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
@@ -29,7 +44,7 @@
       <accessors accessor="getLaneFlowObjectsCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors name="PoolFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="PoolFigure">
+      <actualFigure xsi:type="gmfgraph:SVGFigure" name="PoolFigure" documentURI="platform:/plugin/my.plugin/my.svg">
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
@@ -102,7 +117,7 @@
       <actualFigure xsi:type="gmfgraph:Label" name="EndEventLabelFigure" text="EndEvent"/>
     </descriptors>
     <descriptors name="ActivityFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ActivityFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="ActivityFigure" lineKind="LINE_DASH">
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
@@ -135,7 +150,7 @@
       </actualFigure>
     </descriptors>
     <descriptors name="MessageFlowFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="MessageFlowFigure" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.0">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="MessageFlowFigure" lineKind="LINE_DASH" sourceDecoration="//@figures.0/@figures.0" targetDecoration="//@figures.0/@figures.1">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
@@ -143,7 +158,7 @@
       <actualFigure xsi:type="gmfgraph:Label" name="MessageFlowLabelLabel" text="MessageFlow"/>
     </descriptors>
     <descriptors name="SequenceFlowFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="SequenceFlowFigure" targetDecoration="//@figures.0/@figures.1">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="SequenceFlowFigure" targetDecoration="//@figures.0/@figures.2">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
@@ -151,7 +166,7 @@
       <actualFigure xsi:type="gmfgraph:Label" name="SequenceFlowLabelLabel" text="SequenceFlow"/>
     </descriptors>
     <descriptors name="AssociationFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="AssociationFigure" lineKind="LINE_DOT" targetDecoration="//@figures.0/@figures.2">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="AssociationFigure" lineKind="LINE_DOT" sourceDecoration="//@figures.0/@figures.3" targetDecoration="//@figures.0/@figures.4">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
