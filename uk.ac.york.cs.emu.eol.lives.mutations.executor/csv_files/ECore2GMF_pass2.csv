@@ -1,0 +1,27 @@
+Mutation Operator,Live,Equiv.,Not Killed,Invalid
+CMO-M-ADD_Block_statements,33,0,0,0
+CMO-M-ADD_MethodCallExpression_arguments,47,2,0,0
+CMO-M-ADD_OperationDefinition_parameters,1,2,0,0
+CMO-M-DEL_Block_statements,141,10,0,0
+CMO-M-DEL_EOLModule_operations,1,2,0,0
+CMO-M-DEL_MethodCallExpression_arguments,16,0,0,0
+CMO-M-DEL_OperationDefinition_parameters,0,1,0,0
+CMO-M-REP_Block_statements,7,5,0,0
+CMO-M-REP_FOLMethodCallExpression_conditions,4,2,0,0
+CMO-S-DEL_ExpressionOrStatementBlock_block,31,0,0,0
+CMO-S-DEL_FOLMethodCallExpression_target,3,0,0,0
+CMO-S-DEL_IfStatement_elseBody,7,0,0,0
+CMO-S-DEL_MethodCallExpression_target,44,0,0,0
+CMO-S-DEL_ModelElementType_modelName,20,2,0,3
+CMO-S-REP_AssignmentStatement_rhs,4,3,0,0
+CMO-S-REP_FOLMethodCallExpression_method,12,0,0,0
+CMO-S-REP_FormalParameterExpression_name,13,1,0,0
+CMO-S-REP_IfStatement_condition,17,4,0,0
+CMO-S-REP_MethodCallExpression_method,14,10,0,0
+CMO-S-REP_ModelElementType_modelName,20,2,0,2
+CMO-S-REP_NotOperatorExpression_inBrackets,0,1,0,0
+CMO-S-REP_OrOperatorExpression_inBrackets,2,0,0,0
+CMO-S-REP_PropertyCallExpression_extended,16,0,0,0
+CMO-S-REP_VariableDeclarationExpression_create,3,0,0,0
+CMO-S-REP_VariableDeclarationExpression_name,20,2,0,0
+CMO-S-REP_VariableDeclarationExpression_resolvedType,0,2,0,0
