@@ -8,7 +8,7 @@
 //1.1 replace to false
 @action replace
 @property inBrackets
-pattern neglet_value_to_false
+pattern negate_value_to_false
 instance:Expression
 	in: Expression.all.select(e|e.isKindOf(OperatorExpression)) {
 	do {
