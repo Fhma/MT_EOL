@@ -1,0 +1,36 @@
+Mutation Operator,Valid,Invalid
+CMO-M-DEL_MethodCallExpression_arguments,1,0
+CMO-S-REP_FormalParameterExpression_name,5,0
+CMO-M-ADD_OperationDefinition_parameters,2,0
+CMO-S-REP_NotOperatorExpression_inBrackets,0,1
+CMO-S-REP_VariableDeclarationExpression_name,5,0
+CMO-S-DEL_ExpressionOrStatementBlock_expression,0,6
+CMO-M-REP_Block_statements,5,0
+CMO-S-REP_MethodCallExpression_method,8,0
+CMO-S-REP_FOLMethodCallExpression_method,10,0
+CMO-M-REP_FOLMethodCallExpression_conditions,7,0
+CMO-S-REP_IfStatement_condition,7,0
+CMO-S-REP_AssignmentStatement_rhs,5,0
+CMO-S-REP_PlusOperatorExpression_inBrackets,1,10
+CMO-S-REP_PropertyCallExpression_extended,12,12
+CMO-S-DEL_PropertyCallExpression_target,24,0
+CMO-S-REP_OperationDefinition_returnType,3,0
+CMO-S-REP_LessThanOperatorExpression_inBrackets,0,1
+CMO-S-ADD_ModelElementType_modelName,0,14
+CMO-S-DEL_ExpressionOrStatementBlock_condition,0,6
+CMO-S-DEL_OperationDefinition_body,2,0
+CMO-M-DEL_FOLMethodCallExpression_conditions,0,2
+CMO-S-REP_OperationDefinition_contextType,2,0
+CMO-S-REP_LessThanOrEqualToOperatorExpression_inBrackets,0,1
+CMO-M-DEL_EOLModule_operations,2,0
+CMO-M-ADD_MethodCallExpression_arguments,10,0
+CMO-S-REP_WhileStatement_condition,1,0
+CMO-S-DEL_MethodCallExpression_target,10,0
+CMO-S-DEL_EOLModule_block,1,0
+CMO-S-DEL_ExpressionOrStatementBlock_block,6,0
+CMO-M-ADD_Block_statements,14,0
+CMO-M-DEL_Block_statements,25,0
+CMO-S-DEL_FOLMethodCallExpression_target,2,0
+CMO-S-REP_VariableDeclarationExpression_resolvedType,2,0
+CMO-S-DEL_IfStatement_elseBody,0,2
+Total Mutants,172,55
