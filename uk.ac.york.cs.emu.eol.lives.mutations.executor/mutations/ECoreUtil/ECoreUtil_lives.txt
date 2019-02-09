@@ -12,7 +12,7 @@ L<>CMO-M-ADD_Block_statements_9
 E<>CMO-M-ADD_MethodCallExpression_arguments_101 = the engine seems to do noting about duplicate operations. The mutation that made in the duplicate operation is never executed and therefore it is considered a dead code  
 L<>CMO-M-ADD_MethodCallExpression_arguments_102
 L<>CMO-M-ADD_MethodCallExpression_arguments_104
-E<>CMO-M-ADD_MethodCallExpression_arguments_105  = the engine seems to do noting about duplicate operations. The mutation that made in the duplicate operation is never executed and therefore it is considered a dead code
+E<>CMO-M-ADD_MethodCallExpression_arguments_105 = the engine seems to do noting about duplicate operations. The mutation that made in the duplicate operation is never executed and therefore it is considered a dead code
 L<>CMO-M-ADD_MethodCallExpression_arguments_108
 L<>CMO-M-ADD_MethodCallExpression_arguments_11
 L<>CMO-M-ADD_MethodCallExpression_arguments_12
@@ -72,7 +72,7 @@ E<>CMO-M-DEL_Block_statements_101 = deadcode
 L<>CMO-M-DEL_Block_statements_103
 L<>CMO-M-DEL_Block_statements_104
 L<>CMO-M-DEL_Block_statements_105
-E<>CMO-M-DEL_Block_statements_106 = an operation with a return statement that was removed seems to have no effect on operation execution
+L<>CMO-M-DEL_Block_statements_106 = RSR
 E<>CMO-M-DEL_Block_statements_108 = deadcode
 E<>CMO-M-DEL_Block_statements_109
 L<>CMO-M-DEL_Block_statements_11
@@ -171,7 +171,7 @@ L<>CMO-M-DEL_Block_statements_98
 L<>CMO-M-DEL_Block_statements_99
 L<>CMO-M-DEL_EOLModule_operations_1
 E<>CMO-M-DEL_EOLModule_operations_10 = deadcode
-L<>CMO-M-DEL_EOLModule_operations_14 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code 
+E<>CMO-M-DEL_EOLModule_operations_14 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code 
 E<>CMO-M-DEL_EOLModule_operations_15 = deadcode
 E<>CMO-M-DEL_EOLModule_operations_17 = deadcode
 L<>CMO-M-DEL_EOLModule_operations_2
@@ -198,67 +198,67 @@ E<>CMO-M-DEL_OperationDefinition_parameters_5 = deadcode
 E<>CMO-M-DEL_OperationDefinition_parameters_7 = deadcode
 L<>CMO-M-REP_Block_statements_10
 L<>CMO-M-REP_Block_statements_11
-L<>CMO-M-REP_Block_statements_12 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_12 = RSR
 L<>CMO-M-REP_Block_statements_14
 L<>CMO-M-REP_Block_statements_15
-L<>CMO-M-REP_Block_statements_16 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_16 = RSR
 E<>CMO-M-REP_Block_statements_18 = deadcode
 L<>CMO-M-REP_Block_statements_19
 E<>CMO-M-REP_Block_statements_2
-L<>CMO-M-REP_Block_statements_22 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_22 = RSR
 E<>CMO-M-REP_Block_statements_24
 E<>CMO-M-REP_Block_statements_25 = deadcode
-L<>CMO-M-REP_Block_statements_28 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_28 = RSR
 L<>CMO-M-REP_Block_statements_29
 L<>CMO-M-REP_Block_statements_32
 L<>CMO-M-REP_Block_statements_33
 L<>CMO-M-REP_Block_statements_34
-L<>CMO-M-REP_Block_statements_35 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
-L<>CMO-M-REP_Block_statements_38 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
-L<>CMO-M-REP_Block_statements_4 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_35 = RSR
+L<>CMO-M-REP_Block_statements_38 = RSR
+L<>CMO-M-REP_Block_statements_4 = RSR
 L<>CMO-M-REP_Block_statements_41
 L<>CMO-M-REP_Block_statements_42
 L<>CMO-M-REP_Block_statements_43
 L<>CMO-M-REP_Block_statements_45
-L<>CMO-M-REP_Block_statements_46 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_46 = RSR
 L<>CMO-M-REP_Block_statements_48
 E<>CMO-M-REP_Block_statements_50
 L<>CMO-M-REP_Block_statements_51
-L<>CMO-M-REP_Block_statements_52 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_52 = RSR
 L<>CMO-M-REP_Block_statements_55
 L<>CMO-M-REP_Block_statements_6
-L<>CMO-M-REP_Block_statements_7 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
-L<>CMO-M-REP_Block_statements_8 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
-L<>CMO-M-REP_Block_statements_9 = a return statement of a returning operation is removed and the EOL engine didn't catch the error
+L<>CMO-M-REP_Block_statements_7 = RSR
+L<>CMO-M-REP_Block_statements_8 = RSR
+L<>CMO-M-REP_Block_statements_9 = RSR
 E<>CMO-M-REP_FOLMethodCallExpression_conditions_11 = deadcode
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_12 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say. 
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_12 = BCOUOT 
 E<>CMO-M-REP_FOLMethodCallExpression_conditions_14 = deadcode
 E<>CMO-M-REP_FOLMethodCallExpression_conditions_15 = deadcode
 L<>CMO-M-REP_FOLMethodCallExpression_conditions_17
 E<>CMO-M-REP_FOLMethodCallExpression_conditions_21 = deadcode
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_27 = binary comparison operators (>,>=,<,<=) is used on boolean literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_27 = BCOUOT
 E<>CMO-M-REP_FOLMethodCallExpression_conditions_29 = deadcode
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_30 = binary comparison operators (>,>=,<,<=) is used on boolean literals; something that should not be allowed by the EOL engine as specification say.
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_33 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_36 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_37 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_40 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_41 = binary comparison operators (>,>=,<,<=) is used on boolean literals; something that should not be allowed by the EOL engine as specification say.
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_42 = binary comparison operators (>,>=,<,<=) is used on boolean literals; something that should not be allowed by the EOL engine as specification say.
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_43 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_48 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_51 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_52 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_30 = BCOUOT
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_33 = BCOUOT
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_36 = BCOUOT
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_37 = BCOUOT
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_40 = BCOUOT
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_41 = BCOUOT
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_42 = BCOUOT
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_43 = BCOUOT
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_48 = BCOUOT
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_51 = BCOUOT
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_52 = BCOUOT
 L<>CMO-M-REP_FOLMethodCallExpression_conditions_54
 E<>CMO-M-REP_FOLMethodCallExpression_conditions_57
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_58 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_59 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_6 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_60 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_58 = BCOUOT
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_59 = BCOUOT
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_6 = BCOUOT
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_60 = BCOUOT
 E<>CMO-M-REP_FOLMethodCallExpression_conditions_62 = deadcode
 E<>CMO-M-REP_FOLMethodCallExpression_conditions_63 = deadcode
 L<>CMO-M-REP_FOLMethodCallExpression_conditions_64
-L<>CMO-M-REP_FOLMethodCallExpression_conditions_8 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-M-REP_FOLMethodCallExpression_conditions_8 = BCOUOT
 E<>CMO-M-REP_MethodCallExpression_arguments_1 = deadcode
 L<>CMO-M-REP_MethodCallExpression_arguments_2
 E<>CMO-M-REP_MethodCallExpression_arguments_3 = deadcode
@@ -470,8 +470,8 @@ I<>CMO-S-DEL_ModelElementType_modelName_96
 I<>CMO-S-DEL_ModelElementType_modelName_97
 E<>CMO-S-DEL_ModelElementType_modelName_98
 I<>CMO-S-DEL_ModelElementType_modelName_99
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_4 = binary comparison operators (>,>=,<,<=) is used on boolean literals; something that should not be allowed by the EOL engine as specification say.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_7 = binary comparison operators (>,>=,<,<=) is used on boolean literals; something that should not be allowed by the EOL engine as specification say.
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_4 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_7 = BCOUOT
 E<>CMO-S-REP_FOLMethodCallExpression_method_103 = deadcode
 E<>CMO-S-REP_FOLMethodCallExpression_method_109 = deadcode
 E<>CMO-S-REP_FOLMethodCallExpression_method_115 = deadcode
@@ -513,7 +513,7 @@ E<>CMO-S-REP_FormalParameterExpression_name_46 = deadcode
 E<>CMO-S-REP_IfStatement_condition_13 = deadcode
 E<>CMO-S-REP_IfStatement_condition_14 = deadcode
 L<>CMO-S-REP_IfStatement_condition_15
-L<>CMO-S-REP_IfStatement_condition_16 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_IfStatement_condition_16 = BCOUOT
 L<>CMO-S-REP_IfStatement_condition_17
 E<>CMO-S-REP_IfStatement_condition_18 = deadcode
 E<>CMO-S-REP_IfStatement_condition_19 = deadcode
@@ -524,24 +524,24 @@ E<>CMO-S-REP_IfStatement_condition_26 = deadcode
 L<>CMO-S-REP_IfStatement_condition_28
 L<>CMO-S-REP_IfStatement_condition_29
 CMO-S-REP_IfStatement_condition_30
-L<>CMO-S-REP_IfStatement_condition_36 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claims.
-L<>CMO-S-REP_IfStatement_condition_38 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claims.
+L<>CMO-S-REP_IfStatement_condition_36 = BCOUOT
+L<>CMO-S-REP_IfStatement_condition_38 = BCOUOT
 E<>CMO-S-REP_IfStatement_condition_39 = deadcode
-L<>CMO-S-REP_IfStatement_condition_4 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_IfStatement_condition_4 = BCOUOT
 L<>CMO-S-REP_IfStatement_condition_42
 CMO-S-REP_IfStatement_condition_43
 L<>CMO-S-REP_IfStatement_condition_45
-L<>CMO-S-REP_IfStatement_condition_47 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_IfStatement_condition_47 = BCOUOT
 E<>CMO-S-REP_IfStatement_condition_48 = deadcode
 E<>CMO-S-REP_IfStatement_condition_49 = deadcode
 E<>CMO-S-REP_IfStatement_condition_5 = deadcode
 E<>CMO-S-REP_IfStatement_condition_50 = deadcode
-L<>CMO-S-REP_IfStatement_condition_51 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_IfStatement_condition_51 = BCOUOT
 E<>CMO-S-REP_IfStatement_condition_55 = deadcode
 L<>CMO-S-REP_IfStatement_condition_56
 E<>CMO-S-REP_IfStatement_condition_59 = deadcode
 L<>CMO-S-REP_IfStatement_condition_60
-L<>CMO-S-REP_IfStatement_condition_7 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_IfStatement_condition_7 = BCOUOT
 E<>CMO-S-REP_IfStatement_condition_8 = deadcode
 L<>CMO-S-REP_MethodCallExpression_method_1
 L<>CMO-S-REP_MethodCallExpression_method_11
@@ -553,10 +553,10 @@ L<>CMO-S-REP_MethodCallExpression_method_19
 E<>CMO-S-REP_MethodCallExpression_method_21 = deadcode
 E<>CMO-S-REP_MethodCallExpression_method_24 = deadcode
 E<>CMO-S-REP_MethodCallExpression_method_26 = deadcode 
-L<>CMO-S-REP_MethodCallExpression_method_3 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
+E<>CMO-S-REP_MethodCallExpression_method_3 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
 L<>CMO-S-REP_MethodCallExpression_method_4
 E<>CMO-S-REP_MethodCallExpression_method_5 = deadcode
-L<>CMO-S-REP_MethodCallExpression_method_6 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
+E<>CMO-S-REP_MethodCallExpression_method_6 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
 E<>CMO-S-REP_MethodCallExpression_method_8 = deadcode
 I<>CMO-S-REP_ModelElementType_modelName_1
 L<>CMO-S-REP_ModelElementType_modelName_10
@@ -660,48 +660,48 @@ E<>CMO-S-REP_OperationDefinition_returnType_49 = deadcode
 E<>CMO-S-REP_OperationDefinition_returnType_8 = deadcode
 L<>CMO-S-REP_OperationDefinition_returnType_9
 CMO-S-REP_OrOperatorExpression_inBrackets_3
-L<>CMO-S-REP_ReturnStatement_expression_10 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
-L<>CMO-S-REP_ReturnStatement_expression_11 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
-L<>CMO-S-REP_ReturnStatement_expression_12 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
-L<>CMO-S-REP_ReturnStatement_expression_13 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_10 = BCOUOT
+L<>CMO-S-REP_ReturnStatement_expression_11 = BCOUOT
+L<>CMO-S-REP_ReturnStatement_expression_12 = BCOUOT
+L<>CMO-S-REP_ReturnStatement_expression_13 = BCOUOT
 L<>CMO-S-REP_ReturnStatement_expression_14
-L<>CMO-S-REP_ReturnStatement_expression_15 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
-L<>CMO-S-REP_ReturnStatement_expression_17 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_15 = BCOUOT
+L<>CMO-S-REP_ReturnStatement_expression_17 = BCOUOT
 L<>CMO-S-REP_ReturnStatement_expression_19
 L<>CMO-S-REP_ReturnStatement_expression_2
 CMO-S-REP_ReturnStatement_expression_20
 L<>CMO-S-REP_ReturnStatement_expression_21
-L<>CMO-S-REP_ReturnStatement_expression_25 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
-L<>CMO-S-REP_ReturnStatement_expression_26 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_25 = BCOUOT
+L<>CMO-S-REP_ReturnStatement_expression_26 = BCOUOT
 E<>CMO-S-REP_ReturnStatement_expression_27 = deadcode
-L<>CMO-S-REP_ReturnStatement_expression_28 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
-L<>CMO-S-REP_ReturnStatement_expression_3 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_28 = BCOUOT
+L<>CMO-S-REP_ReturnStatement_expression_3 = BCOUOT
 E<>CMO-S-REP_ReturnStatement_expression_30 = deadcode
-L<>CMO-S-REP_ReturnStatement_expression_31 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
-L<>CMO-S-REP_ReturnStatement_expression_32 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_31 = BCOUOT
+L<>CMO-S-REP_ReturnStatement_expression_32 = BCOUOT
 E<>CMO-S-REP_ReturnStatement_expression_33 = deadcode
-L<>CMO-S-REP_ReturnStatement_expression_34 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_34 = BCOUOT
 E<>CMO-S-REP_ReturnStatement_expression_39 = deadcode
-E<>CMO-S-REP_ReturnStatement_expression_4 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+E<>CMO-S-REP_ReturnStatement_expression_4 = BCOUOT
 E<>CMO-S-REP_ReturnStatement_expression_40 = deadcode
 E<>CMO-S-REP_ReturnStatement_expression_41 = deadcode
-L<>CMO-S-REP_ReturnStatement_expression_42 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
-L<>CMO-S-REP_ReturnStatement_expression_43 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_42 = BCOUOT
+L<>CMO-S-REP_ReturnStatement_expression_43 = BCOUOT
 L<>CMO-S-REP_ReturnStatement_expression_44
 L<>CMO-S-REP_ReturnStatement_expression_46
-L<>CMO-S-REP_ReturnStatement_expression_47 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
-L<>CMO-S-REP_ReturnStatement_expression_5 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
-L<>CMO-S-REP_ReturnStatement_expression_7 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_47 = BCOUOT
+L<>CMO-S-REP_ReturnStatement_expression_5 = BCOUOT
+L<>CMO-S-REP_ReturnStatement_expression_7 = BCOUOT
 E<>CMO-S-REP_ReturnStatement_expression_8 = deadcode
-L<>CMO-S-REP_ReturnStatement_expression_9 = binary comparison operators (>,>=,<,<=) is used on string literals; something that should not be allowed by the engine as EOL specification claim.
+L<>CMO-S-REP_ReturnStatement_expression_9 = BCOUOT
 L<>CMO-S-REP_VariableDeclarationExpression_create_1
 E<>CMO-S-REP_VariableDeclarationExpression_create_2 = deadcode
 E<>CMO-S-REP_VariableDeclarationExpression_name_13 = deadcode
-L<>CMO-S-REP_VariableDeclarationExpression_name_2 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
+E<>CMO-S-REP_VariableDeclarationExpression_name_2 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
 L<>CMO-S-REP_VariableDeclarationExpression_name_21
 E<>CMO-S-REP_VariableDeclarationExpression_name_25 = deadcode
 L<>CMO-S-REP_VariableDeclarationExpression_name_26
-L<>CMO-S-REP_VariableDeclarationExpression_name_33 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
-L<>CMO-S-REP_VariableDeclarationExpression_name_6 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
+E<>CMO-S-REP_VariableDeclarationExpression_name_33 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
+E<>CMO-S-REP_VariableDeclarationExpression_name_6 = the engine seems to do noting about duplicate operations. The mutation that is made in the duplicate operation is never executed and therefore it is considered a dead code
 E<>CMO-S-REP_VariableDeclarationExpression_resolvedType_1
 E<>CMO-S-REP_VariableDeclarationExpression_resolvedType_2

@@ -16,6 +16,6 @@
 #
 #ShortestPath
 #ECore2GMF
-#ECoreUtil
+ECoreUtil
 #Formatting
 #EcoreHelper

@@ -32,8 +32,8 @@ L<>CMO-M-DEL_MethodCallExpression_arguments_9
 L<>CMO-M-DEL_OperationDefinition_parameters_3
 L<>CMO-M-REP_Block_statements_11
 L<>CMO-M-REP_Block_statements_16
-L<>CMO-M-REP_Block_statements_21 = the engine fails to detect the error of adding a return statement while the operation that has the change doesn't return anything
-L<>CMO-M-REP_Block_statements_22 = the engine fails to detect the error of adding a return statement while the operation that has the change doesn't return anything
+L<>CMO-M-REP_Block_statements_21 = RSA
+L<>CMO-M-REP_Block_statements_22 = RSA
 L<>CMO-S-DEL_ExpressionOrStatementBlock_block_14
 L<>CMO-S-DEL_ExpressionOrStatementBlock_block_16
 L<>CMO-S-DEL_ExpressionOrStatementBlock_block_30
@@ -65,45 +65,45 @@ I<>CMO-S-DEL_ModelElementType_modelName_43
 I<>CMO-S-DEL_ModelElementType_modelName_5
 I<>CMO-S-DEL_ModelElementType_modelName_9
 E<>CMO-S-REP_AssignmentStatement_rhs_2
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_12 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_14 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_15 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_16 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_2 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_12 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_14 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_15 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_16 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_2 = BCOUOT
 E<>CMO-S-REP_ExpressionOrStatementBlock_condition_20
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_22 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_29 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_30 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_22 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_29 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_30 = BCOUOT
 L<>CMO-S-REP_ExpressionOrStatementBlock_condition_33
 L<>CMO-S-REP_ExpressionOrStatementBlock_condition_34
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_36 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_37 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_38 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_4 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_40 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_44 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_48 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_5 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_51 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_54 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_59 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_61 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_36 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_37 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_38 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_4 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_40 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_44 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_48 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_5 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_51 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_54 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_59 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_61 = BCOUOT
 L<>CMO-S-REP_ExpressionOrStatementBlock_condition_66
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_67 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_7 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_71 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_72 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_74 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_ExpressionOrStatementBlock_condition_76 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_67 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_7 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_71 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_72 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_74 = BCOUOT
+L<>CMO-S-REP_ExpressionOrStatementBlock_condition_76 = BCOUOT
 L<>CMO-S-REP_FormalParameterExpression_name_14
 E<>CMO-S-REP_FormalParameterExpression_resolvedType_1 
 E<>CMO-S-REP_FormalParameterExpression_resolvedType_2
 E<>CMO-S-REP_IfStatement_condition_1
-L<>CMO-S-REP_IfStatement_condition_24 = = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
+L<>CMO-S-REP_IfStatement_condition_24 = = BCOUOT
 E<>CMO-S-REP_IfStatement_condition_25
-L<>CMO-S-REP_IfStatement_condition_27 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_IfStatement_condition_38 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
-L<>CMO-S-REP_IfStatement_condition_4 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon as specification suggests.
+L<>CMO-S-REP_IfStatement_condition_27 = BCOUOT
+L<>CMO-S-REP_IfStatement_condition_38 = BCOUOT
+L<>CMO-S-REP_IfStatement_condition_4 = BCOUOT
 L<>CMO-S-REP_IfStatement_condition_41
 L<>CMO-S-REP_IfStatement_condition_42
 L<>CMO-S-REP_IfStatement_condition_43

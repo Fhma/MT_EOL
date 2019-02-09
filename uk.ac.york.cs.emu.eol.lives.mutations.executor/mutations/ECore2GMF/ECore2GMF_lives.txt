@@ -417,7 +417,7 @@ L<>CMO-S-REP_FormalParameterExpression_name_6
 L<>CMO-S-REP_FormalParameterExpression_name_9
 L<>CMO-S-REP_IfStatement_condition_1
 L<>CMO-S-REP_IfStatement_condition_12
-L<>CMO-S-REP_IfStatement_condition_18 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not be allowed by Epsilon as its specifications suggest.
+L<>CMO-S-REP_IfStatement_condition_18 = BCOUOT
 L<>CMO-S-REP_IfStatement_condition_19
 L<>CMO-S-REP_IfStatement_condition_20
 L<>CMO-S-REP_IfStatement_condition_21
@@ -427,7 +427,7 @@ E<>CMO-S-REP_IfStatement_condition_3
 L<>CMO-S-REP_IfStatement_condition_33
 L<>CMO-S-REP_IfStatement_condition_34
 L<>CMO-S-REP_IfStatement_condition_37
-L<>CMO-S-REP_IfStatement_condition_38 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not be allowed by Epsilon as its specifications suggest.
+L<>CMO-S-REP_IfStatement_condition_38 = BCOUOT
 L<>CMO-S-REP_IfStatement_condition_40
 L<>CMO-S-REP_IfStatement_condition_42
 L<>CMO-S-REP_IfStatement_condition_43

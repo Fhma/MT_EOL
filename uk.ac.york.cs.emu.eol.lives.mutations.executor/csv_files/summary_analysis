@@ -1,0 +1,10 @@
+1. Binary comparison against unsupported object types (BCOUOT): this category counts mutation that has binary comparison operators (>,>=,<,<=) changed and used for unsupported literals according to Epsilon specifications.
+13x CMO-S-REP_IfStatement_condition, 14x CMO-S-REP_IfStatement_condition, 22x CMO-S-REP_ReturnStatement_expression,
+18x CMO-M-REP_FOLMethodCallExpression_conditions, 28x CMO-S-REP_ExpressionOrStatementBlock_condition
+= total: 
+
+2. Return statement removed (RSR): this category counts mutation that when a return statement is replaced, the execution engine executes oddly the operation with no errors. The replacement for these mutation of return statements is removing the keyword 'return' and leaving the expression after the return as it is. 
+13x CMO-M-REP_Block_statements, 1x CMO-M-DEL_Block_statements
+
+3. Return statement added (RSA): this category counts mutation that adds a return statement to a non-returning operation and the engine executes oddly the operation with no errors.
+2x CMO-M-REP_Block_statements

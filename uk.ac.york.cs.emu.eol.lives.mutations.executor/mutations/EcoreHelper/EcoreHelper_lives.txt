@@ -204,7 +204,7 @@ L<>CMO-M-REP_Block_statements_46
 L<>CMO-M-REP_Block_statements_48
 L<>CMO-M-REP_Block_statements_5
 E<>CMO-M-REP_Block_statements_7
-L<>CMO-M-REP_Block_statements_9 = The engine fails to detect the error and where a return statement of an operation--that supposed to return something-- is removed.
+L<>CMO-M-REP_Block_statements_9 = RSR
 L<>CMO-M-REP_FOLMethodCallExpression_conditions_3
 L<>CMO-M-REP_MethodCallExpression_arguments_11
 L<>CMO-M-REP_MethodCallExpression_arguments_25
@@ -344,26 +344,26 @@ CMO-S-REP_IfStatement_condition_14
 L<>CMO-S-REP_IfStatement_condition_18
 L<>CMO-S-REP_IfStatement_condition_19
 CMO-S-REP_IfStatement_condition_2
-L<>CMO-S-REP_IfStatement_condition_21 = the engine fails to detect the error and allows objects to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon according to its specifications.
+L<>CMO-S-REP_IfStatement_condition_21 = BCOUOT
 L<>CMO-S-REP_IfStatement_condition_23
 L<>CMO-S-REP_IfStatement_condition_25
-L<>CMO-S-REP_IfStatement_condition_27 = the engine fails to detect the error and allows objects to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon according to its specifications.
-L<>CMO-S-REP_IfStatement_condition_30 = the engine fails to detect the error and allows objects to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon according to its specifications.
+L<>CMO-S-REP_IfStatement_condition_27 = BCOUOT
+L<>CMO-S-REP_IfStatement_condition_30 = BCOUOT
 L<>CMO-S-REP_IfStatement_condition_33
 CMO-S-REP_IfStatement_condition_37
-L<>CMO-S-REP_IfStatement_condition_39 = the engine fails to detect the error and allows objects to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon according to its specifications.
-L<>CMO-S-REP_IfStatement_condition_41 = the engine fails to detect the error and allows objects to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon according to its specifications.
+L<>CMO-S-REP_IfStatement_condition_39 = BCOUOT
+L<>CMO-S-REP_IfStatement_condition_41 = BCOUOT
 L<>CMO-S-REP_IfStatement_condition_42
-L<>CMO-S-REP_IfStatement_condition_43 = the engine fails to detect the error and allows objects to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon according to its specifications.
+L<>CMO-S-REP_IfStatement_condition_43 = BCOUOT
 CMO-S-REP_IfStatement_condition_45
-L<>CMO-S-REP_IfStatement_condition_50 = the engine fails to detect the error and allows objects to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon according to its specifications.
-L<>CMO-S-REP_IfStatement_condition_51 = the engine fails to detect the error and allows objects to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon according to its specifications.
+L<>CMO-S-REP_IfStatement_condition_50 = BCOUOT
+L<>CMO-S-REP_IfStatement_condition_51 = BCOUOT
 L<>CMO-S-REP_IfStatement_condition_54
-L<>CMO-S-REP_IfStatement_condition_55 = the engine fails to detect the error and allows objects to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon according to its specifications.
+L<>CMO-S-REP_IfStatement_condition_55 = BCOUOT
 L<>CMO-S-REP_IfStatement_condition_6
-L<>CMO-S-REP_IfStatement_condition_7 = the engine fails to detect the error and allows objects to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon according to its specifications.
-L<>CMO-S-REP_IfStatement_condition_8 = the engine fails to detect the error and allows objects to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon according to its specifications.
-L<>CMO-S-REP_IfStatement_condition_9 = the engine fails to detect the error and allows objects to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon according to its specifications.
+L<>CMO-S-REP_IfStatement_condition_7 = BCOUOT
+L<>CMO-S-REP_IfStatement_condition_8 = BCOUOT
+L<>CMO-S-REP_IfStatement_condition_9 = BCOUOT
 CMO-S-REP_MethodCallExpression_method_12
 E<>CMO-S-REP_OperationDefinition_contextType_1
 E<>CMO-S-REP_OperationDefinition_contextType_3
@@ -371,8 +371,8 @@ E<>CMO-S-REP_OperationDefinition_contextType_5
 E<>CMO-S-REP_OperationDefinition_returnType_1
 E<>CMO-S-REP_OperationDefinition_returnType_14
 E<>CMO-S-REP_OperationDefinition_returnType_28
-L<>CMO-S-REP_ReturnStatement_expression_10  = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon according to its specifications.
-L<>CMO-S-REP_ReturnStatement_expression_12 = the engine fails to detect the error and allows strings to be binary compared using >, >=, <, <=; something that should not allowed by Epsilon according to its specifications.
+L<>CMO-S-REP_ReturnStatement_expression_10  = BCOUOT
+L<>CMO-S-REP_ReturnStatement_expression_12 = BCOUOT
 L<>CMO-S-REP_ReturnStatement_expression_3
 L<>CMO-S-REP_VariableDeclarationExpression_name_13
 L<>CMO-S-REP_VariableDeclarationExpression_name_16

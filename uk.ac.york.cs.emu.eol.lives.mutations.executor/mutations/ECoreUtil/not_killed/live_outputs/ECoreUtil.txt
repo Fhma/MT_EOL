@@ -1,6 +1,6 @@
 	\--> Processed mutants-> 707
-	\--> live mutants-> 258
-	\--> Equiv. mutants-> 303
+	\--> live mutants-> 253
+	\--> Equiv. mutants-> 308
 	\--> Invalid mutants-> 102
 	\--> Not killed mutants-> 44
 		\-->CMO-M-DEL_Block_statements_157
