@@ -94,7 +94,7 @@ public class EmuPatternMatcher extends PatternMatcher {
 		    Object res = getMutationChecker().checkConditions(property, old_value, mu_action);
 
 		    if (res.equals(IMutationChecker.NOT_MUTATABLE))
-			throw new IllegalArgumentException("Property [" + property.getName() + "] is unalbe to be mutated");
+			throw new IllegalArgumentException("Property [" + property.getName() + "] is unable to be mutated");
 
 		    String operatorName = getConcreteOperator(mu_action) + "_" + property.getContainerName() + "_" + property.getName();
 

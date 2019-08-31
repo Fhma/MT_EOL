@@ -1,0 +1,163 @@
+pre {
+	var n_classes:Integer = (0.30 * total).ceiling();
+	var n_attributes:Integer = (0.30 * total).ceiling();
+	var n_vals:Integer = (0.20 * total).ceiling();
+	var n_refs:Integer = (0.20 * total).ceiling();
+	
+	var names:Sequence = StringDB!Row.all.collect(e|e.first_name.toLowerCase()); // 299 names
+	
+	var ecore_datatypes = new Sequence; 
+	ecore_datatypes.clear();
+	ecore_datatypes.addAll(ECore!EDataType.all.select(e|e.serializable).excludingAll(ECore!EDataType.all.select(e|e.name = "EJavaClass" or e.name = "EJavaObject")));
+}
+
+$instances n_classes
+@list classes
+operation Ecore!EClass create(){
+	var name = nextFromCollection(names);
+	while(Ecore!EClass.all.exists(e|e.name = name)){
+		name = nextFromCollection(names);
+	}
+	self.name = name;
+	var choice:Integer = nextInteger(1,10);
+	if(choice.mod(2)=0)
+		self.abstract = true;
+}
+
+$instances n_attributes
+@list attribues
+operation Ecore!EAttribute create(){
+	var _c = nextFromList("classes");
+	_c.eStructuralFeatures.add(self);
+	var name = nextFromCollection(names);
+	while(_c.eStructuralFeatures.exists(e|e.name = name)){
+		name = nextFromCollection(names);
+	}
+	self.name = name;
+	self.upperBound = nextInteger(1,10);
+	self.lowerBound = nextInteger(0,self.upperBound);
+	self.eType = nextFromCollection(ecore_datatypes);
+}
+
+$instances n_vals
+@list vals
+operation Ecore!EReference create(){
+	self.containment = true;
+	var _c = nextFromList("classes");
+	_c.eStructuralFeatures.add(self);
+	var name = nextFromCollection(names);
+	while(_c.eStructuralFeatures.exists(e|e.name = name)){
+		name = nextFromCollection(names);
+	}
+	self.name = name;
+	self.upperBound = nextInteger(1,10);
+	self.lowerBound = nextInteger(0,self.upperBound);
+	self.eType = nextFromList("classes");
+}
+
+$instances n_refs
+@list refs
+operation Ecore!EReference create(){
+	var _c = nextFromList("classes");
+	_c.eStructuralFeatures.add(self);
+	var name = nextFromCollection(names);
+	while(_c.eStructuralFeatures.exists(e|e.name = name)){
+		name = nextFromCollection(names);
+	}
+	self.name = name;
+	self.upperBound = nextInteger(1,10);
+	self.lowerBound = nextInteger(0,self.upperBound);
+	self.eType = nextFromList("classes");
+}
+
+$instances 1
+operation Ecore!EPackage create(){
+	self.name = "ecore";
+	self.eClassifiers.addAll(Ecore!EClass.all);
+	self.nsURI="http://www.eclipse.org/emf/2002/Ecore";
+	self.nsPrefix="Ecore";
+}
+
+post {
+	var visited = new Sequence;
+	var classes = Ecore!EClass.all;
+	
+	// do some inheritance 
+	var classes = Ecore!EClass.all.select(e| not e.abstract and e.eSuperTypes.size() = 0);
+	var n = (nextInteger(1,classes.size)/2).ceiling();
+	if(n = 0)
+		n = 1;
+
+	while(n >= 1) { 
+		var c = nextFromCollection(classes.excludingAll(visited));
+		visited.add(c);
+		classes.remove(c);
+		var target = nextFromCollection(classes.select(e|e <> c or not e.eSuperTypes.flatten.includes(c)));
+		if(target.eSuperTypes.includes(c))
+			throw "target [" +target.name+"] is selected for source ["+c.name+"]";
+		c.eSuperTypes.add(target);
+		n = n - 1;
+	}
+	
+	classes = Ecore!EClass.all.select(e| not e.abstract);
+	
+	// do some annotaions 
+	n = (nextInteger(1,classes.size)/2).ceiling();
+	if(n = 0)
+		n = 1;
+	visited.clear();
+	while(n >= 1){
+		var c = nextFromCollection(classes.excludingAll(visited));
+		var features = c.eStructuralFeatures.select(e|e.isTypeOf(Ecore!EAttribute));
+		if(features.size()=0) {
+			n = n - 1;
+			continue;
+		}
+		visited.add(c);
+		
+		var class_anno_1 = new Ecore!EAnnotation;
+		class_anno_1.source = "https://eclipse.org/epsilon/incremental/OrientDbIndex";
+		class_anno_1.references.add(nextFromCollection(features));
+		class_anno_1.details.put("type","NOTUNIQUE_HASH_INDEX");
+		c.eAnnotations.add(class_anno_1);
+		n = n-1;
+	}
+	
+	n = (nextInteger(1,classes.size)/2).ceiling();
+	if(n = 0)
+		n = 1;
+	visited.clear();
+	while(n >= 1){
+		var c = nextFromCollection(classes.excludingAll(visited));
+		var features = c.eStructuralFeatures.select(e|e.isTypeOf(Ecore!EReference));
+		if(features.size()=0) {
+			n = n - 1;
+			continue;
+		}
+
+		visited.add(c);
+		
+		var class_anno_1 = new Ecore!EAnnotation;
+		class_anno_1.source = "https://eclipse.org/epsilon/incremental/equals";
+		class_anno_1.references.add(nextFromCollection(features));
+		c.eAnnotations.add(class_anno_1);
+		n = n - 1;
+	}
+	
+	var features = Ecore!EStructuralFeature.all;
+	n = (nextInteger(1,features.size)/2).ceiling();
+	if(n = 0)
+		n = 1;
+	visited.clear();
+	while(n >= 1){
+		var f = nextFromCollection(features.excludingAll(visited));
+		visited.add(f);
+		var reference_anno_1 = new Ecore!EAnnotation;
+		reference_anno_1.source = "https://eclipse.org/epsilon/incremental/Graph";
+		reference_anno_1.details.put("edge","true");
+		f.eAnnotations.add(reference_anno_1);
+		n = n-1;
+	}	
+}
+
+

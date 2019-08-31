@@ -451,7 +451,6 @@ instance:ExpressionOrStatementBlock
 		var new_op = NotEqualsOperatorExpression.createInstance();
 		new_op.lhs = instance.condition.lhs;
 		new_op.rhs = instance.condition.rhs;
-		
 		instance.condition = new_op;
 	}
 }

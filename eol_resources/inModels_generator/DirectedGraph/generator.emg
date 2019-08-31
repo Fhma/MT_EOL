@@ -1,0 +1,64 @@
+pre {
+	var n_num:Integer;
+	var e_num:Integer;
+	if(total=2) {
+		n_num = 2;
+		e_num = 1;
+	}
+	else {
+		// nodes
+		n_num = (0.50 * total).ceiling();
+		// edges
+		e_num = (0.50 * total).ceiling();
+	}
+	var names = StringDB!Row.all.collect(e|e.first_name.toLowerCase());
+}
+
+$instances n_num
+@list nodes
+operation Node create()
+{
+	var index = nextInteger(0,300);
+	self.label = nextFromCollection(names);
+}
+
+$instances e_num
+@list edges
+operation Edge create()
+{
+	self.weight = nextInteger(1,200);
+	var n1 = nextFromList("nodes");
+	self.source = n1;
+	var n2 = nextFromList("nodes");
+	while(n1 = n2)
+		n2 = nextFromList("nodes");
+	self.target = n2;
+}
+
+post {
+	// fix the graph and ensure all nodes are connected
+	var not_connected = Node.all.select(e|e.outgoing.size() = 0 and e.incoming.size() = 0).asSequence();
+	while(Node.all.select(n|n.outgoing.size() = 0 and n.incoming.size() = 0).size()>=1) {
+		for(n in Node.all.select(n|n.outgoing.size() = 0 and n.incoming.size() = 0)) {
+			var choice = nextInteger(0,1);
+			var edge;
+			if(choice = 0) {
+				n.outgoing.add(nextFromList("edges"));
+			}
+			if(choice = 1) {
+				n.incoming.add(nextFromList("edges"));
+			}
+		}
+	}
+	
+	if(Edge.all.size() < (Node.all.size() - 1))
+		throw "Number of edges must be >= number of (nodes - 1).";
+	if(Node.all.select(n|n.outgoing.size() = 0 and n.incoming.size() = 0).size()>=1)
+		throw "a node must be connected with at least one edge.";
+	if(Edge.all.select(e|e.source.size = 0 and n.target.size = 0).size()>=1)
+		throw "an edge must be connected with at least one node.";
+		
+	// add all to a graph
+	var g = new Graph;
+	g.contents.addAll(GraphElement.all);
+}
